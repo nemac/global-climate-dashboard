@@ -1,0 +1,47 @@
+<dashboard>
+  <graph id="temp"
+         initiallyopen="true">
+    <title>Temperature</title>
+    <mugl url="temp.xml"/>
+  </graph>
+  <graph id="co2"
+         initiallyopen="true">
+    <title>co2</title>
+    <mugl url="co2.xml"/>
+  </graph>
+  <graph id="ocean"
+         initiallyopen="true">
+    <title>ocean</title>
+    <mugl url="ocean.xml"/>
+  </graph>
+  <graph id="ghouse"
+         initiallyopen="false">
+    <title>ghouse</title>
+    <mugl url="ghouse.xml"/>
+  </graph>
+  <graph id="glacier"
+         initiallyopen="false">
+    <title>glacier</title>
+    <mugl url="glacier.xml"/>
+  </graph>
+  <graph id="sea"
+         initiallyopen="false">
+    <title>sea</title>
+    <mugl url="sea.xml"/>
+  </graph>
+  <graph id="snow"
+         initiallyopen="false">
+    <title>snow</title>
+    <mugl url="snow.xml"/>
+  </graph>
+  <graph id="sun"
+         initiallyopen="false">
+    <title>sun</title>
+    <mugl url="sun.xml"/>
+  </graph>
+  <graph id="asi"
+         initiallyopen="false">
+    <title>asi</title>
+    <mugl url="asi.xml"/>
+  </graph>
+</dashboard>

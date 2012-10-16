@@ -7,55 +7,66 @@
   var $ = window.multigraph.jQuery;
   var Multigraph = window.multigraph.core.Multigraph;
 
-  var graphs = ['temp','co2','sun','asi','ghouse','glacier','ocean','sea','snow'];
+  var buttonState = {}
 
-  var buttonState = {
-    'temp' : true,
-    'co2' : true,
-    'sun' : true,
-    'asi' : false,
-    'ghouse' : false,
-    'glacier' : false,
-    'ocean' : false,
-    'sea' : false,
-    'snow' : false
+  var insertGraph = function(id,mugl) {
+    var html = (''
+      + '<div id="'+id+'graph">'
+      +   '<div class="multigraph-holder">'
+      +     '<div id="'+id+'-multigraph" style="width: 600px; height: 120px;"></div>'
+      +   '</div>'
+      + '<div class="graph-spacer"></div>'
+      + '</div>'
+      );
+
+    $('#dashboard-div').append(html);
+
+    Multigraph.createGraph({'div': id+'-multigraph', 'mugl' : mugl});
   };
 
-  var insertGraph = function(name) {
-    $('#dashboard-div').append('<div id="'+name+'graph"><div class="multigraph-holder"><div id="'+name+'-multigraph" style="width: 600px; height: 120px;"></div></div><div class="graph-spacer"></div></div>');
-    Multigraph.createGraph({'div': name+'-multigraph', 'mugl' : 'config/' + name + '.xml'});
-  };
-
-  var removeGraph = function(name) {
-    $('#'+name+'graph').remove();
+  var removeGraph = function(id) {
+    $('#'+id+'graph').remove();
   }
 
-  var makeButtonHandler = function(name) {
+  var makeButtonHandler = function(id,mugl) {
       return function() {
-        buttonState[name] = !buttonState[name];
-        if (buttonState[name]) {
-          insertGraph(name);
+        buttonState[id] = !buttonState[id];
+        if (buttonState[id]) {
+          insertGraph(id,mugl);
         } else {
-          removeGraph(name);
+          removeGraph(id);
         }
       }
   };
   
   $(document).ready(function() {
 
-    for (var i=0; i<graphs.length; ++i) {
-      var name = graphs[i];
-      var html = '<input id="'+name+'box"  type="checkbox"';
-      if (buttonState[name]) {
-        html += ' checked';
-      }
-      html += '> ' + name + '&nbsp;&nbsp;&nbsp;';
-      $('#buttons').append(html);
-      $('#'+name+'box').change( makeButtonHandler(name) );
-      if (buttonState[name]) {
-        insertGraph(name);
-      }
-    }
+    $.ajax({"url"      : "config/dashboard.xml",
+            "dataType" : "text",
+            "success"  : function (data) {
+              var configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
+              configxml.find("graph").each(function() {
+                 var id = $(this).attr('id');
+                 var initiallyopen = ( $(this).attr('initiallyopen') === "true" );
+                 var mugl = 'config/' + $(this).find('mugl').attr('url')
+
+                 var html = '<input id="'+id+'box"  type="checkbox"';
+                 buttonState[id] = initiallyopen;
+                 if (buttonState[id]) {
+                   html += ' checked';
+                 }
+                 html += '> ' + id + '&nbsp;&nbsp;&nbsp;';
+                 $('#buttons').append(html);
+                 $('#'+id+'box').change( makeButtonHandler(id,mugl) );
+                 if (buttonState[id]) {
+                   insertGraph(id,mugl);
+                 }
+           
+           
+              });
+            }});
+
+
 
   });
 

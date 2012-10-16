@@ -2,7 +2,7 @@
   <window border="0" margin="0" padding="0"/>
   <ui eventhandler="saui"/>
   <legend visible="false"/>
-  <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10"/>
+  <plotarea marginbottom="20" marginleft="60" marginright="25" margintop="10"/>
 
   <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2011" min="1955" tickmax="0" tickmin="-4" type="datetime">
     <labels>
