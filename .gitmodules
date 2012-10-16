@@ -1,0 +1,3 @@
+[submodule "lib/multigraph"]
+	path = lib/multigraph
+	url = https://github.com/multigraph/js-multigraph.git
