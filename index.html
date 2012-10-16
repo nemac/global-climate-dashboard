@@ -3,11 +3,91 @@
 <head>
 <title>HTML5 Dashboard</title>
 <script type="text/javascript" src="lib/multigraph/build/multigraph.js"></script>
+<script type="text/javascript">
+  var $ = window.multigraph.jQuery;
+  var Multigraph = window.multigraph.core.Multigraph;
+
+  var graphs = ['temp','co2','sun','asi','ghouse','glacier','ocean','sea','snow'];
+
+  var buttonState = {
+    'temp' : true,
+    'co2' : true,
+    'sun' : true,
+    'asi' : false,
+    'ghouse' : false,
+    'glacier' : false,
+    'ocean' : false,
+    'sea' : false,
+    'snow' : false
+  };
+
+  var insertGraph = function(name) {
+    $('#dashboard-div').append('<div id="'+name+'graph"><div class="multigraph-holder"><div id="'+name+'-multigraph" style="width: 600px; height: 120px;"></div></div><div class="graph-spacer"></div></div>');
+    Multigraph.createGraph({'div': name+'-multigraph', 'mugl' : 'config/' + name + '.xml'});
+  };
+
+  var removeGraph = function(name) {
+    $('#'+name+'graph').remove();
+  }
+
+  var makeButtonHandler = function(name) {
+      return function() {
+        buttonState[name] = !buttonState[name];
+        if (buttonState[name]) {
+          insertGraph(name);
+        } else {
+          removeGraph(name);
+        }
+      }
+  };
+  
+  $(document).ready(function() {
+
+    for (var i=0; i<graphs.length; ++i) {
+      var name = graphs[i];
+      var html = '<input id="'+name+'box"  type="checkbox"';
+      if (buttonState[name]) {
+        html += ' checked';
+      }
+      html += '> ' + name + '&nbsp;&nbsp;&nbsp;';
+      $('#buttons').append(html);
+      $('#'+name+'box').change( makeButtonHandler(name) );
+      if (buttonState[name]) {
+        insertGraph(name);
+      }
+    }
+
+  });
+
+</script>
+<style type="text/css">
+#dashboard-div {
+  background: #333333;
+  width: 620px;
+  padding: 10px;
+  border-radius:25px;
+  -moz-border-radius:25px; /* Firefox 3.6 and earlier */
+}
+.multigraph-holder {
+  padding: 10px;
+  background: #ffffff;
+  border-radius:25px;
+  -moz-border-radius:25px; /* Firefox 3.6 and earlier */
+}
+.graph-spacer {
+  height: 10px;
+}
+hr {
+  width: 600px;
+}
+</style>
 </head>
 <body>
 
 <center>
-<div class="multigraph" data-src="foo.xml" data-width="600" data-height="400"></div>
+<div id="dashboard-div"></div>
+<hr>
+<div id="buttons"></div>
 </center>
 
 </body>
