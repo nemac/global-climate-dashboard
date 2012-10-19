@@ -1,47 +1,47 @@
 <dashboard>
   <graph id="temp"
          initiallyopen="true">
-    <title>Temperature</title>
+    <title>Temperature (&#730;C)</title>
     <mugl url="temp.xml"/>
   </graph>
   <graph id="co2"
          initiallyopen="true">
-    <title>co2</title>
+    <title>Carbon Dioxide (ppm)</title>
     <mugl url="co2.xml"/>
   </graph>
   <graph id="ocean"
          initiallyopen="true">
-    <title>ocean</title>
+    <title>Ocean Heat</title>
     <mugl url="ocean.xml"/>
   </graph>
   <graph id="ghouse"
          initiallyopen="false">
-    <title>ghouse</title>
+    <title>Annual Greenhouse Gas Index</title>
     <mugl url="ghouse.xml"/>
   </graph>
   <graph id="glacier"
          initiallyopen="false">
-    <title>glacier</title>
+    <title>Glaciers (meters of water equivalent)</title>
     <mugl url="glacier.xml"/>
   </graph>
   <graph id="sea"
          initiallyopen="false">
-    <title>sea</title>
+    <title>Sea Level (mm)</title>
     <mugl url="sea.xml"/>
   </graph>
   <graph id="snow"
          initiallyopen="false">
-    <title>snow</title>
+    <title>Snow (million km<span baselineShift="superscript">2</span>)</title>
     <mugl url="snow.xml"/>
   </graph>
   <graph id="sun"
          initiallyopen="false">
-    <title>sun</title>
+    <title>Sun's Energy (W/m<span baselineShift="superscript">2</span>)</title>
     <mugl url="sun.xml"/>
   </graph>
   <graph id="asi"
          initiallyopen="false">
-    <title>asi</title>
+    <title>Arctic Sea Ice (1000 km<span baselineShift="superscript">2</span>)</title>
     <mugl url="asi.xml"/>
   </graph>
 </dashboard>
