@@ -56,30 +56,46 @@ span.ui-button {
 </style>
 <script type="text/javascript">
 
+var graphTpl;
+
 function createGraph(id,title,mugl,initiallyExpanded) {
 
-  var template = $('#graphTpl').html();
-  var html = Mustache.to_html(template, {
-    'id' : id,
+  var expanded = initiallyExpanded;
+
+  $('#dashboard').append(Mustache.to_html(graphTpl, {
+    'id'    : id,
     'title' : title
-  });
-  $('#dashboard').append(html);
+  }));
 
   window.multigraph.core.Multigraph.createGraph({
-    'div' : $('#' + id + ' .multigraph')[0],
+    'div'  : $('#' + id + ' .multigraph')[0],
     'mugl' : mugl
   });
 
-  function expand(target) {
-    target.button ("option", "icons", { primary : "ui-icon-minusthick" });
-    $('#' + id + ' .graph').css("height", "200px");
-    $('#' + id + ' .multigraph').css("visibility", "visible");
+  function toggle() {
+    if (expanded) {
+      collapse();
+    } else {
+      expand();
+    }
   }
 
-  function collapse(target) {
-    target.button ("option", "icons", { primary : "ui-icon-plusthick" });
-    $('#' + id + ' .graph').css("height", "50px");
-    $('#' + id + ' .multigraph').css("visibility", "hidden");
+  function expand() {
+    $("#" + id + " .statebutton").button ("option", "icons", { primary : "ui-icon-minusthick" });
+    $('#' + id + ' div.graph').css("height", "200px");
+    $('#' + id + ' span.multigraph').css("visibility", "visible");
+    //$('#' + id).off('click', 'div.graph', toggle);
+    //$('#' + id).on('click', '.statebutton', toggle);
+    expanded = true;
+  }
+
+  function collapse() {
+    $('#' + id + ' .statebutton').button ("option", "icons", { primary : "ui-icon-plusthick" });
+    $('#' + id + ' div.graph').css("height", "50px");
+    $('#' + id + ' span.multigraph').css("visibility", "hidden");
+    //$('#' + id).on('click', 'div.graph', toggle);
+    //$('#' + id).on('click', '.statebutton', toggle);
+    expanded = false;
   }
 
   $("#" + id + " .statebutton").button ({
@@ -87,25 +103,32 @@ function createGraph(id,title,mugl,initiallyExpanded) {
       primary : "ui-icon-plusthick"
     },
     text: false
-  }).click(function(event) {
-    var collapsed = $(this).button("option","icons").primary === "ui-icon-plusthick";
-    if (collapsed) {
-      expand($(this));
-    } else {
-      collapse($(this));
-    }
   });
 
+  $("#" + id).on('click', ".statebutton", toggle);
+
+/*
+.click(function(event) {
+    if (expanded) {
+      collapse();
+    } else {
+      expand();
+    }
+  });
+*/
+
   if (initiallyExpanded) {
-    expand($("#" + id + " .statebutton"));
+    expand();
   } else {
-    collapse($("#" + id + " .statebutton"));
+    collapse();
   }
 
 }
 
 
 $(document).ready(function() {
+
+    graphTpl = $('#graphTpl').html();
 
     $.ajax({"url"      : "config/dashboard.xml",
             "dataType" : "text",
@@ -127,7 +150,7 @@ $(document).ready(function() {
   <div id="{{id}}" class="mainContainer">
     <div class="graph">
       <span class="statebutton"></span>
-      <span class="title">{{title}}</span>
+      <span class="title">{{{title}}}</span>
       <span class="multigraph"/>
     </div>
   </div>
