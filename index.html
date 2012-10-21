@@ -3,134 +3,18 @@
 <head>
 <script type="text/javascript" src="lib/mustache.js"></script>
 <!-- <script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script> -->
-<script type="text/javascript" src="lib/multigraph-touch-min.js"></script>
+<script type="text/javascript" src="lib/multigraph-touch.js"></script>
 <!-- <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-1.8.2.js"></script> -->
-<script type="text/javascript">$ = window.multigraph.jQuery;</script>
+<script type="text/javascript">$ = jQuery = window.multigraph.jQuery;</script>
 <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js"></script>
 <link rel="stylesheet" href="lib/jquery-ui-1.9.0.custom/css/smoothness/jquery-ui-1.9.0.custom.css"></link>
-<style type="text/css">
-span.ui-button {
-  font-size: 32px;
-}
-.mainContainer {
-  position: relative;
-}
-.graph {
-  position: relative;
-  border-radius:25px;
-  -moz-border-radius:25px;
-  width: 1000px;
-  height: 50px;
-  background: #999999;
-  padding: 0;
-  margin-bottom: 8px;
-}
-.statebutton {
-  position: absolute;
-  left: 10px;
-  top: 10px;
-  width: 30px;
-}
-.title {
-  display: inline;
-  color: #000000;
-  width: 700px;
-  height: 30px;
-  line-height: 30px;
-  padding-left: 10px;
-  font-weight: bold;
-  position: absolute;
-  visibility: visible;
-  left: 50px;
-  top: 10px;
-}
-.multigraph {
-  background: #663333;
-  width: 700px;
-  height: 175px;
-  position: absolute;
-  visibility: hidden;
-  left: 270px;
-  top: 10px;
-  display: inline;
-}
-</style>
+
+<link rel="stylesheet" href="expandable-dashboard-graph.css"></link>
+<script type="text/javascript" src="expandable-dashboard-graph.js"></script>
+
 <script type="text/javascript">
 
-var graphTpl;
-
-function createGraph(id,title,mugl,initiallyExpanded) {
-
-  var expanded = initiallyExpanded;
-
-  $('#dashboard').append(Mustache.to_html(graphTpl, {
-    'id'    : id,
-    'title' : title
-  }));
-
-  window.multigraph.core.Multigraph.createGraph({
-    'div'  : $('#' + id + ' .multigraph')[0],
-    'mugl' : mugl
-  });
-
-  function toggle() {
-    if (expanded) {
-      collapse();
-    } else {
-      expand();
-    }
-  }
-
-  function expand() {
-    $("#" + id + " .statebutton").button ("option", "icons", { primary : "ui-icon-minusthick" });
-    $('#' + id + ' div.graph').css({
-      'height' : '200px',
-      'cursor' : 'default'
-    });
-    $('#' + id + ' span.multigraph').css("visibility", "visible");
-    expanded = true;
-  }
-
-  function collapse() {
-    $('#' + id + ' .statebutton').button ("option", "icons", { primary : "ui-icon-plusthick" });
-    $('#' + id + ' div.graph').css({
-      'height' : '50px',
-      'cursor' : 'pointer'
-    });
-    $('#' + id + ' span.multigraph').css("visibility", "hidden");
-    expanded = false;
-  }
-
-  $("#" + id + " .statebutton").button ({
-    icons : {
-      primary : "ui-icon-plusthick"
-    },
-    text: false
-  });
-
-  $("#" + id).on('click', ".statebutton", function (event) {
-    event.stopPropagation();
-    toggle();
-  });
-
-  $('#' + id).on('click', ' div.graph', function (event) {
-    if (!expanded) {
-      expand();
-    }
-  });
-
-  if (initiallyExpanded) {
-    expand();
-  } else {
-    collapse();
-  }
-
-}
-
-
 $(document).ready(function() {
-
-    graphTpl = $('#graphTpl').html();
 
     $.ajax({"url"      : "config/dashboard.xml",
             "dataType" : "text",
@@ -141,23 +25,12 @@ $(document).ready(function() {
                  var initiallyopen = ( $(this).attr('initiallyopen') === "true" );
                  var mugl = 'config/' + $(this).find('mugl').attr('url')
                  var title = $(this).find('title').text();
-                 createGraph(id + 'Graph', title, mugl, initiallyopen);
+                 $.append_expandable_dashboard_graph($('#dashboard'), id + 'Graph', title, mugl, initiallyopen);
               });
             }});
 
 });
 </script>
-
-<script id="graphTpl" type="text/template">
-  <div id="{{id}}" class="mainContainer">
-    <div class="graph">
-      <span class="statebutton"></span>
-      <span class="title">{{{title}}}</span>
-      <span class="multigraph"/>
-    </div>
-  </div>
-</script>
-
 
 </head>
 <body>

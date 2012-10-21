@@ -1,0 +1,43 @@
+.expandable-dashboard-graph-container {
+  position: relative;
+}
+.expandable-dashboard-graph {
+  position: relative;
+  border-radius:25px;
+  -moz-border-radius:25px;
+  width: 1000px;
+  height: 50px;
+  background: #999999;
+  padding: 0;
+  margin-bottom: 8px;
+}
+.expandable-dashboard-graph-openclose-button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.expandable-dashboard-graph-title {
+  display: inline;
+  color: #000000;
+  width: 700px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 10px;
+  font-weight: bold;
+  position: absolute;
+  visibility: visible;
+  left: 50px;
+  top: 10px;
+}
+.expandable-dashboard-graph-multigraph {
+  background: #663333;
+  width: 700px;
+  height: 175px;
+  position: absolute;
+  visibility: hidden;
+  left: 270px;
+  top: 10px;
+  display: inline;
+}
