@@ -82,19 +82,21 @@ function createGraph(id,title,mugl,initiallyExpanded) {
 
   function expand() {
     $("#" + id + " .statebutton").button ("option", "icons", { primary : "ui-icon-minusthick" });
-    $('#' + id + ' div.graph').css("height", "200px");
+    $('#' + id + ' div.graph').css({
+      'height' : '200px',
+      'cursor' : 'default'
+    });
     $('#' + id + ' span.multigraph').css("visibility", "visible");
-    //$('#' + id).off('click', 'div.graph', toggle);
-    //$('#' + id).on('click', '.statebutton', toggle);
     expanded = true;
   }
 
   function collapse() {
     $('#' + id + ' .statebutton').button ("option", "icons", { primary : "ui-icon-plusthick" });
-    $('#' + id + ' div.graph').css("height", "50px");
+    $('#' + id + ' div.graph').css({
+      'height' : '50px',
+      'cursor' : 'pointer'
+    });
     $('#' + id + ' span.multigraph').css("visibility", "hidden");
-    //$('#' + id).on('click', 'div.graph', toggle);
-    //$('#' + id).on('click', '.statebutton', toggle);
     expanded = false;
   }
 
@@ -105,17 +107,16 @@ function createGraph(id,title,mugl,initiallyExpanded) {
     text: false
   });
 
-  $("#" + id).on('click', ".statebutton", toggle);
+  $("#" + id).on('click', ".statebutton", function (event) {
+    event.stopPropagation();
+    toggle();
+  });
 
-/*
-.click(function(event) {
-    if (expanded) {
-      collapse();
-    } else {
+  $('#' + id).on('click', ' div.graph', function (event) {
+    if (!expanded) {
       expand();
     }
   });
-*/
 
   if (initiallyExpanded) {
     expand();
