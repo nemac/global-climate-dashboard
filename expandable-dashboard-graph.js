@@ -39,12 +39,15 @@
                         primary : "ui-icon-minusthick"
                     }
                 );
-                $('#' + data.id + ' div.expandable-dashboard-graph') .
-                    removeClass('expandable-dashboard-graph-collapsed') .
-                    addClass('expandable-dashboard-graph-expanded');
-                $('#' + data.id + ' span.expandable-dashboard-graph-multigraph').css({
-                    visibility : "visible"
+
+                $('#' + data.id + ' div.expandable-dashboard-graph').animate({
+                    height : "100px"
+                }, 300, function () {
+                    $('#' + data.id + ' div.expandable-dashboard-graph') .
+                        removeClass('expandable-dashboard-graph-collapsed') .
+                        addClass('expandable-dashboard-graph-expanded');
                 });
+
                 data.expanded = true;
             });
         },
@@ -61,9 +64,11 @@
                 $('#' + data.id + ' div.expandable-dashboard-graph') .
                     removeClass('expandable-dashboard-graph-expanded') .
                     addClass('expandable-dashboard-graph-collapsed');
-                $('#' + data.id + ' span.expandable-dashboard-graph-multigraph').css({
-                    visibility: "hidden"
-                });
+                $('#' + data.id + ' div.expandable-dashboard-graph').css('height', '100px');
+                $('#' + data.id + ' div.expandable-dashboard-graph').animate({
+                    height : "30px"
+                }, 300);
+
                 data.expanded = false;
             });
         },

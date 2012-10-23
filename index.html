@@ -1,6 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(lib/fonts/Cabin-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cabin Bold'), local('Cabin-Bold'), url(lib/fonts/Cabin-Bold.ttf) format('truetype');
+}
+#dashboard {
+  border-radius:10px;
+  -moz-border-radius:10px;
+  background: #5a5b5b;
+  color: #ffffff;
+  padding: 10px;
+  width: auto;
+  font-family: Cabin;
+}
+</style>
+
 <script type="text/javascript" src="lib/mustache.js"></script>
 <script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script>
 <!-- <script type="text/javascript" src="lib/multigraph-touch.js"></script> -->
@@ -11,17 +35,6 @@
 
 <link rel="stylesheet" href="expandable-dashboard-graph.css"></link>
 <script type="text/javascript" src="expandable-dashboard-graph.js"></script>
-
-<style type="text/css">
-#dashboard {
-  border-radius:10px;
-  -moz-border-radius:10px;
-  background: #5a5b5b;
-  color: #ffffff;
-  padding: 10px;
-  width: auto;
-}
-</style>
 
 <script type="text/javascript">
 
@@ -73,7 +86,9 @@ $(document).ready(function() {
 <body>
 <div id="message"></div>
 <table><tr><td>
-<div id="dashboard"></div>
+<div id="dashboard">
+<h2>Global Climate Dashboard</h2>
+</div>
 </td></tr></table>
 </body>
 </html>
