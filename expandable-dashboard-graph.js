@@ -17,8 +17,8 @@
         statTpl =
             (
                 ''
-                    + '<span class="expandable-dashboard-graph-stat-title">{{{title}}}:</span>'
-                    + '<span class="expandable-dashboard-graph-stat-value">{{{value}}}</span>'
+                    + '<span class="expandable-dashboard-graph-stat-item"><span class="expandable-dashboard-graph-stat-title">{{{title}}}:</span>'
+                    + '<span class="expandable-dashboard-graph-stat-value">{{{value}}}</span></span>'
             );
 
     var methods = {
@@ -101,7 +101,7 @@
                     $this.html(Mustache.to_html(expandableDashboardGraphTpl, {
                         'id'    : settings.id,
                         'title' : settings.title,
-                        'stats' : statsarray.join("<br>")
+                        'stats' : statsarray.join("")
                     }));
 
                     $('#' + settings.id + ' .expandable-dashboard-graph-stat-value').css({

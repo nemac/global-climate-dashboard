@@ -31,33 +31,59 @@
 .expandable-dashboard-graph-title {
   display: inline;
   color: #ffffff;
-  width: 700px;
+  width: auto;
   height: 30px;
   line-height: 30px;
-  padding-left: 10px;
   font-weight: bold;
-  position: absolute;
+  position: relative;
   visibility: visible;
-  left: 35px;
-  top: 4px;
+  margin-left: 35px;
+/*
+  background: #0f0;
+  opacity: 0.5;
+*/
+}
+.expandable-dashboard-graph-expanded .expandable-dashboard-graph-title {
+  top: 3px;
 }
 .expandable-dashboard-graph-collapsed .expandable-dashboard-graph-title {
-  top: 0px;
+  margin-top: 0px;
 }
 .expandable-dashboard-graph-stats {
-  width: 330px;
+  display: inline;
+  width: auto;
   height: 44px;
   line-height: 22px;
-  position: absolute;
-  top: 33px;
-  left: 35px;
-  visibility: hidden;
+  position: relative;
+/*
+  background: #f00;
+  opacity: 0.5;
+*/
+}
+.expandable-dashboard-graph-collapsed .expandable-dashboard-graph-stats {
+  margin-left: 25px;
+  height: 22px;
 }
 .expandable-dashboard-graph-expanded .expandable-dashboard-graph-stats {
-  visibility: visible;
+  left: 0px;
+  margin-left: 35px;
+  position: absolute;
+  top: 32px;
 }
 
-.expandable-dashboard-graph-stat-title {
+.expandable-dashboard-graph-expanded .expandable-dashboard-graph-stat-item {
+  display: block;
+}
+.expandable-dashboard-graph-collapsed .expandable-dashboard-graph-stat-item {
+  margin-right: 25px;
+}
+
+.expandable-dashboard-graph-expanded .expandable-dashboard-graph-stats ul li {
+  display: block;
+}
+.expandable-dashboard-graph-collapsed .expandable-dashboard-graph-stats ul li {
+  display: inline;
+  margin-right: 25px;
 }
 
 .expandable-dashboard-graph-stat-value {
