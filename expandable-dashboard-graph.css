@@ -3,24 +3,34 @@
 }
 .expandable-dashboard-graph {
   position: relative;
-  border-radius:25px;
-  -moz-border-radius:25px;
+  border-radius:10px;
+  -moz-border-radius:10px;
   width: 1000px;
-  height: 50px;
-  background: #999999;
+  background: #232020;
   padding: 0;
   margin-bottom: 8px;
 }
+.expandable-dashboard-graph-expanded {
+  height : 100px;
+  cursor : default
+}
+.expandable-dashboard-graph-collapsed {
+  height : 30px;
+  cursor : pointer
+}
 .expandable-dashboard-graph-openclose-button {
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   position: absolute;
   left: 10px;
   top: 10px;
 }
+.expandable-dashboard-graph-collapsed .expandable-dashboard-graph-openclose-button {
+  top: 6px;
+}
 .expandable-dashboard-graph-title {
   display: inline;
-  color: #000000;
+  color: #ffffff;
   width: 700px;
   height: 30px;
   line-height: 30px;
@@ -28,16 +38,57 @@
   font-weight: bold;
   position: absolute;
   visibility: visible;
-  left: 50px;
-  top: 10px;
+  left: 35px;
+  top: 4px;
 }
+.expandable-dashboard-graph-collapsed .expandable-dashboard-graph-title {
+  top: 0px;
+}
+.expandable-dashboard-graph-stats {
+  width: 330px;
+  height: 44px;
+  line-height: 22px;
+  position: absolute;
+  top: 33px;
+  left: 35px;
+  visibility: hidden;
+}
+.expandable-dashboard-graph-expanded .expandable-dashboard-graph-stats {
+  visibility: visible;
+}
+
+.expandable-dashboard-graph-stat-title {
+}
+
+.expandable-dashboard-graph-stat-value {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+
+.expandable-dashboard-graph-link {
+  width: 330px;
+  height: 22px;
+  line-height: 22px;
+  position: absolute;
+  top: 77px;
+  left: 35px;
+  visibility: hidden;
+}
+.expandable-dashboard-graph-link a {
+  color: #ffffff;
+}
+.expandable-dashboard-graph-expanded .expandable-dashboard-graph-link {
+  visibility: visible;
+}
+
 .expandable-dashboard-graph-multigraph {
   background: #663333;
-  width: 700px;
-  height: 175px;
+  width: 600px;
+  height: 80px;
   position: absolute;
   visibility: hidden;
-  left: 270px;
+  right: 20px;
   top: 10px;
   display: inline;
 }

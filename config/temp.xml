@@ -1,7 +1,8 @@
 <mugl>
   <window border="0" margin="0" padding="0"/>
   <legend visible="false"/>
-  <plotarea marginbottom="20" marginleft="60" marginright="25" margintop="10"/>
+<!--  <background color="0x232020"/> -->
+  <plotarea marginbottom="20" marginleft="60" marginright="25" margintop="10" color="0xffffff"/>
 
   <horizontalaxis highlightstyle="labels" id="yearaxis" linewidth="0" max="2020" min="1870" tickmax="0" tickmin="-4" type="datetime">
     <labels>

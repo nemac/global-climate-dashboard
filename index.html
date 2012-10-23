@@ -2,8 +2,8 @@
 <html>
 <head>
 <script type="text/javascript" src="lib/mustache.js"></script>
-<!-- <script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script> -->
-<script type="text/javascript" src="lib/multigraph-touch.js"></script>
+<script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script>
+<!-- <script type="text/javascript" src="lib/multigraph-touch.js"></script> -->
 <!-- <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-1.8.2.js"></script> -->
 <script type="text/javascript">$ = jQuery = window.multigraph.jQuery;</script>
 <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js"></script>
@@ -11,6 +11,13 @@
 
 <link rel="stylesheet" href="expandable-dashboard-graph.css"></link>
 <script type="text/javascript" src="expandable-dashboard-graph.js"></script>
+
+<style type="text/css">
+#dashboard {
+  background: #5a5b5b;
+  color: #ffffff;
+}
+</style>
 
 <script type="text/javascript">
 
@@ -24,7 +31,20 @@ $(document).ready(function() {
                  var id = $(this).attr('id');
                  var initiallyExpanded = ( $(this).attr('initiallyopen') === "true" );
                  var mugl = 'config/' + $(this).find('mugl').attr('url')
-                 var title = $(this).find('title').text();
+                 var title = $(this).find('>title').text();
+                 var stats = {
+                   color : '#ffffff',
+                   stat  : []
+                 };
+                 var statscolor = $(this).find('stats').attr('color');
+                 if (statscolor !== undefined) {
+                   stats.color = statscolor;
+                 }
+                 $(this).find('stats stat').each(function () {
+                   var title = $(this).find('title').text();
+                   var value = $(this).find('value').text();
+                   stats.stat.push( { title : title, value : value } );
+                 });
                  $('<div>', {
                    id    : 'EDG'+id,
                    class : 'EDG'
@@ -32,19 +52,11 @@ $(document).ready(function() {
                    id                : id + 'Graph',
                    title             : title,
                    mugl              : mugl,
-                   initiallyExpanded : initiallyExpanded
+                   initiallyExpanded : initiallyExpanded,
+                   stats             : stats
                  });
               });
 
-              setTimeout(function() {
-                $('.EDG').expandable_dashboard_graph('expand');
-                setTimeout(function() {
-                  $('.EDG').expandable_dashboard_graph('collapse');
-                    setTimeout(function() {
-                      $('#EDGco2').expandable_dashboard_graph('expand');
-                    }, 500);
-                }, 1000);
-              }, 2000);
 
             }});
 

@@ -1,16 +1,25 @@
 (function ($) {
     "use strict";
 
-    var expandableDashboardGraphTpl = (
-        ''
-            +  '<div id="{{id}}" class="expandable-dashboard-graph-container">'
-            +    '<div class="expandable-dashboard-graph">'
-            +      '<span class="expandable-dashboard-graph-openclose-button"></span>'
-            +      '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
-            +      '<span class="expandable-dashboard-graph-multigraph"/>'
-            +    '</div>'
-            +  '</div>'
-    );
+    var expandableDashboardGraphTpl =
+            (
+                ''
+                    +  '<div id="{{id}}" class="expandable-dashboard-graph-container">'
+                    +    '<div class="expandable-dashboard-graph">'
+                    +      '<span class="expandable-dashboard-graph-openclose-button"></span>'
+                    +      '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
+                    +      '<span class="expandable-dashboard-graph-stats">{{{stats}}}</span>'
+                    +      '<span class="expandable-dashboard-graph-link"><a href="#">Learn more &gt;&gt;</a></span>'
+                    +      '<span class="expandable-dashboard-graph-multigraph"/>'
+                    +    '</div>'
+                    +  '</div>'
+            ),
+        statTpl =
+            (
+                ''
+                    + '<span class="expandable-dashboard-graph-stat-title">{{{title}}}:</span>'
+                    + '<span class="expandable-dashboard-graph-stat-value">{{{value}}}</span>'
+            );
 
     var methods = {
         multigraph : function() {
@@ -30,10 +39,9 @@
                         primary : "ui-icon-minusthick"
                     }
                 );
-                $('#' + data.id + ' div.expandable-dashboard-graph').css({
-                    'height' : '200px',
-                    'cursor' : 'default'
-                });
+                $('#' + data.id + ' div.expandable-dashboard-graph') .
+                    removeClass('expandable-dashboard-graph-collapsed') .
+                    addClass('expandable-dashboard-graph-expanded');
                 $('#' + data.id + ' span.expandable-dashboard-graph-multigraph').css({
                     visibility : "visible"
                 });
@@ -50,10 +58,9 @@
                         primary : "ui-icon-plusthick"
                     }
                 );
-                $('#' + data.id + ' div.expandable-dashboard-graph').css({
-                    'height' : '50px',
-                    'cursor' : 'pointer'
-                });
+                $('#' + data.id + ' div.expandable-dashboard-graph') .
+                    removeClass('expandable-dashboard-graph-expanded') .
+                    addClass('expandable-dashboard-graph-collapsed');
                 $('#' + data.id + ' span.expandable-dashboard-graph-multigraph').css({
                     visibility: "hidden"
                 });
@@ -78,13 +85,29 @@
                 var $this = $(this),
                     data = $this.data('expandable_dashboard_graph'),
                     settings = $.extend({
-                        initiallyExpanded : false
-                    }, options);
+                        initiallyExpanded : false,
+                        stats             : []
+                    }, options),
+                    statsarray = [];
                 if ( ! data ) {
+
+                    $.each(settings.stats.stat, function() {
+                        statsarray.push(Mustache.to_html(statTpl, {
+                            title : this.title,
+                            value : this.value
+                        }));
+                    });
+
                     $this.html(Mustache.to_html(expandableDashboardGraphTpl, {
                         'id'    : settings.id,
-                        'title' : settings.title
+                        'title' : settings.title,
+                        'stats' : statsarray.join("<br>")
                     }));
+
+                    $('#' + settings.id + ' .expandable-dashboard-graph-stat-value').css({
+                        color : settings.stats.color
+                    });
+
                     $this.data('expandable_dashboard_graph', {
                         expanded : settings.initiallyExpanded,
                         id : settings.id,
