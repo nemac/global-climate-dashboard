@@ -30,7 +30,7 @@
             return $(this).data('expandable_dashboard_graph').expanded;
         },
 
-        expand : function() {
+        expand : function(animationspeed) {
             return this.each(function() {
                 var data = $(this).data('expandable_dashboard_graph');
                 $("#" + data.id + " .expandable-dashboard-graph-openclose-button").button(
@@ -40,19 +40,29 @@
                     }
                 );
 
-                $('#' + data.id + ' div.expandable-dashboard-graph').animate({
-                    height : "100px"
-                }, 300, function () {
+                if (animationspeed === undefined) {
+                    animationspeed = 300;
+                }
+
+                if (animationspeed <= 0) {
                     $('#' + data.id + ' div.expandable-dashboard-graph') .
                         removeClass('expandable-dashboard-graph-collapsed') .
                         addClass('expandable-dashboard-graph-expanded');
-                });
+                } else {
+                    $('#' + data.id + ' div.expandable-dashboard-graph').animate({
+                        height : "100px"
+                    }, animationspeed, function () {
+                        $('#' + data.id + ' div.expandable-dashboard-graph') .
+                            removeClass('expandable-dashboard-graph-collapsed') .
+                            addClass('expandable-dashboard-graph-expanded');
+                    });
+                }
 
                 data.expanded = true;
             });
         },
           
-        collapse : function() {
+        collapse : function(animationspeed) {
             return this.each(function() {
                 var data = $(this).data('expandable_dashboard_graph');
                 $('#' + data.id + ' .expandable-dashboard-graph-openclose-button').button(
@@ -61,13 +71,20 @@
                         primary : "ui-icon-plusthick"
                     }
                 );
+
+                if (animationspeed === undefined) {
+                    animationspeed = 300;
+                }
+
                 $('#' + data.id + ' div.expandable-dashboard-graph') .
                     removeClass('expandable-dashboard-graph-expanded') .
                     addClass('expandable-dashboard-graph-collapsed');
-                $('#' + data.id + ' div.expandable-dashboard-graph').css('height', '100px');
-                $('#' + data.id + ' div.expandable-dashboard-graph').animate({
-                    height : "30px"
-                }, 300);
+                if (animationspeed >= 0) {
+                    $('#' + data.id + ' div.expandable-dashboard-graph').css('height', '100px');
+                    $('#' + data.id + ' div.expandable-dashboard-graph').animate({
+                        height : "30px"
+                    }, animationspeed);
+                }
 
                 data.expanded = false;
             });
@@ -78,9 +95,9 @@
 
                 var data = $(this).data('expandable_dashboard_graph');
                 if (data.expanded) {
-                    $(this).expandable_dashboard_graph('collapse');
+                    $(this).expandable_dashboard_graph('collapse', 300);
                 } else {
-                    $(this).expandable_dashboard_graph('expand');
+                    $(this).expandable_dashboard_graph('expand', 300);
                 }
             });
         },
@@ -141,9 +158,9 @@
                         }
                     );
                     if (settings.initiallyExpanded) {
-                        $this.expandable_dashboard_graph('expand');
+                        $this.expandable_dashboard_graph('expand', 0);
                     } else {
-                        $this.expandable_dashboard_graph('collapse');
+                        $this.expandable_dashboard_graph('collapse', 0);
                     }
                 }
 
