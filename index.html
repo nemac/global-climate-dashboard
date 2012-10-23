@@ -22,18 +22,40 @@ $(document).ready(function() {
               var configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
               configxml.find("graph").each(function() {
                  var id = $(this).attr('id');
-                 var initiallyopen = ( $(this).attr('initiallyopen') === "true" );
+                 var initiallyExpanded = ( $(this).attr('initiallyopen') === "true" );
                  var mugl = 'config/' + $(this).find('mugl').attr('url')
                  var title = $(this).find('title').text();
-                 $.append_expandable_dashboard_graph($('#dashboard'), id + 'Graph', title, mugl, initiallyopen);
+                 $('<div>', {
+                   id    : 'EDG'+id,
+                   class : 'EDG'
+                 }).appendTo($('#dashboard')).expandable_dashboard_graph({
+                   id                : id + 'Graph',
+                   title             : title,
+                   mugl              : mugl,
+                   initiallyExpanded : initiallyExpanded
+                 });
               });
+
+              setTimeout(function() {
+                $('.EDG').expandable_dashboard_graph('expand');
+                setTimeout(function() {
+                  $('.EDG').expandable_dashboard_graph('collapse');
+                    setTimeout(function() {
+                      $('#EDGco2').expandable_dashboard_graph('expand');
+                    }, 500);
+                }, 1000);
+              }, 2000);
+
             }});
+
+    
 
 });
 </script>
 
 </head>
 <body>
+<div id="message"></div>
 <div id="dashboard"></div>
 </body>
 </html>

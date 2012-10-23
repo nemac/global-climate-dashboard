@@ -11,73 +11,128 @@
             +    '</div>'
             +  '</div>'
     );
-    
-    $.append_expandable_dashboard_graph = function(element,id,title,mugl,initiallyExpanded) {
-        
-        var expanded = initiallyExpanded,
-            
-            toggle = function() {
-                if (expanded) {
-                    collapse();
-                } else {
-                    expand();
-                }
-            },
 
-            expand = function() {
-                $("#" + id + " .expandable-dashboard-graph-openclose-button").button ("option", "icons", { primary : "ui-icon-minusthick" });
-                $('#' + id + ' div.expandable-dashboard-graph').css({
+    var methods = {
+        multigraph : function() {
+            return $(this).data('expandable_dashboard_graph').multigraph;
+        },
+
+        expanded : function() {
+            return $(this).data('expandable_dashboard_graph').expanded;
+        },
+
+        expand : function() {
+            return this.each(function() {
+                var data = $(this).data('expandable_dashboard_graph');
+                $("#" + data.id + " .expandable-dashboard-graph-openclose-button").button(
+                    "option",
+                    "icons", {
+                        primary : "ui-icon-minusthick"
+                    }
+                );
+                $('#' + data.id + ' div.expandable-dashboard-graph').css({
                     'height' : '200px',
                     'cursor' : 'default'
                 });
-                $('#' + id + ' span.expandable-dashboard-graph-multigraph').css("visibility", "visible");
-                expanded = true;
-            },
-
-            collapse = function() {
-                $('#' + id + ' .expandable-dashboard-graph-openclose-button').button ("option", "icons", { primary : "ui-icon-plusthick" });
-                $('#' + id + ' div.expandable-dashboard-graph').css({
+                $('#' + data.id + ' span.expandable-dashboard-graph-multigraph').css({
+                    visibility : "visible"
+                });
+                data.expanded = true;
+            });
+        },
+          
+        collapse : function() {
+            return this.each(function() {
+                var data = $(this).data('expandable_dashboard_graph');
+                $('#' + data.id + ' .expandable-dashboard-graph-openclose-button').button(
+                    "option",
+                    "icons", {
+                        primary : "ui-icon-plusthick"
+                    }
+                );
+                $('#' + data.id + ' div.expandable-dashboard-graph').css({
                     'height' : '50px',
                     'cursor' : 'pointer'
                 });
-                $('#' + id + ' span.expandable-dashboard-graph-multigraph').css("visibility", "hidden");
-                expanded = false;
-            };
-        
-        $(element).append(Mustache.to_html(expandableDashboardGraphTpl, {
-            'id'    : id,
-            'title' : title
-        }));
-        
-        window.multigraph.core.Multigraph.createGraph({
-            'div'  : $('#' + id + ' .expandable-dashboard-graph-multigraph')[0],
-            'mugl' : mugl
-        });
+                $('#' + data.id + ' span.expandable-dashboard-graph-multigraph').css({
+                    visibility: "hidden"
+                });
+                data.expanded = false;
+            });
+        },
 
-        $("#" + id + " .expandable-dashboard-graph-openclose-button").button ({
-            icons : {
-                primary : "ui-icon-plusthick"
-            },
-            text: false
-        });
+        toggle : function() {
+            return this.each(function() {
 
-        $("#" + id).on('click', ".expandable-dashboard-graph-openclose-button", function (event) {
-            event.stopPropagation();
-            toggle();
-        });
+                var data = $(this).data('expandable_dashboard_graph');
+                if (data.expanded) {
+                    $(this).expandable_dashboard_graph('collapse');
+                } else {
+                    $(this).expandable_dashboard_graph('expand');
+                }
+            });
+        },
 
-        $('#' + id).on('click', ' div.expandable-dashboard-graph', function (event) {
-            if (!expanded) {
-                expand();
-            }
-        });
+        init : function(options) {
+            return this.each(function() {
+                var $this = $(this),
+                    data = $this.data('expandable_dashboard_graph'),
+                    settings = $.extend({
+                        initiallyExpanded : false
+                    }, options);
+                if ( ! data ) {
+                    $this.html(Mustache.to_html(expandableDashboardGraphTpl, {
+                        'id'    : settings.id,
+                        'title' : settings.title
+                    }));
+                    $this.data('expandable_dashboard_graph', {
+                        expanded : settings.initiallyExpanded,
+                        id : settings.id,
+                        multigraph : window.multigraph.core.Multigraph.createGraph({
+                            'div'  : $('#' + settings.id + ' .expandable-dashboard-graph-multigraph')[0],
+                            'mugl' : settings.mugl
+                        })
+                    });
+                    $("#" + settings.id + " .expandable-dashboard-graph-openclose-button").button ({
+                        icons : {
+                            primary : "ui-icon-plusthick"
+                        },
+                        text: false
+                    });
+                    $("#" + settings.id + ' .expandable-dashboard-graph-openclose-button').bind(
+                        'click.expandable_dashboard_graph', function (event) {
+                            event.stopPropagation();
+                            $this.expandable_dashboard_graph('toggle');
+                        }
+                    );
+                    $('#' + settings.id + ' div.expandable-dashboard-graph').bind(
+                        'click.expandable_dashboard_graph', function (event) {
+                            if (!$this.data('expandable_dashboard_graph').expanded) {
+                                $this.expandable_dashboard_graph('expand');
+                            }
+                        }
+                    );
+                    if (settings.initiallyExpanded) {
+                        $this.expandable_dashboard_graph('expand');
+                    } else {
+                        $this.expandable_dashboard_graph('collapse');
+                    }
+                }
 
-        if (initiallyExpanded) {
-            expand();
-        } else {
-            collapse();
+                return this;
+            });
         }
-
     };
 
+    $.fn.expandable_dashboard_graph = function( method ) {
+        if ( methods[method] ) {
+            return methods[ method ].apply( this, Array.prototype.slice.call( arguments, 1 ));
+        } else if ( typeof method === 'object' || ! method ) {
+            return methods.init.apply( this, arguments );
+        } else {
+            $.error( 'Method ' +  method + ' does not exist on jQuery.expandable_dashboard_graph' );
+            return null;
+        }    
+    };
+    
 }(jQuery));
