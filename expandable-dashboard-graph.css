@@ -20,6 +20,21 @@ expandable-dashboard-graph-container. {
   height : 30px;
   cursor : pointer
 }
+
+.expandable-dashboard-graph-drag-handle {
+  background: #ffffff;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 12px;
+  height: 18px;
+  display: inline;
+}
+.expandable-dashboard-graph-expanded .expandable-dashboard-graph-drag-handle {
+  top: 10px;
+  height: 77px;
+}
+
 .expandable-dashboard-graph-openclose-button {
   width: 16px;
   height: 16px;
@@ -111,10 +126,10 @@ expandable-dashboard-graph-container. {
 
 .expandable-dashboard-graph-multigraph {
   background: #663333;
-  width: 600px;
+  width: 590px;
   height: 80px;
   position: absolute;
-  right: 20px;
+  right: 30px;
   top: 10px;
   display: inline;
 }

@@ -6,6 +6,7 @@
                 ''
                     +  '<div class="expandable-dashboard-graph-container">'
                     +    '<div class="expandable-dashboard-graph">'
+                    +      '<span class="expandable-dashboard-graph-drag-handle"></span>'
                     +      '<span class="expandable-dashboard-graph-openclose-button"></span>'
                     +      '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
                     +      '<span class="expandable-dashboard-graph-stats">{{{stats}}}</span>'
@@ -143,6 +144,14 @@
                             primary : "ui-icon-plusthick"
                         },
                         text: false
+                    });
+                    $(this).find('.expandable-dashboard-graph-drag-handle').button ({
+                        icons : {
+                            primary : "ui-icon-arrowthick-2-n-s"
+                        },
+                        text: false
+                    }).click(function (event) {
+                        event.stopPropagation();
                     });
                     $(this).find('.expandable-dashboard-graph-openclose-button').bind(
                         'click.expandable_dashboard_graph', function (event) {

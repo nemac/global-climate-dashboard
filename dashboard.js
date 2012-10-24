@@ -51,7 +51,7 @@
                                         var value = $(this).find('value').text();
                                         stats.stat.push( { title : title, value : value } );
                                     });
-                                    $('<div>', {
+                                    var div = $('<div>', {
                                         class : 'EDG ' + (initiallyExpanded ? 'initiallyExpanded' : '')
                                     }).appendTo($this.find('div.dashboard-graphs')).expandable_dashboard_graph({
                                         title             : title,
@@ -65,6 +65,10 @@
                                     $(this).expandable_dashboard_graph('multigraph').done(function(multigraph) {
                                         $(that).expandable_dashboard_graph('expand');
                                     });
+                                });
+                                $this.find('div.dashboard-graphs').sortable({
+                                    axis : 'y',
+                                    handle : $this.find('.expandable-dashboard-graph-drag-handle')
                                 });
 
                             }});
