@@ -1,13 +1,15 @@
-.expandable-dashboard-graph-container {
+expandable-dashboard-graph-container. {
   position: relative;
 }
 .expandable-dashboard-graph {
+  white-space: nowrap;
+  overflow: hidden;
   position: relative;
   border-radius:10px;
   -moz-border-radius:10px;
   width: 1000px;
   background: #232020;
-  padding: 0;
+  padding: 0px;
   margin-bottom: 8px;
 }
 .expandable-dashboard-graph-expanded {

@@ -10,7 +10,7 @@
                     +      '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
                     +      '<span class="expandable-dashboard-graph-stats">{{{stats}}}</span>'
                     +      '<span class="expandable-dashboard-graph-link"><a href="#">Learn more &gt;&gt;</a></span>'
-                    +      '<span class="expandable-dashboard-graph-multigraph"/>'
+                    +      '<span class="expandable-dashboard-graph-multigraph"></span>'
                     +    '</div>'
                     +  '</div>'
             ),
