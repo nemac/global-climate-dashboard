@@ -15,12 +15,6 @@
   src: local('Cabin Bold'), local('Cabin-Bold'), url(lib/fonts/Cabin-Bold.ttf) format('truetype');
 }
 #dashboard {
-  border-radius:10px;
-  -moz-border-radius:10px;
-  background: #5a5b5b;
-  color: #ffffff;
-  padding: 10px;
-  width: auto;
   font-family: Cabin;
 }
 </style>
@@ -36,59 +30,18 @@
 <link rel="stylesheet" href="expandable-dashboard-graph.css"></link>
 <script type="text/javascript" src="expandable-dashboard-graph.js"></script>
 
+<link rel="stylesheet" href="dashboard.css"></link>
+<script type="text/javascript" src="dashboard.js"></script>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
 
-    $.ajax({"url"      : "config/dashboard.xml",
-            "dataType" : "text",
-            "success"  : function (data) {
-              var idsToExpand = [];
-              var configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
-              configxml.find("graph").each(function() {
-                 var id = $(this).attr('id');
-                 var initiallyExpanded = ( $(this).attr('initiallyopen') === "true" );
-                 var mugl = 'config/' + $(this).find('mugl').attr('url');
-                 var title = $(this).find('>title').text();
-                 var stats = {
-                   color : '#ffffff',
-                   stat  : []
-                 };
-                 var statscolor = $(this).find('stats').attr('color');
-                 if (statscolor !== undefined) {
-                   stats.color = statscolor;
-                 }
-                 $(this).find('stats stat').each(function () {
-                   var title = $(this).find('title').text();
-                   var value = $(this).find('value').text();
-                   stats.stat.push( { title : title, value : value } );
-                 });
-                 $('<div>', {
-                   id    : 'EDG'+id,
-                   class : 'EDG'
-                 }).appendTo($('#dashboard')).expandable_dashboard_graph({
-                   id                : id + 'Graph',
-                   title             : title,
-                   mugl              : mugl,
-                   initiallyExpanded : false,
-                   stats             : stats
-                 });
-                 if (initiallyExpanded) {
-                   idsToExpand.push(id);
-                 }
-              });
-
-              $.each(idsToExpand, function () {
-                var $edg = $('#EDG'+this);
-                $edg.expandable_dashboard_graph('multigraph').done(function(multigraph) {
-                  $edg.expandable_dashboard_graph('expand');
-                });
-              });
-
-
-            }});
-
-    
+    $('#dashboard').dashboard({
+      id : 'global-climate-dashboard',
+      title : 'Global Climate Dashboard',
+      config : 'config/dashboard.xml'
+    });
 
 });
 </script>
@@ -97,9 +50,7 @@ $(document).ready(function() {
 <body>
 <div id="message"></div>
 <table><tr><td>
-<div id="dashboard">
-<h2>Global Climate Dashboard</h2>
-</div>
+<div id="dashboard"></div>
 </td></tr></table>
 </body>
 </html>
