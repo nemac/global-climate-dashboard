@@ -1,8 +1,8 @@
 <dashboard>
   <graph id="temp"
-         initiallyopen="true">
+         expanded="true">
     <title>Temperature (&#730;C)</title>
-    <mugl url="temp.xml"/>
+    <mugl url="config/temp.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Increase since 1990</title>
@@ -17,9 +17,9 @@
   </graph>
 
   <graph id="co2"
-         initiallyopen="true">
+         expanded="true">
     <title>Carbon Dioxide (ppm)</title>
-    <mugl url="co2.xml"/>
+    <mugl url="config/co2.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Change since sometime</title>
@@ -33,9 +33,9 @@
     <link href="#"/>
   </graph>
   <graph id="ocean"
-         initiallyopen="true">
+         expanded="true">
     <title>Ocean Heat</title>
-    <mugl url="ocean.xml"/>
+    <mugl url="config/ocean.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Change since sometime</title>
@@ -49,9 +49,9 @@
     <link href="#"/>
   </graph>
   <graph id="ghouse"
-         initiallyopen="false">
+         expanded="false">
     <title>Annual Greenhouse Gas Index</title>
-    <mugl url="ghouse.xml"/>
+    <mugl url="config/ghouse.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Increase in heat-trapping since 1990</title>
@@ -65,9 +65,9 @@
     <link href="#"/>
   </graph>
   <graph id="glacier"
-         initiallyopen="false">
+         expanded="false">
     <title>Glaciers (meters of water equivalent)</title>
-    <mugl url="glacier.xml"/>
+    <mugl url="config/glacier.xml"/>
     <stats color="#87b5d2">
       <stat>
         <title>Melt water lost since 1980</title>
@@ -81,9 +81,9 @@
     <link href="#"/>
   </graph>
   <graph id="sea"
-         initiallyopen="false">
+         expanded="false">
     <title>Sea Level (mm)</title>
-    <mugl url="sea.xml"/>
+    <mugl url="config/sea.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Change since sometime</title>
@@ -97,9 +97,9 @@
     <link href="#"/>
   </graph>
   <graph id="snow"
-         initiallyopen="false">
+         expanded="false">
     <title>Snow (million km<span baselineShift="superscript">2</span>)</title>
-    <mugl url="snow.xml"/>
+    <mugl url="config/snow.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Change since sometime</title>
@@ -113,9 +113,9 @@
     <link href="#"/>
   </graph>
   <graph id="sun"
-         initiallyopen="false">
+         expanded="false">
     <title>Sun's Energy (W/m<span baselineShift="superscript">2</span>)</title>
-    <mugl url="sun.xml"/>
+    <mugl url="config/sun.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Change since sometime</title>
@@ -129,9 +129,9 @@
     <link href="#"/>
   </graph>
   <graph id="asi"
-         initiallyopen="false">
+         expanded="false">
     <title>Arctic Sea Ice (1000 km<span baselineShift="superscript">2</span>)</title>
-    <mugl url="asi.xml"/>
+    <mugl url="config/asi.xml"/>
     <stats color="#f8a792">
       <stat>
         <title>Change since sometime</title>

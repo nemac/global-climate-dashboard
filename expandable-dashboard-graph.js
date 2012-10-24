@@ -4,7 +4,7 @@
     var expandableDashboardGraphTpl =
             (
                 ''
-                    +  '<div id="{{id}}" class="expandable-dashboard-graph-container">'
+                    +  '<div class="expandable-dashboard-graph-container">'
                     +    '<div class="expandable-dashboard-graph">'
                     +      '<span class="expandable-dashboard-graph-openclose-button"></span>'
                     +      '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
@@ -32,8 +32,9 @@
 
         expand : function(animationspeed) {
             return this.each(function() {
-                var data = $(this).data('expandable_dashboard_graph');
-                $("#" + data.id + " .expandable-dashboard-graph-openclose-button").button(
+                var data = $(this).data('expandable_dashboard_graph'),
+                    that = this;
+                $(this).find(".expandable-dashboard-graph-openclose-button").button(
                     "option",
                     "icons", {
                         primary : "ui-icon-minusthick"
@@ -45,14 +46,14 @@
                 }
 
                 if (animationspeed <= 0) {
-                    $('#' + data.id + ' div.expandable-dashboard-graph') .
+                    $(this).find('div.expandable-dashboard-graph') .
                         removeClass('expandable-dashboard-graph-collapsed') .
                         addClass('expandable-dashboard-graph-expanded');
                 } else {
-                    $('#' + data.id + ' div.expandable-dashboard-graph').animate({
+                    $(this).find('div.expandable-dashboard-graph').animate({
                         height : "100px"
                     }, animationspeed, function () {
-                        $('#' + data.id + ' div.expandable-dashboard-graph') .
+                        $(that).find('div.expandable-dashboard-graph') .
                             removeClass('expandable-dashboard-graph-collapsed') .
                             addClass('expandable-dashboard-graph-expanded');
                     });
@@ -64,8 +65,9 @@
           
         collapse : function(animationspeed) {
             return this.each(function() {
-                var data = $(this).data('expandable_dashboard_graph');
-                $('#' + data.id + ' .expandable-dashboard-graph-openclose-button').button(
+                var data = $(this).data('expandable_dashboard_graph'),
+                    that = this;
+                $(this).find('.expandable-dashboard-graph-openclose-button').button(
                     "option",
                     "icons", {
                         primary : "ui-icon-plusthick"
@@ -76,12 +78,12 @@
                     animationspeed = 300;
                 }
 
-                $('#' + data.id + ' div.expandable-dashboard-graph') .
+                $(this).find('div.expandable-dashboard-graph') .
                     removeClass('expandable-dashboard-graph-expanded') .
                     addClass('expandable-dashboard-graph-collapsed');
                 if (animationspeed >= 0) {
-                    $('#' + data.id + ' div.expandable-dashboard-graph').css('height', '100px');
-                    $('#' + data.id + ' div.expandable-dashboard-graph').animate({
+                    $(this).find('div.expandable-dashboard-graph').css('height', '100px');
+                    $(this).find('div.expandable-dashboard-graph').animate({
                         height : "30px"
                     }, animationspeed);
                 }
@@ -121,36 +123,34 @@
                     });
 
                     $this.html(Mustache.to_html(expandableDashboardGraphTpl, {
-                        'id'    : settings.id,
                         'title' : settings.title,
                         'stats' : statsarray.join("")
                     }));
 
-                    $('#' + settings.id + ' .expandable-dashboard-graph-stat-value').css({
+                    $(this).find('.expandable-dashboard-graph-stat-value').css({
                         color : settings.stats.color
                     });
 
                     $this.data('expandable_dashboard_graph', {
                         expanded : settings.initiallyExpanded,
-                        id : settings.id,
                         multigraph : window.multigraph.core.Multigraph.createGraph({
-                            'div'  : $('#' + settings.id + ' .expandable-dashboard-graph-multigraph')[0],
+                            'div'  : $(this).find('.expandable-dashboard-graph-multigraph')[0],
                             'mugl' : settings.mugl
                         })
                     });
-                    $("#" + settings.id + " .expandable-dashboard-graph-openclose-button").button ({
+                    $(this).find('.expandable-dashboard-graph-openclose-button').button ({
                         icons : {
                             primary : "ui-icon-plusthick"
                         },
                         text: false
                     });
-                    $("#" + settings.id + ' .expandable-dashboard-graph-openclose-button').bind(
+                    $(this).find('.expandable-dashboard-graph-openclose-button').bind(
                         'click.expandable_dashboard_graph', function (event) {
                             event.stopPropagation();
                             $this.expandable_dashboard_graph('toggle');
                         }
                     );
-                    $('#' + settings.id + ' div.expandable-dashboard-graph').bind(
+                    $(this).find('div.expandable-dashboard-graph').bind(
                         'click.expandable_dashboard_graph', function (event) {
                             if (!$this.data('expandable_dashboard_graph').expanded) {
                                 $this.expandable_dashboard_graph('expand');
