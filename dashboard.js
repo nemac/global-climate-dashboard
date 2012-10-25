@@ -30,13 +30,13 @@
                     + '</input>'
             );
 
-    var graphXmlToExpandableDashboardGraphOptions = function(graphXml) {
+    var graphXmlToDashboardGraphOptions = function(graphXml) {
         // no longer used: $(graphXml).attr('id');
         return {
             initiallyExpanded : ( $(graphXml).attr('expanded') === "true" ),
             title             : $(graphXml).find('>title').text(),
             mugl              : $(graphXml).find('mugl').attr('url'),
-            stats             : {
+            stats : {
                 color : $(graphXml).find('stats').attr('color') || '#ffffff',
                 stat  : $(graphXml).find('stats stat').map(function () {
                     return {
@@ -44,29 +44,46 @@
                         value : $(this).find('value').text()
                     };
                 }).get()
+            },
+            legend : {
+                title  : $(graphXml).find('legendtitle').text(),
+                text   : $(graphXml).find('legendtext').text(),
+                item   : $(graphXml).find('legend item').map(function () {
+                    return {
+                        img_src : $(this).find('img').attr('src'),
+                        text    : $(this).find('text').text()
+                    };
+                }).get()
             }
         };
     };
 
     var insertGraphs = function($xml, $graphContainer) {
-        $xml.find("graph").each(function() {
-            var options = graphXmlToExpandableDashboardGraphOptions(this);
-            var classes = 'EDG ' + (options.initiallyExpanded ? 'initiallyExpanded' : '');
-            options.initiallyExpanded = false;
-            var div = $('<div>', {
-                'class' : classes
-            }).appendTo($graphContainer).expandable_dashboard_graph(options);
-        });
-        $('div.EDG.initiallyExpanded').each(function () {
-            var that = this;
-            $(this).expandable_dashboard_graph('multigraph').done(function(multigraph) {
-                $(that).expandable_dashboard_graph('expand');
+        if ($xml.find("graph").length > 1) {
+            $xml.find("graph").each(function() {
+                var options = graphXmlToDashboardGraphOptions(this);
+                var classes = 'EDG ' + (options.initiallyExpanded ? 'initiallyExpanded' : '');
+                options.initiallyExpanded = false;
+                var div = $('<div>', {
+                    'class' : classes
+                }).appendTo($graphContainer).expandable_dashboard_graph(options);
             });
-        });
-        $graphContainer.sortable({
-            axis : 'y',
-            handle : $graphContainer.find('.expandable-dashboard-graph-drag-handle')
-        });
+            $('div.EDG.initiallyExpanded').each(function () {
+                var that = this;
+                $(this).expandable_dashboard_graph('multigraph').done(function(multigraph) {
+                    $(that).expandable_dashboard_graph('expand');
+                });
+            });
+            $graphContainer.sortable({
+                axis : 'y',
+                handle : $graphContainer.find('.expandable-dashboard-graph-drag-handle')
+            });
+        } else {
+            $xml.find("graph").each(function() {
+                var options = graphXmlToDashboardGraphOptions(this);
+                $('<div>').appendTo($graphContainer).single_dashboard_graph(options);
+            });
+        }
     };
 
     var selectTab = function(tab_num) {

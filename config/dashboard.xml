@@ -1,7 +1,7 @@
 <dashboard>
 
 
-  <tab id="climateChange" selected="true">
+  <tab id="climateChange">
     <title>Climate Change</title>
     <graph id="temp" expanded="true">
       <title><![CDATA[Temperature (&#730;C)]]></title>
@@ -221,8 +221,54 @@
     </graph>
   </tab>
 
-  <tab id="climateProjections">
-    <title><![CDATA[Climate Projections]]></title>
+ <tab id="climateProjections"  selected="true">
+    <title>Climate Projections</title>
+    <graph id="cp">
+      <title>Climate Model Data (CMIP3, 2007)</title>
+      <legendtitle>Simulation of Global Temperature</legendtitle>
+      <legendtext>The black line shows the average of many different
+simulations of global temperature in the 20th century compared to
+average from 1971-1999, and the colored lines show projected
+temperature changes in the 21st century for three possible
+scenarios.</legendtext>
+<help>
+Results from this set of climate model experiments suggest that our
+planet’s average temperature could be between 2 and 9.7°F (1.1 to
+5.4°C) warmer in 2100 than it is today.
+<br/><br/>
+The graph shows the average of temperature simulations for the 20th
+century (black line), followed by projected temperatures for the 21st
+century based on a range of emissions scenarios (colored lines).  The
+shaded areas around each line indicate the statistical spread (one
+standard deviation) provided by individual model runs.
+<br/><br/>
+Zero on the Y-axis represents Earth’s average temperature for the
+period 1971-1999.  For 2000-2100, the model projections differ mainly
+in their assumptions about the number of people on the planet and the
+way they use energy, and therefore, the amount of heat-trapping gas in
+the atmosphere.
+</help>
+      <link>http://www.climatewatch.noaa.gov/article/2012/global-temperature-projections</link>
+      <mugl url="config/projections.xml" />
+    <legend>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Red-width2.png"/>
+        <text>High Growth (A2)</text>
+      </item>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Green-width2.png"/>
+        <text>Moderate Growth (A1B)</text>
+      </item>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Blue-width2.png"/>
+        <text>Low Growth (B1)</text>
+      </item>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Black-width2.png"/>
+        <text>20th Century Climate</text>
+      </item>
+    </legend>
+    </graph>
   </tab>
 
 </dashboard>
