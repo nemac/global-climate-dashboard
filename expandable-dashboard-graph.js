@@ -8,8 +8,10 @@
                     +    '<div class="expandable-dashboard-graph">'
                     +      '<span class="expandable-dashboard-graph-drag-handle"></span>'
                     +      '<span class="expandable-dashboard-graph-openclose-button"></span>'
-                    +      '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
-                    +      '<span class="expandable-dashboard-graph-stats">{{{stats}}}</span>'
+                    +      '<span class="expandable-dashboard-graph-title-stats">'
+                    +        '<span class="expandable-dashboard-graph-title">{{{title}}}</span>'
+                    +        '<span class="expandable-dashboard-graph-stats">{{{stats}}}</span>'
+                    +      '</span>'
                     +      '<span class="expandable-dashboard-graph-link"><a href="#">Learn more &gt;&gt;</a></span>'
                     +      '<span class="expandable-dashboard-graph-multigraph"></span>'
                     +    '</div>'
@@ -147,7 +149,7 @@
                     });
                     $(this).find('.expandable-dashboard-graph-drag-handle').button ({
                         icons : {
-                            primary : "ui-icon-arrowthick-2-n-s"
+                            primary : "ui-icon-arrow-4"
                         },
                         text: false
                     }).click(function (event) {

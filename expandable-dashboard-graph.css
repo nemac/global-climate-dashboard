@@ -26,13 +26,12 @@
   position: absolute;
   top: 5px;
   right: 5px;
-  width: 12px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   display: inline;
 }
 .expandable-dashboard-graph-expanded .expandable-dashboard-graph-drag-handle {
-  top: 10px;
-  height: 77px;
+  top: 40px;
 }
 
 .expandable-dashboard-graph-openclose-button {
@@ -45,6 +44,12 @@
 .expandable-dashboard-graph-collapsed .expandable-dashboard-graph-openclose-button {
   top: 6px;
 }
+.expandable-dashboard-graph-title-stats {
+  display: inline;
+  position: absolute;
+  bottom: 0px;
+}
+
 .expandable-dashboard-graph-title {
   display: inline;
   color: #ffffff;
@@ -61,15 +66,13 @@
 */
 }
 .expandable-dashboard-graph-expanded .expandable-dashboard-graph-title {
-  top: 3px;
+  bottom: 65px;
 }
-.expandable-dashboard-graph-collapsed .expandable-dashboard-graph-title {
-  margin-top: 0px;
-}
+
 .expandable-dashboard-graph-stats {
   display: inline;
   width: auto;
-  height: 44px;
+
   line-height: 22px;
   position: relative;
 /*
@@ -79,13 +82,12 @@
 }
 .expandable-dashboard-graph-collapsed .expandable-dashboard-graph-stats {
   margin-left: 25px;
-  height: 22px;
+
 }
 .expandable-dashboard-graph-expanded .expandable-dashboard-graph-stats {
-  left: 0px;
-  margin-left: 35px;
+  left: 35px;
+  top: -39px;
   position: absolute;
-  top: 32px;
 }
 
 .expandable-dashboard-graph-expanded .expandable-dashboard-graph-stat-item {
@@ -126,10 +128,10 @@
 
 .expandable-dashboard-graph-multigraph {
   background: #663333;
-  width: 590px;
+  width: 585px;
   height: 80px;
   position: absolute;
-  right: 30px;
+  right: 33px;
   top: 10px;
   display: inline;
 }
