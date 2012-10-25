@@ -1,147 +1,228 @@
 <dashboard>
-  <graph id="temp"
-         expanded="true">
-    <title><![CDATA[Temperature (&#730;C)]]></title>
-    <mugl url="config/temp.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Increase since 1990</title>
-        <value>+1.5&#730; F (0.7 C)</value>
-      </stat>
-      <stat>
-        <title>Average rate of rise</title>
-        <value>+0.25&#730;F (0.13&#730; C) per decade</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
 
-  <graph id="co2"
-         expanded="true">
-    <title><![CDATA[Carbon Dioxide (ppm)]]></title>
-    <mugl url="config/co2.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Change since sometime</title>
-        <value>3.4%</value>
-      </stat>
-      <stat>
-        <title>Average change in last second</title>
-        <value>29%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="ocean"
-         expanded="true">
-    <title><![CDATA[Ocean Heat]]></title>
-    <mugl url="config/ocean.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Change since sometime</title>
-        <value>3.4%</value>
-      </stat>
-      <stat>
-        <title>Average change in last second</title>
-        <value>29%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="ghouse"
-         expanded="false">
-    <title><![CDATA[Annual Greenhouse Gas Index]]></title>
-    <mugl url="config/ghouse.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Increase in heat-trapping since 1990</title>
-        <value>+29%</value>
-      </stat>
-      <stat>
-        <title>% of AGGI from carbon dioxide alone</title>
-        <value>85%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="glacier"
-         expanded="false">
-    <title><![CDATA[Glaciers (meters of water equivalent)]]></title>
-    <mugl url="config/glacier.xml"/>
-    <stats color="#87b5d2">
-      <stat>
-        <title>Melt water lost since 1980</title>
-        <value>40 feet (12.5m)</value>
-      </stat>
-      <stat>
-        <title>Average rate of water loss</title>
-        <value>26 in. (0.5m) per year</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="sea"
-         expanded="false">
-    <title><![CDATA[Sea Level (mm)]]></title>
-    <mugl url="config/sea.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Change since sometime</title>
-        <value>3.4%</value>
-      </stat>
-      <stat>
-        <title>Average change in last second</title>
-        <value>29%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="snow"
-         expanded="false">
-    <title><![CDATA[Snow (million km<sup>2</sup>)]]></title>
-    <mugl url="config/snow.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Change since sometime</title>
-        <value>3.4%</value>
-      </stat>
-      <stat>
-        <title>Average change in last second</title>
-        <value>29%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="sun"
-         expanded="false">
-    <title><![CDATA[Sun's Energy (W/m<sup>2</sup>)]]></title>
-    <mugl url="config/sun.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Change since sometime</title>
-        <value>3.4%</value>
-      </stat>
-      <stat>
-        <title>Average change in last second</title>
-        <value>29%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
-  <graph id="asi"
-         expanded="false">
-    <title><![CDATA[Arctic Sea Ice (1000 km<sup>2</sup>)]]></title>
-    <mugl url="config/asi.xml"/>
-    <stats color="#f8a792">
-      <stat>
-        <title>Change since sometime</title>
-        <value>3.4%</value>
-      </stat>
-      <stat>
-        <title>Average change in last second</title>
-        <value>29%</value>
-      </stat>
-    </stats>
-    <link href="#"/>
-  </graph>
+
+  <tab id="climateChange" selected="true">
+    <title>Climate Change</title>
+    <graph id="temp" expanded="true">
+      <title><![CDATA[Temperature (&#730;C)]]></title>
+      <mugl url="config/temp.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Increase since 1990</title>
+          <value>+1.5&#730; F (0.7 C)</value>
+        </stat>
+        <stat>
+          <title>Average rate of rise</title>
+          <value>+0.25&#730;F (0.13&#730; C) per decade</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="co2" expanded="true">
+      <title><![CDATA[Carbon Dioxide (ppm)]]></title>
+      <mugl url="config/co2.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="ocean" expanded="true">
+      <title><![CDATA[Ocean Heat]]></title>
+      <mugl url="config/ocean.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="ghouse" expanded="false">
+      <title><![CDATA[Annual Greenhouse Gas Index]]></title>
+      <mugl url="config/ghouse.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Increase in heat-trapping since 1990</title>
+          <value>+29%</value>
+        </stat>
+        <stat>
+          <title>% of AGGI from carbon dioxide alone</title>
+          <value>85%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="glacier" expanded="false">
+      <title><![CDATA[Glaciers (meters of water equivalent)]]></title>
+      <mugl url="config/glacier.xml"/>
+      <stats color="#87b5d2">
+        <stat>
+          <title>Melt water lost since 1980</title>
+          <value>40 feet (12.5m)</value>
+        </stat>
+        <stat>
+          <title>Average rate of water loss</title>
+          <value>26 in. (0.5m) per year</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="sea" expanded="false">
+      <title><![CDATA[Sea Level (mm)]]></title>
+      <mugl url="config/sea.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="snow" expanded="false">
+      <title><![CDATA[Snow (million km<sup>2</sup>)]]></title>
+      <mugl url="config/snow.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="sun" expanded="false">
+      <title><![CDATA[Sun's Energy (W/m<sup>2</sup>)]]></title>
+      <mugl url="config/sun.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="asi" expanded="false">
+      <title><![CDATA[Arctic Sea Ice (1000 km<sup>2</sup>)]]></title>
+      <mugl url="config/asi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+  </tab>
+
+  <tab id="climateVariability">
+    <title><![CDATA[Climate Variability]]></title>
+    <graph id="oni" expanded="true">
+      <title><![CDATA[El Niño / La Niña Index]]></title>
+      <mugl url="config/oni.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="pnap" expanded="true">
+      <title><![CDATA[Pacific North American Pattern]]></title>
+      <mugl url="config/pnap.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="soi" expanded="true">
+      <title><![CDATA[Southern Oscillation Index]]></title>
+      <mugl url="config/soi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="naoi" expanded="false">
+      <title><![CDATA[North Atlantic Oscillation]]></title>
+      <mugl url="config/naoi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="aoi" expanded="false">
+      <title><![CDATA[Arctic Oscillation Index]]></title>
+      <mugl url="config/aoi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+  </tab>
+
+  <tab id="climateProjections">
+    <title><![CDATA[Climate Projections]]></title>
+  </tab>
+
 </dashboard>

@@ -63,7 +63,7 @@
                 data.expanded = true;
             });
         },
-          
+        
         collapse : function(animationspeed) {
             return this.each(function() {
                 var data = $(this).data('expandable_dashboard_graph'),

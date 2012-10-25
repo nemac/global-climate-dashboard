@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>Global Climate Dashboard</title>
+</head>
+<body>
+
+
+<hr>
+<div id="message"></div>
+<table><tr><td>
+<div id="dashboard">
+</div>
+</td></tr></table>
+
 <style type="text/css">
+
 @font-face {
   font-family: 'Cabin';
   font-style: normal;
@@ -17,12 +30,11 @@
 #dashboard {
   font-family: Cabin;
 }
+
 </style>
 
 <script type="text/javascript" src="lib/mustache.js"></script>
 <script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script>
-<!-- <script type="text/javascript" src="lib/multigraph-touch.js"></script> -->
-<!-- <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-1.8.2.js"></script> -->
 <script type="text/javascript">$ = jQuery = window.multigraph.jQuery;</script>
 <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js"></script>
 <link rel="stylesheet" href="lib/jquery-ui-1.9.0.custom/css/smoothness/jquery-ui-1.9.0.custom.css"></link>
@@ -37,20 +49,17 @@
 
 $(document).ready(function() {
 
+
     $('#dashboard').dashboard({
       id : 'global-climate-dashboard',
       title : 'Global Climate Dashboard',
       config : 'config/dashboard.xml'
     });
 
+
 });
 </script>
 
-</head>
-<body>
-<div id="message"></div>
-<table><tr><td>
-<div id="dashboard"></div>
-</td></tr></table>
+
 </body>
 </html>
