@@ -1,7 +1,7 @@
 <dashboard>
 
 
-  <tab id="climateChange">
+  <tab id="climateChange" selected="true">
     <title>Climate Change</title>
     <graph id="temp" expanded="true">
       <title><![CDATA[Temperature (&#730;C)]]></title>
@@ -221,7 +221,7 @@
     </graph>
   </tab>
 
- <tab id="climateProjections"  selected="true">
+ <tab id="climateProjections">
     <title>Climate Projections</title>
     <graph id="cp">
       <title>Climate Model Data (CMIP3, 2007)</title>

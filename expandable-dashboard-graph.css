@@ -129,10 +129,10 @@
 .expandable-dashboard-graph-multigraph {
   background: #663333;
   width: 585px;
-  height: 80px;
+  height: 95px;
   position: absolute;
   right: 33px;
-  top: 10px;
+  top: 0px;
   display: inline;
 }
 .expandable-dashboard-graph-collapsed .expandable-dashboard-graph-multigraph {
