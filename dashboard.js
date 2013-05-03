@@ -5,103 +5,17 @@
             (
                 ''
                     + '<div class="dashboard">'
-                    +   '<div class="dashboard-header">'
-                    +     '<div class="dashboard-title">'
-                    +       '<h2>{{{title}}}</h2>'
-                    +     '</div>'
-                    +     '<div class="dashboard-tab-buttons">'
-                    +     '</div>'
-                    +   '</div>'
-                    +   '<div class="dashboard-tabs"></div>'
                     + '</div>'
-            ),
-
-        tabTpl =
-            (
-                ""
-                    + '<div id="{{id}}" class="dashboard-tab" style="display: none"></div>'
-            ),
-
-        tabButtonTpl =
-            (
-                ""
-                    + '<input type="radio" name="tab" id="{{id}}">'
-                    +   '<label for="{{id}}">{{{title}}}</label>'
-                    + '</input>'
             );
 
-    var graphXmlToDashboardGraphOptions = function(graphXml) {
-        // no longer used: $(graphXml).attr('id');
-        return {
-            initiallyExpanded : ( $(graphXml).attr('expanded') === "true" ),
-            title             : $(graphXml).find('>title').text(),
-            mugl              : $(graphXml).find('mugl').attr('url'),
-            stats : {
-                color : $(graphXml).find('stats').attr('color') || '#ffffff',
-                stat  : $(graphXml).find('stats stat').map(function () {
-                    return {
-                        title : $(this).find('title').text(),
-                        value : $(this).find('value').text()
-                    };
-                }).get()
-            },
-            legend : {
-                title  : $(graphXml).find('legendtitle').text(),
-                text   : $(graphXml).find('legendtext').text(),
-                item   : $(graphXml).find('legend item').map(function () {
-                    return {
-                        img_src : $(this).find('img').attr('src'),
-                        text    : $(this).find('text').text()
-                    };
-                }).get()
-            }
-        };
-    };
-
-    var insertGraphs = function($xml, $graphContainer) {
-        if ($xml.find("graph").length > 1) {
-            $xml.find("graph").each(function() {
-                var options = graphXmlToDashboardGraphOptions(this);
-                var classes = 'EDG ' + (options.initiallyExpanded ? 'initiallyExpanded' : '');
-                options.initiallyExpanded = false;
-                var div = $('<div>', {
-                    'class' : classes
-                }).appendTo($graphContainer).expandable_dashboard_graph(options);
-            });
-            $('div.EDG.initiallyExpanded').each(function () {
-                var that = this;
-                $(this).expandable_dashboard_graph('multigraph').done(function(multigraph) {
-                    $(that).expandable_dashboard_graph('expand');
-                });
-            });
-            $graphContainer.sortable({
-                axis : 'y',
-                handle : $graphContainer.find('.expandable-dashboard-graph-drag-handle')
-            });
-        } else {
-            $xml.find("graph").each(function() {
-                var options = graphXmlToDashboardGraphOptions(this);
-                $('<div>').appendTo($graphContainer).single_dashboard_graph(options);
-            });
-        }
-    };
-
-    var selectTab = function(tab_num) {
-        $('.dashboard-tab-buttons input').button({
-            icons : {
-                primary : "ui-icon-triangle-1-e"
-            }
-        });
-        $('.dashboard-tabs .dashboard-tab').css('display', 'none');
-        $('#dashboard-tab-button-' + tab_num).attr('checked','checked').button("refresh");
-        $('#dashboard-tab-button-' + tab_num).button({
-            icons : {
-                primary : "ui-icon-triangle-1-s"
-            }
-        });
-        $('#dashboard-tab-' + tab_num).css('display', 'block');
-    };
-
+    // 
+    //   function xmlObjectToString(obj) {
+    //     if (window.ActiveXObject) {
+    //       return obj.xml;
+    //     }
+    //     return (new XMLSerializer()).serializeToString(obj);
+    //   }
+    // 
 
     var methods = {
         init : function(options) {
@@ -114,9 +28,9 @@
                     }, options);
                 if ( ! data ) {
 
-                    $this.append(Mustache.to_html(dashboardTpl, {
+                    var $dashboardDiv = $(Mustache.to_html(dashboardTpl, {
                         title : settings.title
-                    }));
+                    })).appendTo($this);
 
                     $this.data('dashboard', {
                         //
@@ -126,40 +40,28 @@
                             dataType : 'text',
                             success  : function (data) {
                                 var $configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
-                                var tab_num = 0;
-                                var selected_tab_num = 1;
                                 $configxml.find(">tab").each(function() {
-                                    tab_num += 1;
-                                    var title = $(this).find('>title').text();
-                                    if ($(this).attr('selected') === "true") {
-                                        selected_tab_num = tab_num;
+                                    if ($(this).attr('id') == 'climateChange2') {
+                                        var N = 0;
+                                        $(this).find('graph').each(function() {
+                                            var title = $(this).find('>title').text();
+                                            var description = $(this).find('>description').text();
+                                            var muglString = ($(this).find('mugl'))[0]
+                                            $dashboardDiv.append($('<div/>').dashboard_graph({
+                                                title       : title,
+                                                description : description,
+                                                error       : function (e) { throw e; },
+                                                warning     : function (e) { console.log(e); },
+                                                width       : 560,
+                                                height      : 104,
+                                                muglString  : muglString
+                                            }));
+                                            if (++N >= 3) { return false; } else { return true; }
+                                        });
                                     }
-
-                                    var $tab = $(Mustache.to_html(tabTpl, {
-                                        id : 'dashboard-tab-' + tab_num
-                                    })).appendTo($('.dashboard-tabs'));
-
-                                    insertGraphs($(this), $tab);
-
-                                    $(Mustache.to_html(tabButtonTpl, {
-                                        id : 'dashboard-tab-button-' + tab_num,
-                                        title : title
-                                    })).appendTo('.dashboard-tab-buttons').data('tab_num', tab_num);
-
                                 });
-
-
-                                $('.dashboard-tab-buttons input').button({
-                                    icons : {
-                                        primary : "ui-icon-triangle-1-e"
-                                    }
-                                }).click(function (event) {
-                                    selectTab($(this).data('tab_num'));
-                                });
-
-                                selectTab(selected_tab_num);
-
                             }});
+
                 }
                 return this;
             });

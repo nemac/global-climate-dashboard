@@ -20,19 +20,6 @@
   font-family: Cabin;
 }
 
-
-#dashboard {
-  width: 940px;
-  height: 570px;
-  background: #5a5b5b;  /* light gray */
-  border-radius:10px;
-  -moz-border-radius:10px;
-}
-
-.dashboard-graph-container {
-  margin-bottom: 5px;
-}
-
 </style>
 
 <!-- BEGIN MULTIGRAPH FILES -->
@@ -182,47 +169,14 @@
 <script type="text/javascript" src="dashboard-graph.js"></script>
 <link type="text/css" rel="stylesheet" href="dashboard-graph.css"></link>
 
+<script type="text/javascript" src="dashboard.js"></script>
+<link type="text/css" rel="stylesheet" href="dashboard.css"></link>
+
 <script type="text/javascript">
 
 $(document).ready(function() {
 
-/*
-  function xmlObjectToString(obj) {
-    if (window.ActiveXObject) {
-      return obj.xml;
-    }
-    return (new XMLSerializer()).serializeToString(obj);
-  }
-*/
-
-  $.ajax({url      : 'config/dashboard.xml',
-          dataType : 'text',
-          success  : function (data) {
-              var $configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
-              $configxml.find(">tab").each(function() {
-                if ($(this).attr('id') == 'climateChange2') {
-                  var N = 0;
-                  $(this).find('graph').each(function() {
-                    var title = $(this).find('>title').text();
-                    var description = $(this).find('>description').text();
-                    var muglString = ($(this).find('mugl'))[0]
-                    $('#dashboard').append($('<div/>').dashboard_graph({
-                      title       : title,
-                      description : description,
-                      error       : function (e) { throw e; },
-                      warning     : function (e) { console.log(e); },
-                      width       : 560,
-                      height      : 104,
-                      muglString  : muglString
-                    }));
-                    if (++N >= 3) { return false; }
-                  });
-                }
-              });
-          }});
-
-
-
+  $('#dashboard').dashboard({config : 'config/dashboard.xml'});
 
 });
 </script>
@@ -231,13 +185,7 @@ $(document).ready(function() {
 </head>
 <body>
 
-  <div id="dashboard">
-<!--
-    <div class="dashboard-graph-container"></div>
-    <div class="dashboard-graph-container"></div>
-    <div class="dashboard-graph-container"></div>
--->
-  </div>
+  <div id="dashboard"></div>
 
 </body>
 </html>

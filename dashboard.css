@@ -1,46 +1,11 @@
 .dashboard {
+  width: 940px;
+  height: 570px;
+  background: #5a5b5b;  /* light gray */
   border-radius:10px;
   -moz-border-radius:10px;
-  background: #5a5b5b;
-  color: #ffffff;
-  padding: 10px;
-  width: auto;
 }
 
-/* http://stackoverflow.com/questions/3836241/how-do-i-add-a-custom-icon-to-a-standard-jquery-ui-theme */
-
-.dashboard .dashboard-header {
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.dashboard .dashboard-title {
-  display: inline;
-}
-.dashboard .dashboard-title h2 {
-  display: inline;
-}
-.dashboard div.dashboard-tab-buttons {
-  margin-left: 10px;
-  display: inline;
-}
-.dashboard div.dashboard-tab-buttons label {
-  border: 0;
-  margin-left: 13px;
-}
-
-.dashboard-tab-buttons .ui-button-text  {
-  color: #ffffff;
-}
-
-.dashboard-tab-buttons label.ui-button {
-  background: #898c8e;
-}
-
-.dashboard-tab-buttons label.ui-button.ui-state-active, .dashboard-tab-buttons label.ui-button.ui-state-active.ui-state-hover  {
-  background: #232020;
-}
-
-.dashboard-tab-buttons label.ui-button.ui-state-hover  {
-  background: #636060;
+.dashboard-graph-container {
+  margin-bottom: 5px;
 }
