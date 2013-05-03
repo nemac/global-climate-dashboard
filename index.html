@@ -21,7 +21,7 @@
 }
 
 
-#region {
+#dashboard {
   width: 940px;
   height: 570px;
   background: #5a5b5b;  /* light gray */
@@ -29,64 +29,34 @@
   -moz-border-radius:10px;
 }
 
-.dashboard-graph {
-    position: relative;
-    left: 10px;
-    width: 920px;
-    height: 110px;
-    background-color: #232020; /* dark gray */
-    border-radius:10px;
-    -moz-border-radius:10px;
-}
-
-.dashboard-graph-title {
-  position: absolute;
-  left: 5px;
-  top: 5px;
-  color: #ffffff;
-}
-
-.dashboard-graph-description {
-  position: absolute;
-  left: 5px;
-  top: 30px;
-  width: 350px;
-  height: 70px;
-  color: #ffffff;
-}
-
-.dashboard-graph-link {
-  position: absolute;
-  left: 250px;
-  top: 80px;
-  color: #ffffff;
-  width: 100px;
-}
-
-.dashboard-graph-multigraph-wrapper {
-    position: absolute;
-    right: 5px;
-    top: 3px;
-    width: 560px;
-    height: 104px;
-    background-color: #00ff00;
-}
-
-.dashboard-graph-multigraph {
-    width: 100%;
-    height: 100%;
+.dashboard-graph-container {
+  margin-bottom: 5px;
 }
 
 </style>
 
+<script type="text/javascript" src="lib/mustache.js"></script>
 <script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script>
 <script type="text/javascript">$ = jQuery = window.multigraph.jQuery;</script>
+
+<script type="text/javascript" src="dashboard-graph.js"></script>
+<link type="text/css" rel="stylesheet" href="dashboard-graph.css"></link>
 
 <script type="text/javascript">
 
 $(document).ready(function() {
 
-  $('.dashboard-graph-multigraph').multigraph({mugl : 'config/temp.xml'});
+  $('.dashboard-graph-container:eq(0)').dashboard_graph({
+    title       : 'Global Temperature',
+    description : "Temperature is rising: each bar shows global average surface temperature compared to last century's average.",
+    mugl        : 'config/temp.xml'
+  });
+
+  $('.dashboard-graph-container:eq(1)').dashboard_graph({
+    title       : 'CO2',
+    description : "Carbon Dioxide is awesome; it makes zombie-eating plants grow!",
+    mugl        : 'config/co2.xml'
+  });
 
 });
 </script>
@@ -95,16 +65,10 @@ $(document).ready(function() {
 </head>
 <body>
 
-  <div id="region">
+  <div id="dashboard">
 
-    <div class="dashboard-graph">
-      <div class="dashboard-graph-title">Global Temperature</div>
-      <div class="dashboard-graph-description">Temperature is rising: each bar shows global average surface temperature compared to last century's average.</div>
-      <div class="dashboard-graph-link">Learn More &gt;&gt;</div>
-      <div class="dashboard-graph-multigraph-wrapper">
-        <div class="dashboard-graph-multigraph"></div>
-      </div>
-    </div>
+    <div class="dashboard-graph-container"></div>
+    <div class="dashboard-graph-container"></div>
 
   </div>
 

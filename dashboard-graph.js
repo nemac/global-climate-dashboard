@@ -1,19 +1,19 @@
 (function ($) {
     "use strict";
 
-    var dashboardGraphTpl =
-            (
-                ''
-                    +  '<div class="dashboard-graph">'
-                    +    '<div class="dashboard-graph-multigraph-wrapper"><div class="dashboard-graph-multigraph"></div></div>'
-                    +  '</div>'
-            );
+    var dashboardGraphTpl = (
+        ''
+            + '<div class="dashboard-graph">'
+            +   '<div class="dashboard-graph-title">{{{title}}}</div>'
+            +   '<div class="dashboard-graph-description">{{{description}}}</div>'
+            +   '<div class="dashboard-graph-link">Learn More &gt;&gt;</div>'
+            +   '<div class="dashboard-graph-multigraph-wrapper">'
+            +     '<div class="dashboard-graph-multigraph"></div>'
+            +   '</div>'
+            + '</div>'
+    );
 
     var methods = {
-        multigraph : function() {
-            return $(this).data('dashboard_graph').multigraph;
-        },
-
         init : function(options) {
             return this.each(function() {
                 var $this = $(this),
@@ -23,9 +23,9 @@
                 if ( ! data ) {
 
                     $this.html(Mustache.to_html(dashboardGraphTpl, {
-                        //'title' : settings.title
+                        title       : settings.title,
+                        description : settings.description
                     }));
-
 
                     $this.find('.dashboard-graph-multigraph').multigraph({
                         mugl : settings.mugl
