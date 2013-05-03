@@ -1,0 +1,331 @@
+<dashboard>
+  <tab id="climateChange" selected="true">
+    <title>Climate Change</title>
+
+    <graph id="temp" expanded="true">
+      <title><![CDATA[Temperature (&#730;C)]]></title>
+      <shortname>Temperature</shortname>
+      <fullname><![CDATA[Global Average Temperature Anomaly (&#730;C) Difference from 1901-2000 Global Average]]></fullname>
+      <description><![CDATA[Temperature is rising: each bar shows global average surface temperature compared to last century's average.]]></description>
+      <alternate><![CDATA[Earth’s average surface temperature is rising: the bars show how each year compared to the 20th century average.]]></alternate>
+      <mugl url="config/temp.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Increase since 1990</title>
+          <value>+1.5&#730; F (0.7 C)</value>
+        </stat>
+        <stat>
+          <title>Average rate of rise</title>
+          <value>+0.25&#730;F (0.13&#730; C) per decade</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="co2" expanded="true">
+      <title><![CDATA[Carbon Dioxide (ppm)]]></title>
+      <shortname>Carbon Dioxide</shortname>
+      <fullname><![CDATA[CO2 Atmospheric Abundance (ppm)]]></fullname>
+      <description><![CDATA[The amount of carbon dioxide in the atmosphere has gone up by about 40% since the Industrial Revolution.]]></description>
+      <alternate><![CDATA[The amount of carbon dioxide in the atmosphere is now about 40% higher than it was in 1750.]]></alternate>
+      <mugl url="config/co2.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="ocean" expanded="true">
+      <title><![CDATA[Ocean Heat]]></title>
+      <shortname>Ocean Heat</shortname>
+      <fullname><![CDATA[Total Ocean Heat Content Anomaly (10^22 Joules)]]></fullname>
+      <description><![CDATA[Each bar shows how much more or less heat energy is in the ocean than the average for 1955-2006.]]></description>
+      <alternate><![CDATA[Total ocean heat shown as the difference from the long-term average.]]></alternate>
+      <mugl url="config/ocean.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="ghouse" expanded="false">
+      <title><![CDATA[Annual Greenhouse Gas Index]]></title>
+      <shortname>Greenhouse Gases</shortname>
+      <fullname><![CDATA[Annual Greenhouse Gas Index]]></fullname>
+      <description><![CDATA[The total effect of long-lived heat- trapping gases has gone up by 30% since 1990, the year many nations agreed to cut emissions.]]></description>
+      <alternate><![CDATA[The Annual Greenhouse Gas Index reports the total effect of long-lived heat-trapping gas.]]></alternate>
+      <mugl url="config/ghouse.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Increase in heat-trapping since 1990</title>
+          <value>+29%</value>
+        </stat>
+        <stat>
+          <title>% of AGGI from carbon dioxide alone</title>
+          <value>85%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="glacier" expanded="false">
+      <title><![CDATA[Glaciers (meters of water equivalent)]]></title>
+      <shortname>Glaciers</shortname>
+      <fullname><![CDATA[Glacial Mass Balance for 30 Reference Glaciers (meters of water equivalent)]]></fullname>
+      <description><![CDATA[Glaciers are shrinking: the average thickness of 30 well-studied glaciers has decreased more than 40 feet since 1980.]]></description>
+      <mugl url="config/glacier.xml"/>
+      <stats color="#87b5d2">
+        <stat>
+          <title>Melt water lost since 1980</title>
+          <value>40 feet (12.5m)</value>
+        </stat>
+        <stat>
+          <title>Average rate of water loss</title>
+          <value>26 in. (0.5m) per year</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="sea" expanded="false">
+      <title><![CDATA[Sea Level (mm)]]></title>
+      <shortname>Sea Level</shortname>
+      <fullname><![CDATA[Global Average Sea Level (mm) Difference from 1990]]></fullname>
+      <description><![CDATA[Global sea level is rising: water expands as it warms, and melting of land-based ice adds water to the ocean.]]></description>
+      <mugl url="config/sea.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="snow" expanded="false">
+      <title><![CDATA[Snow (million km<sup>2</sup>)]]></title>
+      <shortname>Snow</shortname>
+      <fullname><![CDATA[March-April Northern Hemisphere Snow Cover Extent (million km^2)]]></fullname>
+      <description><![CDATA[Snow is melting earlier in the spring: each bar shows March-April snowcover in the Northern Hemisphere compared to the average for 1971-2000.]]></description>
+      <alternate><![CDATA[Snow is melting earlier in the spring: each bar shows March-April snow cover in the Northern Hemisphere compared to the long- term average.]]></alternate>
+      <mugl url="config/snow.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="sun" expanded="false">
+      <title><![CDATA[Sun's Energy (W/m<sup>2</sup>)]]></title>
+      <mugl url="config/sun.xml"/>
+      <shortname>Sun's Energy</shortname>
+      <fullname><![CDATA[Solar Irradiance (W/m<sup>2</sup>)]]></fullname>
+      <description><![CDATA[Energy from the sun rises and falls slightly on an 11-year cycle, with little net change over the last century.]]></description>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="asi" expanded="false">
+      <title><![CDATA[Arctic Sea Ice (1000 km<sup>2</sup>)]]></title>
+      <shortname>Arctic Sea Ice</shortname>
+      <fullname><![CDATA[Arctic Sea Ice Minimum Annual Extent (1000 km^2)]]></fullname>
+      <description><![CDATA[The area of the Arctic covered by sea ice at the end of summer has shrunk by about 40% since 1979.]]></description>
+      <mugl url="config/asi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+  </tab>
+
+  <tab id="climateVariability">
+    <title><![CDATA[Climate Variability]]></title>
+
+    <graph id="oni" expanded="true">
+      <title><![CDATA[El Niño / La Niña Index]]></title>
+
+      <shortname>El Niño / La Niña</shortname>
+      <description><![CDATA[Departure from average sea surface temperature in the eastern Pacific Ocean.  0.5&#730;C or higher = El Niño; Near 0 = neutral; -0.5&#730;C or lower = La Niña]]></description>
+      <alternate><![CDATA[Warmer-than-average sea surface temps indicate El Niño conditions. Cooler- than-average, La Niña. Average temps indicate neutral conditions.]]></alternate>
+
+      <mugl url="config/oni.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="pnap" expanded="true">
+      <title><![CDATA[Pacific North American Pattern]]></title>
+      <shortname>Pacific North American Pattern</shortname>
+      <description><![CDATA[Departures from average air pressure at four locations over the Pacific Ocean and North America affect the strength and location of the East Asian jet stream and the weather it delivers to North America.]]></description>
+      <alternate><![CDATA[Air pressure patterns over the Pacific Ocean and North America affect the strength and location of the jet stream that brings storms across the Pacific.]]></alternate>
+      <mugl url="config/pnap.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="soi" expanded="true">
+      <title><![CDATA[Southern Oscillation Index]]></title>
+      <shortname>Southern Oscillation Index</shortname>
+      <description><![CDATA[Differences in average air pressure at Tahiti and Darwin, Australia provide an atmospheric indicator of the El Niño–Southern Oscillation. El Niño conditions result in negative SOI values; La Niña conditions produce positive values for this index.]]></description>
+      <alternate><![CDATA[Air pressure patterns in the South Pacific reflect El Niño / La Niña conditions.]]></alternate>
+      <mugl url="config/soi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+    <graph id="naoi" expanded="false">
+      <title><![CDATA[North Atlantic Oscillation]]></title>
+      <shortname>North Atlantic Oscillation</shortname>
+      <description><![CDATA[Departures from average air pressure over Greenland and the central North Atlantic Ocean affect weather around the Atlantic by influencing the intensity and location of the jet stream and the storm tracks that follow it. Negative values are linked with]]></description>
+      <alternate><![CDATA[Air pressure patterns in the North Atlantic influence storm tracks. Negative values are linked with winter storms in the eastern U.S.]]></alternate>
+      <mugl url="config/naoi.xml"/>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+
+    <graph id="aoi" expanded="false">
+      <title><![CDATA[Arctic Oscillation Index]]></title>
+      <mugl url="config/aoi.xml"/>
+      <shortname>Arctic Oscillation Index</shortname>
+      <fullname><![CDATA[xxx]]></fullname>
+      <description><![CDATA[Departures from average air pressure over the Arctic region and the North Pacific and Atlantic Oceans affect the north-to- south location of the storm-steering, mid- latitude jet stream.  Negative values are associated with severe winter storms in the eastern U.S.]]></description>
+      <alternate><![CDATA[Air pressure conditions in the Arctic affect the north- south location of the jet stream. Negative values are linked with severe winter storms in the eastern U.S.]]></alternate>
+      <stats color="#f8a792">
+        <stat>
+          <title>Change since sometime</title>
+          <value>3.4%</value>
+        </stat>
+        <stat>
+          <title>Average change in last second</title>
+          <value>29%</value>
+        </stat>
+      </stats>
+      <link href="#"/>
+    </graph>
+  </tab>
+
+ <tab id="climateProjections">
+    <title>Climate Projections</title>
+    <graph id="cp">
+      <title>Climate Model Data (CMIP3, 2007)</title>
+      <legendtitle>Simulation of Global Temperature</legendtitle>
+      <legendtext>The black line shows the average of many different
+simulations of global temperature in the 20th century compared to
+average from 1971-1999, and the colored lines show projected
+temperature changes in the 21st century for three possible
+scenarios.</legendtext>
+<help><![CDATA[Results from this set of climate model experiments suggest that our
+planet’s average temperature could be between 2 and 9.7&#730;F (1.1 to
+5.4&#730;C) warmer in 2100 than it is today.
+<br/><br/>
+The graph shows the average of temperature simulations for the 20th
+century (black line), followed by projected temperatures for the 21st
+century based on a range of emissions scenarios (colored lines).  The
+shaded areas around each line indicate the statistical spread (one
+standard deviation) provided by individual model runs.
+<br/><br/>
+Zero on the Y-axis represents Earth’s average temperature for the
+period 1971-1999.  For 2000-2100, the model projections differ mainly
+in their assumptions about the number of people on the planet and the
+way they use energy, and therefore, the amount of heat-trapping gas in
+the atmosphere.]]></help>
+      <link>http://www.climatewatch.noaa.gov/article/2012/global-temperature-projections</link>
+      <mugl url="config/projections.xml" />
+    <legend>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Red-width2.png"/>
+        <text>High Growth (A2)</text>
+      </item>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Green-width2.png"/>
+        <text>Moderate Growth (A1B)</text>
+      </item>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Blue-width2.png"/>
+        <text>Low Growth (B1)</text>
+      </item>
+      <item>
+        <img src="config/ProjectionGraphLegendIcons-Black-width2.png"/>
+        <text>20th Century Climate</text>
+      </item>
+    </legend>
+    </graph>
+  </tab>
+
+</dashboard>

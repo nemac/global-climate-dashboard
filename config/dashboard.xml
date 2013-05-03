@@ -1,331 +1,7355 @@
-<dashboard>
-  <tab id="climateChange" selected="true">
-    <title>Climate Change</title>
+<dashboard xmlns:ns0="http://ns.adobe.com/textLayout/2008" id="dashboard2">
+  
+    <mugloverrides>
+      <element name="window">
+        <attribute name="margin" value="0" />
+        <attribute name="border" value="0" />
+        <attribute name="padding" value="0" />
+      </element>
+      <element name="plotarea">
+        <attribute name="marginleft" value="34" />
+        <attribute name="marginright" value="18" />
+        <attribute name="margintop" value="4" />
+        <attribute name="marginbottom" value="6" />
+      </element>
+      <element name="legend">
+        <attribute name="visible" value="false" />
+      </element>
+      <element name="horizontalaxis">
+        <attribute name="tickcolor" value="0xdddddd" />
+        <element name="labels">
+          <attribute name="format" value="%Y" visible="false" />
+          <attribute name="fontcolor" value="0x666666" />
+        </element>
+        <element name="pan">
+          <attribute name="allowed" value="yes" />
+        </element>
+        <element name="zoom">
+          <attribute name="allowed" value="yes" />
+        </element>
+        <element name="grid">
+          <attribute name="color" value="0xdddddd" />
+        </element>
+        <element name="binding">
+          <attribute name="min" value="1900" />
+          <attribute name="max" value="2000" />
+        </element>
+      </element>
+      <element name="verticalaxis">
+        <attribute name="tickcolor" value="0xdddddd" />
+        <element name="labels">
+          <attribute name="fontcolor" value="0x666666" />
+        </element>      
+        <element name="pan">
+          <attribute name="allowed" value="no" />
+        </element>
+        <element name="zoom">
+          <attribute name="allowed" value="no" />
+        </element>
+        <element name="grid">
+          <attribute name="color" value="0xdddddd" />
+        </element>
+      </element>
+      <elements name="datatips">
+      	<attribute name="border" value="1" />
+        <attribute name="bgcolor" value="0x33383b" />
+        <attribute name="bordercolor" value="0x5b6473" />
+        <attribute name="fontcolor" value="0xffffff" />
+        <attribute name="fontsize" value="14" />
+        <attribute name="bold" value="true" />
+        <attribute name="pad" value="2" />
+      </elements>
+    </mugloverrides>
 
-    <graph id="temp" expanded="true">
-      <title><![CDATA[Temperature (&#730;C)]]></title>
-      <shortname>Temperature</shortname>
-      <fullname><![CDATA[Global Average Temperature Anomaly (&#730;C) Difference from 1901-2000 Global Average]]></fullname>
-      <description><![CDATA[Temperature is rising: each bar shows global average surface temperature compared to last century's average.]]></description>
-      <alternate><![CDATA[Earth’s average surface temperature is rising: the bars show how each year compared to the 20th century average.]]></alternate>
-      <mugl url="config/temp.xml"/>
-      <stats color="#f8a792">
+
+    <tab id="climateChange2">
+    <title>Climate Change</title>
+    <timeslider />
+    <mugloverrides>
+      <element name="horizontalaxis">
+        <attribute name="min" value="1950" />
+        <attribute name="max" value="2015" />
+        <element name="binding">
+          <attribute name="id" value="Tab1TimeBinding" />
+        </element>
+        <element name="pan">
+          <attribute name="min" value="1880" />
+          <attribute name="max" value="2020" />
+        </element>
+        <element name="zoom">
+          <attribute name="min" value="6M" />
+        </element>
+      </element>
+    </mugloverrides>
+
+    <graph id="temperature2" name="Temperature">
+      <title>Global Average Temperature (&#730;C)</title>
+      <shorttitle>Temperature</shorttitle>
+      <description>The temperature near Earth&#8217;s surface is rising: the bars show each year&#8217;s average temperature compared to the 20th century average.</description>
+      <oldtitle>Temperature (&#730;C)</oldtitle>
+      <help>Earth&#8217;s overall temperature has increased by 1.3&#176;F (0.7&#176;C) since 1900. <br /> <br />
+
+		In the graph, average annual surface temperature is shown as the difference from the average for 1901-2000.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-global-temperature</link>
+      <stats>
         <stat>
           <title>Increase since 1990</title>
-          <value>+1.5&#730; F (0.7 C)</value>
+          <value color="0xf8a792">+0.7 C (+1.5&#730; F)</value>
         </stat>
         <stat>
-          <title>Average rate of rise</title>
-          <value>+0.25&#730;F (0.13&#730; C) per decade</value>
+          <title>Rate of increase per decade</title>
+          <value color="0xf8a792">+0.25&#730;F (0.13&#730; C)</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+<window border="0" margin="0" padding="0" />
+  <legend visible="false" />
+  <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+  <horizontalaxis highlightstyle="labels" id="year" linewidth="0" max="2020" min="1870" tickmax="0" tickmin="-4" type="datetime">
+    <labels>
+      <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+      <label format="%n %y" spacing="6M 3M 2M 1M" />
+    </labels>
+    <grid />
+    <title anchor="0 5" position="-10 0">Year</title>
+  </horizontalaxis>
 
-    <graph id="co2" expanded="true">
-      <title><![CDATA[Carbon Dioxide (ppm)]]></title>
-      <shortname>Carbon Dioxide</shortname>
-      <fullname><![CDATA[CO2 Atmospheric Abundance (ppm)]]></fullname>
-      <description><![CDATA[The amount of carbon dioxide in the atmosphere has gone up by about 40% since the Industrial Revolution.]]></description>
-      <alternate><![CDATA[The amount of carbon dioxide in the atmosphere is now about 40% higher than it was in 1750.]]></alternate>
-      <mugl url="config/co2.xml"/>
-      <stats color="#f8a792">
+  <verticalaxis highlightstyle="labels" id="tempanomoly" linewidth="0" max="1" min="-1" tickmax="0" tickmin="-4" type="number">
+    <labels densityfactor="0.5" format="%.2f" spacing="50 20 10 5 2 1 0.5 0.25 0.1 0.05 0.02 0.01" />
+    <grid />
+    <title anchor="0 -4" angle="90" position="-20 -22">Global Temperature Anomaly (C) compared to 1901-2000</title>
+	
+	
+  </verticalaxis>
+  <plot>
+    <horizontalaxis ref="year">
+      <variable ref="year" />
+    </horizontalaxis>
+    <verticalaxis ref="yaxis">
+      <variable ref="temp" />
+    </verticalaxis>
+		<renderer type="bar">
+			<option min="0" name="fillcolor" value="0xCD6760" />
+			<option max="0" name="fillcolor" value="0x6194C8" />
+			<option name="barwidth" value="1Y" />
+			<option name="baroffset" value="0" />
+			<option name="barbase" value="0" />
+		</renderer>
+    <datatips format="{0}: {1}">
+       <variable format="'%y" />
+       <variable format="%.1f" />
+    </datatips>
+  </plot>
+
+  <data>
+    <variables>
+      <variable column="0" id="year" type="datetime" />
+      <variable column="1" id="temp" />
+    </variables>
+    <values>1880,-0.1613
+1881,-0.1084
+1882,-0.1222
+1883,-0.1727
+1884,-0.2337
+1885,-0.2059
+1886,-0.1855
+1887,-0.2601
+1888,-0.1761
+1889,-0.0964
+1890,-0.3106
+1891,-0.2766
+1892,-0.3138
+1893,-0.3513
+1894,-0.3103
+1895,-0.2480
+1896,-0.1059
+1897,-0.1469
+1898,-0.2747
+1899,-0.1572
+1900,-0.1121
+1901,-0.1727
+1902,-0.2627
+1903,-0.3514
+1904,-0.4129
+1905,-0.2925
+1906,-0.2406
+1907,-0.3835
+1908,-0.4303
+1909,-0.4341
+1910,-0.4162
+1911,-0.4384
+1912,-0.3828
+1913,-0.3503
+1914,-0.1897
+1915,-0.1136
+1916,-0.3126
+1917,-0.3452
+1918,-0.2381
+1919,-0.2561
+1920,-0.2346
+1921,-0.1651
+1922,-0.2543
+1923,-0.2322
+1924,-0.2277
+1925,-0.1587
+1926,-0.0636
+1927,-0.1303
+1928,-0.1337
+1929,-0.2532
+1930,-0.0634
+1931,-0.0369
+1932,-0.0562
+1933,-0.1968
+1934,-0.0533
+1935,-0.0828
+1936,-0.0556
+1937,0.0563
+1938,0.0857
+1939,0.0697
+1940,0.1145
+1941,0.1646
+1942,0.1217
+1943,0.1142
+1944,0.2224
+1945,0.0930
+1946,-0.0412
+1947,-0.0423
+1948,-0.0537
+1949,-0.0670
+1950,-0.1576
+1951,-0.0007
+1952,0.0411
+1953,0.1169
+1954,-0.0970
+1955,-0.1137
+1956,-0.1736
+1957,0.0672
+1958,0.1178
+1959,0.0744
+1960,0.0250
+1961,0.1012
+1962,0.1279
+1963,0.1466
+1964,-0.1180
+1965,-0.0529
+1966,0.0057
+1967,0.0218
+1968,0.0096
+1969,0.1142
+1970,0.0684
+1971,-0.0314
+1972,0.0557
+1973,0.1908
+1974,-0.0531
+1975,0.0168
+1976,-0.0764
+1977,0.1765
+1978,0.0976
+1979,0.1847
+1980,0.2293
+1981,0.2691
+1982,0.1513
+1983,0.3160
+1984,0.1256
+1985,0.1068
+1986,0.1961
+1987,0.3293
+1988,0.3405
+1989,0.2656
+1990,0.3984
+1991,0.3751
+1992,0.2323
+1993,0.2630
+1994,0.3243
+1995,0.4467
+1996,0.3163
+1997,0.5095
+1998,0.6282
+1999,0.4509
+2000,0.4245
+2001,0.5477
+2002,0.6100
+2003,0.6180
+2004,0.5737
+2005,0.6461
+2006,0.5918
+2007,0.5864
+2008,0.5074
+2009,0.5918
+2010,0.6551
+2011,0.5338
+</values>
+  </data>
+</mugl></graph><graph id="carbonDioxide2" name="CarbonDioxide">
+      <title>Carbon Dioxide (ppm)</title>
+      <shorttitle>Carbon Dioxide</shorttitle>
+      <description>The amount of carbon dioxide in the atmosphere has risen by 25% since 1958, and by about 40% since the Industrial Revolution.</description>
+      <oldtitle>Carbon Dioxide (ppm)</oldtitle>
+      <help>Atmospheric carbon dioxide has increased by about 40% since 1750.
+	The graph shows the number of CO<span baselineShift="subscript">2</span>&#160;&#160;molecules
+        per million molecules of dry air measured at Mauna Loa, Hawai'i. 
+	The black line shows monthly values; the red line shows the running average.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-atmospheric-carbon-dioxide</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>Increase since 1960</title>
+          <value color="0xf8a792">24%</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>Rate of increase per decade</title>
+          <value color="0xf8a792">6%</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+  <window border="0" margin="0" padding="0" />
 
-    <graph id="ocean" expanded="true">
-      <title><![CDATA[Ocean Heat]]></title>
-      <shortname>Ocean Heat</shortname>
-      <fullname><![CDATA[Total Ocean Heat Content Anomaly (10^22 Joules)]]></fullname>
-      <description><![CDATA[Each bar shows how much more or less heat energy is in the ocean than the average for 1955-2006.]]></description>
-      <alternate><![CDATA[Total ocean heat shown as the difference from the long-term average.]]></alternate>
-      <mugl url="config/ocean.xml"/>
-      <stats color="#f8a792">
+  <legend anchor="1 -1" base="1 -1" border="0" opacity="0.0" position="20 0" rows="1" visible="false">
+      <icon border="0" height="15" width="15" />
+  </legend>
+  <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+  <horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2010" min="1960" tickmax="0" tickmin="-4" type="datetime">
+    <labels>
+      <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />  
+      <label format="  %n %y" spacing="6M 3M 2M 1M" />
+    </labels>
+    <grid />
+    <title anchor="0 5" position="-10 0">Year</title>
+  </horizontalaxis>
+
+  <verticalaxis highlightstyle="labels" id="co2" linewidth="0" max="400" min="300" tickmax="0" tickmin="-4" type="number">
+    <labels densityfactor="0.7" format="%.2f" spacing="100 50 25 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+    <grid />
+     <title anchor="0 -4" angle="90" position="-15 0">Carbon Dioxide Abundance (ppm)</title>
+	 
+         <pan max="800" min="-200" />
+  </verticalaxis>
+
+
+  <plot>
+    <horizontalaxis ref="datetime">
+      <variable ref="datetime" />
+    </horizontalaxis>
+    <verticalaxis ref="co2">
+      <variable ref="co2" />
+    </verticalaxis>
+    <legend visible="false" />
+		<renderer type="fill">
+			<option name="fillcolor" value="0xff6666" />
+			<option name="linecolor" value="0xff0000" />
+			<option name="fillopacity" value="0.55" />
+		</renderer>
+		    <datatips format="{0}: {1}">
+       <variable format="%n '%y" />
+       <variable format="%1d" />
+    </datatips>
+
+  </plot>
+
+
+  <plot>
+    <horizontalaxis ref="datetime">
+      <variable ref="datetime" />
+    </horizontalaxis>
+    <verticalaxis ref="co2">
+      <variable ref="co2avg" />
+    </verticalaxis>
+    <legend label="annual" />
+    <renderer type="pointline">
+      <option name="linecolor" value="0x990000" />
+      <option name="linewidth" value="1.5" />
+      <option name="missingvalue" value="-9000" />
+      <option name="missingop" value="lt" />
+    </renderer>
+  </plot>
+
+
+
+
+  <data>
+    <variables>
+      <variable column="0" id="datetime" type="datetime" />
+      <variable column="1" id="co2" />
+      <variable column="2" id="co2avg" />
+    </variables>
+
+    <values>195803,315.71,-9999.0
+195804,317.45,-9999.0
+195805,317.50,-9999.0
+195806,317.10,-9999.0
+195807,315.86,-9999.0
+195808,314.93,-9999.0
+195809,313.20,-9999.0
+195810,312.66,-9999.0
+195811,313.33,-9999.0
+195812,314.67,-9999.0
+195901,315.62,-9999.0
+195902,316.38,315.37
+195903,316.71,315.45
+195904,317.72,315.47
+195905,318.29,315.54
+195906,318.15,315.63
+195907,316.54,315.68
+195908,314.80,315.67
+195909,313.84,315.73
+195910,313.26,315.78
+195911,314.80,315.90
+195912,315.58,315.97
+196001,316.43,316.04
+196002,316.97,316.09
+196003,317.58,316.16
+196004,319.02,316.27
+196005,320.03,316.42
+196006,319.59,316.54
+196007,318.18,316.67
+196008,315.91,316.77
+196009,314.16,316.79
+196010,313.83,316.84
+196011,315.00,316.86
+196012,316.19,316.91
+196101,316.93,316.95
+196102,317.70,317.01
+196103,318.54,317.09
+196104,319.48,317.13
+196105,320.58,317.17
+196106,319.77,317.19
+196107,318.57,317.22
+196108,316.79,317.30
+196109,314.80,317.35
+196110,315.38,317.48
+196111,316.10,317.57
+196112,317.01,317.64
+196201,317.94,317.72
+196202,318.56,317.79
+196203,319.68,317.89
+196204,320.63,317.98
+196205,321.01,318.02
+196206,320.55,318.08
+196207,319.58,318.17
+196208,317.40,318.22
+196209,316.26,318.34
+196210,315.42,318.35
+196211,316.69,318.39
+196212,317.69,318.45
+196301,318.74,318.52
+196302,319.08,318.56
+196303,319.86,318.58
+196304,321.39,318.64
+196305,322.25,318.74
+196306,321.47,318.82
+196307,319.74,318.83
+196308,317.77,318.86
+196309,316.21,318.86
+196310,315.99,318.91
+196311,317.12,318.94
+196312,318.31,318.99
+196401,319.57,319.06
+196402,320.07,319.15
+196403,320.73,319.22
+196404,321.77,319.25
+196405,322.25,319.25
+196406,321.89,319.29
+196407,320.44,319.34
+196408,318.70,319.42
+196409,316.70,319.46
+196410,316.79,319.53
+196411,317.79,319.58
+196412,318.71,319.62
+196501,319.44,319.61
+196502,320.44,319.64
+196503,320.89,319.65
+196504,322.13,319.68
+196505,322.16,319.67
+196506,321.87,319.67
+196507,321.39,319.75
+196508,318.81,319.76
+196509,317.81,319.85
+196510,317.30,319.89
+196511,318.87,319.99
+196512,319.42,320.04
+196601,320.62,320.14
+196602,321.59,320.24
+196603,322.39,320.36
+196604,323.87,320.51
+196605,324.01,320.66
+196606,323.75,320.82
+196607,322.39,320.90
+196608,320.37,321.03
+196609,318.64,321.10
+196610,318.10,321.17
+196611,319.79,321.24
+196612,321.08,321.38
+196701,322.07,321.50
+196702,322.50,321.58
+196703,323.04,321.63
+196704,324.42,321.68
+196705,325.00,321.76
+196706,324.09,321.79
+196707,322.55,321.80
+196708,320.92,321.85
+196709,319.31,321.91
+196710,319.31,322.01
+196711,320.72,322.08
+196712,321.96,322.16
+196801,322.57,322.20
+196802,323.15,322.25
+196803,323.89,322.32
+196804,325.02,322.37
+196805,325.57,322.42
+196806,325.36,322.53
+196807,324.14,322.66
+196808,322.03,322.75
+196809,320.41,322.84
+196810,320.25,322.92
+196811,321.31,322.97
+196812,322.84,323.04
+196901,324.00,323.16
+196902,324.42,323.27
+196903,325.64,323.42
+196904,326.66,323.55
+196905,327.34,323.70
+196906,326.76,323.82
+196907,325.88,323.96
+196908,323.67,324.10
+196909,322.38,324.26
+196910,321.78,324.39
+196911,322.85,324.52
+196912,324.11,324.62
+197001,325.03,324.71
+197002,325.99,324.84
+197003,326.87,324.94
+197004,328.13,325.07
+197005,328.07,325.13
+197006,327.66,325.20
+197007,326.35,325.24
+197008,324.69,325.33
+197009,323.10,325.39
+197010,323.16,325.50
+197011,323.98,325.59
+197012,325.13,325.68
+197101,326.17,325.78
+197102,326.68,325.83
+197103,327.18,325.86
+197104,327.78,325.83
+197105,328.92,325.90
+197106,328.57,325.98
+197107,327.34,326.06
+197108,325.46,326.12
+197109,323.36,326.14
+197110,323.57,326.18
+197111,324.80,326.25
+197112,326.01,326.32
+197201,326.77,326.37
+197202,327.63,326.45
+197203,327.75,326.50
+197204,329.72,326.66
+197205,330.07,326.75
+197206,329.09,326.80
+197207,328.05,326.86
+197208,326.32,326.93
+197209,324.93,327.06
+197210,325.06,327.18
+197211,326.50,327.32
+197212,327.55,327.45
+197301,328.54,327.60
+197302,329.56,327.76
+197303,330.30,327.97
+197304,331.50,328.12
+197305,332.48,328.32
+197306,332.07,328.57
+197307,330.87,328.81
+197308,329.31,329.06
+197309,327.51,329.27
+197310,327.18,329.45
+197311,328.16,329.59
+197312,328.64,329.68
+197401,329.35,329.74
+197402,330.71,329.84
+197403,331.48,329.94
+197404,332.65,330.03
+197405,333.19,330.09
+197406,332.12,330.10
+197407,330.99,330.11
+197408,329.17,330.10
+197409,327.41,330.09
+197410,327.21,330.09
+197411,328.34,330.11
+197412,329.50,330.18
+197501,330.68,330.29
+197502,331.41,330.35
+197503,331.85,330.38
+197504,333.29,330.43
+197505,333.91,330.49
+197506,333.40,330.60
+197507,331.74,330.66
+197508,329.88,330.72
+197509,328.57,330.81
+197510,328.36,330.91
+197511,329.33,330.99
+197512,330.59,331.08
+197601,331.66,331.17
+197602,332.75,331.28
+197603,333.46,331.41
+197604,334.78,331.54
+197605,334.78,331.61
+197606,334.06,331.66
+197607,332.95,331.76
+197608,330.64,331.83
+197609,328.96,331.86
+197610,328.77,331.89
+197611,330.18,331.96
+197612,331.65,332.05
+197701,332.69,332.14
+197702,333.23,332.18
+197703,334.97,332.31
+197704,336.03,332.41
+197705,336.82,332.58
+197706,336.10,332.75
+197707,334.79,332.90
+197708,332.53,333.06
+197709,331.19,333.25
+197710,331.21,333.45
+197711,332.35,333.63
+197712,333.47,333.78
+197801,335.10,333.98
+197802,335.26,334.15
+197803,336.61,334.29
+197804,337.77,334.43
+197805,338.01,334.53
+197806,337.98,334.69
+197807,336.48,334.83
+197808,334.37,334.98
+197809,332.33,335.08
+197810,332.41,335.18
+197811,333.76,335.30
+197812,334.83,335.41
+197901,336.21,335.50
+197902,336.65,335.62
+197903,338.13,335.74
+197904,338.95,335.84
+197905,339.00,335.93
+197906,339.20,336.03
+197907,337.60,336.12
+197908,335.56,336.22
+197909,333.93,336.35
+197910,334.12,336.49
+197911,335.26,336.62
+197912,336.78,336.78
+198001,337.80,336.91
+198002,338.28,337.05
+198003,340.04,337.21
+198004,340.86,337.37
+198005,341.47,337.57
+198006,341.26,337.75
+198007,339.34,337.89
+198008,337.45,338.05
+198009,336.10,338.23
+198010,336.05,338.39
+198011,337.21,338.55
+198012,338.29,338.68
+198101,339.36,338.81
+198102,340.51,339.00
+198103,341.57,339.12
+198104,342.56,339.26
+198105,343.01,339.39
+198106,342.49,339.50
+198107,340.68,339.61
+198108,338.49,339.69
+198109,336.92,339.76
+198110,337.12,339.85
+198111,338.59,339.97
+198112,339.90,340.10
+198201,340.92,340.23
+198202,341.69,340.33
+198203,342.85,340.44
+198204,343.92,340.55
+198205,344.67,340.69
+198206,343.78,340.79
+198207,342.23,340.92
+198208,340.11,341.06
+198209,338.32,341.18
+198210,338.39,341.28
+198211,339.48,341.36
+198212,340.88,341.44
+198301,341.64,341.50
+198302,342.87,341.60
+198303,343.59,341.66
+198304,345.25,341.77
+198305,345.96,341.88
+198306,345.52,342.02
+198307,344.15,342.18
+198308,342.25,342.36
+198309,340.17,342.51
+198310,340.30,342.67
+198311,341.53,342.84
+198312,343.07,343.03
+198401,344.05,343.23
+198402,344.77,343.38
+198403,345.46,343.54
+198404,346.77,343.67
+198405,347.55,343.80
+198406,346.98,343.92
+198407,345.55,344.04
+198408,343.20,344.12
+198409,341.35,344.21
+198410,341.68,344.33
+198411,343.06,344.46
+198412,344.54,344.58
+198501,345.25,344.68
+198502,346.06,344.79
+198503,347.66,344.97
+198504,348.20,345.09
+198505,348.92,345.20
+198506,348.40,345.32
+198507,346.66,345.41
+198508,344.85,345.55
+198509,343.20,345.71
+198510,343.08,345.82
+198511,344.40,345.93
+198512,345.82,346.04
+198601,346.54,346.15
+198602,347.13,346.24
+198603,348.05,346.27
+198604,349.77,346.40
+198605,350.53,346.54
+198606,349.90,346.66
+198607,348.11,346.78
+198608,346.09,346.88
+198609,345.01,347.04
+198610,344.47,347.15
+198611,345.86,347.27
+198612,347.15,347.38
+198701,348.38,347.54
+198702,348.70,347.67
+198703,349.72,347.81
+198704,351.32,347.94
+198705,352.14,348.07
+198706,351.61,348.21
+198707,349.91,348.36
+198708,347.84,348.51
+198709,346.52,348.64
+198710,346.65,348.82
+198711,347.95,348.99
+198712,349.18,349.16
+198801,350.38,349.33
+198802,351.68,349.57
+198803,352.24,349.79
+198804,353.66,349.98
+198805,354.18,350.15
+198806,353.68,350.32
+198807,352.58,350.54
+198808,350.66,350.78
+198809,349.03,350.99
+198810,349.08,351.19
+198811,350.15,351.37
+198812,351.44,351.56
+198901,352.89,351.77
+198902,353.24,351.90
+198903,353.80,352.03
+198904,355.59,352.19
+198905,355.89,352.34
+198906,355.30,352.47
+198907,353.98,352.59
+198908,351.53,352.66
+198909,350.02,352.74
+198910,350.29,352.84
+198911,351.44,352.95
+198912,352.84,353.07
+199001,353.79,353.14
+199002,354.88,353.28
+199003,355.65,353.43
+199004,356.27,353.49
+199005,357.29,353.61
+199006,356.32,353.69
+199007,354.89,353.77
+199008,352.89,353.88
+199009,351.28,353.99
+199010,351.59,354.09
+199011,353.05,354.23
+199012,354.27,354.35
+199101,354.87,354.44
+199102,355.68,354.50
+199103,357.06,354.62
+199104,358.51,354.81
+199105,359.09,354.96
+199106,358.10,355.11
+199107,356.12,355.21
+199108,353.89,355.29
+199109,352.30,355.38
+199110,352.32,355.44
+199111,353.79,355.50
+199112,355.07,355.57
+199201,356.17,355.68
+199202,356.93,355.78
+199203,357.82,355.84
+199204,359.00,355.88
+199205,359.55,355.92
+199206,359.32,356.02
+199207,356.85,356.08
+199208,354.91,356.17
+199209,352.93,356.22
+199210,353.31,356.30
+199211,354.27,356.34
+199212,355.53,356.38
+199301,356.86,356.44
+199302,357.27,356.47
+199303,358.36,356.51
+199304,359.27,356.54
+199305,360.19,356.59
+199306,359.52,356.61
+199307,357.42,356.65
+199308,355.46,356.70
+199309,354.10,356.80
+199310,354.12,356.86
+199311,355.40,356.96
+199312,356.84,357.07
+199401,358.22,357.18
+199402,358.98,357.32
+199403,359.91,357.45
+199404,361.32,357.62
+199405,361.68,357.75
+199406,360.80,357.85
+199407,359.39,358.02
+199408,357.42,358.18
+199409,355.63,358.31
+199410,356.09,358.47
+199411,357.56,358.65
+199412,358.87,358.82
+199501,359.87,358.96
+199502,360.79,359.11
+199503,361.77,359.27
+199504,363.23,359.43
+199505,363.77,359.60
+199506,363.22,359.80
+199507,361.70,359.99
+199508,359.11,360.13
+199509,358.11,360.34
+199510,357.97,360.50
+199511,359.40,360.65
+199512,360.61,360.80
+199601,362.04,360.98
+199602,363.17,361.18
+199603,364.17,361.38
+199604,364.51,361.48
+199605,365.16,361.60
+199606,364.93,361.74
+199607,363.53,361.89
+199608,361.38,362.08
+199609,359.60,362.21
+199610,359.54,362.34
+199611,360.84,362.46
+199612,362.18,362.59
+199701,363.04,362.67
+199702,364.09,362.75
+199703,364.47,362.77
+199704,366.25,362.92
+199705,366.69,363.05
+199706,365.59,363.10
+199707,364.34,363.17
+199708,362.20,363.24
+199709,360.31,363.30
+199710,360.71,363.39
+199711,362.44,363.53
+199712,364.33,363.70
+199801,365.18,363.88
+199802,365.98,364.04
+199803,367.13,364.26
+199804,368.61,364.46
+199805,369.49,364.69
+199806,368.95,364.97
+199807,367.74,365.26
+199808,365.79,365.56
+199809,364.01,365.86
+199810,364.35,366.17
+199811,365.52,366.42
+199812,367.08,366.65
+199901,368.12,366.90
+199902,368.98,367.15
+199903,369.60,367.35
+199904,370.96,367.55
+199905,370.77,367.66
+199906,370.33,367.77
+199907,369.28,367.90
+199908,366.86,367.99
+199909,364.94,368.07
+199910,365.35,368.15
+199911,366.68,368.25
+199912,368.04,368.33
+200001,369.25,368.42
+200002,369.50,368.46
+200003,370.56,368.54
+200004,371.82,368.61
+200005,371.51,368.68
+200006,371.71,368.79
+200007,369.85,368.84
+200008,368.20,368.95
+200009,366.91,369.12
+200010,366.99,369.25
+200011,368.33,369.39
+200012,369.67,369.52
+200101,370.52,369.63
+200102,371.49,369.80
+200103,372.53,369.96
+200104,373.37,370.09
+200105,373.82,370.28
+200106,373.18,370.40
+200107,371.57,370.55
+200108,369.63,370.67
+200109,368.16,370.77
+200110,368.42,370.89
+200111,369.69,371.00
+200112,371.18,371.13
+200201,372.45,371.29
+200202,373.14,371.43
+200203,373.93,371.55
+200204,375.00,371.68
+200205,375.65,371.83
+200206,375.50,372.03
+200207,374.00,372.23
+200208,371.83,372.41
+200209,370.66,372.62
+200210,370.51,372.80
+200211,372.20,373.00
+200212,373.71,373.21
+200301,374.87,373.42
+200302,375.62,373.62
+200303,376.48,373.84
+200304,377.74,374.06
+200305,378.50,374.30
+200306,378.18,374.53
+200307,376.72,374.75
+200308,374.32,374.96
+200309,373.20,375.17
+200310,373.10,375.39
+200311,374.64,375.59
+200312,375.93,375.78
+200401,377.00,375.95
+200402,377.87,376.14
+200403,378.73,376.33
+200404,380.41,376.55
+200405,380.63,376.73
+200406,379.56,376.84
+200407,377.61,376.92
+200408,376.15,377.07
+200409,374.11,377.14
+200410,374.44,377.26
+200411,375.93,377.36
+200412,377.45,377.49
+200501,378.47,377.61
+200502,379.76,377.77
+200503,381.14,377.97
+200504,382.20,378.12
+200505,382.47,378.27
+200506,382.20,378.49
+200507,380.78,378.76
+200508,378.73,378.97
+200509,376.66,379.19
+200510,376.97,379.40
+200511,378.29,379.59
+200512,379.92,379.80
+200601,381.35,380.04
+200602,382.16,380.24
+200603,382.66,380.37
+200604,384.73,380.58
+200605,384.98,380.79
+200606,384.09,380.94
+200607,382.38,381.08
+200608,380.45,381.22
+200609,378.92,381.41
+200610,379.16,381.59
+200611,380.18,381.75
+200612,381.79,381.90
+200701,382.93,382.04
+200702,383.81,382.17
+200703,384.56,382.33
+200704,386.40,382.47
+200705,386.58,382.60
+200706,386.05,382.77
+200707,384.49,382.94
+200708,382.00,383.07
+200709,380.90,383.24
+200710,381.14,383.40
+200711,382.42,383.59
+200712,383.89,383.76
+200801,385.44,383.97
+200802,385.73,384.13
+200803,385.97,384.25
+200804,387.16,384.31
+200805,388.50,384.47
+200806,387.88,384.63
+200807,386.42,384.79
+200808,384.15,384.97
+200809,383.09,385.15
+200810,382.99,385.30
+200811,384.13,385.45
+200812,385.56,385.59
+200901,386.93,385.71
+200902,387.42,385.85
+200903,388.77,386.08
+200904,389.46,386.28
+200905,390.19,386.42
+200906,389.44,386.55
+200907,387.91,386.67
+200908,385.92,386.82
+200909,384.79,386.96
+200910,384.39,387.08
+200911,386.00,387.23
+200912,387.27,387.37
+201001,388.45,387.50
+201002,389.82,387.70
+201003,391.08,387.89
+201004,392.46,388.14
+201005,392.95,388.37
+201006,392.03,388.59
+201007,390.13,388.77
+201008,388.15,388.96
+201009,386.80,389.13
+201010,387.18,389.36
+201011,388.59,389.58
+201012,389.68,389.78
+201101,391.19,390.00
+201102,391.76,390.17
+201103,392.40,390.28
+201104,393.28,390.34
+201105,394.16,390.45
+201106,393.68,390.58
+201107,392.39,390.77
+201108,390.08,390.93
+201109,389.00,391.12
+201110,388.92,391.26
+201111,390.20,391.39
+201112,391.80,391.57
+201201,393.09,391.73
+201202,393.60,391.88
+201203,394.44,392.05
+201204,396.18,392.30
+201205,396.79,392.51
+201206,395.82,392.69
+201207,394.30,392.85
+201208,392.41,393.05
+201209,391.05,393.22
+201210,391.01,393.39
+</values>
+  </data>
+</mugl></graph><graph id="snowCover2" name="SnowCover">
+      <title>Spring Snow Cover (million km<span baselineShift="superscript">2</span>)</title>
+      <shorttitle>Snow</shorttitle>
+      <description>Snow is melting earlier: each bar shows spring snow cover in the Northern Hemisphere compared to the long-term average.</description>
+
+      <oldtitle>Spring Snow Cover (million km<span baselineShift="superscript">2</span>)</oldtitle>
+      <help>Earlier melting of winter snow has reduced the area of land covered by snow in spring. The graph shows the area covered by snow in the Northern Hemisphere during March and April, shown as 
+	the difference from the 1971-2000 average. </help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-spring-snow-cover</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>Decrease since 1968</title>
+          <value color="0x87b5d2">-??%</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>Rate of decrease per decade</title>
+          <value color="0x87b5d2">-?%</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+		<background color="0xFFFFFF" />
+		<window border="0" margin="0" padding="0" />
+		<legend visible="false" />
+		<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+	  
+		<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2011" min="1966" tickmax="0" tickmin="-4" type="datetime">
+			<labels>
+			  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+			  
+			</labels>
+					<grid />
+			<title anchor="0 5" position="-10 0">Year</title>
+		</horizontalaxis>
 
-    <graph id="ghouse" expanded="false">
-      <title><![CDATA[Annual Greenhouse Gas Index]]></title>
-      <shortname>Greenhouse Gases</shortname>
-      <fullname><![CDATA[Annual Greenhouse Gas Index]]></fullname>
-      <description><![CDATA[The total effect of long-lived heat- trapping gases has gone up by 30% since 1990, the year many nations agreed to cut emissions.]]></description>
-      <alternate><![CDATA[The Annual Greenhouse Gas Index reports the total effect of long-lived heat-trapping gas.]]></alternate>
-      <mugl url="config/ghouse.xml"/>
-      <stats color="#f8a792">
+		<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="4" min="-4" tickmax="0" tickmin="-4" type="number">
+			<labels densityfactor="0.75" format="%.2f" spacing="1000000 100000 10000 1000 100 50 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+			<grid />
+			<title anchor="0 -4" angle="90" position="-15 0">March-April Snow Cover Anomaly (million square km)</title>
+			
+			
+	  </verticalaxis>
+
+	  <plot>
+		<horizontalaxis ref="datetime1">
+		  <variable ref="datetime1" />
+		</horizontalaxis>
+		
+		<verticalaxis ref="col1">
+		  <variable ref="col1" />
+		</verticalaxis>
+			<renderer type="bar">
+				<option name="barwidth" value="0.5Y" />
+				<option name="baroffset" value="1" />
+				<option name="barbase" value="0" />
+				
+				<option min="0" name="fillcolor" value="0x6666FF" />
+				<option max="0" name="fillcolor" value="0x663333" />
+
+				<option name="fillopacity" value="1" />
+			</renderer>
+
+			<datatips format="{0}: {1}">
+		   <variable format="'%y" />
+		   <variable format="%.1f" />
+		</datatips>
+	  </plot>
+
+	  <data>
+		<variables>
+		  <variable column="0" id="datetime1" type="datetime" />
+		  <variable column="1" id="col1" />
+		</variables>
+		<values>1967,2.257261
+1968,-2.951414
+1969,0.348671
+1970,2.081126
+1971,1.817752
+1972,0.385988
+1973,0.050091
+1974,-0.604862
+1975,0.650425
+1976,-0.051941
+1977,-0.299308
+1978,1.170506
+1979,3.329813
+1980,2.330437
+1981,2.331052
+1982,0.410502
+1983,-0.529107
+1984,0.053779
+1985,2.639376
+1986,-0.652173
+1987,1.504727
+1988,-1.344816
+1989,-1.482659
+1990,-3.142418
+1991,-1.774621
+1992,-2.103828
+1993,-1.715481
+1994,-1.209568
+1995,-0.192752
+1996,1.659902
+1997,-0.799419
+1998,0.340144
+1999,-1.119310
+2000,-1.669887
+2001,-0.994841
+2002,-1.888668
+2003,0.457870
+2004,-2.035943
+2005,-0.756835
+2006,-0.508891
+2007,-2.037548
+2008,-2.496925
+2009,-1.424976
+2010,-1.226292
+2011,0.177621
+2012,-1.384804
+</values>
+	  </data>
+	</mugl>
+    </graph><graph id="seaLevel2" name="SeaLevel">
+      <title>Global Average Sea Level (mm)</title>
+      <shorttitle>Sea Level</shorttitle>
+      <description>The ocean&#8217;s surface is rising: water expands as it warms, and melting of ice sheets and glaciers on land adds water to the ocean.</description>
+
+      <oldtitle>Sea Level (mm)</oldtitle>
+      <help>The average height of the ocean&#8217;s surface has increased by 8.25 inches 
+      (210 mm) since 1880. <br /> <br />
+
+	The graph shows mean global sea level measured by tidal gauges since 1880 and by 
+	satellite instruments since 1993.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-sea-level</link>
+      <stats>
         <stat>
-          <title>Increase in heat-trapping since 1990</title>
-          <value>+29%</value>
+          <title>Increase since 1880</title>
+          <value>203mm (8 in)</value>
         </stat>
         <stat>
-          <title>% of AGGI from carbon dioxide alone</title>
-          <value>85%</value>
+          <title>Rate of rise per decade</title>
+          <value>10mm (0.5in)</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+	<background color="0xFFFFFF" />
+	<window border="0" margin="0" padding="0" />
+	<legend visible="false" />
+	<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+  
+	<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2009" min="1880" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+		  <label format="  %n %y" spacing="6M 3M 2M 1M" />
+		</labels>
+		<title anchor="0 5" position="-10 0">Year</title>
+               <grid />
+	</horizontalaxis>
+	<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="100" min="-100" tickmax="0" tickmin="-4" type="number">
+		<labels densityfactor="0.5" format="%.1f" spacing="100 50 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+		 <title anchor="0 -4" angle="90" position="-15 0">Global Sea Level (mm) shown as difference from 1990</title>
+		 
+		 
+                <grid />
+       </verticalaxis>
 
-    <graph id="glacier" expanded="false">
-      <title><![CDATA[Glaciers (meters of water equivalent)]]></title>
-      <shortname>Glaciers</shortname>
-      <fullname><![CDATA[Glacial Mass Balance for 30 Reference Glaciers (meters of water equivalent)]]></fullname>
-      <description><![CDATA[Glaciers are shrinking: the average thickness of 30 well-studied glaciers has decreased more than 40 feet since 1980.]]></description>
-      <mugl url="config/glacier.xml"/>
-      <stats color="#87b5d2">
+  
+  <plot>
+    <horizontalaxis ref="datetime1">
+      <variable ref="datetime1" />
+    </horizontalaxis>
+    <verticalaxis ref="col1">
+	 <variable ref="col1" />
+    </verticalaxis>
+	  <legend visible="false" />
+		<renderer type="fill">
+			<option name="fillcolor" value="0x3299CC" />
+			<option name="fillopacity" value="0.5" />
+		</renderer>
+		    <datatips format="{0}: {1}">
+       <variable format="'%y" />
+       <variable format="%1d" />
+    </datatips>
+   </plot>
+
+  
+
+  
+  <data>
+    <variables>
+      <variable column="0" id="datetime1" type="datetime" />
+      <variable column="1" id="col1" />
+    </variables>
+    <values>1880,-157.1
+1881,-151.5
+1882,-168.3
+1883,-163.0
+1884,-142.1
+1885,-143.6
+1886,-146.0
+1887,-151.6
+1888,-149.5
+1889,-147.9
+1890,-145.9
+1891,-147.6
+1892,-144.4
+1893,-139.7
+1894,-149.4
+1895,-137.6
+1896,-145.2
+1897,-140.0
+1898,-130.6
+1899,-123.1
+1900,-128.5
+1901,-128.9
+1902,-124.3
+1903,-116.3
+1904,-126.6
+1905,-132.1
+1906,-125.3
+1907,-126.7
+1908,-129.2
+1909,-124.7
+1910,-124.8
+1911,-116.5
+1912,-119.6
+1913,-117.8
+1914,-111.5
+1915,-103.6
+1916,-105.5
+1917,-110.0
+1918,-111.6
+1919,-110.0
+1920,-108.7
+1921,-106.6
+1922,-107.5
+1923,-106.3
+1924,-113.6
+1925,-111.6
+1926,-105.1
+1927,-106.2
+1928,-110.1
+1929,-108.7
+1930,-104.7
+1931,-105.1
+1932,-99.4
+1933,-95.1
+1934,-100.5
+1935,-94.9
+1936,-98.8
+1937,-93.1
+1938,-90.5
+1939,-85.3
+1940,-90.6
+1941,-78.4
+1942,-78.4
+1943,-78.4
+1944,-84.8
+1945,-82.0
+1946,-74.5
+1947,-71.4
+1948,-66.6
+1949,-67.9
+1950,-65.7
+1951,-56.2
+1952,-58.8
+1953,-54.4
+1954,-57.3
+1955,-56.4
+1956,-61.5
+1957,-48.1
+1958,-46.7
+1959,-46.4
+1960,-42.7
+1961,-36.5
+1962,-41.7
+1963,-43.3
+1964,-51.2
+1965,-40.0
+1966,-45.4
+1967,-44.0
+1968,-43.2
+1969,-36.4
+1970,-38.3
+1971,-33.1
+1972,-24.0
+1973,-30.0
+1974,-18.1
+1975,-19.7
+1976,-20.7
+1977,-22.4
+1978,-16.0
+1979,-20.9
+1980,-14.9
+1981,-2.5
+1982,-8.3
+1983,0.1
+1984,-0.8
+1985,-11.1
+1986,-10.5
+1987,-9.9
+1988,-5.2
+1989,-0.7
+1990,0.7
+1991,3.8
+1992,6.6
+1993,2.1
+1994,5.5
+1995,10.7
+1996,14.4
+1997,22.6
+1998,15.0
+1999,21.7
+2000,22.6
+2001,27.1
+2002,26.1
+2003,35.1
+2004,34.5
+2005,34.1
+2006,35.6
+2007,39.1
+2008,49.0
+2009,55.5
+</values>
+  </data>
+</mugl></graph><graph id="asi2" name="asi">
+      <title>September Arctic Sea Ice (1000 km<span baselineShift="superscript">2</span>)</title>
+      <shorttitle>Arctic Sea Ice</shorttitle>
+      <description>The area covered by sea ice in the Arctic at the end of summer has shrunk by about 40% since 1979.</description>
+
+      <oldtitle>Arctic Sea Ice (1000 km<span baselineShift="superscript">2</span>)</oldtitle>
+      <help>The area of the Arctic where sea ice remains frozen at the end of summer has 
+      decreased by more than 10% per decade since 1979. <br /><br />
+
+The graph shows the average area with at least 15% sea ice on its surface each September.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-minimum-arctic-sea-ice-extent</link>
+      <stats>
+        <stat>
+          <title>Decrease since 1980</title>
+          <value color="0x87b5d2">45%</value>
+        </stat>
+        <stat>
+          <title>Rate of decrease per decade</title>
+          <value color="0x87b5d2">12%</value>
+        </stat>
+      </stats>
+      <mugl>
+	 <background color="0xFFFFFF" />
+	 <window border="0" margin="0" padding="0" />
+	  <ui eventhandler="saui" />
+	  <legend visible="false" />
+	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2010" min="1979" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+		  <label format="%n %y" spacing="6M 3M 2M 1M" />
+		</labels>
+		<title anchor="0 5" position="-10 0">Year</title>
+		<grid color="0xeeeeee" />
+	  </horizontalaxis>
+	  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="8" min="0" tickmax="0" tickmin="-4">
+		<labels>
+		 <label densityfactor="0.5" format="%1d" spacing="20 10 5 2 1" />
+		 <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+		</labels>
+		 <title anchor="0 -4" angle="90" position="-15 0">Minimum Arctic Sea Ice Extent (millions of square km)</title>
+		 
+		 
+		<grid color="0xeeeeee" />
+	  </verticalaxis>
+
+	<plot>
+		<legend visible="false" />
+		<horizontalaxis ref="x"><variable ref="datetime" /></horizontalaxis>
+		<verticalaxis ref="y"><variable ref="minSQ" /></verticalaxis>
+		
+			<renderer type="fill">
+				<option name="fillcolor" value="0x8fc6ff" />
+				<option name="fillopacity" value="0.2" />
+			</renderer>
+    <datatips format="{0}: {1}">
+       <variable format="'%y" />
+       <variable format="%.1f" />
+    </datatips>
+	</plot>
+
+	
+	  <data>
+		<variables>
+		  <variable column="0" id="datetime" type="datetime" />
+		  <variable column="1" id="minSQ" type="number" />
+		</variables>
+		<values>197909,7.20
+198009,7.85
+198109,7.25
+198209,7.45
+198309,7.52
+198409,7.17
+198509,6.93
+198609,7.54
+198709,7.48
+198809,7.49
+198909,7.04
+199009,6.24
+199109,6.55
+199209,7.55
+199309,6.50
+199409,7.18
+199509,6.13
+199609,7.88
+199709,6.74
+199809,6.56
+199909,6.24
+200009,6.32
+200109,6.75
+200209,5.96
+200309,6.15
+200409,6.05
+200509,5.57
+200609,5.92
+200709,4.30
+200809,4.73
+200909,5.39
+201009,4.93
+201109,4.61
+201209,3.61
+</values>
+	  </data>
+	</mugl></graph><graph id="oceanHeat2" name="OceanHeat">
+      <title>Ocean Heat (10<span baselineShift="superscript">22</span> Joules)</title>
+      <shorttitle>Ocean Heat</shorttitle>
+      <description>Each bar shows heat energy in the top half-mile of the ocean compared to the average from 1955-2006.</description>
+
+
+      <oldtitle>Ocean Heat (10<span baselineShift="superscript">22</span> Joules)</oldtitle>
+      <help>More than 90% of the warming that has occurred on Earth over the past 50 years has occurred in the ocean. The graph shows heat energy in the top 700 meters of the ocean as the difference from the average from 1955-2006.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-ocean-heat-content</link>
+      <stats>
+        <stat>
+          <title>Increase since 1955</title>
+          <value color="0xf8a792">+0.7 C (+1.5&#730; F)</value>
+        </stat>
+        <stat>
+          <title>Rate of increase per decade</title>
+          <value color="0xf8a792">+0.25&#730;F (0.13&#730; C)</value>
+        </stat>
+      </stats>
+      <mugl>
+ <window border="0" margin="0" padding="0" />
+  <ui eventhandler="saui" />
+  <legend visible="false" />
+ <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+
+  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2011" min="1955" tickmax="0" tickmin="-4" type="datetime">
+    <labels>
+      <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+      <label format="%n %y" spacing="6M 3M 2M 1M" />
+    </labels>
+    <title anchor="0 5" position="-5 0">Year</title>
+    <grid color="0xeeeeee" />
+  </horizontalaxis>
+  
+  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="14" min="-8" tickmax="0" tickmin="-4">
+    <labels>
+     <label densityfactor="0.5" format="%1d" spacing="20 10 5 2 1" />
+     <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+    </labels>
+  <title anchor="0 -4" angle="90" position="-15 0">Heat Content Anomaly (10^22 Joules)</title>
+  
+  
+    <grid color="0xeeeeee" />
+  </verticalaxis>
+
+  <plot>
+    <legend label="Yearly average" />
+    <horizontalaxis ref="x"><variable ref="a_datetime" /></horizontalaxis>
+    <verticalaxis ref="y"><variable ref="a_ohc" /></verticalaxis>
+    		<renderer type="bar">
+			<option min="0" name="fillcolor" value="0xFFCC33" />
+			<option max="0" name="fillcolor" value="0x66CCFF" />
+			<option name="barwidth" value="3M" />
+			<option name="baroffset" value="0" />
+			<option name="barbase" value="0" />			
+		</renderer>
+    <datatips format="{0}: {1}">
+       <variable format="'%y" />
+       <variable format="%.2f" />
+    </datatips>
+  </plot>
+  
+  <data>
+    <variables>
+      <variable column="0" id="a_datetime" type="datetime" />
+      <variable column="1" id="a_ohc" type="number" />
+    </variables>
+    <values>195503,-2.870925
+195506,-0.113296
+195509,-1.813742
+195512,-8.006910
+195603,-2.414607
+195606,-4.435912
+195609,-2.657124
+195612,-0.925465
+195703,-4.127088
+195706,-5.581200
+195709,-3.828830
+195712,-4.916498
+195803,-0.855545
+195806,-1.357801
+195809,-0.407367
+195812,-3.510767
+195903,-4.332010
+195906,-0.125907
+195909,-2.352780
+195912,-1.947408
+196003,-2.228227
+196006,-1.150731
+196009,-0.156272
+196012,-2.233837
+196103,-2.596031
+196106,-2.191460
+196109,-0.904096
+196112,-2.766685
+196203,-1.934766
+196206,-3.028738
+196209,1.394506
+196212,-0.732860
+196303,-2.489068
+196306,-1.974558
+196309,-3.881539
+196312,-0.741971
+196403,-2.540313
+196406,-0.999370
+196409,-3.549917
+196412,-5.396096
+196503,-3.407796
+196506,-3.651060
+196509,-2.260303
+196512,-2.920660
+196603,-4.449966
+196606,-3.878906
+196609,-2.689987
+196612,-4.756363
+196703,-4.570507
+196706,-3.258782
+196709,-4.821247
+196712,-4.795085
+196803,-7.423230
+196806,-4.560177
+196809,-3.969141
+196812,-6.957617
+196903,-3.020220
+196906,-4.897943
+196909,-4.474632
+196912,-5.532115
+197003,-7.440534
+197006,-5.943474
+197009,-3.995174
+197012,-3.814011
+197103,-4.959818
+197106,-3.910183
+197109,-3.726991
+197112,-2.473084
+197203,-4.091886
+197206,-2.546359
+197209,-7.319052
+197212,-6.997852
+197303,-6.992775
+197306,-3.276178
+197309,-1.011192
+197312,-2.795871
+197403,-4.533430
+197406,-3.247841
+197409,-2.194062
+197412,-1.125790
+197503,-2.142713
+197506,-2.137060
+197509,-1.747772
+197512,-0.178088
+197603,-2.744268
+197606,-0.842794
+197609,-3.663460
+197612,-3.164245
+197703,0.753891
+197706,1.487581
+197709,-0.297367
+197712,-1.816468
+197803,0.659256
+197806,0.187264
+197809,-1.208797
+197812,0.569558
+197903,0.244650
+197906,-1.640488
+197909,-1.909762
+197912,-0.533093
+198003,1.621881
+198006,1.814072
+198009,-0.058225
+198012,0.985701
+198103,0.466168
+198106,0.533019
+198109,-1.490330
+198112,0.979715
+198203,-1.497088
+198206,-1.675889
+198209,-5.023788
+198212,-1.026936
+198303,-3.626007
+198306,2.378404
+198309,-6.587296
+198312,-3.216581
+198403,2.502578
+198406,-2.455971
+198409,-2.656800
+198412,0.773362
+198503,1.784262
+198506,1.809035
+198509,0.248802
+198512,-3.403238
+198603,-0.832756
+198606,1.703444
+198609,-1.313413
+198612,-3.706943
+198703,-0.207668
+198706,-1.372012
+198709,-2.150298
+198712,0.158271
+198803,0.584576
+198806,0.317025
+198809,1.239289
+198812,2.213718
+198903,1.054723
+198906,2.184729
+198909,0.722344
+198912,-0.347162
+199003,1.214564
+199006,-1.215741
+199009,-1.483075
+199012,2.194279
+199103,2.197050
+199106,3.208981
+199109,2.128791
+199112,3.047323
+199203,0.985577
+199206,1.039451
+199209,0.747103
+199212,-0.484800
+199303,1.901216
+199306,0.015097
+199309,0.072376
+199312,0.746983
+199403,1.721594
+199406,-0.640212
+199409,2.212776
+199412,2.744155
+199503,3.308967
+199506,2.081990
+199509,0.500178
+199512,3.164957
+199603,4.493011
+199606,7.236841
+199609,2.027310
+199612,4.419474
+199703,4.525420
+199706,3.687227
+199709,2.090730
+199712,2.676816
+199803,3.046485
+199806,5.323545
+199809,3.689739
+199812,5.156975
+199903,5.387740
+199906,5.638496
+199909,6.149894
+199912,6.594871
+200003,4.724419
+200006,6.468111
+200009,7.166307
+200012,5.068066
+200103,3.077063
+200106,2.730582
+200109,3.212115
+200112,7.447919
+200203,5.505382
+200206,7.580402
+200209,7.701295
+200212,6.368768
+200303,8.746428
+200306,9.988827
+200309,9.416799
+200312,11.654599
+200403,11.021895
+200406,9.882969
+200409,9.770131
+200412,10.287180
+200503,8.052967
+200506,8.463543
+200509,7.850172
+200512,9.281549
+200603,10.344161
+200606,9.907475
+200609,10.797197
+200612,10.671215
+200703,9.897107
+200706,8.811687
+200709,9.611671
+200712,9.592865
+200803,10.786921
+200806,10.336898
+200809,10.391636
+200812,8.693643
+200903,10.177031
+200906,9.101593
+200909,10.603754
+200912,10.623687
+201003,11.199052
+201006,9.614531
+201009,9.911873
+201012,10.745736
+201103,10.729007
+201106,10.042230
+201109,12.127255
+201112,10.578411
+201203,12.198177
+201206,10.423190
+201209,10.611865
+</values>
+  </data>
+
+</mugl></graph><graph id="sunsEnergy2" name="SunsEnergy">
+      <title>Sun's Energy (W/m<sup>2</sup>)</title>
+      <shorttitle>Sun's Energy</shorttitle>
+      <description>The sun&#8217;s energy rises and falls slightly on an 11-year cycle, with little net change over the last century.</description>
+
+      <oldtitle>Sun's Energy (W/m<span baselineShift="superscript">2</span>)</oldtitle>
+      <help>Energy from the Sun varies slightly on 11-year cycles with little net 
+      change overall. <br /> <br />
+
+	The graph shows the total amount of solar energy arriving at the top of Earth&#8217;s 
+	atmosphere.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-incoming-sunlight</link>
+      <stats>
+        <stat>
+          <title>Change since 1880</title>
+          <value color="0xcccccc">0 W/m<span baselineShift="superscript">2</span></value>
+        </stat>
+        <stat>
+          <title>Average change per decade</title>
+          <value color="0xcccccc">0 W/m<span baselineShift="superscript">2</span></value>
+        </stat>
+      </stats>
+      <mugl>
+	 <window border="0" margin="0" padding="0" />
+	  <legend visible="false" />
+	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+	 <horizontalaxis highlightstyle="labels" id="year" linewidth="0" max="2010" min="1960" tickmax="0" tickmin="-4" type="datetime">
+	  <grid />
+	  <labels>
+		<label format="%Y" spacing="500Y 200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+		<label format="%n %y" spacing="6M 3M 2M 1M" />
+	</labels>
+	  <title anchor="0 5" position="0 0">Year</title>
+	 </horizontalaxis>
+	 <verticalaxis highlightstyle="labels" id="wm2" linewidth="0" max="1370" min="1350" tickmax="0" tickmin="-4" type="number">
+	   <labels densityfactor="0.5" format="%.2f" spacing="50 20 10 5 2 1 0.5 0.10 0.05 0.01" />
+	   <grid />
+	   <title anchor="0 -4" angle="90" position="-20 0">Sun's Energy (watts per square meter)</title>
+	   
+	   
+	 </verticalaxis>
+	 
+	  <plot>
+		<horizontalaxis ref="year">
+		  <variable ref="year" />
+		</horizontalaxis>
+		<verticalaxis ref="wm2">
+		  <variable ref="sunsenergy" />
+		</verticalaxis>
+			<renderer type="fill">
+				<option name="linecolor" value="0x90480f" />
+				<option name="linewidth" value="1.0" />
+				<option name="fillcolor" value="0xed7619" />
+				<option name="fillopacity" value="0.1" />
+			</renderer>
+		<datatips format="{0}: {1}">
+		   <variable format="'%y" />
+		   <variable format="%.1f" />
+		</datatips>
+	  </plot>
+	  <data>
+		<variables>
+		  <variable column="0" id="year" type="datetime" />
+		  <variable column="1" id="sunsenergy" />
+		</variables>
+		<values>1610,1360.6728
+1611,1360.6559
+1612,1361.0538
+1613,1361.1658
+1614,1361.2402
+1615,1360.9573
+1616,1360.5407
+1617,1360.4148
+1618,1360.4042
+1619,1360.4943
+1620,1360.4904
+1621,1360.4866
+1622,1360.4827
+1623,1360.4789
+1624,1360.4380
+1625,1360.6562
+1626,1360.5450
+1627,1360.4677
+1628,1360.4777
+1629,1360.4181
+1630,1360.2687
+1631,1360.2774
+1632,1360.2442
+1633,1360.3417
+1634,1360.2621
+1635,1360.2670
+1636,1360.2339
+1637,1360.2305
+1638,1360.6969
+1639,1360.7500
+1640,1360.3195
+1641,1360.2074
+1642,1360.5265
+1643,1360.3083
+1644,1360.2531
+1645,1360.1713
+1646,1360.1708
+1647,1360.1702
+1648,1360.1683
+1649,1360.1658
+1650,1360.1648
+1651,1360.1642
+1652,1360.1916
+1653,1360.1698
+1654,1360.1617
+1655,1360.1519
+1656,1360.1508
+1657,1360.1458
+1658,1360.1404
+1659,1360.1384
+1660,1360.1518
+1661,1360.1437
+1662,1360.1384
+1663,1360.1384
+1664,1360.1385
+1665,1360.1386
+1666,1360.1386
+1667,1360.1384
+1668,1360.1381
+1669,1360.1381
+1670,1360.1381
+1671,1360.1442
+1672,1360.1407
+1673,1360.1381
+1674,1360.1394
+1675,1360.1379
+1676,1360.1498
+1677,1360.1393
+1678,1360.1387
+1679,1360.1374
+1680,1360.1429
+1681,1360.1374
+1682,1360.1374
+1683,1360.1374
+1684,1360.1470
+1685,1360.1376
+1686,1360.1418
+1687,1360.1385
+1688,1360.1418
+1689,1360.1405
+1690,1360.1402
+1691,1360.1416
+1692,1360.1431
+1693,1360.1436
+1694,1360.1438
+1695,1360.1445
+1696,1360.1437
+1697,1360.1437
+1698,1360.1438
+1699,1360.1443
+1700,1360.1475
+1701,1360.1495
+1702,1360.1525
+1703,1360.1703
+1704,1360.1853
+1705,1360.2011
+1706,1360.1896
+1707,1360.2061
+1708,1360.1917
+1709,1360.1873
+1710,1360.1893
+1711,1360.1998
+1712,1360.2057
+1713,1360.2122
+1714,1360.2282
+1715,1360.2553
+1716,1360.2953
+1717,1360.3553
+1718,1360.2966
+1719,1360.4688
+1720,1360.4118
+1721,1360.4139
+1722,1360.3468
+1723,1360.3096
+1724,1360.3940
+1725,1360.3833
+1726,1360.5533
+1727,1360.5586
+1728,1360.7496
+1729,1360.4738
+1730,1360.7864
+1731,1360.3071
+1732,1360.4349
+1733,1360.3243
+1734,1360.3345
+1735,1360.4645
+1736,1360.6745
+1737,1360.5086
+1738,1360.4629
+1739,1360.7054
+1740,1360.4070
+1741,1360.7366
+1742,1360.4506
+1743,1360.3957
+1744,1360.3396
+1745,1360.3423
+1746,1360.3482
+1747,1360.3564
+1748,1360.7807
+1749,1360.8008
+1750,1360.7644
+1751,1360.5939
+1752,1360.5661
+1753,1360.5479
+1754,1360.4610
+1755,1360.4479
+1756,1360.4760
+1757,1360.5993
+1758,1360.7126
+1759,1360.7760
+1760,1360.7513
+1761,1360.9157
+1762,1360.7773
+1763,1360.7070
+1764,1360.6832
+1765,1360.5324
+1766,1360.5018
+1767,1360.7076
+1768,1360.9605
+1769,1361.1453
+1770,1361.1479
+1771,1361.0414
+1772,1360.9692
+1773,1360.7502
+1774,1360.7121
+1775,1360.5752
+1776,1360.6298
+1777,1360.7915
+1778,1361.0214
+1779,1361.0793
+1780,1360.9012
+1781,1361.0127
+1782,1360.7476
+1783,1360.6543
+1784,1360.5225
+1785,1360.5817
+1786,1360.8941
+1787,1361.0596
+1788,1361.0060
+1789,1360.9854
+1790,1360.8863
+1791,1360.7360
+1792,1360.7220
+1793,1360.7015
+1794,1360.6075
+1795,1360.4904
+1796,1360.4607
+1797,1360.4076
+1798,1360.3826
+1799,1360.3888
+1800,1360.4294
+1801,1360.7016
+1802,1360.5800
+1803,1360.4477
+1804,1360.4516
+1805,1360.4620
+1806,1360.3644
+1807,1360.2969
+1808,1360.2717
+1809,1360.2439
+1810,1360.2353
+1811,1360.2481
+1812,1360.2890
+1813,1360.3376
+1814,1360.3614
+1815,1360.4165
+1816,1360.5125
+1817,1360.4859
+1818,1360.4378
+1819,1360.4227
+1820,1360.3669
+1821,1360.3453
+1822,1360.3691
+1823,1360.3742
+1824,1360.4152
+1825,1360.4886
+1826,1360.5918
+1827,1360.7030
+1828,1360.7905
+1829,1360.8084
+1830,1360.8494
+1831,1360.6844
+1832,1360.5824
+1833,1360.4871
+1834,1360.5225
+1835,1360.7836
+1836,1361.1652
+1837,1361.2386
+1838,1361.0256
+1839,1360.9433
+1840,1360.8266
+1841,1360.6749
+1842,1360.6199
+1843,1360.5496
+1844,1360.5802
+1845,1360.7079
+1846,1360.8062
+1847,1360.9075
+1848,1361.1040
+1849,1361.0950
+1850,1360.8957
+1851,1360.9003
+1852,1360.8206
+1853,1360.7107
+1854,1360.5873
+1855,1360.5087
+1856,1360.5112
+1857,1360.6205
+1858,1360.8134
+1859,1361.0313
+1860,1361.0977
+1861,1360.9882
+1862,1360.8379
+1863,1360.7542
+1864,1360.6919
+1865,1360.6014
+1866,1360.5378
+1867,1360.4856
+1868,1360.6453
+1869,1360.8816
+1870,1361.1203
+1871,1361.0602
+1872,1361.0135
+1873,1360.8125
+1874,1360.6841
+1875,1360.5354
+1876,1360.4852
+1877,1360.4855
+1878,1360.4568
+1879,1360.4792
+1880,1360.6259
+1881,1360.7702
+1882,1360.7935
+1883,1360.8406
+1884,1360.7425
+1885,1360.6329
+1886,1360.4676
+1887,1360.4241
+1888,1360.3887
+1889,1360.3603
+1890,1360.3949
+1891,1360.6463
+1892,1360.7449
+1893,1360.8859
+1894,1360.9812
+1895,1360.8649
+1896,1360.6840
+1897,1360.5385
+1898,1360.5158
+1899,1360.4640
+1900,1360.4333
+1901,1360.3551
+1902,1360.3637
+1903,1360.5738
+1904,1360.8439
+1905,1360.6550
+1906,1360.8514
+1907,1360.7356
+1908,1360.8007
+1909,1360.6901
+1910,1360.5568
+1911,1360.4732
+1912,1360.4269
+1913,1360.4434
+1914,1360.5103
+1915,1360.8149
+1916,1361.0249
+1917,1361.1739
+1918,1361.1355
+1919,1360.9061
+1920,1360.7437
+1921,1360.6386
+1922,1360.5207
+1923,1360.5524
+1924,1360.5840
+1925,1360.7881
+1926,1360.8892
+1927,1361.0727
+1928,1360.9504
+1929,1360.9092
+1930,1360.8914
+1931,1360.7695
+1932,1360.6623
+1933,1360.5415
+1934,1360.6534
+1935,1360.8698
+1936,1361.2592
+1937,1361.1935
+1938,1361.1290
+1939,1361.1127
+1940,1361.0501
+1941,1360.9710
+1942,1360.8678
+1943,1360.7100
+1944,1360.7399
+1945,1361.0069
+1946,1361.1050
+1947,1361.3444
+1948,1361.4749
+1949,1361.3814
+1950,1361.1390
+1951,1360.9024
+1952,1360.8935
+1953,1360.7543
+1954,1360.7823
+1955,1360.9032
+1956,1361.4368
+1957,1361.7940
+1958,1361.7587
+1959,1361.5087
+1960,1361.4026
+1961,1361.0458
+1962,1360.8743
+1963,1360.8222
+1964,1360.8235
+1965,1360.8600
+1966,1361.0437
+1967,1361.2402
+1968,1361.2903
+1969,1361.3735
+1970,1361.3685
+1971,1361.0839
+1972,1361.1784
+1973,1360.9250
+1974,1360.8530
+1975,1360.6604
+1976,1360.7712
+1977,1360.9590
+1978,1361.4006
+1979,1361.7607
+1980,1361.7741
+1981,1361.8210
+1982,1361.4118
+1983,1361.3251
+1984,1360.9362
+1985,1360.7675
+1986,1360.7638
+1987,1360.9158
+1988,1361.2085
+1989,1361.7738
+1990,1361.6792
+1991,1361.5716
+1992,1361.4280
+1993,1361.1545
+1994,1360.9230
+1995,1360.8255
+1996,1360.7380
+1997,1360.8658
+1998,1361.2280
+1999,1361.5110
+2000,1361.7913
+2001,1361.7281
+2002,1361.8066
+2003,1361.3080
+2004,1361.1849
+2005,1361.0062
+2006,1360.9401
+2007,1360.8497
+2008,1360.8225
+2009,1360.8416
+2010,1361.0830
+2011,1361.3473
+</values>
+	  </data>
+	</mugl></graph><graph id="glacier2" name="Glacier">
+      <title>Glaciers (meters of water equivalent)</title>
+      <shorttitle>Glaciers</shorttitle>
+      <description>Glaciers are shrinking: average thickness of 30 well-studied glaciers has decreased more than 40 feet since 1980.</description>
+
+      <oldtitle>Glaciers (meters of water equivalent)</oldtitle>
+      <help>Since 1980, a representative set of well studied glaciers has lost the equivalent of 40 feet (12.5 meters) of water on average. The graph shows the average mass balance of 30 reference glaciers around the world.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-glacier-mass-balance</link>
+      <stats>
         <stat>
           <title>Melt water lost since 1980</title>
-          <value>40 feet (12.5m)</value>
+          <value color="0x87b5d2">(12.5m) 40 feet</value>
         </stat>
         <stat>
           <title>Average rate of water loss</title>
-          <value>26 in. (0.5m) per year</value>
+          <value color="0x87b5d2">(0.5m) 26 in. per year</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+			<background color="0xFFFFFF" />
+			<window border="0" margin="0" padding="0" />
+			<legend visible="false" />
+			<plotarea marginbottom="50" marginleft="55" marginright="25" margintop="10" />
+		  
+			<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2010" min="1975" tickmax="0" tickmin="-4" type="datetime">
+				<labels>
+				  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+				  
+				</labels>
+				<grid />
+				<title anchor="0 5" position="-10 0">Year</title>
+			</horizontalaxis>
 
-    <graph id="sea" expanded="false">
-      <title><![CDATA[Sea Level (mm)]]></title>
-      <shortname>Sea Level</shortname>
-      <fullname><![CDATA[Global Average Sea Level (mm) Difference from 1990]]></fullname>
-      <description><![CDATA[Global sea level is rising: water expands as it warms, and melting of land-based ice adds water to the ocean.]]></description>
-      <mugl url="config/sea.xml"/>
-      <stats color="#f8a792">
+			<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="5" min="-15" tickmax="0" tickmin="-4" type="number">
+				<labels densityfactor="1.5" format="%.2f" spacing="100 50 20 10 5 2 1 0.5 0.3 0.24 0.2 0.1 0.05 0.02 0.01" />
+				<grid />		
+				<title anchor="0 -4" angle="90" position="-15 0">Cumulative Glacier Mass Balance (meters of water equivalent)</title>
+				<pan max="50" min="-50" />
+		  </verticalaxis>
+
+		<plot>
+			<horizontalaxis ref="datetime1">
+			  <variable ref="datetime1" />
+			</horizontalaxis>
+			
+			<verticalaxis ref="col1">
+			  <variable ref="col1" />
+			</verticalaxis>
+			<legend visible="false" />
+				<renderer type="fill">
+
+                    <option name="fillcolor" value="0x5bc69a" />
+					<option name="fillopacity" value="0.2" />
+				</renderer>
+ <datatips format="{0}: {1}">
+       <variable format="%Y" />
+       <variable format="%.2f" />
+    </datatips>
+		  </plot>
+
+
+		  <data>
+			<variables>
+			  <variable column="0" id="datetime1" type="datetime" />
+			  <variable column="1" id="col1" />
+			</variables>
+			<values>1979,0
+1980,-0.1600
+1981,-0.2200
+1982,-0.7000
+1983,-0.5800
+1984,-0.6300
+1985,-1.0100
+1986,-1.5600
+1987,-1.4900
+1988,-2.0100
+1989,-1.9800
+1990,-2.2300
+1991,-2.7600
+1992,-2.8800
+1993,-2.8900
+1994,-3.4100
+1995,-3.5700
+1996,-4.0100
+1997,-4.5600
+1998,-5.3300
+1999,-5.8000
+2000,-5.8500
+2001,-6.0100
+2002,-6.7000
+2003,-7.9400
+2004,-8.6900
+2005,-9.2500
+2006,-10.5050
+2007,-11.1780
+2008,-11.5670
+</values>
+		  </data>
+		</mugl></graph><graph id="totalGreenhouseGas2" name="TotalGreenhouseGas">
+      <title>Annual Greenhouse Gas Index</title>
+      <shorttitle>Heat-Trapping Gases</shorttitle>
+      <description>The total warming effect of long-lived heat-trapping gases has gone up by 30% since 1990, the year many nations agreed to cut emissions.</description>
+
+      <oldtitle>Annual Greenhouse Gas Index</oldtitle>
+      <help>The effect of heat-trapping gases in the atmosphere has increased by 27.5% since 1990, the 
+      year many nations agreed to limit emissions under the Kyoto Protocol. The graph shows total radiative forcing from long-lived greenhouse gases as a percent change from 1990.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-annual-greenhouse-gas-index-2</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>Increase in heat-trapping since 1990</title>
+          <value color="0xf8a792">+29%</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>% of AGGI from carbon dioxide alone</title>
+          <value color="0xf8a792">85%</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+	<background color="0xFFFFFF" />
+	<window border="0" margin="0" padding="0" />
+	<legend visible="false" />
+	<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+  
+	<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2009" min="1980" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+		  
+		</labels>
+		<grid />
+		<title anchor="0 5" position="-10 0">Year</title>
+	</horizontalaxis>
 
-    <graph id="snow" expanded="false">
-      <title><![CDATA[Snow (million km<sup>2</sup>)]]></title>
-      <shortname>Snow</shortname>
-      <fullname><![CDATA[March-April Northern Hemisphere Snow Cover Extent (million km^2)]]></fullname>
-      <description><![CDATA[Snow is melting earlier in the spring: each bar shows March-April snowcover in the Northern Hemisphere compared to the average for 1971-2000.]]></description>
-      <alternate><![CDATA[Snow is melting earlier in the spring: each bar shows March-April snow cover in the Northern Hemisphere compared to the long- term average.]]></alternate>
-      <mugl url="config/snow.xml"/>
-      <stats color="#f8a792">
+	<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="1.600" min="0.600" tickmax="0" tickmin="-4" type="number">
+		<labels densityfactor="1.0" format="%.2f" spacing="100 50 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+		<grid />		
+		 <title anchor="0 -4" angle="90" position="-15 -10">Annual Greenhouse Gas Index (AGGI)</title>
+		 
+		 
+  </verticalaxis>
+
+  <plot>
+    <horizontalaxis ref="datetime1">
+      <variable ref="datetime1" />
+    </horizontalaxis>
+    <verticalaxis ref="col1">
+      <variable ref="col1" />
+    </verticalaxis>
+		<renderer type="fill">
+			<option name="fillcolor" value="0x7e2b18" />
+			<option name="fillopacity" value="0.1" />
+			<option name="linecolor" value="0x41160c" />
+			<option name="linewidth" value="1" />		
+		</renderer>
+	<datatips format="{0}: {1}">
+       <variable format="'%y" />
+       <variable format="%.3f" />
+    </datatips>
+  </plot>
+
+
+  <data>
+    <variables>
+      <variable column="0" id="datetime1" type="datetime" />
+      <variable column="1" id="col1" />
+    </variables>
+    <values>1979,0.79
+1980,0.81
+1981,0.83
+1982,0.84
+1983,0.86
+1984,0.88
+1985,0.90
+1986,0.92
+1987,0.94
+1988,0.96
+1989,0.98
+1990,1.00
+1991,1.02
+1992,1.03
+1993,1.03
+1994,1.05
+1995,1.06
+1996,1.08
+1997,1.09
+1998,1.11
+1999,1.13
+2000,1.14
+2001,1.15
+2002,1.17
+2003,1.19
+2004,1.20
+2005,1.21
+2006,1.23
+2007,1.24
+2008,1.26
+2009,1.27
+2010,1.29
+</values>
+  </data>
+</mugl></graph></tab><tab id="climateVariability2">
+    <title>Climate Variability</title>
+    <timeslider />
+    <mugloverrides>
+      <element name="horizontalaxis">
+        <attribute name="min" value="2010" />
+        <attribute name="max" value="2013" />
+        <element name="binding">
+          <attribute name="id" value="Tab2TimeBinding" />
+        </element>
+        <element name="pan">
+          <attribute name="min" value="1950" />
+          <attribute name="max" value="2015" />
+        </element>
+        <element name="zoom">
+          <attribute name="min" value="6M" />
+        </element>
+      </element>
+    </mugloverrides>
+    <graph id="oni2" name="oni">
+      <title>El Ni&#241;o / La Ni&#241;a (Oceanic Ni&#241;o Index)</title>
+      <shorttitle>El Ni&#241;o / La Ni&#241;a</shorttitle>
+      <description>Average sea surface temperature in the Eastern Pacific Ocean indicates El Ni&#241;o (yellow), La Ni&#241;a (blue), or neutral (gray) conditions</description>
+
+      <oldtitle>El Ni&#241;o / La Ni&#241;a Index</oldtitle>
+      <help>Departures from average sea surface temperature in the eastern Pacific Ocean indicate the status of the El Ni&#241;o &#8211; 
+      Southern Oscillation cycle. Values greater than 0.5 indicate El Ni&#241;o conditions. 
+      Values less than -0.5 indicate La Ni&#241;a conditions. Values between 0.5 and -0.5 indicate neutral conditions. 
+</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-oceanic-nino-index</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>?? ??? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>????? ???? ?? ? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+	 <window border="0" margin="0" padding="0" />
+	  <ui eventhandler="saui" />
+	  <legend visible="false" />
+	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-    <graph id="sun" expanded="false">
-      <title><![CDATA[Sun's Energy (W/m<sup>2</sup>)]]></title>
-      <mugl url="config/sun.xml"/>
-      <shortname>Sun's Energy</shortname>
-      <fullname><![CDATA[Solar Irradiance (W/m<sup>2</sup>)]]></fullname>
-      <description><![CDATA[Energy from the sun rises and falls slightly on an 11-year cycle, with little net change over the last century.]]></description>
-      <stats color="#f8a792">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2010" min="2008" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
+		  <label format="%n %y" spacing="6M 3M 2M 1M" />
+		</labels>
+		<title anchor="0 5" position="-10 0">Year</title>
+		<grid color="0xeeeeee" />
+	  </horizontalaxis>
+	  
+	  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="4" min="-4" tickmax="0" tickmin="-4">
+		<labels>
+		 <label densityfactor="0.4" format="%1d" spacing="20 10 5 2 1" />
+		 <label densityfactor="0.4" format="%.1f" spacing="0.5 0.2 0.1" />
+		</labels>
+		 <title anchor="0 -4" angle="90" position="-15 0">Oceanic Ni&#241;o Index (C)</title>
+		 
+		 
+		<grid color="0xeeeeee" />
+	  </verticalaxis>
+	  
+	  <plot>
+		<legend visible="false" />
+		<verticalaxis ref="y"><constant value="0" /></verticalaxis>
+		<renderer type="line">
+		  <option name="linecolor" value="0x999999" />
+		  <option name="linewidth" value="1" />
+		</renderer>
+	  </plot>
+
+	  <plot>
+		<legend label="Yearly average" />
+		<horizontalaxis ref="x"><variable ref="datetime" /></horizontalaxis>
+		<verticalaxis ref="y"><variable ref="minSQ" /></verticalaxis>
+			<renderer type="bar">
+				
+				<option min="0.5" name="fillcolor" value="0xFFCC33" />
+				<option max="0.5" min="0.0" name="fillcolor" value="0x888888" />
+				<option max="0.0" min="-0.5" name="fillcolor" value="0x888888" />
+				<option max="-0.5" name="fillcolor" value="0x66CCFF" />
+							
+				<option name="linecolor" value="0x000000" />
+				
+				<option name="barwidth" value="1M" />
+				<option name="baroffset" value="0" />
+				<option name="barbase" value="0" />
+			</renderer>
+			<datatips format="{0}: {1}">
+			  <variable format="%n '%y" />
+			  <variable format="%.1f" />
+			</datatips>
+
+	  </plot>
+	  <data>
+		<variables>
+		  <variable column="0" id="datetime" type="datetime" />
+		  <variable column="1" id="minSQ" type="number" />
+		</variables>
+		<values>195001,-1.700
+195002,-1.500
+195003,-1.300
+195004,-1.400
+195005,-1.300
+195006,-1.100
+195007,-0.800
+195008,-0.800
+195009,-0.800
+195010,-0.900
+195011,-0.900
+195012,-1.000
+195101,-1.000
+195102,-0.900
+195103,-0.600
+195104,-0.300
+195105,-0.200
+195106,0.200
+195107,0.400
+195108,0.700
+195109,0.700
+195110,0.800
+195111,0.700
+195112,0.600
+195201,0.300
+195202,0.100
+195203,0.100
+195204,0.200
+195205,0.100
+195206,-0.100
+195207,-0.300
+195208,-0.300
+195209,-0.200
+195210,-0.200
+195211,-0.100
+195212,0.000
+195301,0.200
+195302,0.400
+195303,0.500
+195304,0.500
+195305,0.500
+195306,0.500
+195307,0.400
+195308,0.400
+195309,0.400
+195310,0.400
+195311,0.400
+195312,0.400
+195401,0.500
+195402,0.300
+195403,-0.100
+195404,-0.500
+195405,-0.700
+195406,-0.700
+195407,-0.800
+195408,-1.000
+195409,-1.200
+195410,-1.100
+195411,-1.100
+195412,-1.100
+195501,-1.000
+195502,-0.900
+195503,-0.900
+195504,-1.000
+195505,-1.000
+195506,-1.000
+195507,-1.000
+195508,-1.000
+195509,-1.400
+195510,-1.800
+195511,-2.000
+195512,-1.900
+195601,-1.300
+195602,-0.900
+195603,-0.700
+195604,-0.600
+195605,-0.600
+195606,-0.600
+195607,-0.700
+195608,-0.800
+195609,-0.800
+195610,-0.900
+195611,-0.900
+195612,-0.800
+195701,-0.500
+195702,-0.100
+195703,0.300
+195704,0.600
+195705,0.700
+195706,0.900
+195707,0.900
+195708,0.900
+195709,0.900
+195710,1.000
+195711,1.200
+195712,1.500
+195801,1.700
+195802,1.500
+195803,1.200
+195804,0.800
+195805,0.600
+195806,0.500
+195807,0.300
+195808,0.100
+195809,0.000
+195810,0.000
+195811,0.200
+195812,0.400
+195901,0.400
+195902,0.500
+195903,0.400
+195904,0.200
+195905,0.000
+195906,-0.200
+195907,-0.400
+195908,-0.500
+195909,-0.400
+195910,-0.300
+195911,-0.200
+195912,-0.200
+196001,-0.300
+196002,-0.300
+196003,-0.300
+196004,-0.200
+196005,-0.200
+196006,-0.200
+196007,-0.100
+196008,0.000
+196009,-0.100
+196010,-0.200
+196011,-0.200
+196012,-0.200
+196101,-0.200
+196102,-0.200
+196103,-0.200
+196104,-0.100
+196105,0.100
+196106,0.200
+196107,0.000
+196108,-0.300
+196109,-0.600
+196110,-0.600
+196111,-0.500
+196112,-0.400
+196201,-0.400
+196202,-0.400
+196203,-0.400
+196204,-0.500
+196205,-0.400
+196206,-0.400
+196207,-0.300
+196208,-0.300
+196209,-0.500
+196210,-0.600
+196211,-0.700
+196212,-0.700
+196301,-0.600
+196302,-0.300
+196303,0.000
+196304,0.100
+196305,0.100
+196306,0.300
+196307,0.600
+196308,0.800
+196309,0.900
+196310,0.900
+196311,1.000
+196312,1.000
+196401,0.800
+196402,0.400
+196403,-0.100
+196404,-0.500
+196405,-0.800
+196406,-0.800
+196407,-0.900
+196408,-1.000
+196409,-1.100
+196410,-1.200
+196411,-1.200
+196412,-1.000
+196501,-0.800
+196502,-0.400
+196503,-0.200
+196504,0.000
+196505,0.300
+196506,0.600
+196507,1.000
+196508,1.200
+196509,1.400
+196510,1.500
+196511,1.600
+196512,1.500
+196601,1.200
+196602,1.000
+196603,0.800
+196604,0.500
+196605,0.200
+196606,0.200
+196607,0.200
+196608,0.000
+196609,-0.200
+196610,-0.200
+196611,-0.300
+196612,-0.300
+196701,-0.400
+196702,-0.400
+196703,-0.600
+196704,-0.500
+196705,-0.300
+196706,0.000
+196707,0.000
+196708,-0.200
+196709,-0.400
+196710,-0.500
+196711,-0.400
+196712,-0.500
+196801,-0.700
+196802,-0.900
+196803,-0.800
+196804,-0.700
+196805,-0.300
+196806,0.000
+196807,0.300
+196808,0.400
+196809,0.300
+196810,0.400
+196811,0.700
+196812,0.900
+196901,1.000
+196902,1.000
+196903,0.900
+196904,0.700
+196905,0.600
+196906,0.500
+196907,0.400
+196908,0.400
+196909,0.600
+196910,0.700
+196911,0.800
+196912,0.700
+197001,0.500
+197002,0.300
+197003,0.200
+197004,0.100
+197005,0.000
+197006,-0.300
+197007,-0.600
+197008,-0.800
+197009,-0.900
+197010,-0.800
+197011,-0.900
+197012,-1.100
+197101,-1.300
+197102,-1.300
+197103,-1.100
+197104,-0.900
+197105,-0.800
+197106,-0.800
+197107,-0.800
+197108,-0.800
+197109,-0.800
+197110,-0.900
+197111,-1.000
+197112,-0.900
+197201,-0.700
+197202,-0.400
+197203,0.000
+197204,0.200
+197205,0.500
+197206,0.800
+197207,1.000
+197208,1.300
+197209,1.500
+197210,1.800
+197211,2.000
+197212,2.100
+197301,1.800
+197302,1.200
+197303,0.500
+197304,-0.100
+197305,-0.600
+197306,-0.900
+197307,-1.100
+197308,-1.300
+197309,-1.400
+197310,-1.700
+197311,-2.000
+197312,-2.100
+197401,-1.900
+197402,-1.700
+197403,-1.300
+197404,-1.100
+197405,-0.900
+197406,-0.800
+197407,-0.600
+197408,-0.500
+197409,-0.500
+197410,-0.700
+197411,-0.900
+197412,-0.700
+197501,-0.600
+197502,-0.600
+197503,-0.700
+197504,-0.800
+197505,-0.900
+197506,-1.100
+197507,-1.200
+197508,-1.300
+197509,-1.500
+197510,-1.600
+197511,-1.700
+197512,-1.700
+197601,-1.600
+197602,-1.200
+197603,-0.800
+197604,-0.600
+197605,-0.500
+197606,-0.200
+197607,0.100
+197608,0.300
+197609,0.500
+197610,0.700
+197611,0.800
+197612,0.700
+197701,0.600
+197702,0.500
+197703,0.200
+197704,0.200
+197705,0.200
+197706,0.400
+197707,0.400
+197708,0.400
+197709,0.500
+197710,0.600
+197711,0.700
+197712,0.700
+197801,0.700
+197802,0.400
+197803,0.000
+197804,-0.300
+197805,-0.400
+197806,-0.400
+197807,-0.400
+197808,-0.400
+197809,-0.400
+197810,-0.300
+197811,-0.200
+197812,-0.100
+197901,-0.100
+197902,0.000
+197903,0.100
+197904,0.100
+197905,0.100
+197906,-0.100
+197907,0.000
+197908,0.100
+197909,0.300
+197910,0.400
+197911,0.500
+197912,0.500
+198001,0.500
+198002,0.300
+198003,0.200
+198004,0.200
+198005,0.300
+198006,0.300
+198007,0.200
+198008,0.000
+198009,-0.100
+198010,-0.100
+198011,0.000
+198012,-0.100
+198101,-0.300
+198102,-0.500
+198103,-0.500
+198104,-0.400
+198105,-0.300
+198106,-0.300
+198107,-0.400
+198108,-0.400
+198109,-0.300
+198110,-0.200
+198111,-0.100
+198112,-0.100
+198201,0.000
+198202,0.100
+198203,0.100
+198204,0.300
+198205,0.600
+198206,0.700
+198207,0.700
+198208,1.000
+198209,1.500
+198210,1.900
+198211,2.200
+198212,2.300
+198301,2.300
+198302,2.000
+198303,1.500
+198304,1.200
+198305,1.000
+198306,0.600
+198307,0.200
+198308,-0.200
+198309,-0.600
+198310,-0.800
+198311,-0.900
+198312,-0.700
+198401,-0.400
+198402,-0.200
+198403,-0.200
+198404,-0.300
+198405,-0.500
+198406,-0.400
+198407,-0.300
+198408,-0.200
+198409,-0.300
+198410,-0.600
+198411,-0.900
+198412,-1.100
+198501,-0.900
+198502,-0.800
+198503,-0.700
+198504,-0.700
+198505,-0.700
+198506,-0.600
+198507,-0.500
+198508,-0.500
+198509,-0.500
+198510,-0.400
+198511,-0.300
+198512,-0.400
+198601,-0.500
+198602,-0.400
+198603,-0.200
+198604,-0.200
+198605,-0.100
+198606,0.000
+198607,0.300
+198608,0.500
+198609,0.700
+198610,0.900
+198611,1.100
+198612,1.200
+198701,1.200
+198702,1.300
+198703,1.200
+198704,1.100
+198705,1.000
+198706,1.200
+198707,1.400
+198708,1.600
+198709,1.600
+198710,1.500
+198711,1.300
+198712,1.100
+198801,0.700
+198802,0.500
+198803,0.100
+198804,-0.200
+198805,-0.700
+198806,-1.200
+198807,-1.300
+198808,-1.200
+198809,-1.300
+198810,-1.600
+198811,-1.900
+198812,-1.900
+198901,-1.700
+198902,-1.500
+198903,-1.100
+198904,-0.800
+198905,-0.600
+198906,-0.400
+198907,-0.300
+198908,-0.300
+198909,-0.300
+198910,-0.300
+198911,-0.200
+198912,-0.100
+199001,0.100
+199002,0.200
+199003,0.200
+199004,0.200
+199005,0.200
+199006,0.200
+199007,0.300
+199008,0.300
+199009,0.300
+199010,0.300
+199011,0.300
+199012,0.400
+199101,0.400
+199102,0.300
+199103,0.300
+199104,0.400
+199105,0.600
+199106,0.800
+199107,1.000
+199108,0.900
+199109,0.900
+199110,1.000
+199111,1.400
+199112,1.600
+199201,1.800
+199202,1.600
+199203,1.500
+199204,1.400
+199205,1.200
+199206,0.800
+199207,0.500
+199208,0.200
+199209,0.000
+199210,-0.100
+199211,0.000
+199212,0.200
+199301,0.300
+199302,0.400
+199303,0.600
+199304,0.700
+199305,0.800
+199306,0.700
+199307,0.400
+199308,0.400
+199309,0.400
+199310,0.400
+199311,0.300
+199312,0.200
+199401,0.200
+199402,0.200
+199403,0.300
+199404,0.400
+199405,0.500
+199406,0.500
+199407,0.600
+199408,0.600
+199409,0.700
+199410,0.900
+199411,1.200
+199412,1.300
+199501,1.200
+199502,0.900
+199503,0.700
+199504,0.400
+199505,0.300
+199506,0.200
+199507,0.000
+199508,-0.200
+199509,-0.500
+199510,-0.600
+199511,-0.700
+199512,-0.700
+199601,-0.700
+199602,-0.700
+199603,-0.500
+199604,-0.300
+199605,-0.100
+199606,-0.100
+199607,0.000
+199608,-0.100
+199609,-0.100
+199610,-0.200
+199611,-0.300
+199612,-0.400
+199701,-0.400
+199702,-0.300
+199703,0.000
+199704,0.400
+199705,0.800
+199706,1.300
+199707,1.700
+199708,2.000
+199709,2.200
+199710,2.400
+199711,2.500
+199712,2.500
+199801,2.300
+199802,1.900
+199803,1.500
+199804,1.000
+199805,0.500
+199806,0.000
+199807,-0.500
+199808,-0.800
+199809,-1.000
+199810,-1.100
+199811,-1.300
+199812,-1.400
+199901,-1.400
+199902,-1.200
+199903,-0.900
+199904,-0.800
+199905,-0.800
+199906,-0.800
+199907,-0.900
+199908,-0.900
+199909,-1.000
+199910,-1.100
+199911,-1.300
+199912,-1.600
+200001,-1.600
+200002,-1.400
+200003,-1.000
+200004,-0.800
+200005,-0.600
+200006,-0.500
+200007,-0.400
+200008,-0.400
+200009,-0.400
+200010,-0.500
+200011,-0.600
+200012,-0.700
+200101,-0.600
+200102,-0.500
+200103,-0.400
+200104,-0.200
+200105,-0.100
+200106,0.100
+200107,0.200
+200108,0.200
+200109,0.100
+200110,0.000
+200111,-0.100
+200112,-0.100
+200201,-0.100
+200202,0.100
+200203,0.200
+200204,0.400
+200205,0.700
+200206,0.800
+200207,0.900
+200208,1.000
+200209,1.100
+200210,1.300
+200211,1.500
+200212,1.400
+200301,1.200
+200302,0.900
+200303,0.500
+200304,0.100
+200305,-0.100
+200306,0.100
+200307,0.400
+200308,0.500
+200309,0.600
+200310,0.500
+200311,0.600
+200312,0.400
+200401,0.400
+200402,0.300
+200403,0.200
+200404,0.200
+200405,0.300
+200406,0.500
+200407,0.700
+200408,0.800
+200409,0.900
+200410,0.800
+200411,0.800
+200412,0.800
+200501,0.700
+200502,0.500
+200503,0.400
+200504,0.400
+200505,0.400
+200506,0.400
+200507,0.400
+200508,0.300
+200509,0.200
+200510,-0.100
+200511,-0.400
+200512,-0.700
+200601,-0.700
+200602,-0.600
+200603,-0.400
+200604,-0.100
+200605,0.100
+200606,0.200
+200607,0.300
+200608,0.500
+200609,0.600
+200610,0.900
+200611,1.100
+200612,1.100
+200701,0.800
+200702,0.400
+200703,0.100
+200704,-0.100
+200705,-0.100
+200706,-0.100
+200707,-0.100
+200708,-0.400
+200709,-0.700
+200710,-1.000
+200711,-1.100
+200712,-1.300
+200801,-1.400
+200802,-1.400
+200803,-1.100
+200804,-0.800
+200805,-0.600
+200806,-0.400
+200807,-0.100
+200808,0.000
+200809,0.000
+200810,0.000
+200811,-0.300
+200812,-0.600
+200901,-0.800
+200902,-0.700
+200903,-0.500
+200904,-0.100
+200905,0.200
+200906,0.600
+200907,0.700
+200908,0.800
+200909,0.900
+200910,1.200
+200911,1.500
+200912,1.800
+201001,1.700
+201002,1.500
+201003,1.200
+201004,0.800
+201005,0.300
+201006,-0.200
+201007,-0.600
+201008,-1.000
+201009,-1.300
+201010,-1.400
+201011,-1.400
+201012,-1.400
+201101,-1.300
+201102,-1.200
+201103,-0.900
+201104,-0.600
+201105,-0.200
+201106,0.000
+201107,0.000
+201108,-0.200
+201109,-0.400
+201110,-0.700
+201111,-0.800
+201112,-0.900
+201201,-0.900
+201202,-0.700
+201203,-0.500
+201204,-0.300
+201205,-0.100
+201206,0.000
+201207,0.100
+201208,0.300
+201209,0.400
+</values>
+	  </data>
+	</mugl></graph><graph id="aoi2" name="aoi">
+      <title>Arctic Oscillation Index</title>
+      <shorttitle>Arctic Oscillation</shorttitle>
+      <description>When this index is negative, air pressure patterns are more likely to steer severe winter storms to the eastern U.S.</description>
+
+      <oldtitle>Arctic Oscillation Index</oldtitle>
+      <help>Departures from average air pressure over the Arctic region and the North Pacific and Atlantic Oceans 
+      affect the north-to-south location of the storm-steering, 
+      mid-latitude jet stream. Negative values are associated with severe winter storms in the eastern U.S.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-arctic-oscillation</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>?? ??? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>????? ???? ?? ? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+	 <window border="0" margin="0" padding="0" />
+	  <ui eventhandler="saui" />
+	  <legend visible="false" />
+	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-    <graph id="asi" expanded="false">
-      <title><![CDATA[Arctic Sea Ice (1000 km<sup>2</sup>)]]></title>
-      <shortname>Arctic Sea Ice</shortname>
-      <fullname><![CDATA[Arctic Sea Ice Minimum Annual Extent (1000 km^2)]]></fullname>
-      <description><![CDATA[The area of the Arctic covered by sea ice at the end of summer has shrunk by about 40% since 1979.]]></description>
-      <mugl url="config/asi.xml"/>
-      <stats color="#f8a792">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
+		  <label format="%n %y" spacing="6M 3M 2M 1M" />
+		</labels>
+		<title anchor="0 5" position="-15 0">Month/Year</title>
+		<grid color="0xeeeeee" />
+	  </horizontalaxis>
+	  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="4.5" min="-4.5" tickmax="0" tickmin="-4">
+		<labels>
+		 <label densityfactor="0.5" format="%1d" spacing="20 10 5 2 1" />
+		 <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+		</labels>
+		<title anchor="0 -4" angle="90" position="-15 0">Arctic Oscillation Index</title>
+		
+		
+		<grid color="0xeeeeee" />
+	  </verticalaxis>
+
+	  <plot>
+		<legend visible="false" />
+		<verticalaxis ref="y"><constant value="0" /></verticalaxis>
+		<renderer type="line">
+		  <option name="linecolor" value="0x999999" />
+		  <option name="linewidth" value="1" />
+		</renderer>
+	  </plot>
+
+	  <plot>
+		<legend label="Yearly average" />
+		<horizontalaxis ref="x"><variable ref="datetime" /></horizontalaxis>
+		<verticalaxis ref="y"><variable ref="number" /></verticalaxis>
+			<renderer type="bar">
+
+				
+				<option min="0.0" name="fillcolor" value="0x23238E" />
+				<option max="0.0" name="fillcolor" value="0x94BDE9" />
+				<option name="linecolor" value="0x000000" />
+				
+				<option name="barwidth" value="1M" />
+				<option name="baroffset" value="0" />
+				<option name="barbase" value="0" />
+			</renderer>
+		<datatips format="{0}: {1}">
+				 <variable format="%n '%y" />
+				<variable format="%.2f" />
+			</datatips>
+	  </plot>
+
+	  <data>
+
+		<variables>
+		  <variable column="0" id="datetime" type="datetime" />
+		  <variable column="1" id="number" type="number" />
+		</variables>
+		<values>195002,0.186
+195003,0.391
+195004,0.206
+195005,0.389
+195006,-0.064
+195007,-0.371
+195008,-0.432
+195009,-0.291
+195010,-0.179
+195011,-0.941
+195012,-0.843
+195101,-0.804
+195102,-0.806
+195103,-1.037
+195104,-1.191
+195105,-0.852
+195106,-0.564
+195107,-0.402
+195108,-0.368
+195109,-0.469
+195110,-0.367
+195111,0.568
+195112,0.762
+195201,0.203
+195202,-1.079
+195203,-1.022
+195204,-0.698
+195205,-0.225
+195206,-0.277
+195207,-0.029
+195208,-0.010
+195209,-0.283
+195210,-0.904
+195211,-1.385
+195212,-1.585
+195301,-1.037
+195302,-0.072
+195303,-0.146
+195304,-0.250
+195305,-0.598
+195306,-0.069
+195307,0.147
+195308,0.360
+195309,0.184
+195310,0.274
+195311,0.245
+195312,0.260
+195401,0.082
+195402,0.049
+195403,0.269
+195404,-0.223
+195405,-0.471
+195406,-0.528
+195407,-0.016
+195408,0.173
+195409,0.231
+195410,0.162
+195411,0.246
+195412,-0.313
+195501,-0.717
+195502,-1.424
+195503,-0.972
+195504,-0.377
+195505,0.057
+195506,0.103
+195507,0.275
+195508,0.483
+195509,0.405
+195510,-0.295
+195511,-0.562
+195512,-0.997
+195601,-1.226
+195602,-0.921
+195603,-0.809
+195604,0.331
+195605,0.268
+195606,0.485
+195607,-0.196
+195608,-0.356
+195609,0.095
+195610,0.290
+195611,0.358
+195612,0.666
+195701,0.183
+195702,-0.488
+195703,-1.096
+195704,-0.914
+195705,-0.496
+195706,-0.791
+195707,-0.436
+195708,-0.502
+195709,0.015
+195710,-0.478
+195711,0.117
+195712,-0.663
+195801,-0.946
+195802,-2.063
+195803,-1.703
+195804,-1.073
+195805,-0.615
+195806,-0.723
+195807,-0.863
+195808,-0.484
+195809,0.001
+195810,0.249
+195811,-0.309
+195812,-1.237
+195901,-0.385
+195902,0.654
+195903,1.365
+195904,0.403
+195905,-0.085
+195906,-0.090
+195907,-0.224
+195908,-0.307
+195909,-0.425
+195910,-0.647
+195911,-0.567
+195912,-1.312
+196001,-1.579
+196002,-2.107
+196003,-1.378
+196004,-0.926
+196005,-0.366
+196006,-0.474
+196007,-0.524
+196008,-0.670
+196009,-0.859
+196010,-0.707
+196011,-0.694
+196012,-0.801
+196101,-0.409
+196102,-0.181
+196103,0.242
+196104,0.087
+196105,0.252
+196106,0.295
+196107,0.247
+196108,0.240
+196109,0.344
+196110,0.336
+196111,-0.492
+196112,-0.011
+196201,-0.127
+196202,-0.520
+196203,-0.679
+196204,-0.537
+196205,0.508
+196206,-0.191
+196207,-0.163
+196208,-0.277
+196209,0.027
+196210,-0.395
+196211,-0.613
+196212,-1.711
+196301,-1.914
+196302,-1.436
+196303,-0.448
+196304,0.382
+196305,-0.054
+196306,-0.039
+196307,-0.504
+196308,-0.282
+196309,0.176
+196310,0.244
+196311,-0.176
+196312,-0.404
+196401,-0.456
+196402,-0.249
+196403,-0.157
+196404,0.426
+196405,0.660
+196406,0.683
+196407,-0.110
+196408,-0.233
+196409,-0.364
+196410,-0.076
+196411,-0.083
+196412,-0.545
+196501,-1.125
+196502,-1.345
+196503,-0.807
+196504,-0.163
+196505,0.151
+196506,-0.208
+196507,-0.242
+196508,-0.488
+196509,-0.186
+196510,-0.548
+196511,-0.261
+196512,-1.470
+196601,-1.502
+196602,-1.860
+196603,-1.395
+196604,-0.541
+196605,-0.102
+196606,0.514
+196607,-0.175
+196608,-0.308
+196609,-0.670
+196610,-0.318
+196611,-0.789
+196612,-0.622
+196701,-0.266
+196702,0.857
+196703,1.616
+196704,1.265
+196705,0.825
+196706,0.344
+196707,0.204
+196708,0.033
+196709,0.380
+196710,0.589
+196711,0.429
+196712,-0.141
+196801,-0.970
+196802,-0.274
+196803,-0.028
+196804,0.609
+196805,0.169
+196806,-0.219
+196807,-0.362
+196808,-0.839
+196809,-0.898
+196810,-1.402
+196811,-1.326
+196812,-1.978
+196901,-2.288
+196902,-2.554
+196903,-1.419
+196904,-0.621
+196905,-0.210
+196906,-0.219
+196907,-0.240
+196908,-0.152
+196909,-0.256
+196910,0.114
+196911,-0.477
+196912,-1.314
+197001,-1.864
+197002,-1.940
+197003,-1.036
+197004,-0.417
+197005,0.569
+197006,0.515
+197007,0.250
+197008,-0.031
+197009,-0.045
+197010,0.169
+197011,0.026
+197012,-0.061
+197101,-0.495
+197102,-0.725
+197103,-0.865
+197104,-0.332
+197105,-0.191
+197106,-0.189
+197107,-0.143
+197108,0.131
+197109,0.719
+197110,0.586
+197111,0.809
+197112,0.470
+197201,0.265
+197202,-0.057
+197203,0.224
+197204,0.335
+197205,0.366
+197206,-0.154
+197207,-0.228
+197208,-0.518
+197209,-0.203
+197210,-0.303
+197211,0.417
+197212,0.697
+197301,1.085
+197302,0.852
+197303,0.066
+197304,-0.172
+197305,-0.174
+197306,0.291
+197307,0.371
+197308,0.232
+197309,0.255
+197310,0.151
+197311,0.053
+197312,0.018
+197401,-0.146
+197402,-0.334
+197403,-0.309
+197404,-0.315
+197405,-0.082
+197406,-0.055
+197407,-0.064
+197408,-0.093
+197409,-0.564
+197410,-0.532
+197411,-0.301
+197412,0.572
+197501,0.782
+197502,0.647
+197503,0.251
+197504,-0.018
+197505,-0.176
+197506,-0.197
+197507,0.051
+197508,0.584
+197509,0.515
+197510,0.678
+197511,0.682
+197512,0.648
+197601,0.993
+197602,0.759
+197603,0.894
+197604,0.362
+197605,0.276
+197606,0.021
+197607,0.187
+197608,-0.170
+197609,-0.329
+197610,-0.545
+197611,-0.988
+197612,-1.976
+197701,-2.617
+197702,-1.811
+197703,-0.112
+197704,0.592
+197705,0.402
+197706,-0.205
+197707,-0.710
+197708,-0.439
+197709,-0.278
+197710,0.394
+197711,0.119
+197712,0.006
+197801,-1.200
+197802,-0.953
+197803,-1.160
+197804,-0.135
+197805,-0.091
+197806,0.030
+197807,-0.108
+197808,-0.352
+197809,0.147
+197810,1.089
+197811,0.795
+197812,-0.248
+197901,-1.303
+197902,-1.248
+197903,-0.889
+197904,-0.740
+197905,-0.158
+197906,0.241
+197907,0.096
+197908,-0.230
+197909,-0.658
+197910,-0.271
+197911,0.176
+197912,-0.099
+198001,-0.568
+198002,-1.478
+198003,-0.929
+198004,-1.002
+198005,-0.284
+198006,-0.352
+198007,-0.029
+198008,-0.165
+198009,-0.131
+198010,-0.523
+198011,-0.646
+198012,-0.511
+198101,-0.168
+198102,-0.698
+198103,-0.516
+198104,-0.345
+198105,0.057
+198106,0.101
+198107,-0.040
+198108,-0.241
+198109,-0.817
+198110,-0.798
+198111,-0.857
+198112,-0.762
+198201,-0.375
+198202,0.388
+198203,1.167
+198204,0.773
+198205,0.022
+198206,-0.461
+198207,-0.271
+198208,0.308
+198209,0.236
+198210,0.336
+198211,0.472
+198212,0.996
+198301,0.173
+198302,-0.338
+198303,-1.037
+198304,-0.582
+198305,-0.289
+198306,0.001
+198307,0.514
+198308,0.465
+198309,0.878
+198310,0.283
+198311,0.289
+198312,0.134
+198401,0.263
+198402,-0.595
+198403,-0.991
+198404,-0.730
+198405,0.067
+198406,0.168
+198407,0.164
+198408,0.024
+198409,-0.072
+198410,-0.550
+198411,-0.263
+198412,-1.109
+198501,-1.267
+198502,-1.232
+198503,-0.079
+198504,0.257
+198505,-0.042
+198506,-0.390
+198507,-0.246
+198508,-0.092
+198509,0.383
+198510,-0.023
+198511,-0.710
+198512,-1.245
+198601,-1.807
+198602,-0.514
+198603,-0.290
+198604,0.800
+198605,0.335
+198606,0.298
+198607,-0.100
+198608,-0.286
+198609,0.192
+198610,0.776
+198611,0.804
+198612,-0.054
+198701,-0.854
+198702,-1.456
+198703,-0.944
+198704,-0.345
+198705,0.001
+198706,-0.284
+198707,-0.671
+198708,-0.338
+198709,-0.210
+198710,-0.110
+198711,-0.383
+198712,-0.268
+198801,-0.445
+198802,-0.333
+198803,-0.608
+198804,-0.535
+198805,-0.449
+198806,-0.309
+198807,0.058
+198808,0.384
+198809,0.442
+198810,0.345
+198811,0.559
+198812,1.583
+198901,2.688
+198902,2.638
+198903,1.520
+198904,0.723
+198905,0.328
+198906,0.700
+198907,0.587
+198908,0.707
+198909,0.748
+198910,0.576
+198911,0.127
+198912,0.130
+199001,1.253
+199002,2.464
+199003,2.757
+199004,1.937
+199005,1.042
+199006,0.317
+199007,-0.057
+199008,-0.229
+199009,0.090
+199010,0.324
+199011,0.819
+199012,0.840
+199101,0.375
+199102,-0.227
+199103,-0.291
+199104,0.163
+199105,0.300
+199106,0.061
+199107,0.165
+199108,0.166
+199109,0.144
+199110,-0.026
+199111,0.549
+199112,0.816
+199201,1.095
+199202,0.885
+199203,0.528
+199204,0.601
+199205,0.173
+199206,0.410
+199207,0.141
+199208,0.029
+199209,-0.157
+199210,-0.096
+199211,0.659
+199212,1.946
+199301,1.769
+199302,1.481
+199303,0.171
+199304,-0.426
+199305,-0.854
+199306,-0.879
+199307,-0.475
+199308,-0.422
+199309,-0.440
+199310,0.025
+199311,0.111
+199312,0.203
+199401,-0.418
+199402,0.244
+199403,0.415
+199404,0.664
+199405,0.572
+199406,0.614
+199407,0.928
+199408,0.365
+199409,0.306
+199410,0.623
+199411,0.949
+199412,0.840
+199501,0.723
+199502,0.556
+199503,0.286
+199504,-0.487
+199505,-0.655
+199506,-0.407
+199507,0.072
+199508,-0.074
+199509,0.023
+199510,-0.399
+199511,-0.925
+199512,-1.350
+199601,-1.055
+199602,-0.840
+199603,-0.948
+199604,-1.078
+199605,-0.418
+199606,0.329
+199607,0.446
+199608,-0.100
+199609,-0.277
+199610,-0.274
+199611,-0.467
+199612,-0.681
+199701,-0.096
+199702,0.841
+199703,1.101
+199704,0.151
+199705,-0.484
+199706,-0.736
+199707,-0.375
+199708,-0.038
+199709,-0.128
+199710,-0.389
+199711,-0.477
+199712,-0.938
+199801,-0.778
+199802,-0.839
+199803,-0.158
+199804,0.046
+199805,-0.107
+199806,-0.165
+199807,-0.091
+199808,-0.204
+199809,-0.035
+199810,-0.735
+199811,0.066
+199812,0.005
+199901,0.648
+199902,-0.300
+199903,-0.242
+199904,-0.327
+199905,0.406
+199906,0.310
+199907,0.011
+199908,-0.205
+199909,-0.206
+199910,0.221
+199911,0.549
+199912,0.975
+200001,1.130
+200002,0.632
+200003,0.115
+200004,0.080
+200005,0.425
+200006,0.302
+200007,0.027
+200008,-0.037
+200009,0.285
+200010,-0.290
+200011,-1.206
+200012,-1.631
+200101,-1.312
+200102,-1.089
+200103,-0.468
+200104,-0.110
+200105,0.448
+200106,0.135
+200107,0.158
+200108,-0.072
+200109,0.174
+200110,0.273
+200111,0.068
+200112,0.293
+200201,0.454
+200202,1.196
+200203,0.985
+200204,0.684
+200205,0.574
+200206,0.434
+200207,0.224
+200208,0.019
+200209,-0.587
+200210,-0.986
+200211,-1.502
+200212,-1.163
+200301,-0.645
+200302,0.196
+200303,0.294
+200304,0.591
+200305,0.246
+200306,0.330
+200307,-0.102
+200308,0.087
+200309,-0.161
+200310,0.146
+200311,0.079
+200312,-0.260
+200401,-0.983
+200402,-0.965
+200403,-0.540
+200404,-0.062
+200405,-0.246
+200406,-0.177
+200407,-0.386
+200408,-0.022
+200409,-0.127
+200410,0.339
+200411,0.464
+200412,0.755
+200501,0.105
+200502,-0.754
+200503,-0.888
+200504,-0.719
+200505,-0.397
+200506,-0.392
+200507,-0.129
+200508,0.266
+200509,0.286
+200510,0.353
+200511,-0.615
+200512,-0.682
+200601,-0.810
+200602,-0.643
+200603,-0.541
+200604,-0.437
+200605,0.455
+200606,0.443
+200607,0.303
+200608,0.148
+200609,-0.229
+200610,0.033
+200611,0.591
+200612,1.612
+200701,1.003
+200702,0.636
+200703,0.140
+200704,0.873
+200705,0.294
+200706,-0.019
+200707,-0.329
+200708,-0.084
+200709,0.176
+200710,0.014
+200711,0.228
+200712,0.374
+200801,0.859
+200802,0.781
+200803,0.356
+200804,-0.358
+200805,-0.583
+200806,-0.592
+200807,-0.217
+200808,-0.296
+200809,0.423
+200810,0.480
+200811,0.805
+200812,0.513
+200901,0.259
+200902,0.083
+200903,0.141
+200904,0.763
+200905,0.272
+200906,-0.504
+200907,-0.920
+200908,-0.178
+200909,-0.240
+200910,-0.069
+200911,-1.498
+200912,-1.847
+201001,-3.422
+201002,-2.428
+201003,-1.658
+201004,-0.542
+201005,-0.402
+201006,-0.166
+201007,0.102
+201008,-0.182
+201009,-0.483
+201010,-0.569
+201011,-1.158
+201012,-1.563
+201101,-0.913
+201102,0.439
+201103,1.758
+201104,1.221
+201105,0.461
+201106,-0.455
+201107,-0.798
+201108,-0.290
+201109,0.134
+201110,0.975
+201111,1.493
+201112,1.153
+201201,0.655
+201202,0.260
+201203,0.322
+201204,0.390
+201205,-0.180
+201206,-0.112
+201207,-0.163
+201208,0.318
+201209,-0.243
+</values>
+	  </data>
+	</mugl></graph><graph id="naoi2" name="naoi">
+      <title>North Atlantic Oscillation Index</title>
+      <shorttitle>North Atlantic Oscillation</shorttitle>
+      <description>Air pressure patterns over the North Atlantic can steer winter weather: negative values are linked to storms in the eastern U.S.</description>
+      <alternate>Air pressure patterns in the North Atlantic influence storm tracks. Negative values are linked with winter storms in the eastern U.S.</alternate>
+
+
+      <oldtitle>North Atlantic Oscillation</oldtitle>
+      <help>Departures from average air pressure over Greenland and the central North Atlantic 
+      Ocean affect weather around the Atlantic by influencing the intensity 
+      and location of the jet stream and the storm tracks that follow it. Negative values 
+      are linked with winter storms in the eastern U.S.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-north-atlantic-oscillation</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>?? ??? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>????? ???? ?? ? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+	 <window border="0" margin="0" padding="0" />
+	  <ui eventhandler="saui" />
+	  <legend visible="false" />
+	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-  </tab>
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
+		  <label format="%n %y" spacing="6M 3M 2M 1M" />
+		</labels>
+		<title anchor="0 5" position="-15 0">Month/Year</title>
+		<grid color="0xeeeeee" />
+	  </horizontalaxis>
+	  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="3" min="-3" tickmax="0" tickmin="-4">
+		<labels>
+		 <label densityfactor="0.5" format="%1d" spacing="20 10 5 2 1" />
+		 <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+		</labels>
+		<title anchor="0 -4" angle="90" position="-15 0">North Atlantic Oscillation Index</title>
+		<zoom max="50" min="0.2" />
+		
+		
+	  </verticalaxis>
 
-  <tab id="climateVariability">
-    <title><![CDATA[Climate Variability]]></title>
+	  <plot>
+		<legend visible="false" />
+		<verticalaxis ref="y"><constant value="0" /></verticalaxis>
+		<renderer type="line">
+		  <option name="linecolor" value="0x999999" />
+		  <option name="linewidth" value="1" />
+		</renderer>
+	  </plot>
 
-    <graph id="oni" expanded="true">
-      <title><![CDATA[El Niño / La Niña Index]]></title>
+	  <plot>
+		<legend label="Yearly average" />
+		<horizontalaxis ref="x"><variable ref="datetime" /></horizontalaxis>
+		<verticalaxis ref="y"><variable ref="number" /></verticalaxis>
+			<renderer type="bar">
 
-      <shortname>El Niño / La Niña</shortname>
-      <description><![CDATA[Departure from average sea surface temperature in the eastern Pacific Ocean.  0.5&#730;C or higher = El Niño; Near 0 = neutral; -0.5&#730;C or lower = La Niña]]></description>
-      <alternate><![CDATA[Warmer-than-average sea surface temps indicate El Niño conditions. Cooler- than-average, La Niña. Average temps indicate neutral conditions.]]></alternate>
+				
 
-      <mugl url="config/oni.xml"/>
-      <stats color="#f8a792">
+				<option min="0.0" name="fillcolor" value="0xD01E11" />
+				<option max="0.0" name="fillcolor" value="0xCD6760" />
+
+				<option name="linecolor" value="0x000000" />
+				
+				<option name="barwidth" value="1M" />
+				<option name="baroffset" value="0" />
+				<option name="barbase" value="0" />
+			</renderer>
+		<datatips format="{0}: {1}">
+				 <variable format="%n '%y" />
+				<variable format="%.2f" />
+			</datatips>
+	  </plot>
+
+	  <data>
+
+		<variables>
+		  <variable column="0" id="datetime" type="datetime" />
+		  <variable column="1" id="number" type="number" />
+		</variables>
+		<values>195002,0.320
+195003,0.257
+195004,-0.073
+195005,0.027
+195006,-0.637
+195007,-0.457
+195008,-0.353
+195009,0.350
+195010,-0.053
+195011,-0.477
+195012,-0.733
+195101,-0.080
+195102,-0.080
+195103,-0.180
+195104,-0.610
+195105,-0.817
+195106,-0.287
+195107,-0.163
+195108,-0.070
+195109,0.097
+195110,0.040
+195111,0.933
+195112,0.620
+195201,0.473
+195202,-0.463
+195203,-0.437
+195204,-0.533
+195205,-0.170
+195206,-0.537
+195207,-0.257
+195208,-0.303
+195209,-0.517
+195210,-0.800
+195211,-0.763
+195212,-0.410
+195301,-0.197
+195302,-0.067
+195303,-0.733
+195304,-0.790
+195305,-0.413
+195306,0.277
+195307,0.260
+195308,-0.220
+195309,0.087
+195310,0.670
+195311,0.630
+195312,0.313
+195401,0.213
+195402,0.093
+195403,0.417
+195404,0.140
+195405,0.333
+195406,-0.313
+195407,-0.917
+195408,-0.980
+195409,-0.580
+195410,0.187
+195411,0.563
+195412,-0.250
+195501,-0.757
+195502,-1.163
+195503,-0.690
+195504,-0.430
+195505,-0.620
+195506,0.107
+195507,0.577
+195508,1.050
+195509,-0.027
+195510,-0.813
+195511,-0.863
+195512,-0.447
+195601,-0.390
+195602,-0.463
+195603,-0.743
+195604,0.367
+195605,0.417
+195606,0.520
+195607,-0.673
+195608,-0.627
+195609,-0.083
+195610,0.543
+195611,0.497
+195612,0.553
+195701,0.420
+195702,-0.033
+195703,-0.220
+195704,-0.520
+195705,-0.340
+195706,-0.900
+195707,-0.820
+195708,-1.133
+195709,-0.297
+195710,0.130
+195711,0.723
+195712,0.103
+195801,-0.493
+195802,-1.187
+195803,-0.883
+195804,-0.610
+195805,-0.417
+195806,-1.117
+195807,-1.557
+195808,-1.120
+195809,-0.490
+195810,0.577
+195811,0.367
+195812,0.023
+195901,-0.297
+195902,-0.113
+195903,0.297
+195904,0.200
+195905,0.383
+195906,0.510
+195907,0.400
+195908,0.560
+195909,0.610
+195910,0.727
+195911,0.580
+195912,-0.147
+196001,-0.913
+196002,-1.227
+196003,-0.343
+196004,0.437
+196005,0.533
+196006,0.197
+196007,-0.420
+196008,-0.220
+196009,-0.913
+196010,-0.617
+196011,-0.727
+196012,-0.013
+196101,0.307
+196102,0.470
+196103,-0.183
+196104,-0.453
+196105,-0.350
+196106,0.037
+196107,0.457
+196108,0.583
+196109,0.883
+196110,0.377
+196111,-0.530
+196112,-0.497
+196201,-0.107
+196202,-0.437
+196203,-0.310
+196204,-0.527
+196205,0.350
+196206,-0.803
+196207,-0.723
+196208,-0.900
+196209,0.060
+196210,-0.063
+196211,-0.380
+196212,-1.223
+196301,-1.467
+196302,-1.170
+196303,-0.913
+196304,0.127
+196305,0.127
+196306,0.320
+196307,-0.613
+196308,0.127
+196309,0.697
+196310,0.487
+196311,-0.750
+196312,-1.380
+196401,-1.433
+196402,-1.193
+196403,-0.757
+196404,-0.107
+196405,0.723
+196406,1.237
+196407,0.473
+196408,0.110
+196409,-0.277
+196410,0.310
+196411,0.193
+196412,-0.093
+196501,-0.607
+196502,-1.060
+196503,-0.780
+196504,-0.470
+196505,0.130
+196506,-0.003
+196507,0.353
+196508,0.380
+196509,0.400
+196510,-0.303
+196511,0.030
+196512,-0.677
+196601,-0.587
+196602,-0.857
+196603,-0.527
+196604,0.010
+196605,0.173
+196606,0.530
+196607,-0.130
+196608,-0.630
+196609,-0.963
+196610,-0.390
+196611,0.000
+196612,-0.070
+196701,0.007
+196702,0.270
+196703,0.627
+196704,0.233
+196705,0.197
+196706,0.273
+196707,1.083
+196708,0.927
+196709,0.813
+196710,0.533
+196711,0.073
+196712,0.093
+196801,-0.537
+196802,-0.253
+196803,-0.657
+196804,-0.813
+196805,-0.837
+196806,-0.743
+196807,-0.377
+196808,-1.127
+196809,-1.627
+196810,-1.717
+196811,-1.543
+196812,-1.053
+196901,-1.260
+196902,-1.313
+196903,-0.527
+196904,0.173
+196905,0.877
+196906,0.557
+196907,-0.110
+196908,0.397
+196909,0.427
+196910,0.590
+196911,-0.193
+196912,-0.913
+197001,-0.380
+197002,-0.607
+197003,-0.540
+197004,-0.373
+197005,0.463
+197006,0.930
+197007,0.583
+197008,0.037
+197009,-0.303
+197010,-0.537
+197011,-0.907
+197012,-0.977
+197101,-0.697
+197102,-0.577
+197103,-0.280
+197104,-0.193
+197105,-0.437
+197106,-0.277
+197107,0.073
+197108,0.727
+197109,0.840
+197110,0.257
+197111,0.327
+197112,0.223
+197201,0.397
+197202,0.437
+197203,0.273
+197204,0.483
+197205,0.537
+197206,0.670
+197207,0.793
+197208,0.460
+197209,0.763
+197210,0.503
+197211,0.607
+197212,0.257
+197301,0.360
+197302,0.397
+197303,0.203
+197304,-0.227
+197305,-0.197
+197306,0.173
+197307,0.300
+197308,0.070
+197309,-0.533
+197310,-0.823
+197311,-0.617
+197312,0.243
+197401,0.507
+197402,0.390
+197403,0.113
+197404,0.080
+197405,0.043
+197406,-0.380
+197407,-0.513
+197408,-0.193
+197409,0.223
+197410,0.257
+197411,0.483
+197412,0.513
+197501,0.487
+197502,-0.217
+197503,-0.943
+197504,-0.910
+197505,-0.987
+197506,0.063
+197507,0.150
+197508,0.950
+197509,0.253
+197510,0.477
+197511,-0.043
+197512,0.053
+197601,0.227
+197602,0.477
+197603,0.647
+197604,0.657
+197605,0.673
+197606,0.480
+197607,0.800
+197608,0.103
+197609,0.183
+197610,-0.400
+197611,-0.503
+197612,-0.823
+197701,-1.043
+197702,-0.780
+197703,-0.217
+197704,-0.340
+197705,-0.260
+197706,-0.627
+197707,-0.433
+197708,-0.120
+197709,0.203
+197710,0.273
+197711,-0.183
+197712,-0.137
+197801,-0.847
+197802,-0.280
+197803,-0.890
+197804,0.203
+197805,0.430
+197806,0.440
+197807,0.293
+197808,-0.013
+197809,1.010
+197810,1.810
+197811,1.133
+197812,0.030
+197901,-1.207
+197902,-0.423
+197903,-0.533
+197904,-0.653
+197905,-0.380
+197906,0.467
+197907,1.130
+197908,0.933
+197909,0.557
+197910,0.413
+197911,0.410
+197912,0.260
+198001,0.100
+198002,-0.337
+198003,0.343
+198004,-0.173
+198005,-0.193
+198006,-0.763
+198007,-1.010
+198008,-0.667
+198009,-1.117
+198010,-0.493
+198011,-0.453
+198012,0.260
+198101,0.690
+198102,0.033
+198103,0.030
+198104,-0.210
+198105,0.037
+198106,-0.067
+198107,-0.003
+198108,-0.337
+198109,-0.803
+198110,-1.060
+198111,-0.583
+198112,-0.430
+198201,0.080
+198202,0.470
+198203,0.800
+198204,0.240
+198205,-0.687
+198206,-0.337
+198207,-0.073
+198208,1.057
+198209,0.427
+198210,0.873
+198211,0.880
+198212,1.657
+198301,0.947
+198302,0.670
+198303,-0.143
+198304,0.010
+198305,0.023
+198306,0.703
+198307,1.263
+198308,0.560
+198309,0.380
+198310,-0.483
+198311,-0.013
+198312,0.323
+198401,0.890
+198402,0.670
+198403,0.023
+198404,-0.037
+198405,-0.053
+198406,0.017
+198407,0.220
+198408,0.417
+198409,0.417
+198410,0.013
+198411,-0.043
+198412,-0.557
+198501,-0.700
+198502,-0.633
+198503,0.010
+198504,0.010
+198505,-0.323
+198506,-0.023
+198507,-0.020
+198508,0.073
+198509,-0.033
+198510,-0.097
+198511,0.150
+198512,0.220
+198601,0.110
+198602,0.607
+198603,0.040
+198604,0.657
+198605,0.493
+198606,0.730
+198607,0.083
+198608,-0.697
+198609,-0.220
+198610,0.907
+198611,1.610
+198612,0.710
+198701,-0.297
+198702,-0.580
+198703,0.470
+198704,1.040
+198705,0.387
+198706,-0.107
+198707,-0.710
+198708,-0.510
+198709,-0.637
+198710,-0.300
+198711,0.213
+198712,0.507
+198801,0.700
+198802,0.537
+198803,-0.193
+198804,-0.237
+198805,0.113
+198806,0.387
+198807,0.190
+198808,-0.433
+198809,-0.677
+198810,-0.803
+198811,-0.270
+198812,0.480
+198901,1.260
+198902,1.673
+198903,1.377
+198904,1.170
+198905,0.463
+198906,0.693
+198907,0.237
+198908,1.010
+198909,0.677
+198910,0.727
+198911,-0.340
+198912,0.017
+199001,0.433
+199002,1.303
+199003,1.623
+199004,0.643
+199005,0.150
+199006,-0.340
+199007,0.493
+199008,0.853
+199009,0.753
+199010,0.350
+199011,0.070
+199012,0.280
+199101,0.707
+199102,0.567
+199103,0.377
+199104,0.057
+199105,-0.150
+199106,-0.410
+199107,-0.027
+199108,0.407
+199109,0.507
+199110,0.257
+199111,0.250
+199112,0.270
+199201,0.467
+199202,0.603
+199203,1.267
+199204,1.787
+199205,1.563
+199206,0.997
+199207,0.403
+199208,0.190
+199209,-0.450
+199210,-0.337
+199211,-0.033
+199212,1.087
+199301,0.857
+199302,0.923
+199303,0.713
+199304,0.287
+199305,-0.133
+199306,-1.517
+199307,-1.217
+199308,-1.210
+199309,-0.387
+199310,0.427
+199311,1.137
+199312,1.720
+199401,1.020
+199402,0.920
+199403,0.953
+199404,0.610
+199405,0.697
+199406,0.753
+199407,1.070
+199408,0.123
+199409,-0.637
+199410,-0.550
+199411,0.563
+199412,1.197
+199501,1.363
+199502,1.107
+199503,0.513
+199504,-0.363
+199505,-0.737
+199506,-0.527
+199507,0.200
+199508,0.260
+199509,0.397
+199510,-0.293
+199511,-0.953
+199512,-1.057
+199601,-0.620
+199602,-0.143
+199603,-0.160
+199604,-0.490
+199605,-0.223
+199606,0.057
+199607,0.750
+199608,0.277
+199609,-0.057
+199610,-0.583
+199611,-0.767
+199612,-0.820
+199701,-0.067
+199702,0.890
+199703,0.713
+199704,0.053
+199705,-0.923
+199706,-0.470
+199707,-0.100
+199708,0.593
+199709,-0.087
+199710,-0.663
+199711,-1.187
+199712,-0.490
+199801,-0.227
+199802,0.383
+199803,0.027
+199804,-0.377
+199805,-1.573
+199806,-1.507
+199807,-1.073
+199808,-0.833
+199809,-0.770
+199810,-0.857
+199811,0.100
+199812,0.453
+199901,0.643
+199902,0.430
+199903,-0.143
+199904,0.067
+199905,0.363
+199906,0.380
+199907,0.203
+199908,-0.050
+199909,0.317
+199910,0.403
+199911,0.820
+199912,0.953
+200001,1.303
+200002,1.023
+200003,0.813
+200004,0.773
+200005,0.507
+200006,0.173
+200007,-0.450
+200008,-0.510
+200009,0.140
+200010,-0.070
+200011,-0.193
+200012,-0.417
+200101,0.040
+200102,-0.187
+200103,-0.270
+200104,-0.427
+200105,-0.073
+200106,-0.157
+200107,-0.173
+200108,-0.323
+200109,-0.320
+200110,-0.087
+200111,-0.147
+200112,0.080
+200201,0.237
+200202,0.743
+200203,0.990
+200204,0.550
+200205,0.447
+200206,0.260
+200207,0.460
+200208,0.100
+200209,-0.867
+200210,-1.053
+200211,-1.133
+200212,-0.320
+200301,-0.053
+200302,0.367
+200303,0.253
+200304,0.050
+200305,-0.080
+200306,0.023
+200307,-0.003
+200308,0.023
+200309,-0.440
+200310,-0.130
+200311,0.080
+200312,0.403
+200401,0.070
+200402,0.197
+200403,0.677
+200404,0.787
+200405,0.150
+200406,0.143
+200407,-0.080
+200408,0.343
+200409,-0.400
+200410,0.003
+200411,0.280
+200412,1.153
+200501,0.890
+200502,-0.123
+200503,-0.730
+200504,-1.127
+200505,-0.533
+200506,-0.603
+200507,-0.063
+200508,0.163
+200509,0.007
+200510,-0.220
+200511,-0.577
+200512,0.173
+200601,0.107
+200602,-0.173
+200603,-0.183
+200604,-0.393
+200605,0.313
+200606,0.200
+200607,0.003
+200608,-0.817
+200609,-1.863
+200610,-1.140
+200611,-0.153
+200612,0.667
+200701,0.363
+200702,0.397
+200703,0.380
+200704,0.757
+200705,-0.160
+200706,-0.410
+200707,-0.677
+200708,0.000
+200709,0.343
+200710,0.583
+200711,0.457
+200712,0.603
+200801,0.653
+200802,0.567
+200803,-0.087
+200804,-0.907
+200805,-1.397
+200806,-1.463
+200807,-1.273
+200808,-0.470
+200809,-0.060
+200810,0.220
+200811,-0.213
+200812,-0.203
+200901,-0.077
+200902,0.207
+200903,0.143
+200904,0.683
+200905,0.090
+200906,-0.560
+200907,-1.183
+200908,-0.277
+200909,0.097
+200910,0.153
+200911,-0.993
+200912,-1.020
+201001,-1.673
+201002,-1.323
+201003,-1.193
+201004,-1.030
+201005,-1.010
+201006,-0.910
+201007,-0.820
+201008,-0.810
+201009,-0.980
+201010,-1.113
+201011,-1.467
+201012,-1.450
+201101,-0.677
+201102,0.143
+201103,1.263
+201104,1.010
+201105,0.380
+201106,-0.950
+201107,-1.380
+201108,-0.773
+201109,-0.140
+201110,0.763
+201111,1.423
+201112,1.683
+201201,1.370
+201202,0.953
+201203,0.720
+201204,0.277
+201205,-0.990
+201206,-1.587
+201207,-1.610
+201208,-0.963
+201209,-1.210
+</values>
+	  </data>
+	</mugl></graph><graph id="soi2" name="soi">
+  <title>Southern Oscillation Index</title>
+  <shorttitle>Southern Oscillation</shorttitle>
+  <description>Air pressure patterns across the southern Pacific Ocean reflect El Ni&#241;o (yellow), La Ni&#241;a (blue), and neutral (gray) conditions.</description>
+  <oldtitle>Southern Oscillation Index</oldtitle>
+  <help>Differences in average air pressure at Tahiti and Darwin, Australia provide an 
+  atmospheric indicator of the El Ni&#241;o&#8211;Southern Oscillation.  El Ni&#241;o conditions result in negative SOI values; La Ni&#241;a conditions produce positive values for this index.</help>
+  <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-southern-oscillation-index</link>
+  <stats>
+    <stat>
+      <title>?? ??? ?????</title>
+      <value color="0xf8a792">??</value>
+    </stat>
+    <stat>
+      <title>????? ???? ?? ? ?????</title>
+      <value color="0xf8a792">??</value>
+    </stat>
+  </stats>
+  <mugl>
+    <window border="0" margin="0" padding="0" />
+    <ui eventhandler="saui" />
+    <legend visible="false" />
+    <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+
+    <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+      <labels>
+        <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
+        <label format="%n %y" spacing="6M 3M 2M 1M" />
+      </labels>
+      <title anchor="0 5" position="-15 0">Month/Year</title>
+      <grid color="0xeeeeee" />
+    </horizontalaxis>
+
+    <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="5.5" min="-5.5" tickmax="0" tickmin="-4">
+      <labels>
+        <label densityfactor="0.3" format="%1d" spacing="20 10 5 2 1" />
+        <label densityfactor="0.3" format="%.1f" spacing="0.5 0.2 0.1" />
+      </labels>
+      <title anchor="0 -4" angle="90" position="-15 0">Southern Oscillation Index</title>
+      
+      
+      
+    </verticalaxis>
+
+    <plot>
+      <legend visible="false" />
+      <verticalaxis ref="y"><constant value="0" /></verticalaxis>
+      <renderer type="line">
+        <option name="linecolor" value="0x999999" />
+        <option name="linewidth" value="1" />
+      </renderer>
+    </plot>
+
+    <plot>
+      <legend label="Yearly average" />
+      <horizontalaxis ref="x"><variable ref="datetime" /></horizontalaxis>
+      <verticalaxis ref="y"><variable ref="number" /></verticalaxis>
+      <renderer type="bar">
+        
+        <option min="0.5" name="fillcolor" value="0x0570b6" /> 
+        <option max="0.5" min="-0.5" name="fillcolor" value="0x888888" /> 
+        <option max="-0.5" name="fillcolor" value="0xb88a00" /> 
+        <option name="linecolor" value="0x000000" />
+
+        <option name="barwidth" value="1M" />
+        <option name="baroffset" value="0" />
+        <option name="barbase" value="0" />
+      </renderer>
+      <datatips format="{0}: {1}">
+        <variable format="%n '%y" />
+        <variable format="%.2f" />
+      </datatips>
+
+    </plot>
+    <data>
+      <variables>
+        <variable column="0" id="datetime" type="datetime" />
+        <variable column="1" id="number" type="number" />
+      </variables>
+      <values>195101,1.700
+195102,0.600
+195103,-0.800
+195104,-0.600
+195105,-1.000
+195106,-0.300
+195107,-1.400
+195108,-0.700
+195109,-1.300
+195110,-1.400
+195111,-1.000
+195112,-1.000
+195201,-1.200
+195202,-1.100
+195203,0.000
+195204,-0.500
+195205,0.600
+195206,0.500
+195207,0.400
+195208,-0.400
+195209,-0.300
+195210,0.200
+195211,-0.200
+195212,-1.600
+195301,0.200
+195302,-1.000
+195303,-0.800
+195304,-0.100
+195305,-2.200
+195306,-0.300
+195307,-0.100
+195308,-1.900
+195309,-1.500
+195310,-0.200
+195311,-0.400
+195312,-0.700
+195401,0.600
+195402,-0.700
+195403,-0.300
+195404,0.400
+195405,0.300
+195406,-0.300
+195407,0.300
+195408,0.800
+195409,0.200
+195410,0.100
+195411,0.100
+195412,1.500
+195501,-0.700
+195502,1.800
+195503,0.100
+195504,-0.500
+195505,0.900
+195506,1.100
+195507,1.700
+195508,1.200
+195509,1.500
+195510,1.500
+195511,1.300
+195512,1.000
+195601,1.400
+195602,1.500
+195603,0.900
+195604,0.700
+195605,1.300
+195606,0.800
+195607,1.100
+195608,0.900
+195609,0.000
+195610,1.900
+195611,0.100
+195612,1.000
+195701,0.600
+195702,-0.500
+195703,-0.400
+195704,0.000
+195705,-1.000
+195706,-0.200
+195707,0.100
+195708,-1.000
+195709,-1.100
+195710,-0.200
+195711,-1.200
+195712,-0.500
+195801,-2.300
+195802,-1.000
+195803,-0.300
+195804,0.100
+195805,-0.900
+195806,-0.200
+195807,0.300
+195808,0.600
+195809,-0.400
+195810,-0.200
+195811,-0.600
+195812,-0.900
+195901,-1.200
+195902,-2.000
+195903,0.900
+195904,0.200
+195905,0.300
+195906,-0.600
+195907,-0.500
+195908,-0.600
+195909,0.000
+195910,0.300
+195911,1.000
+195912,0.800
+196001,0.000
+196002,-0.300
+196003,0.600
+196004,0.600
+196005,0.300
+196006,-0.300
+196007,0.400
+196008,0.500
+196009,0.700
+196010,-0.100
+196011,0.500
+196012,0.800
+196101,-0.400
+196102,0.700
+196103,-2.700
+196104,0.700
+196105,0.100
+196106,-0.300
+196107,0.100
+196108,-0.200
+196109,0.100
+196110,-0.700
+196111,0.600
+196112,1.600
+196201,2.200
+196202,-0.700
+196203,-0.400
+196204,0.000
+196205,1.000
+196206,0.400
+196207,-0.100
+196208,0.300
+196209,0.500
+196210,0.900
+196211,0.300
+196212,0.000
+196301,1.100
+196302,0.400
+196303,0.700
+196304,0.600
+196305,0.100
+196306,-1.000
+196307,-0.300
+196308,-0.500
+196309,-0.700
+196310,-1.600
+196311,-1.000
+196312,-1.600
+196401,-0.500
+196402,-0.300
+196403,0.700
+196404,1.000
+196405,-0.100
+196406,0.400
+196407,0.400
+196408,1.300
+196409,1.400
+196410,1.300
+196411,0.000
+196412,-0.500
+196501,-0.600
+196502,0.100
+196503,0.200
+196504,-0.800
+196505,-0.100
+196506,-1.000
+196507,-2.200
+196508,-1.200
+196509,-1.500
+196510,-1.200
+196511,-1.800
+196512,0.000
+196601,-1.700
+196602,-0.700
+196603,-1.700
+196604,-0.500
+196605,-0.700
+196606,0.000
+196607,-0.100
+196608,0.300
+196609,-0.300
+196610,-0.400
+196611,-0.100
+196612,-0.600
+196701,1.900
+196702,1.600
+196703,0.800
+196704,-0.300
+196705,-0.300
+196706,0.300
+196707,0.000
+196708,0.500
+196709,0.600
+196710,-0.200
+196711,-0.600
+196712,-0.800
+196801,0.400
+196802,1.100
+196803,-0.500
+196804,-0.200
+196805,1.100
+196806,0.900
+196807,0.600
+196808,-0.100
+196809,-0.300
+196810,-0.300
+196811,-0.500
+196812,0.000
+196901,-2.000
+196902,-1.100
+196903,-0.100
+196904,-0.600
+196905,-0.600
+196906,-0.200
+196907,-0.700
+196908,-0.600
+196909,-1.200
+196910,-1.300
+196911,-0.200
+196912,0.300
+197001,-1.400
+197002,-1.600
+197003,0.000
+197004,-0.400
+197005,0.100
+197006,0.700
+197007,-0.600
+197008,0.200
+197009,1.300
+197010,0.900
+197011,1.700
+197012,2.100
+197101,0.300
+197102,1.900
+197103,2.100
+197104,1.700
+197105,0.700
+197106,0.100
+197107,0.100
+197108,1.300
+197109,1.600
+197110,1.700
+197111,0.500
+197112,0.000
+197201,0.400
+197202,0.800
+197203,0.100
+197204,-0.400
+197205,-2.100
+197206,-1.100
+197207,-1.900
+197208,-1.000
+197209,-1.600
+197210,-1.200
+197211,-0.500
+197212,-1.600
+197301,-0.500
+197302,-2.000
+197303,0.200
+197304,-0.200
+197305,0.200
+197306,0.800
+197307,0.500
+197308,1.100
+197309,1.400
+197310,0.600
+197311,2.900
+197312,2.000
+197401,2.700
+197402,2.000
+197403,2.200
+197404,0.800
+197405,0.900
+197406,0.100
+197407,1.200
+197408,0.500
+197409,1.300
+197410,0.800
+197411,-0.300
+197412,0.000
+197501,-0.800
+197502,0.600
+197503,1.200
+197504,1.100
+197505,0.500
+197506,1.100
+197507,2.100
+197508,1.900
+197509,2.400
+197510,1.700
+197511,1.300
+197512,2.300
+197601,1.500
+197602,1.600
+197603,1.300
+197604,0.100
+197605,0.200
+197606,-0.100
+197607,-1.200
+197608,-1.300
+197609,-1.400
+197610,0.200
+197611,0.700
+197612,-0.600
+197701,-0.700
+197702,1.100
+197703,-1.300
+197704,-0.800
+197705,-0.900
+197706,-1.500
+197707,-1.500
+197708,-1.300
+197709,-1.000
+197710,-1.400
+197711,-1.600
+197712,-1.400
+197801,-0.400
+197802,-3.500
+197803,-0.800
+197804,-0.600
+197805,1.300
+197806,0.300
+197807,0.400
+197808,0.000
+197809,0.000
+197810,-0.700
+197811,-0.100
+197812,-0.300
+197901,-0.700
+197902,0.800
+197903,-0.500
+197904,-0.400
+197905,0.300
+197906,0.400
+197907,1.300
+197908,-0.600
+197909,0.100
+197910,-0.400
+197911,-0.600
+197912,-1.000
+198001,0.300
+198002,0.000
+198003,-1.200
+198004,-1.000
+198005,-0.300
+198006,-0.400
+198007,-0.200
+198008,0.000
+198009,-0.600
+198010,-0.300
+198011,-0.500
+198012,-0.300
+198101,0.200
+198102,-0.600
+198103,-2.100
+198104,-0.400
+198105,0.700
+198106,1.000
+198107,0.800
+198108,0.400
+198109,0.400
+198110,-0.700
+198111,0.100
+198112,0.500
+198201,1.300
+198202,-0.100
+198203,0.100
+198204,-0.200
+198205,-0.700
+198206,-1.600
+198207,-1.900
+198208,-2.500
+198209,-2.000
+198210,-2.200
+198211,-3.200
+198212,-2.800
+198301,-4.200
+198302,-4.600
+198303,-3.400
+198304,-1.300
+198305,0.500
+198306,-0.300
+198307,-0.800
+198308,-0.200
+198309,1.000
+198310,0.300
+198311,-0.200
+198312,-0.100
+198401,0.100
+198402,0.600
+198403,-0.900
+198404,0.200
+198405,0.000
+198406,-0.800
+198407,0.000
+198408,0.000
+198409,0.100
+198410,-0.600
+198411,0.200
+198412,-0.400
+198501,-0.500
+198502,1.000
+198503,0.200
+198504,1.000
+198505,0.200
+198506,-0.900
+198507,-0.300
+198508,0.700
+198509,0.000
+198510,-0.700
+198511,-0.300
+198512,0.100
+198601,0.900
+198602,-1.600
+198603,0.000
+198604,0.100
+198605,-0.500
+198606,0.700
+198607,0.100
+198608,-1.000
+198609,-0.600
+198610,0.500
+198611,-1.500
+198612,-1.800
+198701,-0.900
+198702,-1.900
+198703,-2.000
+198704,-1.900
+198705,-1.700
+198706,-1.700
+198707,-1.700
+198708,-1.500
+198709,-1.200
+198710,-0.700
+198711,-0.100
+198712,-0.700
+198801,-0.200
+198802,-0.900
+198803,0.100
+198804,-0.100
+198805,0.800
+198806,-0.200
+198807,1.100
+198808,1.400
+198809,2.100
+198810,1.400
+198811,1.900
+198812,1.300
+198901,1.700
+198902,1.100
+198903,0.600
+198904,1.600
+198905,1.200
+198906,0.500
+198907,0.800
+198908,-0.800
+198909,0.600
+198910,0.600
+198911,-0.400
+198912,-0.700
+199001,-0.200
+199002,-2.400
+199003,-1.200
+199004,0.000
+199005,1.100
+199006,0.000
+199007,0.500
+199008,-0.600
+199009,-0.800
+199010,0.100
+199011,-0.700
+199012,-0.500
+199101,0.600
+199102,-0.100
+199103,-1.400
+199104,-1.000
+199105,-1.500
+199106,-0.500
+199107,-0.200
+199108,-0.900
+199109,-1.800
+199110,-1.500
+199111,-0.800
+199112,-2.300
+199201,-3.400
+199202,-1.400
+199203,-3.000
+199204,-1.400
+199205,0.000
+199206,-1.200
+199207,-0.800
+199208,0.000
+199209,0.000
+199210,-1.900
+199211,-0.900
+199212,-0.900
+199301,-1.200
+199302,-1.300
+199303,-1.100
+199304,-1.600
+199305,-0.600
+199306,-1.400
+199307,-1.100
+199308,-1.500
+199309,-0.800
+199310,-1.500
+199311,-0.200
+199312,0.000
+199401,-0.300
+199402,-0.100
+199403,-1.400
+199404,-1.800
+199405,-1.000
+199406,-0.900
+199407,-1.800
+199408,-1.800
+199409,-1.800
+199410,-1.600
+199411,-0.700
+199412,-1.600
+199501,-0.600
+199502,-0.500
+199503,0.200
+199504,-1.100
+199505,-0.700
+199506,-0.200
+199507,0.300
+199508,-0.100
+199509,0.300
+199510,-0.300
+199511,0.000
+199512,-0.800
+199601,1.000
+199602,-0.100
+199603,0.700
+199604,0.600
+199605,0.100
+199606,1.000
+199607,0.600
+199608,0.400
+199609,0.600
+199610,0.400
+199611,-0.200
+199612,0.800
+199701,0.500
+199702,1.600
+199703,-1.100
+199704,-0.900
+199705,-1.800
+199706,-2.000
+199707,-1.000
+199708,-2.100
+199709,-1.600
+199710,-1.900
+199711,-1.400
+199712,-1.300
+199801,-3.300
+199802,-2.700
+199803,-3.500
+199804,-1.900
+199805,0.100
+199806,0.700
+199807,1.300
+199808,1.000
+199809,1.200
+199810,1.000
+199811,1.100
+199812,1.400
+199901,2.000
+199902,0.800
+199903,0.900
+199904,1.400
+199905,0.100
+199906,-0.100
+199907,0.500
+199908,0.100
+199909,-0.100
+199910,0.900
+199911,1.100
+199912,1.500
+200001,0.700
+200002,1.600
+200003,1.000
+200004,1.200
+200005,0.200
+200006,-0.600
+200007,-0.400
+200008,0.400
+200009,1.000
+200010,1.000
+200011,2.000
+200012,0.700
+200101,1.100
+200102,1.500
+200103,0.500
+200104,-0.100
+200105,-0.800
+200106,-0.100
+200107,-0.400
+200108,-1.000
+200109,0.200
+200110,-0.400
+200111,0.700
+200112,-1.200
+200201,0.400
+200202,0.900
+200203,-0.900
+200204,-0.400
+200205,-1.200
+200206,-0.700
+200207,-0.700
+200208,-1.600
+200209,-0.700
+200210,-0.700
+200211,-0.600
+200212,-1.400
+200301,-0.400
+200302,-1.200
+200303,-1.000
+200304,-0.400
+200305,-0.600
+200306,-1.100
+200307,0.200
+200308,-0.300
+200309,-0.100
+200310,-0.300
+200311,-0.400
+200312,1.100
+200401,-1.700
+200402,1.100
+200403,-0.200
+200404,-1.300
+200405,0.900
+200406,-1.300
+200407,-0.700
+200408,-0.800
+200409,-0.400
+200410,-0.300
+200411,-0.900
+200412,-1.100
+200501,0.300
+200502,-4.100
+200503,-0.200
+200504,-1.000
+200505,-1.200
+200506,0.100
+200507,0.000
+200508,-0.800
+200509,0.400
+200510,1.100
+200511,-0.300
+200512,-0.200
+200601,1.800
+200602,-0.200
+200603,1.400
+200604,0.900
+200605,-0.800
+200606,-0.700
+200607,-0.800
+200608,-1.600
+200609,-0.700
+200610,-1.700
+200611,0.100
+200612,-0.500
+200701,-1.100
+200702,-0.500
+200703,-0.400
+200704,-0.400
+200705,-0.400
+200706,0.200
+200707,-0.500
+200708,0.100
+200709,0.200
+200710,0.600
+200711,0.900
+200712,1.800
+200801,1.900
+200802,2.700
+200803,1.100
+200804,0.600
+200805,-0.300
+200806,0.300
+200807,0.200
+200808,0.800
+200809,1.500
+200810,1.300
+200811,1.500
+200812,1.500
+200901,1.200
+200902,1.800
+200903,-0.100
+200904,0.700
+200905,-0.400
+200906,-0.300
+200907,0.100
+200908,-0.700
+200909,0.300
+200910,-1.700
+200911,-0.800
+200912,-1.000
+201001,-1.500
+201002,-2.100
+201003,-1.400
+201004,1.200
+201005,0.800
+201006,0.100
+201007,2.000
+201008,1.700
+201009,2.600
+201010,1.800
+201011,1.500
+201012,3.200
+201101,2.300
+201102,2.700
+201103,2.500
+201104,1.900
+201105,0.400
+201106,0.200
+201107,1.000
+201108,0.400
+201109,1.000
+201110,0.800
+201111,1.100
+201112,2.500
+201201,1.100
+201202,0.500
+201203,0.700
+201204,-0.300
+201205,0.000
+201206,-0.400
+201207,0.000
+201208,-0.200
+201209,0.200
+201210,0.300
+</values>
+    </data>
+</mugl></graph><graph id="pnap2" name="pnap">
+      <title>Pacific North American Pattern</title>
+      <shorttitle>Pacific North American Pattern</shorttitle>
+      <description>Air pressure patterns over the Pacific Ocean and North America affect the type of weather that is delivered to North America.</description>
+
+      <oldtitle>Pacific North American Pattern</oldtitle>
+      <help>Departures from average air pressure at four locations over the Pacific Ocean and North America affect 
+      the strength and location of the East Asian jet stream and the weather it delivers to North America.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-pacific-north-american-teleconnection-pattern</link>
+      <stats>
         <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
+          <title>?? ??? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
         <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
+          <title>????? ???? ?? ? ?????</title>
+          <value color="0xf8a792">??</value>
         </stat>
       </stats>
-      <link href="#"/>
-    </graph>
-    <graph id="pnap" expanded="true">
-      <title><![CDATA[Pacific North American Pattern]]></title>
-      <shortname>Pacific North American Pattern</shortname>
-      <description><![CDATA[Departures from average air pressure at four locations over the Pacific Ocean and North America affect the strength and location of the East Asian jet stream and the weather it delivers to North America.]]></description>
-      <alternate><![CDATA[Air pressure patterns over the Pacific Ocean and North America affect the strength and location of the jet stream that brings storms across the Pacific.]]></alternate>
-      <mugl url="config/pnap.xml"/>
-      <stats color="#f8a792">
-        <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
-        </stat>
-        <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
-        </stat>
-      </stats>
-      <link href="#"/>
-    </graph>
+      <mugl>
+	 <window border="0" margin="0" padding="0" />
+	  <ui eventhandler="saui" />
+	  <legend visible="false" />
+	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+	 
 
-    <graph id="soi" expanded="true">
-      <title><![CDATA[Southern Oscillation Index]]></title>
-      <shortname>Southern Oscillation Index</shortname>
-      <description><![CDATA[Differences in average air pressure at Tahiti and Darwin, Australia provide an atmospheric indicator of the El Niño–Southern Oscillation. El Niño conditions result in negative SOI values; La Niña conditions produce positive values for this index.]]></description>
-      <alternate><![CDATA[Air pressure patterns in the South Pacific reflect El Niño / La Niña conditions.]]></alternate>
-      <mugl url="config/soi.xml"/>
-      <stats color="#f8a792">
-        <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
-        </stat>
-        <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
-        </stat>
-      </stats>
-      <link href="#"/>
-    </graph>
-    <graph id="naoi" expanded="false">
-      <title><![CDATA[North Atlantic Oscillation]]></title>
-      <shortname>North Atlantic Oscillation</shortname>
-      <description><![CDATA[Departures from average air pressure over Greenland and the central North Atlantic Ocean affect weather around the Atlantic by influencing the intensity and location of the jet stream and the storm tracks that follow it. Negative values are linked with]]></description>
-      <alternate><![CDATA[Air pressure patterns in the North Atlantic influence storm tracks. Negative values are linked with winter storms in the eastern U.S.]]></alternate>
-      <mugl url="config/naoi.xml"/>
-      <stats color="#f8a792">
-        <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
-        </stat>
-        <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
-        </stat>
-      </stats>
-      <link href="#"/>
-    </graph>
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+		<labels>
+		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
+		  <label format="%n %y" spacing="6M 3M 2M 1M" />
+		</labels>
+		<title anchor="0 5" position="-25 0">Month/Year</title>
+		<grid color="0xeeeeee" />
 
-    <graph id="aoi" expanded="false">
-      <title><![CDATA[Arctic Oscillation Index]]></title>
-      <mugl url="config/aoi.xml"/>
-      <shortname>Arctic Oscillation Index</shortname>
-      <fullname><![CDATA[xxx]]></fullname>
-      <description><![CDATA[Departures from average air pressure over the Arctic region and the North Pacific and Atlantic Oceans affect the north-to- south location of the storm-steering, mid- latitude jet stream.  Negative values are associated with severe winter storms in the eastern U.S.]]></description>
-      <alternate><![CDATA[Air pressure conditions in the Arctic affect the north- south location of the jet stream. Negative values are linked with severe winter storms in the eastern U.S.]]></alternate>
-      <stats color="#f8a792">
-        <stat>
-          <title>Change since sometime</title>
-          <value>3.4%</value>
-        </stat>
-        <stat>
-          <title>Average change in last second</title>
-          <value>29%</value>
-        </stat>
-      </stats>
-      <link href="#"/>
-    </graph>
-  </tab>
 
- <tab id="climateProjections">
+	  </horizontalaxis>
+	  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="3" min="-3" tickmax="0" tickmin="-4">
+		<labels>
+
+		 <label densityfactor="0.5" format="%1d" spacing="20 10 5 2 1" />
+		 <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+		</labels>
+		<title anchor="0 -4" angle="90" position="-15 0">PNA Index</title>
+		<grid color="0xeeeeee" />
+
+
+	  </verticalaxis>
+
+	  <plot>
+		<legend visible="false" />
+		<verticalaxis ref="y"><constant value="0" /></verticalaxis>
+		<renderer type="line">
+		  <option name="linecolor" value="0x999999" />
+		  <option name="linewidth" value="1" />
+		</renderer>
+	  </plot>
+
+	  <plot>
+		<legend label="Yearly average" />
+		<horizontalaxis ref="x"><variable ref="datetime" /></horizontalaxis>
+		<verticalaxis ref="y"><variable ref="number" /></verticalaxis>
+		<renderer type="bar">
+		
+				
+
+				<option min="0.0" name="fillcolor" value="0x1A4B37" />
+				<option max="0.0" name="fillcolor" value="0x669933" />
+
+				<option name="linecolor" value="0x000000" />
+				
+				<option name="barwidth" value="1.00M" />
+				<option name="baroffset" value="0" />
+				<option name="barbase" value="0" />
+			</renderer>
+			<datatips format="{0}: {1}">
+			  <variable format="%n '%y" />
+			  <variable format="%.2f" />
+			</datatips>
+	  </plot>
+	  <data>
+
+		<variables>
+		  <variable column="0" id="datetime" type="datetime" />
+		  <variable column="1" id="number" type="number" />
+		</variables>
+		<values>195002,-1.047
+195003,-0.263
+195004,-0.100
+195005,-0.837
+195006,-0.983
+195007,-0.527
+195008,-0.253
+195009,0.053
+195010,-0.823
+195011,-0.433
+195012,-0.733
+195101,-0.583
+195102,-0.860
+195103,-0.480
+195104,0.393
+195105,0.460
+195106,0.210
+195107,-0.193
+195108,-0.007
+195109,0.080
+195110,0.140
+195111,-0.273
+195112,-1.013
+195201,-0.997
+195202,-0.700
+195203,0.347
+195204,-0.077
+195205,0.187
+195206,-0.610
+195207,-0.013
+195208,0.033
+195209,0.710
+195210,0.717
+195211,0.850
+195212,0.800
+195301,0.860
+195302,0.500
+195303,0.633
+195304,0.700
+195305,0.217
+195306,0.113
+195307,-0.660
+195308,-0.167
+195309,0.223
+195310,1.147
+195311,1.610
+195312,0.593
+195401,-0.003
+195402,-0.817
+195403,-1.337
+195404,-1.077
+195405,-0.693
+195406,0.307
+195407,0.067
+195408,0.073
+195409,0.223
+195410,0.733
+195411,0.560
+195412,0.443
+195501,-0.620
+195502,-1.190
+195503,-1.323
+195504,-0.933
+195505,-0.190
+195506,-0.510
+195507,-0.493
+195508,-0.563
+195509,-0.140
+195510,-0.287
+195511,-0.907
+195512,-1.450
+195601,-1.477
+195602,-1.017
+195603,-0.553
+195604,-0.303
+195605,-0.133
+195606,-0.463
+195607,-0.433
+195608,-0.190
+195609,-0.587
+195610,-0.167
+195611,-0.453
+195612,-0.147
+195701,-0.897
+195702,-0.427
+195703,-0.087
+195704,0.747
+195705,0.420
+195706,0.587
+195707,-0.170
+195708,-0.283
+195709,-0.303
+195710,0.190
+195711,0.120
+195712,0.360
+195801,0.350
+195802,0.657
+195803,0.517
+195804,0.570
+195805,0.837
+195806,1.060
+195807,1.560
+195808,1.127
+195809,0.767
+195810,0.080
+195811,0.300
+195812,0.017
+195901,-0.247
+195902,-0.290
+195903,-0.287
+195904,-0.200
+195905,-0.070
+195906,0.147
+195907,0.647
+195908,0.837
+195909,0.867
+195910,0.607
+195911,0.333
+195912,0.440
+196001,0.367
+196002,0.013
+196003,-0.053
+196004,0.270
+196005,0.743
+196006,1.230
+196007,1.513
+196008,1.187
+196009,0.737
+196010,-0.067
+196011,0.407
+196012,0.780
+196101,1.073
+196102,0.783
+196103,0.007
+196104,-0.237
+196105,0.107
+196106,0.377
+196107,0.670
+196108,0.587
+196109,-0.013
+196110,-0.317
+196111,-1.187
+196112,-0.573
+196201,-0.497
+196202,-0.227
+196203,-0.637
+196204,-1.030
+196205,-1.223
+196206,-0.770
+196207,-0.117
+196208,-0.097
+196209,0.237
+196210,0.227
+196211,0.517
+196212,0.357
+196301,0.437
+196302,-0.133
+196303,-0.513
+196304,-1.173
+196305,-0.453
+196306,-0.510
+196307,-0.447
+196308,-0.203
+196309,0.270
+196310,0.493
+196311,0.717
+196312,0.540
+196401,1.057
+196402,0.120
+196403,-0.297
+196404,-1.603
+196405,-1.207
+196406,-0.623
+196407,0.557
+196408,0.890
+196409,0.863
+196410,0.307
+196411,-0.653
+196412,-0.917
+196501,-0.830
+196502,-0.427
+196503,-0.640
+196504,-0.647
+196505,0.083
+196506,0.067
+196507,0.373
+196508,-0.023
+196509,0.657
+196510,0.260
+196511,-0.320
+196512,-0.570
+196601,-0.727
+196602,-0.060
+196603,-0.293
+196604,0.053
+196605,-0.197
+196606,-0.363
+196607,0.157
+196608,0.430
+196609,0.467
+196610,-0.643
+196611,-0.883
+196612,-0.783
+196701,-0.080
+196702,-0.777
+196703,-1.217
+196704,-1.577
+196705,-1.047
+196706,-0.767
+196707,-0.537
+196708,-0.340
+196709,0.237
+196710,0.223
+196711,-0.110
+196712,-0.687
+196801,-0.217
+196802,0.203
+196803,0.200
+196804,-0.093
+196805,-0.300
+196806,0.133
+196807,0.520
+196808,0.250
+196809,0.200
+196810,0.050
+196811,-0.100
+196812,-0.787
+196901,-1.497
+196902,-0.757
+196903,0.090
+196904,0.860
+196905,1.227
+196906,1.310
+196907,0.737
+196908,0.650
+196909,0.437
+196910,0.707
+196911,0.780
+196912,0.863
+197001,1.140
+197002,0.797
+197003,0.453
+197004,-0.093
+197005,-0.327
+197006,0.230
+197007,0.260
+197008,0.083
+197009,-0.667
+197010,-0.873
+197011,-0.997
+197012,-1.123
+197101,-0.693
+197102,-0.423
+197103,0.200
+197104,0.547
+197105,0.667
+197106,0.037
+197107,-0.603
+197108,-0.653
+197109,-0.640
+197110,-0.467
+197111,-1.030
+197112,-1.043
+197201,-1.450
+197202,-0.897
+197203,-1.013
+197204,-0.473
+197205,-0.620
+197206,-0.287
+197207,-0.337
+197208,-0.187
+197209,-0.433
+197210,-0.243
+197211,-0.500
+197212,-0.060
+197301,-0.207
+197302,0.263
+197303,0.443
+197304,0.623
+197305,0.620
+197306,0.557
+197307,0.030
+197308,-0.343
+197309,-0.673
+197310,-0.943
+197311,-0.673
+197312,-0.630
+197401,-0.353
+197402,-0.803
+197403,-0.740
+197404,-0.623
+197405,-0.810
+197406,-0.527
+197407,-0.033
+197408,0.583
+197409,0.697
+197410,0.577
+197411,0.647
+197412,0.273
+197501,0.030
+197502,-0.373
+197503,-0.377
+197504,-0.127
+197505,-0.080
+197506,-0.330
+197507,-0.883
+197508,-0.830
+197509,-0.680
+197510,-0.540
+197511,-0.417
+197512,-0.067
+197601,-0.370
+197602,-0.923
+197603,-0.630
+197604,0.077
+197605,0.137
+197606,-0.153
+197607,-0.537
+197608,-0.090
+197609,0.030
+197610,0.830
+197611,1.000
+197612,1.357
+197701,1.433
+197702,1.130
+197703,0.520
+197704,-0.403
+197705,-0.127
+197706,-0.323
+197707,0.660
+197708,0.243
+197709,0.793
+197710,-0.020
+197711,0.087
+197712,-0.037
+197801,0.460
+197802,0.667
+197803,0.480
+197804,-0.250
+197805,-0.613
+197806,-1.347
+197807,-1.023
+197808,-0.130
+197809,0.747
+197810,0.567
+197811,-0.243
+197812,-0.633
+197901,-1.077
+197902,-0.710
+197903,-0.450
+197904,0.607
+197905,-0.067
+197906,0.233
+197907,0.017
+197908,0.990
+197909,1.170
+197910,1.117
+197911,0.563
+197912,-0.040
+198001,0.360
+198002,0.370
+198003,1.117
+198004,0.443
+198005,0.273
+198006,-0.520
+198007,-1.090
+198008,-0.820
+198009,0.137
+198010,1.250
+198011,1.177
+198012,1.167
+198101,0.843
+198102,1.467
+198103,0.320
+198104,0.853
+198105,0.253
+198106,0.380
+198107,-0.780
+198108,-0.663
+198109,-0.933
+198110,-0.013
+198111,-0.103
+198112,0.093
+198201,-0.553
+198202,-0.980
+198203,-1.323
+198204,-1.330
+198205,-0.220
+198206,0.733
+198207,1.080
+198208,0.787
+198209,0.153
+198210,-0.120
+198211,-0.220
+198212,0.483
+198301,1.077
+198302,1.620
+198303,1.647
+198304,1.150
+198305,0.980
+198306,1.003
+198307,1.243
+198308,0.090
+198309,-0.323
+198310,0.113
+198311,0.540
+198312,0.833
+198401,0.477
+198402,1.050
+198403,1.293
+198404,1.143
+198405,0.527
+198406,-0.820
+198407,-1.297
+198408,-1.140
+198409,-0.570
+198410,-0.060
+198411,-0.603
+198412,0.150
+198501,-0.163
+198502,0.063
+198503,-0.833
+198504,-1.003
+198505,-0.330
+198506,0.107
+198507,0.283
+198508,-0.320
+198509,-0.907
+198510,-1.373
+198511,-0.673
+198512,0.153
+198601,0.963
+198602,0.777
+198603,0.483
+198604,0.263
+198605,0.073
+198606,0.067
+198607,-0.373
+198608,-0.557
+198609,-0.273
+198610,-0.033
+198611,0.520
+198612,0.547
+198701,1.007
+198702,0.940
+198703,1.217
+198704,0.580
+198705,0.330
+198706,-0.283
+198707,0.393
+198708,-0.770
+198709,-0.590
+198710,-0.427
+198711,0.863
+198712,0.863
+198801,0.860
+198802,0.823
+198803,1.113
+198804,0.897
+198805,1.043
+198806,1.297
+198807,0.900
+198808,0.153
+198809,-0.347
+198810,-0.107
+198811,0.473
+198812,0.013
+198901,-0.383
+198902,-1.027
+198903,-0.967
+198904,-0.660
+198905,-0.437
+198906,-0.317
+198907,-0.350
+198908,0.040
+198909,-0.277
+198910,-0.437
+198911,-0.327
+198912,-0.063
+199001,-0.443
+199002,-0.620
+199003,-0.637
+199004,0.053
+199005,-0.530
+199006,-0.343
+199007,0.183
+199008,0.487
+199009,0.107
+199010,-1.067
+199011,-1.340
+199012,-0.797
+199101,0.137
+199102,0.263
+199103,0.257
+199104,-0.370
+199105,-0.380
+199106,-0.343
+199107,-0.157
+199108,0.643
+199109,-0.367
+199110,-0.203
+199111,-0.523
+199112,0.663
+199201,0.680
+199202,0.780
+199203,0.337
+199204,0.663
+199205,0.797
+199206,1.097
+199207,0.560
+199208,-0.267
+199209,-0.480
+199210,-0.083
+199211,-0.057
+199212,-0.343
+199301,-0.443
+199302,0.390
+199303,1.120
+199304,1.823
+199305,1.573
+199306,1.110
+199307,0.177
+199308,-0.370
+199309,-0.520
+199310,-0.593
+199311,0.020
+199312,0.080
+199401,-0.043
+199402,-0.103
+199403,-0.220
+199404,0.173
+199405,-0.467
+199406,-0.183
+199407,-0.780
+199408,-1.113
+199409,-1.317
+199410,-1.427
+199411,-0.403
+199412,-0.107
+199501,0.693
+199502,0.573
+199503,0.450
+199504,0.210
+199505,0.347
+199506,0.137
+199507,0.033
+199508,0.293
+199509,0.390
+199510,0.240
+199511,0.040
+199512,0.050
+199601,0.200
+199602,-0.263
+199603,0.000
+199604,0.207
+199605,-0.040
+199606,-0.083
+199607,-0.490
+199608,-0.180
+199609,-0.647
+199610,-0.497
+199611,-0.813
+199612,-0.350
+199701,-0.013
+199702,-0.037
+199703,-0.063
+199704,0.010
+199705,0.330
+199706,0.333
+199707,-0.100
+199708,0.117
+199709,-0.157
+199710,0.320
+199711,0.603
+199712,0.937
+199801,0.930
+199802,0.880
+199803,1.007
+199804,-0.030
+199805,-0.373
+199806,0.000
+199807,0.550
+199808,0.740
+199809,0.177
+199810,0.613
+199811,0.400
+199812,0.270
+199901,-0.017
+199902,0.243
+199903,0.290
+199904,0.280
+199905,0.150
+199906,-0.130
+199907,0.577
+199908,0.623
+199909,0.940
+199910,0.443
+199911,0.367
+199912,-0.043
+200001,0.170
+200002,0.527
+200003,0.683
+200004,0.217
+200005,-0.617
+200006,-1.260
+200007,-1.327
+200008,-1.387
+200009,-0.543
+200010,-0.137
+200011,0.740
+200012,1.160
+200101,0.860
+200102,0.683
+200103,0.023
+200104,0.040
+200105,-0.507
+200106,-0.330
+200107,-0.330
+200108,0.017
+200109,-0.077
+200110,0.323
+200111,0.477
+200112,0.537
+200201,0.220
+200202,-0.400
+200203,-1.127
+200204,-1.417
+200205,-1.000
+200206,0.033
+200207,0.490
+200208,0.763
+200209,0.253
+200210,0.553
+200211,0.827
+200212,1.473
+200301,1.203
+200302,0.650
+200303,0.267
+200304,-0.710
+200305,-0.887
+200306,-0.523
+200307,0.117
+200308,0.570
+200309,0.483
+200310,0.003
+200311,0.037
+200312,-0.150
+200401,0.777
+200402,0.590
+200403,0.623
+200404,-0.317
+200405,-0.540
+200406,-0.680
+200407,0.423
+200408,0.520
+200409,0.027
+200410,-0.387
+200411,-0.273
+200412,0.197
+200501,0.140
+200502,0.347
+200503,0.767
+200504,1.300
+200505,1.103
+200506,0.820
+200507,0.480
+200508,0.927
+200509,1.083
+200510,0.590
+200511,0.507
+200512,0.350
+200601,0.567
+200602,0.017
+200603,0.023
+200604,-0.363
+200605,-0.627
+200606,-0.167
+200607,-0.213
+200608,0.280
+200609,-0.610
+200610,-0.603
+200611,-0.123
+200612,0.397
+200701,0.830
+200702,0.270
+200703,0.447
+200704,0.457
+200705,0.270
+200706,0.590
+200707,1.270
+200708,2.023
+200709,1.470
+200710,1.040
+200711,0.460
+200712,0.170
+200801,0.107
+200802,-0.047
+200803,-0.263
+200804,0.013
+200805,-0.463
+200806,-0.173
+200807,-0.310
+200808,0.647
+200809,0.967
+200810,1.030
+200811,0.187
+200812,0.103
+200901,-0.583
+200902,-0.453
+200903,-0.587
+200904,-0.463
+200905,-0.007
+200906,0.330
+200907,0.740
+200908,1.053
+200909,0.790
+200910,0.643
+200911,0.327
+200912,0.600
+201001,0.723
+201002,1.283
+201003,1.380
+201004,0.877
+201005,0.137
+201006,0.090
+201007,0.767
+201008,1.280
+201009,1.413
+201010,0.767
+201011,-0.273
+201012,-0.443
+201101,-0.690
+201102,0.133
+201103,-0.827
+201104,-0.237
+201105,-0.393
+201106,0.020
+201107,0.430
+201108,0.217
+201109,0.543
+201110,-0.193
+201111,0.067
+201112,0.057
+201201,0.570
+201202,0.487
+201203,0.337
+201204,-0.053
+201205,-0.257
+201206,-0.360
+201207,-0.277
+201208,-0.250
+201209,-0.590
+</values>
+	  </data>
+	</mugl></graph></tab><tab id="climateProjections2">
     <title>Climate Projections</title>
-    <graph id="cp">
-      <title>Climate Model Data (CMIP3, 2007)</title>
-      <legendtitle>Simulation of Global Temperature</legendtitle>
+    <timeslider />
+    <mugloverrides>
+      <element name="plotarea">
+        <attribute name="marginright" value="35" />
+      </element>
+      <element name="horizontalaxis">
+        <attribute name="min" value="1990" />
+        <attribute name="max" value="2100" />
+        <element name="binding">
+          <attribute name="id" value="Tab3TimeBinding" />
+        </element>
+        <element name="pan">
+          <attribute name="min" value="1900" />
+          <attribute name="max" value="2100" />
+        </element>
+        <element name="zoom">
+          <attribute name="min" value="6M" />
+        </element>
+      </element>
+      <element name="verticalaxis">
+        <element name="pan">
+          <attribute name="allowed" value="yes" />
+        </element>
+      </element>
+    </mugloverrides>
+    <graph id="cp2" name="cp">
+      <title>Simulation of Global Temperature</title>
+      <legendtitle>Climate Model Data (CMIP3, 2007)</legendtitle>
       <legendtext>The black line shows the average of many different
-simulations of global temperature in the 20th century compared to
-average from 1971-1999, and the colored lines show projected
+simulations of global temperature in the 20th century compared
+to average from 1971-1999, and the colored lines show projected
 temperature changes in the 21st century for three possible
-scenarios.</legendtext>
-<help><![CDATA[Results from this set of climate model experiments suggest that our
-planet’s average temperature could be between 2 and 9.7&#730;F (1.1 to
-5.4&#730;C) warmer in 2100 than it is today.
-<br/><br/>
+emissions scenarios.  The shaded areas around each line indicate
+the statistical spread (one standard deviation) provided by
+individual model runs.</legendtext>
+<help>
+Results from this set of climate model experiments suggest that our
+planet&#8217;s average temperature could be between 2 and 9.7&#176;F (1.1 to
+5.4&#176;C) warmer in 2100 than it is today.
+<br /><br />
 The graph shows the average of temperature simulations for the 20th
 century (black line), followed by projected temperatures for the 21st
 century based on a range of emissions scenarios (colored lines).  The
 shaded areas around each line indicate the statistical spread (one
 standard deviation) provided by individual model runs.
-<br/><br/>
-Zero on the Y-axis represents Earth’s average temperature for the
+<br /><br />
+Zero on the Y-axis represents Earth&#8217;s average temperature for the
 period 1971-1999.  For 2000-2100, the model projections differ mainly
 in their assumptions about the number of people on the planet and the
 way they use energy, and therefore, the amount of heat-trapping gas in
-the atmosphere.]]></help>
+the atmosphere.
+</help>
       <link>http://www.climatewatch.noaa.gov/article/2012/global-temperature-projections</link>
-      <mugl url="config/projections.xml" />
+      <mugl>
+        <legend visible="false" />
+        <horizontalaxis id="year" max="2100" min="1990" type="datetime">
+          <title>Year</title>
+          <labels>
+            <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+            <label format="%n %y" spacing="6M 3M 2M 1M" />
+          </labels>
+        </horizontalaxis>
+
+        <verticalaxis id="tempf" type="number">
+          <title anchor="0 -1" angle="90" position="-20 0">Temperature Change from 1971-1999 Average (&#730;F)</title>
+
+          <binding id="ProjTempBinding" max="1.8" min="0" />
+          <labels fontcolor="0x666666" />
+        </verticalaxis>
+        <verticalaxis base="1 -1" id="temp" max="4.5" min="-0.5" type="number">
+          <title anchor="0 -1" angle="90" position="28 0">Temperature Change from 1971-1999 Average (&#730;C)</title>
+          <pan max="6" min="-2" />
+          <binding id="ProjTempBinding" max="1" min="0" />
+          <labels fontcolor="0x666666" />
+        </verticalaxis>
+
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_20c3m" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="min_20c3m" />
+            <variable ref="max_20c3m" />
+          </verticalaxis>
+          <renderer type="band">
+            <option name="fillcolor" value="0xCCCCCC" />
+            <option name="fillopacity" value="0.5" />
+            <option name="linewidth" value="0" />
+          </renderer>
+        </plot>
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_a2" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="min_a2" />
+            <variable ref="max_a2" />
+          </verticalaxis>
+          <renderer type="band">
+            <option name="fillcolor" value="0xFFCCCC" />
+            <option name="fillopacity" value="0.5" />
+            <option name="linewidth" value="0" />
+          </renderer>
+        </plot>
+
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_a1b" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="min_a1b" />
+            <variable ref="max_a1b" />
+          </verticalaxis>
+          <renderer type="band">
+            <option name="fillcolor" value="0xCCFFCC" />
+            <option name="fillopacity" value="0.5" />
+            <option name="linewidth" value="0" />
+          </renderer>
+        </plot>
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_b1" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="min_b1" />
+            <variable ref="max_b1" />
+          </verticalaxis>
+          <renderer type="band">
+            <option name="fillcolor" value="0xCCCCFF" />
+            <option name="fillopacity" value="0.5" />
+            <option name="linewidth" value="0" />
+          </renderer>
+        </plot>
+
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_20c3m" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="temp_20c3m" />
+          </verticalaxis>
+          <renderer type="line">
+            <option name="linecolor" value="0x000000" />
+            <option name="linewidth" value="2" />
+          </renderer>
+          <datatips format="{0}: {1}">
+            <variable format="%Y" />
+            <variable format="%.1f &#730;C" />
+          </datatips>
+        </plot>
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_a2" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="temp_a2" />
+          </verticalaxis>
+          <renderer type="line">
+            <option name="linecolor" value="0x990000" />
+            <option name="linewidth" value="2" />
+          </renderer>
+          <datatips format="{0}: {1}">
+            <variable format="%Y A2" />
+            <variable format="%.1f &#730;C" />
+          </datatips>
+        </plot>
+
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_a1b" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="temp_a1b" />
+          </verticalaxis>
+          <renderer type="line">
+            <option name="linecolor" value="0x009900" />
+            <option name="linewidth" value="2" />
+          </renderer>
+          <datatips format="{0}: {1}">
+            <variable format="%Y A1B" />
+            <variable format="%.1f &#730;C" />
+          </datatips>
+        </plot>
+        <plot>
+          <horizontalaxis ref="year">
+            <variable ref="year_b1" />
+          </horizontalaxis>
+          <verticalaxis ref="temp">
+            <variable ref="temp_b1" />
+          </verticalaxis>
+          <renderer type="line">
+            <option name="linecolor" value="0x000099" />
+            <option name="linewidth" value="2" />
+          </renderer>
+          <datatips format="{0}: {1}">
+            <variable format="%Y B1" />
+            <variable format="%.1f &#730;C" />
+          </datatips>
+        </plot>
+        <data>
+          <variables>
+            <variable column="0" id="year_20c3m" type="datetime" />
+            <variable column="1" id="min_20c3m" />
+            <variable column="2" id="temp_20c3m" />
+            <variable column="3" id="max_20c3m" />
+          </variables>
+          <values>1900,-0.710738,-0.501011,-0.291284
+1901,-0.709837,-0.488806,-0.267776
+1902,-0.738885,-0.505620,-0.272355
+1903,-0.822017,-0.591622,-0.361227
+1904,-0.828376,-0.562089,-0.295802
+1905,-0.748973,-0.544255,-0.339537
+1906,-0.670167,-0.523723,-0.377279
+1907,-0.717963,-0.510749,-0.303535
+1908,-0.757014,-0.477469,-0.197924
+1909,-0.742775,-0.504135,-0.265494
+1910,-0.694880,-0.488432,-0.281984
+1911,-0.727574,-0.497348,-0.267123
+1912,-0.743912,-0.546236,-0.348560
+1913,-0.734749,-0.561600,-0.388450
+1914,-0.709540,-0.524161,-0.338783
+1915,-0.666296,-0.470669,-0.275043
+1916,-0.615051,-0.434292,-0.253533
+1917,-0.681798,-0.452867,-0.223936
+1918,-0.653037,-0.437358,-0.221679
+1919,-0.594194,-0.422320,-0.250446
+1920,-0.657729,-0.461637,-0.265544
+1921,-0.661296,-0.462231,-0.263166
+1922,-0.633630,-0.426820,-0.220010
+1923,-0.596698,-0.405058,-0.213417
+1924,-0.601313,-0.408155,-0.214998
+1925,-0.609820,-0.404679,-0.199538
+1926,-0.635884,-0.431055,-0.226227
+1927,-0.623605,-0.402219,-0.180833
+1928,-0.559513,-0.372856,-0.186199
+1929,-0.598222,-0.380643,-0.163063
+1930,-0.652624,-0.411341,-0.170059
+1931,-0.632389,-0.428031,-0.223674
+1932,-0.624553,-0.429175,-0.233797
+1933,-0.609135,-0.425603,-0.242072
+1934,-0.602625,-0.380579,-0.158534
+1935,-0.566810,-0.359286,-0.151762
+1936,-0.552560,-0.349274,-0.145988
+1937,-0.584782,-0.386471,-0.188160
+1938,-0.576507,-0.369817,-0.163127
+1939,-0.518921,-0.323497,-0.128072
+1940,-0.549787,-0.344629,-0.139472
+1941,-0.516653,-0.323550,-0.130446
+1942,-0.520879,-0.338123,-0.155366
+1943,-0.541142,-0.352008,-0.162875
+1944,-0.535743,-0.360963,-0.186183
+1945,-0.471457,-0.316071,-0.160685
+1946,-0.511557,-0.327073,-0.142588
+1947,-0.533288,-0.356772,-0.180256
+1948,-0.521996,-0.342596,-0.163195
+1949,-0.569460,-0.374774,-0.180087
+1950,-0.486723,-0.307924,-0.129125
+1951,-0.458477,-0.295940,-0.133403
+1952,-0.536644,-0.339509,-0.142374
+1953,-0.453351,-0.284436,-0.115521
+1954,-0.444120,-0.278077,-0.112034
+1955,-0.480438,-0.265625,-0.050812
+1956,-0.453878,-0.243119,-0.032359
+1957,-0.421881,-0.249446,-0.077012
+1958,-0.463311,-0.244916,-0.026522
+1959,-0.395277,-0.232648,-0.070019
+1960,-0.440320,-0.241140,-0.041960
+1961,-0.461807,-0.248167,-0.034527
+1962,-0.461378,-0.258331,-0.055284
+1963,-0.453368,-0.274575,-0.095783
+1964,-0.495349,-0.343279,-0.191209
+1965,-0.476183,-0.330742,-0.185301
+1966,-0.453868,-0.282088,-0.110309
+1967,-0.400522,-0.245543,-0.090565
+1968,-0.375041,-0.231942,-0.088844
+1969,-0.400482,-0.242794,-0.085105
+1970,-0.366061,-0.229268,-0.092475
+1971,-0.377058,-0.218369,-0.059680
+1972,-0.285979,-0.178620,-0.071261
+1973,-0.317793,-0.203584,-0.089375
+1974,-0.322983,-0.174263,-0.025542
+1975,-0.260690,-0.166179,-0.071669
+1976,-0.307674,-0.194430,-0.081185
+1977,-0.204836,-0.097912,0.009012
+1978,-0.143529,-0.066871,0.009788
+1979,-0.219297,-0.102634,0.014029
+1980,-0.168949,-0.048366,0.072216
+1981,-0.104629,-0.020126,0.064378
+1982,-0.163454,-0.057464,0.048527
+1983,-0.265794,-0.085451,0.094892
+1984,-0.199850,-0.051584,0.096681
+1985,-0.118408,-0.031497,0.055414
+1986,-0.088032,0.013698,0.115429
+1987,-0.027990,0.071500,0.170989
+1988,-0.048658,0.068205,0.185068
+1989,-0.012725,0.092269,0.197264
+1990,0.024057,0.133902,0.243748
+1991,0.015163,0.129762,0.244362
+1992,-0.206681,-0.041059,0.124564
+1993,-0.108136,0.053487,0.215110
+1994,-0.009449,0.132708,0.274865
+1995,-0.004492,0.150081,0.304653
+1996,0.054049,0.170357,0.286666
+1997,0.075091,0.206625,0.338160
+1998,0.120801,0.230066,0.339330
+1999,0.137926,0.285747,0.433567
+2000,0.166130,0.310955,0.455780
+</values>
+        </data>
+        <data>
+          <variables>
+            <variable column="0" id="year_a1b" type="datetime" />
+            <variable column="1" id="min_a1b" />
+            <variable column="2" id="temp_a1b" />
+            <variable column="3" id="max_a1b" />
+          </variables>
+          <values>2000,0.145627,0.291885,0.438144
+2001,0.200560,0.347025,0.493491
+2002,0.234579,0.396154,0.557728
+2003,0.171510,0.350560,0.529610
+2004,0.201651,0.379757,0.557863
+2005,0.281905,0.456911,0.631917
+2006,0.306555,0.496666,0.686778
+2007,0.304930,0.489238,0.673546
+2008,0.313193,0.477984,0.642776
+2009,0.297077,0.505995,0.714913
+2010,0.292069,0.506336,0.720602
+2011,0.362137,0.557922,0.753707
+2012,0.409145,0.578246,0.747347
+2013,0.392030,0.570812,0.749594
+2014,0.439108,0.599734,0.760360
+2015,0.411519,0.622467,0.833415
+2016,0.414330,0.645934,0.877538
+2017,0.410669,0.645283,0.879896
+2018,0.468515,0.667665,0.866816
+2019,0.466252,0.692533,0.918814
+2020,0.459485,0.716900,0.974316
+2021,0.504237,0.746924,0.989611
+2022,0.559294,0.779399,0.999503
+2023,0.599739,0.811885,1.024031
+2024,0.636871,0.856999,1.077128
+2025,0.628261,0.878262,1.128263
+2026,0.664833,0.899280,1.133727
+2027,0.748957,0.994518,1.240080
+2028,0.684936,0.967092,1.249248
+2029,0.769391,1.023029,1.276667
+2030,0.740319,1.012693,1.285068
+2031,0.751357,1.017853,1.284350
+2032,0.808492,1.070940,1.333388
+2033,0.758937,1.081246,1.403555
+2034,0.861197,1.145258,1.429318
+2035,0.903435,1.176571,1.449707
+2036,0.871478,1.209465,1.547453
+2037,0.951028,1.238026,1.525024
+2038,1.034090,1.296544,1.558998
+2039,0.992822,1.292254,1.591686
+2040,1.058780,1.359342,1.659905
+2041,1.049079,1.372618,1.696156
+2042,1.121038,1.412749,1.704459
+2043,1.156512,1.452485,1.748458
+2044,1.166804,1.455456,1.744108
+2045,1.206794,1.504807,1.802819
+2046,1.219790,1.522368,1.824946
+2047,1.250711,1.577118,1.903525
+2048,1.262818,1.591077,1.919335
+2049,1.315937,1.616743,1.917548
+2050,1.330172,1.655734,1.981296
+2051,1.328707,1.647857,1.967007
+2052,1.399671,1.708456,2.017240
+2053,1.455674,1.766671,2.077668
+2054,1.425555,1.795265,2.164976
+2055,1.442940,1.791434,2.139927
+2056,1.475191,1.847903,2.220615
+2057,1.481021,1.849337,2.217653
+2058,1.506940,1.869720,2.232499
+2059,1.525885,1.904968,2.284050
+2060,1.583539,1.962000,2.340461
+2061,1.653489,2.006156,2.358822
+2062,1.624567,2.023446,2.422326
+2063,1.656734,2.046415,2.436096
+2064,1.683838,2.060428,2.437018
+2065,1.723957,2.131361,2.538765
+2066,1.799722,2.203419,2.607116
+2067,1.764734,2.189269,2.613804
+2068,1.759360,2.202156,2.644952
+2069,1.801787,2.234197,2.666608
+2070,1.862704,2.272177,2.681649
+2071,1.851883,2.265624,2.679364
+2072,1.875543,2.320728,2.765914
+2073,1.868358,2.333415,2.798472
+2074,1.884038,2.334039,2.784041
+2075,1.932404,2.387578,2.842752
+2076,1.928619,2.420624,2.912629
+2077,1.982402,2.432595,2.882788
+2078,1.995155,2.453802,2.912448
+2079,1.927537,2.428147,2.928758
+2080,2.040906,2.519151,2.997397
+2081,2.052111,2.549884,3.047657
+2082,2.004536,2.502989,3.001442
+2083,2.059103,2.562609,3.066115
+2084,2.110614,2.604766,3.098917
+2085,2.080144,2.617573,3.155002
+2086,2.111514,2.632933,3.154351
+2087,2.149207,2.674269,3.199332
+2088,2.153173,2.698239,3.243304
+2089,2.178929,2.716187,3.253446
+2090,2.153883,2.711574,3.269265
+2091,2.161684,2.716475,3.271266
+2092,2.234301,2.789741,3.345181
+2093,2.234368,2.802476,3.370583
+2094,2.261474,2.808146,3.354818
+2095,2.247968,2.801056,3.354145
+2096,2.247280,2.830378,3.413476
+2097,2.325516,2.902391,3.479265
+2098,2.320413,2.914630,3.508847
+2099,2.347624,2.916784,3.485944
+2100,2.737245,3.120802,3.504359
+
+</values>
+        </data>
+        <data>
+          <variables>
+            <variable column="0" id="year_a2" type="datetime" />
+            <variable column="1" id="min_a2" />
+            <variable column="2" id="temp_a2" />
+            <variable column="3" id="max_a2" />
+          </variables>
+          <values>2000,0.165646,0.329046,0.492446
+2001,0.214887,0.360918,0.506949
+2002,0.256888,0.371929,0.486971
+2003,0.248045,0.373018,0.497991
+2004,0.219270,0.402240,0.585210
+2005,0.227164,0.417076,0.606988
+2006,0.292956,0.481519,0.670082
+2007,0.344807,0.496321,0.647835
+2008,0.269287,0.433711,0.598135
+2009,0.391140,0.511838,0.632535
+2010,0.428566,0.545337,0.662108
+2011,0.387912,0.541266,0.694619
+2012,0.393813,0.545776,0.697739
+2013,0.420896,0.560027,0.699159
+2014,0.453710,0.612274,0.770838
+2015,0.439609,0.633707,0.827806
+2016,0.477243,0.670679,0.864116
+2017,0.435290,0.633751,0.832213
+2018,0.500993,0.697492,0.893990
+2019,0.547595,0.745748,0.943900
+2020,0.514851,0.691117,0.867383
+2021,0.571911,0.724185,0.876458
+2022,0.569295,0.755675,0.942055
+2023,0.575148,0.775057,0.974967
+2024,0.644455,0.831513,1.018570
+2025,0.641848,0.815143,0.988439
+2026,0.595520,0.808722,1.021923
+2027,0.661233,0.841132,1.021032
+2028,0.751649,0.922933,1.094218
+2029,0.724011,0.924471,1.124931
+2030,0.699449,0.918878,1.138307
+2031,0.783230,0.975796,1.168361
+2032,0.855728,1.044385,1.233043
+2033,0.840432,1.043712,1.246993
+2034,0.763628,1.011247,1.258865
+2035,0.888724,1.090809,1.292894
+2036,0.962713,1.144415,1.326116
+2037,0.947020,1.126192,1.305364
+2038,0.939682,1.155511,1.371341
+2039,0.921783,1.203574,1.485365
+2040,1.001595,1.205828,1.410060
+2041,1.076605,1.284902,1.493198
+2042,1.053342,1.285695,1.518048
+2043,1.104053,1.326836,1.549620
+2044,1.150249,1.347215,1.544181
+2045,1.171716,1.398293,1.624870
+2046,1.159938,1.391922,1.623906
+2047,1.198084,1.430631,1.663178
+2048,1.230670,1.478784,1.726898
+2049,1.209669,1.474498,1.739327
+2050,1.249102,1.499980,1.750857
+2051,1.355772,1.580050,1.804327
+2052,1.346798,1.615528,1.884258
+2053,1.392078,1.666378,1.940678
+2054,1.465268,1.692697,1.920125
+2055,1.499945,1.730452,1.960959
+2056,1.511339,1.766878,2.022418
+2057,1.542369,1.809511,2.076653
+2058,1.494901,1.814643,2.134384
+2059,1.592719,1.868890,2.145062
+2060,1.676947,1.931699,2.186451
+2061,1.684672,1.960537,2.236403
+2062,1.774754,2.006763,2.238773
+2063,1.766306,2.045218,2.324131
+2064,1.773018,2.056654,2.340291
+2065,1.848077,2.127676,2.407275
+2066,1.929260,2.184909,2.440558
+2067,1.956415,2.234760,2.513105
+2068,1.966822,2.257303,2.547784
+2069,2.038086,2.310407,2.582728
+2070,2.052885,2.355641,2.658396
+2071,2.104184,2.390841,2.677497
+2072,2.133361,2.445692,2.758023
+2073,2.175156,2.494486,2.813817
+2074,2.149044,2.497112,2.845180
+2075,2.257178,2.604918,2.952659
+2076,2.310395,2.635191,2.959986
+2077,2.348965,2.680721,3.012477
+2078,2.365751,2.702072,3.038393
+2079,2.368819,2.755041,3.141264
+2080,2.408831,2.778045,3.147259
+2081,2.517314,2.878540,3.239765
+2082,2.597459,2.953959,3.310458
+2083,2.560223,2.970389,3.380555
+2084,2.627930,3.020329,3.412728
+2085,2.716474,3.055262,3.394050
+2086,2.700502,3.076589,3.452676
+2087,2.738700,3.100011,3.461322
+2088,2.751288,3.139895,3.528502
+2089,2.804757,3.201326,3.597894
+2090,2.805472,3.244231,3.682990
+2091,2.814277,3.264641,3.715005
+2092,2.910711,3.316926,3.723140
+2093,2.954835,3.353766,3.752696
+2094,2.973943,3.426580,3.879217
+2095,3.041611,3.470116,3.898620
+2096,3.083598,3.520908,3.958219
+2097,3.089865,3.576524,4.063184
+2098,3.207975,3.693051,4.178126
+2099,3.245118,3.740233,4.235348
+2100,3.0,4.099390,5.0
+</values>
+        </data>
+        <data>
+          <variables>
+            <variable column="0" id="year_b1" type="datetime" />
+            <variable column="1" id="min_b1" />
+            <variable column="2" id="temp_b1" />
+            <variable column="3" id="max_b1" />
+          </variables>
+          <values>2000,0.106485,0.293151,0.479818
+2001,0.187834,0.346060,0.504286
+2002,0.142559,0.330877,0.519194
+2003,0.162613,0.377274,0.591934
+2004,0.235353,0.420926,0.606500
+2005,0.254130,0.414176,0.574222
+2006,0.216684,0.447631,0.678579
+2007,0.227637,0.440609,0.653581
+2008,0.228923,0.448347,0.667771
+2009,0.266404,0.469509,0.672614
+2010,0.376018,0.571263,0.766507
+2011,0.360094,0.582055,0.804015
+2012,0.325692,0.548769,0.771846
+2013,0.396121,0.609733,0.823345
+2014,0.378801,0.611110,0.843420
+2015,0.404624,0.620442,0.836261
+2016,0.424048,0.673854,0.923660
+2017,0.441420,0.682750,0.924081
+2018,0.499148,0.724414,0.949679
+2019,0.482166,0.701587,0.921009
+2020,0.516961,0.757937,0.998913
+2021,0.535054,0.792807,1.050560
+2022,0.547432,0.787053,1.026674
+2023,0.518771,0.795888,1.073005
+2024,0.507528,0.769187,1.030845
+2025,0.556925,0.807635,1.058345
+2026,0.545932,0.812186,1.078439
+2027,0.619289,0.852421,1.085554
+2028,0.596383,0.868639,1.140894
+2029,0.556840,0.857312,1.157785
+2030,0.640772,0.918657,1.196543
+2031,0.616748,0.927760,1.238771
+2032,0.629364,0.892886,1.156408
+2033,0.754457,0.972190,1.189923
+2034,0.745537,0.987435,1.229333
+2035,0.641887,0.932857,1.223827
+2036,0.646280,0.926223,1.206166
+2037,0.733718,0.998384,1.263051
+2038,0.740857,1.022107,1.303357
+2039,0.692815,1.011365,1.329914
+2040,0.806856,1.074563,1.342271
+2041,0.805422,1.094599,1.383776
+2042,0.840898,1.125453,1.410008
+2043,0.896532,1.141363,1.386194
+2044,0.853987,1.139195,1.424404
+2045,0.852729,1.154993,1.457257
+2046,0.885246,1.192437,1.499627
+2047,0.877325,1.227795,1.578265
+2048,0.928694,1.249435,1.570176
+2049,0.933770,1.261929,1.590087
+2050,0.919344,1.242812,1.566281
+2051,0.955645,1.282146,1.608646
+2052,1.090914,1.381108,1.671302
+2053,1.056689,1.370671,1.684653
+2054,0.991356,1.310711,1.630067
+2055,1.059053,1.369332,1.679611
+2056,1.103112,1.413047,1.722982
+2057,1.090421,1.421150,1.751879
+2058,1.147237,1.463783,1.780330
+2059,1.114532,1.456341,1.798150
+2060,1.122089,1.490398,1.858706
+2061,1.162520,1.527337,1.892154
+2062,1.177603,1.528742,1.879881
+2063,1.205090,1.552542,1.899994
+2064,1.189537,1.559960,1.930383
+2065,1.244112,1.578392,1.912672
+2066,1.219431,1.567093,1.914755
+2067,1.253789,1.613096,1.972403
+2068,1.239116,1.618911,1.998706
+2069,1.283890,1.627804,1.971718
+2070,1.303781,1.657060,2.010339
+2071,1.362190,1.730506,2.098821
+2072,1.302853,1.696700,2.090548
+2073,1.302147,1.676731,2.051316
+2074,1.326031,1.719110,2.112189
+2075,1.360823,1.752833,2.144843
+2076,1.350315,1.756798,2.163280
+2077,1.326705,1.729210,2.131714
+2078,1.429822,1.794889,2.159956
+2079,1.415692,1.773155,2.130618
+2080,1.378361,1.757330,2.136299
+2081,1.476490,1.847881,2.219272
+2082,1.431044,1.847248,2.263453
+2083,1.366170,1.801766,2.237363
+2084,1.420183,1.829904,2.239625
+2085,1.467023,1.853149,2.239276
+2086,1.422705,1.860202,2.297699
+2087,1.383293,1.851855,2.320416
+2088,1.434011,1.868834,2.303657
+2089,1.491763,1.889890,2.288017
+2090,1.461271,1.898241,2.335210
+2091,1.477625,1.919731,2.361836
+2092,1.421358,1.879517,2.337676
+2093,1.432489,1.875576,2.318663
+2094,1.437764,1.903926,2.370088
+2095,1.477110,1.944774,2.412438
+2096,1.470886,1.935538,2.400190
+2097,1.453013,1.952689,2.452364
+2098,1.513645,1.975499,2.437354
+2099,1.525836,1.960674,2.395511
+2100,1.481352,1.873689,2.266026
+</values>
+        </data>
+      </mugl>
     <legend>
       <item>
-        <img src="config/ProjectionGraphLegendIcons-Red-width2.png"/>
+        <img src="./assets/ProjectionGraphLegendIcons-Red-width2.png" />
         <text>High Growth (A2)</text>
       </item>
       <item>
-        <img src="config/ProjectionGraphLegendIcons-Green-width2.png"/>
+        <img src="./assets/ProjectionGraphLegendIcons-Green-width2.png" />
         <text>Moderate Growth (A1B)</text>
       </item>
       <item>
-        <img src="config/ProjectionGraphLegendIcons-Blue-width2.png"/>
+        <img src="./assets/ProjectionGraphLegendIcons-Blue-width2.png" />
         <text>Low Growth (B1)</text>
       </item>
       <item>
-        <img src="config/ProjectionGraphLegendIcons-Black-width2.png"/>
+        <img src="./assets/ProjectionGraphLegendIcons-Black-width2.png" />
         <text>20th Century Climate</text>
       </item>
     </legend>
-    </graph>
-  </tab>
-
+    </graph></tab><intro>
+     <ns0:TextFlow fontFamily="Arial"><ns0:p textAlign="center"><ns0:span fontSize="18" fontWeight="bold">Global Climate Dashboard</ns0:span></ns0:p><ns0:p><ns0:span fontWeight="bold" /></ns0:p><ns0:p><ns0:span fontSize="12" fontWeight="bold">Just as the dashboard of a car gives you a quick look at the status of your vehicle, the global climate dashboard gives you a quick look at the status of Earth&#8217;s climate system. The interactive graphs let you explore climate-relevant measurements and the relationships among them for different time periods.</ns0:span></ns0:p>
+       <ns0:p><ns0:span fontSize="12" fontWeight="bold" /></ns0:p>
+       <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Adjust the time slider, or click and drag within a graph, to change the time period displayed.</ns0:span></ns0:p>
+       <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Click and drag data labels up from the list at the bottom to display their graphs.</ns0:span></ns0:p>
+       <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Click the question mark next to any graph for a brief description of the parameter.</ns0:span></ns0:p>
+       <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Click Read More&#8230; to access an overview article about the parameter, including a larger version of the graph and the opportunity to download the data.</ns0:span></ns0:p>
+     </ns0:TextFlow>
+  </intro>
+  
+    
+  
+  <timeline>
+    <mugloverrides>
+      <element name="plotarea">
+        <attribute name="marginbottom" value="15" />
+      </element>
+      <element name="horizontalaxis">
+        <attribute name="linewidth" value="0" />
+        <attribute name="tickcolor" value="0x666666" />
+        <element name="grid">
+          <attribute name="color" value="0x666666" />
+        </element>
+        <element name="labels">
+          <attribute name="visible" value="true" />
+        </element>
+      </element>
+      <element name="verticalaxis">
+        <element name="pan">
+          <attribute name="allowed" value="yes" />
+        </element>
+        <element name="grid">
+          <attribute name="visible" value="false" />
+        </element>
+      </element>
+    </mugloverrides>
+    <mugl>
+      <window border="0" margin="0" padding="0" />
+      <legend visible="false" />
+      <plotarea marginbottom="15" marginleft="25" marginright="20" margintop="0" />
+      <horizontalaxis id="year" linewidth="0" max="2100" min="1950" tickmax="5" tickmin="-3" tickwidth="1" type="datetime">
+        <labels position="0 0">
+          <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+          <label format="%n %Y" spacing="6M 3M 2M 1M" />
+        </labels>
+        <title />
+        <grid />
+        <pan max="2500" min="1600" />
+        <zoom min="2" />
+        <binding id="timebinding" max="2000" min="1900" />
+      </horizontalaxis>
+      <verticalaxis base="-2 -1" id="y" linewidth="0" max="1" min="-1" type="number">
+        <labels />
+        <title />
+        <pan allowed="no" />
+        <zoom allowed="no" />
+      </verticalaxis>
+      <data>
+        <variables>
+          <variable column="0" id="x" type="datetime" />
+          <variable column="1" id="y" />
+        </variables>
+        <values>
+        </values>
+      </data>
+    </mugl>
+  </timeline>
+  
+  
 </dashboard>
