@@ -35,9 +35,149 @@
 
 </style>
 
-<script type="text/javascript" src="lib/mustache.js"></script>
-<script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script>
+<!-- BEGIN MULTIGRAPH FILES -->
+<!--
+<script type="text/javascript" src="lib/multigraph/build/multigraph.js"></script>
+-->
+<script type="text/javascript" src="lib/multigraph/lib/jermaine/build/jermaine.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/ajaxthrottle/src/ajaxthrottle.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/lightbox/lightbox.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/jquery/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/jquery/jquery-embed.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/busy-spinner/busy_spinner.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/error-display/build/errorDisplay.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/util/util.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/sprintf/sprintf-0.7-beta1.js"></script>
+<script type="text/javascript" src="lib/multigraph/lib/requestanimationframe/requestanimationframe.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/utility_functions/defaults.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/utility_functions/parsing_functions.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/utility_functions/validation_functions.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/data_value.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/data_measure.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/data_formatter.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/box.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/displacement.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/enum.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/insets.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/point.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/rgb_color.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/math/util.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/event_emitter.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/data_variable.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/plot.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/array_data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/axis.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/axis_binding.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/axis_title.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/background.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/constant_plot.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/csv_data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/data_plot.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/datatips.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/datatips_variable.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/datetime_formatter.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/datetime_measure.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/datetime_value.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/filter.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/filter_option.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/graph_title.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/grid.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/icon.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/img.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/labeler.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/legend.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/number_formatter.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/number_measure.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/number_value.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/pan.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/periodic_array_data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/plot_legend.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/plotarea.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/renderers/band_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/renderers/bar_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/renderers/fill_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/renderers/pointline_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/renderers/rangebar_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/text.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/warning.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/web_service_data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/web_service_data_cache_node.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/web_service_data_iterator.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/window.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/core/zoom.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/jquery_mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/axis.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/axis_title.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/background.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/data_variable.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/datatips.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/datatips_variable.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/filter.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/filter_option.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/graph_title.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/grid.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/icon.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/img.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/labeler.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/legend.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/pan.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/parse_xml.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/plot.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/plot_legend.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/plotarea.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/window.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/parser/jquery/zoom.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/canvas_mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/axis.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/axis_title.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/background.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/graph_title.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/icon.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/img.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/labeler.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/legend.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/plotarea.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/renderers/band_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/renderers/bar_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/renderers/fill_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/renderers/pointline_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/renderers/rangebar_renderer.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/text.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/graphics/canvas/window.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/draggable/mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/draggable/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/mouse/mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/mouse/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/mouse/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/touch/mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/touch/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/events/jquery/touch/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/normalizer_mixin.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/axis.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/data.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/graph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/labeler.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/legend.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/multigraph.js"></script>
+<script type="text/javascript" src="lib/multigraph/src/normalizer/plot.js"></script>
+
 <script type="text/javascript">$ = jQuery = window.multigraph.jQuery;</script>
+<!-- END OF MULTIGRAPH FILES -->
+
+<script type="text/javascript" src="lib/mustache.js"></script>
 
 <script type="text/javascript" src="dashboard-graph.js"></script>
 <link type="text/css" rel="stylesheet" href="dashboard-graph.css"></link>
@@ -46,17 +186,43 @@
 
 $(document).ready(function() {
 
-  $('.dashboard-graph-container:eq(0)').dashboard_graph({
-    title       : 'Global Temperature',
-    description : "Temperature is rising: each bar shows global average surface temperature compared to last century's average.",
-    mugl        : 'config/temp.xml'
-  });
+/*
+  function xmlObjectToString(obj) {
+    if (window.ActiveXObject) {
+      return obj.xml;
+    }
+    return (new XMLSerializer()).serializeToString(obj);
+  }
+*/
 
-  $('.dashboard-graph-container:eq(1)').dashboard_graph({
-    title       : 'CO2',
-    description : "Carbon Dioxide is awesome; it makes zombie-eating plants grow!",
-    mugl        : 'config/co2.xml'
-  });
+  $.ajax({url      : 'config/dashboard.xml',
+          dataType : 'text',
+          success  : function (data) {
+              var $configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
+              $configxml.find(">tab").each(function() {
+                if ($(this).attr('id') == 'climateChange2') {
+                  var N = 0;
+                  $(this).find('graph').each(function() {
+                    var title = $(this).find('>title').text();
+                    var description = $(this).find('>description').text();
+                    var muglString = ($(this).find('mugl'))[0]
+                    $('#dashboard').append($('<div/>').dashboard_graph({
+                      title       : title,
+                      description : description,
+                      error       : function (e) { throw e; },
+                      warning     : function (e) { console.log(e); },
+                      width       : 560,
+                      height      : 104,
+                      muglString  : muglString
+                    }));
+                    if (++N >= 3) { return false; }
+                  });
+                }
+              });
+          }});
+
+
+
 
 });
 </script>
@@ -66,10 +232,11 @@ $(document).ready(function() {
 <body>
 
   <div id="dashboard">
-
+<!--
     <div class="dashboard-graph-container"></div>
     <div class="dashboard-graph-container"></div>
-
+    <div class="dashboard-graph-container"></div>
+-->
   </div>
 
 </body>

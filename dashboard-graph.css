@@ -42,6 +42,10 @@
 }
 
 .dashboard-graph-multigraph {
+    width: 560px;
+    height: 104px;
+/*
     width: 100%;
     height: 100%;
+*/
 }

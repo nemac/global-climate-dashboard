@@ -21,19 +21,12 @@
                     settings = $.extend({
                     }, options);
                 if ( ! data ) {
-
                     $this.html(Mustache.to_html(dashboardGraphTpl, {
                         title       : settings.title,
                         description : settings.description
                     }));
-
-                    $this.find('.dashboard-graph-multigraph').multigraph({
-                        mugl : settings.mugl
-                    });
-
-
+                    $this.find('.dashboard-graph-multigraph').multigraph(settings);
                 }
-
                 return this;
             });
         }

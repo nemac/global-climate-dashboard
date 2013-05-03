@@ -114,7 +114,7 @@
     <title anchor="0 5" position="-10 0">Year</title>
   </horizontalaxis>
 
-  <verticalaxis highlightstyle="labels" id="tempanomoly" linewidth="0" max="1" min="-1" tickmax="0" tickmin="-4" type="number">
+  <verticalaxis highlightstyle="labels" id="tempanomaly" linewidth="0" max="1" min="-1" tickmax="0" tickmin="-4" type="number">
     <labels densityfactor="0.5" format="%.2f" spacing="50 20 10 5 2 1 0.5 0.25 0.1 0.05 0.02 0.01" />
     <grid />
     <title anchor="0 -4" angle="90" position="-20 -22">Global Temperature Anomaly (C) compared to 1901-2000</title>
@@ -125,7 +125,7 @@
     <horizontalaxis ref="year">
       <variable ref="year" />
     </horizontalaxis>
-    <verticalaxis ref="yaxis">
+    <verticalaxis ref="tempanomaly">
       <variable ref="temp" />
     </verticalaxis>
 		<renderer type="bar">
@@ -1073,8 +1073,8 @@
 	  </verticalaxis>
 
 	  <plot>
-		<horizontalaxis ref="datetime1">
-		  <variable ref="datetime1" />
+		<horizontalaxis ref="datetime">
+		  <variable ref="datetime" />
 		</horizontalaxis>
 		
 		<verticalaxis ref="col1">
@@ -1099,7 +1099,7 @@
 
 	  <data>
 		<variables>
-		  <variable column="0" id="datetime1" type="datetime" />
+		  <variable column="0" id="datetime" type="datetime" />
 		  <variable column="1" id="col1" />
 		</variables>
 		<values>1967,2.257261
@@ -1197,8 +1197,8 @@
 
   
   <plot>
-    <horizontalaxis ref="datetime1">
-      <variable ref="datetime1" />
+    <horizontalaxis ref="datetime">
+      <variable ref="datetime" />
     </horizontalaxis>
     <verticalaxis ref="col1">
 	 <variable ref="col1" />
@@ -1219,7 +1219,7 @@
   
   <data>
     <variables>
-      <variable column="0" id="datetime1" type="datetime" />
+      <variable column="0" id="datetime" type="datetime" />
       <variable column="1" id="col1" />
     </variables>
     <values>1880,-157.1
@@ -2269,8 +2269,8 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 		  </verticalaxis>
 
 		<plot>
-			<horizontalaxis ref="datetime1">
-			  <variable ref="datetime1" />
+			<horizontalaxis ref="datetime">
+			  <variable ref="datetime" />
 			</horizontalaxis>
 			
 			<verticalaxis ref="col1">
@@ -2291,7 +2291,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
 		  <data>
 			<variables>
-			  <variable column="0" id="datetime1" type="datetime" />
+			  <variable column="0" id="datetime" type="datetime" />
 			  <variable column="1" id="col1" />
 			</variables>
 			<values>1979,0
@@ -2369,8 +2369,8 @@ The graph shows the average area with at least 15% sea ice on its surface each S
   </verticalaxis>
 
   <plot>
-    <horizontalaxis ref="datetime1">
-      <variable ref="datetime1" />
+    <horizontalaxis ref="datetime">
+      <variable ref="datetime" />
     </horizontalaxis>
     <verticalaxis ref="col1">
       <variable ref="col1" />
@@ -2390,7 +2390,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
   <data>
     <variables>
-      <variable column="0" id="datetime1" type="datetime" />
+      <variable column="0" id="datetime" type="datetime" />
       <variable column="1" id="col1" />
     </variables>
     <values>1979,0.79
