@@ -1,0 +1,45 @@
+
+<!--  courtesy of https://gist.github.com/3758297 -->
+<head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="dragslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/themes/ui-lightness/jquery-ui.css" />
+
+<style type="text/css">
+.ui-slider .ui-slider-handle {
+  width: 3px;
+  margin-left: 0;
+}
+</style>
+
+<script>
+  $(document).ready(function(){
+    $('#slider').css({
+          'width': 600,
+          'margin-left': 20,
+          'margin-right': 20
+      }).dragslider({
+      animate: true,   // Works with animation.
+      range: true,     // Must have a range to drag.
+      rangeDrag: true, // Enable range dragging.
+      values: [30, 70],
+      slide: function(event, ui) {
+        console.log(ui.values[0] + ' : ' + ui.values[1]);
+        $('td#min').text(ui.values[0]);
+        $('td#max').text(ui.values[1]);
+      }
+    });
+  });
+</script>
+
+</head>
+
+<body>
+
+<table><tr>
+<td id='min'></td>
+<td><div id="slider" style=""></div></td>
+<td id='max'></td>
+
+</body>

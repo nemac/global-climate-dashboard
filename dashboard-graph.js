@@ -26,6 +26,10 @@
                         description : settings.description
                     }));
                     $this.find('.dashboard-graph-multigraph').multigraph(settings);
+                    $this.data('dashboard_graph', {
+                        title       : settings.title,
+                        description : settings.description
+                    });
                 }
                 return this;
             });

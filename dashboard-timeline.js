@@ -1,7 +1,7 @@
 (function ($) {
     "use strict";
 
-    var dashboardGraphTpl = (
+    var timelineTpl = (
         ''
             + '<div class="dashboard-timeline">'
             +   '<div class="dashboard-timeline-multigraph-wrapper">'
@@ -18,11 +18,10 @@
                     settings = $.extend({
                     }, options);
                 if ( ! data ) {
-                    $this.html(Mustache.to_html(dashboardGraphTpl, {
-                        title       : settings.title,
-                        description : settings.description
+                    $this.html(Mustache.to_html(timelineTpl, {
                     }));
                     $this.find('.dashboard-timeline-multigraph').multigraph(settings);
+                    $this.data('dashboard_timeline', settings);
                 }
                 return this;
             });

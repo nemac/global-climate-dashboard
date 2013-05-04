@@ -108,6 +108,14 @@
                         muglString  : mugl
                 }));
 
+                //
+                // add a time slider
+                //
+                $container.append($('<div/>').dashboard_timeslider({
+                }));
+
+
+                
             }
         });
 
