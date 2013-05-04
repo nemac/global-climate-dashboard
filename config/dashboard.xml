@@ -7,7 +7,10 @@
         <attribute name="padding" value="0" />
       </element>
       <element name="plotarea">
+<!--
         <attribute name="marginleft" value="34" />
+-->
+        <attribute name="marginleft" value="50" />
         <attribute name="marginright" value="18" />
         <attribute name="margintop" value="4" />
         <attribute name="marginbottom" value="6" />
@@ -17,6 +20,7 @@
       </element>
       <element name="horizontalaxis">
         <attribute name="tickcolor" value="0xdddddd" />
+        <element name="title" action="empty"/>
         <element name="labels">
           <attribute name="format" value="%Y" visible="false" />
           <attribute name="fontcolor" value="0x666666" />
@@ -36,6 +40,9 @@
         </element>
       </element>
       <element name="verticalaxis">
+
+        <element name="title" action="empty"/>
+
         <attribute name="tickcolor" value="0xdddddd" />
         <element name="labels">
           <attribute name="fontcolor" value="0x666666" />
