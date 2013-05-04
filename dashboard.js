@@ -61,6 +61,59 @@
         return $target;
     }
 
+    function buildDashboard($container, $configxml) {
+        var $globalMuglOverrides = $configxml.find(">mugloverrides");
+        var $timelineMugl = $configxml.find(">timeline mugl");
+        var $timelineMuglOverrides = $configxml.find(">timeline mugloverrides");
+
+        $configxml.find(">tab").each(function() {
+            var $tabxml = $(this);
+            var $tabMuglOverrides = $tabxml.find(">mugloverrides");
+            // for the climateChange2 tab only...
+            if ($tabxml.attr('id') == 'climateChange2') {
+                //
+                // add 3 graphs
+                //
+                var N = 0;
+                $tabxml.find('graph').each(function() {
+                    var title = $(this).find('>title').text();
+                    var description = $(this).find('>description').text();
+                    var mugl = applyXMLOverrides($(this).find('mugl'),
+                                                 [ $globalMuglOverrides,
+                                                   $tabMuglOverrides ]);
+                    $container.append($('<div/>').dashboard_graph({
+                        title       : title,
+                        description : description,
+                        error       : function (e) { throw e; },
+                        warning     : function (e) { console.log(e); },
+                        width       : 560,
+                        height      : 104,
+                        muglString  : mugl
+                    }));
+                    if (++N >= 3) { return false; } else { return true; }
+                });
+
+                //
+                // add a timeline
+                //
+                var mugl = applyXMLOverrides($timelineMugl, 
+                                                 [ $globalMuglOverrides,
+                                                   $tabMuglOverrides,
+                                                   $timelineMuglOverrides ]);
+                console.log(xmlObjectToString(mugl[0]));
+                $container.append($('<div/>').dashboard_timeline({
+                        error       : function (e) { throw e; },
+                        warning     : function (e) { console.log(e); },
+                        width       : 560,
+                        height      : 30,
+                        muglString  : mugl
+                }));
+
+            }
+        });
+
+    }
+
     var methods = {
         init : function(options) {
             return this.each(function() {
@@ -84,31 +137,7 @@
                             dataType : 'text',
                             success  : function (data) {
                                 var $configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
-                                var $globalMuglOverrides = $configxml.find(">mugloverrides");
-                                $configxml.find(">tab").each(function() {
-                                    var $tabxml = $(this);
-                                    var $tabMuglOverrides = $tabxml.find(">mugloverrides");
-                                    if ($tabxml.attr('id') == 'climateChange2') {
-                                        var N = 0;
-                                        $tabxml.find('graph').each(function() {
-                                            var title = $(this).find('>title').text();
-                                            var description = $(this).find('>description').text();
-                                            var mugl = applyXMLOverrides($(this).find('mugl'),
-                                                                         [ $globalMuglOverrides,
-                                                                           $tabMuglOverrides ]);
-                                            $dashboardDiv.append($('<div/>').dashboard_graph({
-                                                title       : title,
-                                                description : description,
-                                                error       : function (e) { throw e; },
-                                                warning     : function (e) { console.log(e); },
-                                                width       : 560,
-                                                height      : 104,
-                                                muglString  : mugl
-                                            }));
-                                            if (++N >= 1) { return false; } else { return true; }
-                                        });
-                                    }
-                                });
+                                buildDashboard($dashboardDiv, $configxml);
                             }});
 
                 }

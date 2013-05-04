@@ -7,10 +7,7 @@
         <attribute name="padding" value="0" />
       </element>
       <element name="plotarea">
-<!--
         <attribute name="marginleft" value="34" />
--->
-        <attribute name="marginleft" value="50" />
         <attribute name="marginright" value="18" />
         <attribute name="margintop" value="4" />
         <attribute name="marginbottom" value="6" />
@@ -7353,6 +7350,7 @@ the atmosphere.
           <variable column="1" id="y" />
         </variables>
         <values>
+          1200,0
         </values>
       </data>
     </mugl>
