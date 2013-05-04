@@ -7302,11 +7302,11 @@ the atmosphere.
   <timeline>
     <mugloverrides>
       <element name="plotarea">
-        <attribute name="marginbottom" value="15" />
+        <attribute name="marginbottom" value="10" />
+        <attribute name="margintop"    value="0" />
       </element>
       <element name="horizontalaxis">
         <attribute name="linewidth" value="0" />
-        <attribute name="tickcolor" value="0x666666" />
         <element name="grid">
           <attribute name="color" value="0x666666" />
         </element>
@@ -7326,8 +7326,8 @@ the atmosphere.
     <mugl>
       <window border="0" margin="0" padding="0" />
       <legend visible="false" />
-      <plotarea marginbottom="15" marginleft="25" marginright="20" margintop="0" />
-      <horizontalaxis id="year" linewidth="0" max="2100" min="1950" tickmax="5" tickmin="-3" tickwidth="1" type="datetime">
+      <plotarea marginbottom="10" marginleft="25" marginright="20" margintop="0" />
+      <horizontalaxis id="year" linewidth="0" max="2100" min="1950" tickmax="5" tickmin="-5" tickwidth="0" type="datetime">
         <labels position="0 0">
           <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
           <label format="%n %Y" spacing="6M 3M 2M 1M" />

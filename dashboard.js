@@ -100,12 +100,11 @@
                                                  [ $globalMuglOverrides,
                                                    $tabMuglOverrides,
                                                    $timelineMuglOverrides ]);
-                console.log(xmlObjectToString(mugl[0]));
                 $container.append($('<div/>').dashboard_timeline({
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,
-                        height      : 30,
+                        height      : 20,
                         muglString  : mugl
                 }));
 

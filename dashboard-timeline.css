@@ -2,7 +2,7 @@
     position: relative;
     left: 10px;
     width: 920px;
-    height: 30px;
+    height: 20px;
     border-radius:10px;
     -moz-border-radius:10px;
 }
@@ -12,7 +12,7 @@
     right: 5px;
     top: 3px;
     width: 560px;
-    height: 30px;
+    height: 20px;
     background-color: #00ff00;
 }
 
