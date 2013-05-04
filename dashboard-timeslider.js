@@ -23,7 +23,16 @@
                         animate: true,   // Works with animation.
                         range: true,     // Must have a range to drag.
                         rangeDrag: true, // Enable range dragging.
+
+                        min: settings.min,
+                        max: settings.max,
+                        values: [settings.selectedMin, settings.selectedMax],
+
+/*
+                        min: 0,
+                        max: 100,
                         values: [30, 70],
+*/
                         slide: function(event, ui) {
                             console.log(ui.values[0] + ' : ' + ui.values[1]);
                             //$('td#min').text(ui.values[0]);

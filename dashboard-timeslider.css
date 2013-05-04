@@ -18,6 +18,7 @@
 .ui-slider .ui-slider-handle {
   width: 3px;
   margin-left: 0;
+  top: -2px;
 }
 
 .dashboard-timeslider .ui-widget-header {
@@ -34,4 +35,6 @@ div.dashboard-timeslider.ui-slider.ui-widget-content {
   background-color: #232020; /* dark gray */
 }
 
-
+/*
+<a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 33%;"></a>
+*/

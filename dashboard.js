@@ -96,25 +96,31 @@
                 //
                 // add a timeline
                 //
-                var mugl = applyXMLOverrides($timelineMugl, 
-                                                 [ $globalMuglOverrides,
-                                                   $tabMuglOverrides,
-                                                   $timelineMuglOverrides ]);
+                $timelineMugl = applyXMLOverrides($timelineMugl, 
+                                                  [ $globalMuglOverrides,
+                                                    $tabMuglOverrides,
+                                                    $timelineMuglOverrides ]);
                 $container.append($('<div/>').dashboard_timeline({
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,
                         height      : 20,
-                        muglString  : mugl
+                        muglString  : $timelineMugl
                 }));
 
                 //
                 // add a time slider
                 //
+                var timeSliderMin         = parseInt($timelineMugl.find("horizontalaxis pan").attr('min'), 10);
+                var timeSliderMax         = parseInt($timelineMugl.find("horizontalaxis pan").attr('max'), 10);
+                var timeSliderSelectedMin = parseInt($timelineMugl.find("horizontalaxis").attr('min'), 10);
+                var timeSliderSelectedMax = parseInt($timelineMugl.find("horizontalaxis").attr('max'), 10);
                 $container.append($('<div/>').dashboard_timeslider({
+                    min         : timeSliderMin,
+                    max         : timeSliderMax,
+                    selectedMin : timeSliderSelectedMin,
+                    selectedMax : timeSliderSelectedMax
                 }));
-
-
                 
             }
         });
