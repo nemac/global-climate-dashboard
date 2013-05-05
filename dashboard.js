@@ -77,12 +77,14 @@
             var $tabMuglOverrides = $tabxml.find(">mugloverrides");
             var tabGraphs = [];
             $tabxml.find('graph').each(function() {
-                var title = $(this).find('>title').text();
+                var title       = $(this).find('>title').text();
+                var shortTitle  = $(this).find('>shorttitle').text();
                 var description = $(this).find('>description').text();
-                var mugl = applyXMLOverrides($(this).find('mugl'),
-                                             [ $globalMuglOverrides,
-                                               $tabMuglOverrides ]);
+                var mugl        = applyXMLOverrides($(this).find('mugl'),
+                                                    [ $globalMuglOverrides,
+                                                      $tabMuglOverrides ]);
                 tabGraphs.push({'title'       : title,
+                                'shortTitle'  : shortTitle,
                                 'description' : description,
                                 'mugl'        : mugl});
             });

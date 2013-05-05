@@ -4,6 +4,12 @@
     var dashboardTabTpl = (
         ''
             + '<div class="dashboard-tab">'
+            +   '<div class="dashboard-tab-graphslots">'
+            +   '</div>'
+            +   '<div class="dashboard-tab-timeregion">'
+            +   '</div>'
+            +   '<div class="dashboard-tab-graphbuttons">'
+            +   '</div>'
             + '</div>'
     );
 
@@ -17,7 +23,9 @@
                 if ( ! data ) {
                     $this.html(Mustache.to_html(dashboardTabTpl, {
                     }));
-                    var $tabDiv = $this.find(".dashboard-tab");
+                    var $graphSlots = $this.find(".dashboard-tab-graphslots");
+                    var $timeRegion = $this.find(".dashboard-tab-timeregion");
+                    var $graphButtons = $this.find(".dashboard-tab-graphbuttons");
 
                     var firstDashboardGraphDiv = undefined;
 
@@ -27,25 +35,29 @@
                     var N = 0;
                     $.each(settings.graphs, function () {
                         var graph = this;
-                        var dashboardGraphDiv = $('<div/>').dashboard_graph({
-                            title       : graph.title,
-                            description : graph.description,
-                            error       : function (e) { throw e; },
-                            warning     : function (e) { console.log(e); },
-                            width       : 560,
-                            height      : 104,
-                            muglString  : graph.mugl
-                        }).appendTo($tabDiv);
-                        if (firstDashboardGraphDiv === undefined) {
-                            firstDashboardGraphDiv = dashboardGraphDiv;
+                        if (N++ < 3) {
+                            var dashboardGraphDiv = $('<div/>').dashboard_graph({
+                                title       : graph.title,
+                                description : graph.description,
+                                error       : function (e) { throw e; },
+                                warning     : function (e) { console.log(e); },
+                                width       : 560,
+                                height      : 104,
+                                muglString  : graph.mugl
+                            }).appendTo($graphSlots);
+                            if (firstDashboardGraphDiv === undefined) {
+                                firstDashboardGraphDiv = dashboardGraphDiv;
+                            }
                         }
-                        if (++N >= 3) { return false; } else { return true; }
+                        $('<div class="dashboard-graph-button"/>').button({
+                            label : graph.shortTitle
+                        }).appendTo($graphButtons);
                     });
 
                     //
                     // add a timeline
                     //
-                    $tabDiv.append($('<div/>').dashboard_timeline({
+                    $timeRegion.append($('<div/>').dashboard_timeline({
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,
@@ -84,7 +96,7 @@
                                 multigraph.redraw();
                                 sliderActive = false;
                             }
-                        }).appendTo($tabDiv);
+                        }).appendTo($timeRegion);
                     });
 
                     $this.data('dashboard_tab', {
