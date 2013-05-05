@@ -1,3 +1,7 @@
+/**********************************************************************************
+ * dashboard.css
+ */
+
 .dashboard {
   position: relative;
   width: 940px;
@@ -35,4 +39,136 @@
 
 .dashboard-graph-container {
   margin-bottom: 5px;
+}
+
+/**********************************************************************************
+ * dashboard-graph.css
+ */
+
+.dashboard-graph {
+    position: relative;
+    left: 10px;
+    width: 920px;
+    height: 110px;
+    background-color: #232020; /* dark gray */
+    border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.dashboard-graph-title {
+  position: absolute;
+  left: 8px;
+  top: 5px;
+  color: #ffffff;
+  font-size: 12pt;
+}
+
+.dashboard-graph-description {
+  position: absolute;
+  left: 8px;
+  top: 30px;
+  width: 330px;
+  height: 70px;
+  color: #888888;
+  font-size: 11pt;
+}
+
+.dashboard-graph-link {
+  position: absolute;
+  left: 260px;
+  top: 88px;
+  color: #888888;
+  width: 100px;
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.dashboard-graph-multigraph-wrapper {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 560px;
+    height: 104px;
+    background-color: #00ff00;
+}
+
+.dashboard-graph-multigraph {
+    width: 560px;
+    height: 104px;
+/*
+    width: 100%;
+    height: 100%;
+*/
+}
+
+/**********************************************************************************
+ * dashboard-timeline.css
+ */
+
+.dashboard-timeline {
+    position: relative;
+    left: 10px;
+    width: 920px;
+    height: 20px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.dashboard-timeline-multigraph-wrapper {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 560px;
+    height: 20px;
+    background-color: #00ff00;
+}
+
+.dashboard-timeline-multigraph {
+    width: 560px;
+    height: 30px;
+/*
+    width: 100%;
+    height: 100%;
+*/
+}
+
+/**********************************************************************************
+ * dashboard-timeslider.css
+ */
+
+.dashboard-timeslider-wrapper {
+    position: relative;
+    left: 10px;
+    width: 920px;
+    height: 20px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+}
+
+.dashboard-timeslider {
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    width: 560px;
+    height: 20px;
+}
+
+.ui-slider .ui-slider-handle {
+  width: 3px;
+  margin-left: 0;
+  top: -2px;
+}
+
+.dashboard-timeslider .ui-widget-header {
+  background: none;
+}
+
+.dashboard-timeslider .ui-slider-range {
+  background-color: #f6a828;
+}
+
+div.dashboard-timeslider.ui-slider.ui-widget-content {
+  border: none;
+  background: none;
+  background-color: #232020; /* dark gray */
 }
