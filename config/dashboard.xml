@@ -6638,7 +6638,9 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201209,-0.590
 </values>
 	  </data>
-	</mugl></graph></tab><tab id="climateProjections2">
+	</mugl></graph></tab>
+<!--
+<tab id="climateProjections2">
     <title>Climate Projections</title>
     <timeslider />
     <mugloverrides>
@@ -7299,7 +7301,9 @@ the atmosphere.
         <text>20th Century Climate</text>
       </item>
     </legend>
-    </graph></tab><intro>
+    </graph></tab>
+-->
+<intro>
      <ns0:TextFlow fontFamily="Arial"><ns0:p textAlign="center"><ns0:span fontSize="18" fontWeight="bold">Global Climate Dashboard</ns0:span></ns0:p><ns0:p><ns0:span fontWeight="bold" /></ns0:p><ns0:p><ns0:span fontSize="12" fontWeight="bold">Just as the dashboard of a car gives you a quick look at the status of your vehicle, the global climate dashboard gives you a quick look at the status of Earth&#8217;s climate system. The interactive graphs let you explore climate-relevant measurements and the relationships among them for different time periods.</ns0:span></ns0:p>
        <ns0:p><ns0:span fontSize="12" fontWeight="bold" /></ns0:p>
        <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Adjust the time slider, or click and drag within a graph, to change the time period displayed.</ns0:span></ns0:p>

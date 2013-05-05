@@ -75,7 +75,20 @@
         var tabList       = [];
         var tabButtonList = [];
 
-        $configxml.find(">tab").each(function() {
+        function displayTab(i) {
+            var j;
+            for (j=0; j<tabList.length; ++j) {
+                if (j == i) {
+                    tabList[j].css('display', 'block');
+                    tabButtonList[j].addClass("dashboard-button-selected");
+                } else {
+                    tabList[j].css('display', 'none');
+                    tabButtonList[j].removeClass("dashboard-button-selected");
+                }
+            }
+        }
+
+        $configxml.find(">tab").each(function(i) {
             var $tabxml  = $(this);
             var tabTitle = $tabxml.find(">title").text();
             var tabId    = $tabxml.attr('id');
@@ -89,8 +102,8 @@
                                                     [ $globalMuglOverrides,
                                                       $tabMuglOverrides ]);
                 tabGraphs.push({'title'       : title,
-                                'shortTitle'  : shortTitle,
-                                'description' : description,
+                                'shortTitle'  : shortTitle, 
+                               'description' : description,
                                 'mugl'        : mugl});
             });
             $timelineMugl = applyXMLOverrides($timelineMugl, 
@@ -102,19 +115,21 @@
             var timeSliderSelectedMin = parseInt($timelineMugl.find("horizontalaxis").attr('min'), 10);
             var timeSliderSelectedMax = parseInt($timelineMugl.find("horizontalaxis").attr('max'), 10);
 
-            // for the climateChange2 tab only...
-            var $tabDiv = undefined;
-            if (tabId === 'climateChange2') {
-                $tabDiv = $('<div class="dashboard-tab-wrapper">').dashboard_tab({
-                    graphs                : tabGraphs,
-                    timelineMugl          : $timelineMugl,
-                    timeSliderMin         : timeSliderMin,
-                    timeSliderMax         : timeSliderMax,
-                    timeSliderSelectedMin : timeSliderSelectedMin,
-                    timeSliderSelectedMax : timeSliderSelectedMax
-                }).appendTo($tabsContainer);
-            };
-
+            // create the tab div, with css display `none`, and add it to the list of all tabdivs
+            tabList.push(
+                $('<div class="dashboard-tab-wrapper">')
+                    .dashboard_tab({
+                        graphs                : tabGraphs,
+                        timelineMugl          : $timelineMugl,
+                        timeSliderMin         : timeSliderMin,
+                        timeSliderMax         : timeSliderMax,
+                        timeSliderSelectedMin : timeSliderSelectedMin,
+                        timeSliderSelectedMax : timeSliderSelectedMax
+                    })
+                    .appendTo($tabsContainer)
+                    .css('display', 'none')
+            );
+            
             // add the tab button
             tabButtonList.push(
                 $('<div class="dashboard-tab-button"/>')
@@ -122,13 +137,15 @@
                         label : tabTitle
                     })
                     .click(function() {
-                        displayTab($tabDiv);
+                        displayTab(i);
                     })
                     .appendTo($tabButtonsDiv)
             );
 
 
         });
+
+        displayTab(0);
 
     }
 
