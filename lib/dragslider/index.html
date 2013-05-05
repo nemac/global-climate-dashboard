@@ -15,6 +15,7 @@
 
 <script>
   $(document).ready(function(){
+
     $('#slider').css({
           'width': 600,
           'margin-left': 20,
@@ -30,6 +31,25 @@
         $('td#max').text(ui.values[1]);
       }
     });
+
+    $('#slider2').css({
+          'width': 600,
+          'margin-left': 20,
+          'margin-right': 20
+      }).dragslider({
+      animate: true,   // Works with animation.
+      range: true,     // Must have a range to drag.
+      rangeDrag: true, // Enable range dragging.
+      values: [30, 70],
+      slide: function(event, ui) {
+        $('#slider').dragslider('option', 'values', [ ui.values[0], ui.values[1] ]);
+      }
+    });
+
+
+
+
+
   });
 </script>
 
@@ -40,6 +60,7 @@
 <table><tr>
 <td id='min'></td>
 <td><div id="slider" style=""></div></td>
+<td><div id="slider2" style=""></div></td>
 <td id='max'></td>
 
 </body>

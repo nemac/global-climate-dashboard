@@ -18,6 +18,7 @@
             return this.each(function() {
                 var $this = $(this),
                     data = $this.data('dashboard_graph'),
+                    multigraphDiv = undefined,
                     settings = $.extend({
                     }, options);
                 if ( ! data ) {
@@ -25,14 +26,19 @@
                         title       : settings.title,
                         description : settings.description
                     }));
-                    $this.find('.dashboard-graph-multigraph').multigraph(settings);
+                    multigraphDiv = $this.find('.dashboard-graph-multigraph').multigraph(settings);
                     $this.data('dashboard_graph', {
-                        title       : settings.title,
-                        description : settings.description
+                        title             : settings.title,
+                        description       : settings.description,
+                        multigraphDiv     : multigraphDiv
                     });
                 }
                 return this;
             });
+        },
+
+        multigraphDone : function(callback) {
+            $(this).data('dashboard_graph').multigraphDiv.multigraph('done', callback);
         }
     };
 

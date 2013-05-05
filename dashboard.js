@@ -71,6 +71,10 @@
             var $tabMuglOverrides = $tabxml.find(">mugloverrides");
             // for the climateChange2 tab only...
             if ($tabxml.attr('id') == 'climateChange2') {
+
+                var firstDashboardGraphDiv = undefined;
+
+
                 //
                 // add 3 graphs
                 //
@@ -81,7 +85,7 @@
                     var mugl = applyXMLOverrides($(this).find('mugl'),
                                                  [ $globalMuglOverrides,
                                                    $tabMuglOverrides ]);
-                    $container.append($('<div/>').dashboard_graph({
+                    var dashboardGraphDiv = $('<div/>').dashboard_graph({
                         title       : title,
                         description : description,
                         error       : function (e) { throw e; },
@@ -89,7 +93,12 @@
                         width       : 560,
                         height      : 104,
                         muglString  : mugl
-                    }));
+                    }).appendTo($container);
+
+                    if (firstDashboardGraphDiv === undefined) {
+                        firstDashboardGraphDiv = dashboardGraphDiv;
+                    }
+
                     if (++N >= 3) { return false; } else { return true; }
                 });
 
@@ -108,21 +117,47 @@
                         muglString  : $timelineMugl
                 }));
 
-                //
-                // add a time slider
-                //
-                var timeSliderMin         = parseInt($timelineMugl.find("horizontalaxis pan").attr('min'), 10);
-                var timeSliderMax         = parseInt($timelineMugl.find("horizontalaxis pan").attr('max'), 10);
-                var timeSliderSelectedMin = parseInt($timelineMugl.find("horizontalaxis").attr('min'), 10);
-                var timeSliderSelectedMax = parseInt($timelineMugl.find("horizontalaxis").attr('max'), 10);
-                $container.append($('<div/>').dashboard_timeslider({
-                    min         : timeSliderMin,
-                    max         : timeSliderMax,
-                    selectedMin : timeSliderSelectedMin,
-                    selectedMax : timeSliderSelectedMax
-                }));
+                firstDashboardGraphDiv.dashboard_graph('multigraphDone', function (multigraph) {
+                    var axis = multigraph.graphs().at(0).axes().at(0);
+                    var sliderActive = false;
+                    var yearFormatter = new window.multigraph.core.DatetimeFormatter("%Y");
+                    var timesliderDiv = undefined;
+                    axis.addListener('dataRangeSet', function (e) {
+                        if (! sliderActive) {
+                            var minYear = parseInt(yearFormatter.format(e.min), 10);
+                            var maxYear = parseInt(yearFormatter.format(e.max), 10);
+                            if (timesliderDiv !== undefined) {
+                                timesliderDiv.dashboard_timeslider('setRange', minYear, maxYear);
+                            }
+                        }
+                    });
+                    //
+                    // add a time slider
+                    //
+                    var timeSliderMin         = parseInt($timelineMugl.find("horizontalaxis pan").attr('min'), 10);
+                    var timeSliderMax         = parseInt($timelineMugl.find("horizontalaxis pan").attr('max'), 10);
+                    var timeSliderSelectedMin = parseInt($timelineMugl.find("horizontalaxis").attr('min'), 10);
+                    var timeSliderSelectedMax = parseInt($timelineMugl.find("horizontalaxis").attr('max'), 10);
+
+                    timesliderDiv = $('<div/>').dashboard_timeslider({
+                        min         : timeSliderMin,
+                        max         : timeSliderMax,
+                        selectedMin : timeSliderSelectedMin,
+                        selectedMax : timeSliderSelectedMax,
+                        setRange    : function(min, max) {
+                            sliderActive = true;
+                            // Force this graph's horiz axis to the given min/max
+                            axis.setDataRange(window.multigraph.core.DatetimeValue.parse(''+min),
+                                              window.multigraph.core.DatetimeValue.parse(''+max));
+                            // Redraw this graph.  We only need to call this one graph's redraw() method
+                            // here, because the other ones will be forced to redraw by the axis binding
+                            multigraph.redraw();
+                            sliderActive = false;
+                        }
+                    }).appendTo($container);
+                });
                 
-            }
+            };
         });
 
     }

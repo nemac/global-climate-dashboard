@@ -20,23 +20,16 @@
                     $this.html(Mustache.to_html(timesliderTpl, {
                     }));
                     $this.find('.dashboard-timeslider').dragslider({
-                        animate: true,   // Works with animation.
-                        range: true,     // Must have a range to drag.
-                        rangeDrag: true, // Enable range dragging.
-
-                        min: settings.min,
-                        max: settings.max,
-                        values: [settings.selectedMin, settings.selectedMax],
-
-/*
-                        min: 0,
-                        max: 100,
-                        values: [30, 70],
-*/
-                        slide: function(event, ui) {
-                            console.log(ui.values[0] + ' : ' + ui.values[1]);
-                            //$('td#min').text(ui.values[0]);
-                            //$('td#max').text(ui.values[1]);
+                        animate   : true,   // Works with animation.
+                        range     : true,     // Must have a range to drag.
+                        rangeDrag : true, // Enable range dragging.
+                        min       : settings.min,
+                        max       : settings.max,
+                        values    : [settings.selectedMin, settings.selectedMax],
+                        slide     : function(event, ui) {
+                            if (typeof(settings.setRange) === "function") {
+                                settings.setRange(ui.values[0], ui.values[1]);
+                            }
                         }
                     });
                     $this.data('dashboard_timeslider', {
@@ -45,6 +38,10 @@
                 }
                 return this;
             });
+        },
+
+        setRange : function (min, max) {
+            $(this).find('.dashboard-timeslider').dragslider('option', 'values', [min,max]);
         }
     };
 
