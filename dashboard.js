@@ -5,6 +5,10 @@
             (
                 ''
                     + '<div class="dashboard">'
+                    +   '<div class="dashboard-title">{{{title}}}</div>'
+                    +   '<div class="dashboard-tab-buttons"></div>'
+                    +   '<div class="dashboard-tabs">'
+                    +   '</div>'
                     + '</div>'
             );
 
@@ -66,6 +70,8 @@
         var $timelineMugl = $configxml.find(">timeline mugl");
         var $timelineMuglOverrides = $configxml.find(">timeline mugloverrides");
 
+        var $tabContainer = $container.find(".dashboard-tabs");
+
         $configxml.find(">tab").each(function() {
             var $tabxml = $(this);
             var $tabMuglOverrides = $tabxml.find(">mugloverrides");
@@ -93,7 +99,7 @@
                         width       : 560,
                         height      : 104,
                         muglString  : mugl
-                    }).appendTo($container);
+                    }).appendTo($tabContainer);
 
                     if (firstDashboardGraphDiv === undefined) {
                         firstDashboardGraphDiv = dashboardGraphDiv;
@@ -109,7 +115,7 @@
                                                   [ $globalMuglOverrides,
                                                     $tabMuglOverrides,
                                                     $timelineMuglOverrides ]);
-                $container.append($('<div/>').dashboard_timeline({
+                $tabContainer.append($('<div/>').dashboard_timeline({
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,
@@ -154,7 +160,7 @@
                             multigraph.redraw();
                             sliderActive = false;
                         }
-                    }).appendTo($container);
+                    }).appendTo($tabContainer);
                 });
                 
             };
@@ -169,7 +175,7 @@
                     data = $this.data('dashboard'),
                     settings = $.extend({
                         config : undefined,
-                        title : 'Dashboard'
+                        title : 'Global Climate Dashboard'
                     }, options);
                 if ( ! data ) {
 

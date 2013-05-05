@@ -1,9 +1,36 @@
 .dashboard {
+  position: relative;
   width: 940px;
   height: 570px;
   background: #5a5b5b;  /* light gray */
   border-radius:10px;
   -moz-border-radius:10px;
+}
+
+.dashboard-title {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #000000;
+  font-size: 22pt;
+}
+
+.dashboard-tab-buttons {
+  position: absolute;
+  width: 560px;
+  height: 40px;
+  top: 5px;
+  left: 365px;
+  background-color: #00ff00;
+}
+
+.dashboard-tabs {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 50px;
+  left: 0px;
+  background-color: #0000ff;
 }
 
 .dashboard-graph-container {

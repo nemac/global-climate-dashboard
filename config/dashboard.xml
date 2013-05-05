@@ -119,7 +119,11 @@
   </horizontalaxis>
 
   <verticalaxis highlightstyle="labels" id="tempanomaly" linewidth="0" max="1" min="-1" tickmax="0" tickmin="-4" type="number">
-    <labels densityfactor="0.5" format="%.2f" spacing="50 20 10 5 2 1 0.5 0.25 0.1 0.05 0.02 0.01" />
+    <labels>
+      <label densityfactor="0.5" format="%1d"  spacing="50 20 10 5 2 1" />
+      <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+      <label densityfactor="0.5" format="%.2f" spacing="0.05 0.02 0.01" />
+    </labels>
     <grid />
     <title anchor="0 -4" angle="90" position="-20 -22">Global Temperature Anomaly (C) compared to 1901-2000</title>
 	
@@ -321,7 +325,11 @@
   </horizontalaxis>
 
   <verticalaxis highlightstyle="labels" id="co2" linewidth="0" max="400" min="300" tickmax="0" tickmin="-4" type="number">
-    <labels densityfactor="0.7" format="%.2f" spacing="100 50 25 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+    <labels>
+      <label densityfactor="0.7" format="%1d"  spacing="100 50 25 20 10 5 2 1" />
+      <label densityfactor="0.7" format="%.1f" spacing="0.5 0.2 0.1" />
+      <label densityfactor="0.7" format="%.2f" spacing="0.05 0.02 0.01" />
+    </labels>
     <grid />
      <title anchor="0 -4" angle="90" position="-15 0">Carbon Dioxide Abundance (ppm)</title>
 	 
@@ -1069,7 +1077,11 @@
 		</horizontalaxis>
 
 		<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="4" min="-4" tickmax="0" tickmin="-4" type="number">
-			<labels densityfactor="0.75" format="%.2f" spacing="1000000 100000 10000 1000 100 50 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+          <labels>
+			<label densityfactor="0.75" format="%1d " spacing="1000000 100000 10000 1000 100 50 20 10 5 2 1" />
+			<label densityfactor="0.75" format="%.1f" spacing="0.5 0.2 0.1" />
+			<label densityfactor="0.75" format="%.2f" spacing="0.05 0.02 0.01" />
+          </labels>
 			<grid />
 			<title anchor="0 -4" angle="90" position="-15 0">March-April Snow Cover Anomaly (million square km)</title>
 			
