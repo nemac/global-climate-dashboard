@@ -131,12 +131,8 @@
                                 .button({
                                     label : graph.shortTitle
                                 })
-                                .data('dashboard-button-state', 'unpressed')
+                                //.data('dashboard-button-state', 'unpressed') // don't need this??
                                 .click(function() {
-                                    /*
-                                     console.log(graph.shortTitle + ' button clicked; state is: ' +
-                                     $(this).data('dashboard-button-state'));
-                                     */
                                     displayGraph(i);
                                 })
                                 .appendTo($graphButtonsDiv)

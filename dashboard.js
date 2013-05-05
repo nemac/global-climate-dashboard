@@ -69,11 +69,16 @@
         var $globalMuglOverrides   = $configxml.find(">mugloverrides");
         var $timelineMugl          = $configxml.find(">timeline mugl");
         var $timelineMuglOverrides = $configxml.find(">timeline mugloverrides");
-
         var $tabsContainer = $container.find(".dashboard-tabs");
+        var $tabButtonsDiv = $container.find(".dashboard-tab-buttons");
+        
+        var tabList       = [];
+        var tabButtonList = [];
 
         $configxml.find(">tab").each(function() {
-            var $tabxml = $(this);
+            var $tabxml  = $(this);
+            var tabTitle = $tabxml.find(">title").text();
+            var tabId    = $tabxml.attr('id');
             var $tabMuglOverrides = $tabxml.find(">mugloverrides");
             var tabGraphs = [];
             $tabxml.find('graph').each(function() {
@@ -98,8 +103,9 @@
             var timeSliderSelectedMax = parseInt($timelineMugl.find("horizontalaxis").attr('max'), 10);
 
             // for the climateChange2 tab only...
-            if ($tabxml.attr('id') == 'climateChange2') {
-                $('<div class="dashboard-tab-wrapper">').dashboard_tab({
+            var $tabDiv = undefined;
+            if (tabId === 'climateChange2') {
+                $tabDiv = $('<div class="dashboard-tab-wrapper">').dashboard_tab({
                     graphs                : tabGraphs,
                     timelineMugl          : $timelineMugl,
                     timeSliderMin         : timeSliderMin,
@@ -108,6 +114,20 @@
                     timeSliderSelectedMax : timeSliderSelectedMax
                 }).appendTo($tabsContainer);
             };
+
+            // add the tab button
+            tabButtonList.push(
+                $('<div class="dashboard-tab-button"/>')
+                    .button({
+                        label : tabTitle
+                    })
+                    .click(function() {
+                        displayTab($tabDiv);
+                    })
+                    .appendTo($tabButtonsDiv)
+            );
+
+
         });
 
     }

@@ -25,7 +25,39 @@
   height: 40px;
   top: 5px;
   left: 365px;
-  background-color: #00ff00;
+  padding-left: 7px;
+  /*background-color: #00ff00;*/
+}
+
+.dashboard-tab-button.ui-button span.ui-button-text {
+  line-height: 1.0;
+  font-size: 11pt;
+}
+
+.dashboard-tab-button {
+  width: 175px;
+  margin-left: 3px;
+  margin-right: 3px;
+  margin-top: 5px;
+}
+
+
+.dashboard-tab-button.ui-widget {
+  background: none;
+  border: none;
+  color: #ffffff;
+}
+
+.dashboard-tab-button.ui-widget.ui-state-default {
+  background-color: #8a8c8e; /* light gray */
+}
+
+.dashboard-tab-button.ui-widget.ui-state-hover {
+  background-color: #232020; /* dark grey */
+}
+
+.dashboard-tab-button.ui-widget.ui-state-default.dashboard-button-selected {
+  background-color: #232020; /* dark grey */
 }
 
 .dashboard-tabs {
@@ -34,7 +66,7 @@
   height: auto;
   top: 50px;
   left: 0px;
-  background-color: #0000ff;
+  /*background-color: #0000ff;*/
 }
 
 .dashboard-graph-container {
@@ -89,7 +121,7 @@
     top: 3px;
     width: 560px;
     height: 104px;
-    background-color: #00ff00;
+    /*background-color: #00ff00;*/
 }
 
 .dashboard-graph-multigraph {
@@ -120,7 +152,7 @@
     top: 3px;
     width: 560px;
     height: 20px;
-    background-color: #00ff00;
+    /*background-color: #00ff00;*/
 }
 
 .dashboard-timeline-multigraph {
@@ -187,7 +219,7 @@ div.dashboard-timeslider.ui-slider.ui-widget-content {
   padding-right: 5px;
   width: auto;
   height: auto;
-  background-color: #ff0000;
+  /*background-color: #ff0000;*/
 }
 
 .dashboard-graph-button {
@@ -195,6 +227,11 @@ div.dashboard-timeslider.ui-slider.ui-widget-content {
   margin-left: 5px;
   margin-right: 5px;
   margin-bottom: 5px;
+}
+
+.dashboard-graph-button.ui-button span.ui-button-text {
+  line-height: 1.0;
+  font-size: 11pt;
 }
 
 .dashboard-graph-button.ui-widget {
