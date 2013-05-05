@@ -16,6 +16,13 @@
     var methods = {
         init : function(options) {
             return this.each(function() {
+                function setButtonSelected(button) {
+                    $.each(graphButtonList, function() {
+                        $(this).removeClass("dashboard-button-selected");
+                    });
+                    $(button).addClass("dashboard-button-selected");
+                }
+
                 var $this = $(this),
                     data = $this.data('dashboard_tab'),
                     settings = $.extend({
@@ -28,6 +35,8 @@
                     var $graphButtons = $this.find(".dashboard-tab-graphbuttons");
 
                     var firstDashboardGraphDiv = undefined;
+
+                    var graphButtonList = [];
 
                     //
                     // add 3 graphs
@@ -49,9 +58,19 @@
                                 firstDashboardGraphDiv = dashboardGraphDiv;
                             }
                         }
-                        $('<div class="dashboard-graph-button"/>').button({
-                            label : graph.shortTitle
-                        }).appendTo($graphButtons);
+                        graphButtonList.push(
+                            $('<div class="dashboard-graph-button"/>')
+                                .button({
+                                    label : graph.shortTitle
+                                })
+                                .data('dashboard-button-state', 'unpressed')
+                                .click(function() {
+                                    console.log(graph.shortTitle + ' button clicked; state is: ' +
+                                                $(this).data('dashboard-button-state'));
+                                    setButtonSelected(this);
+                                })
+                                .appendTo($graphButtons)
+                        );
                     });
 
                     //
