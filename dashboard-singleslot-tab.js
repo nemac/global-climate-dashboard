@@ -42,10 +42,13 @@
                     var $graphDiv = $('<div/>').dashboard_graph({
                         title       : settings.graph.title,
                         description : settings.graph.description,
+                        legendTitle : settings.graph.legendTitle,
+                        legendText  : settings.graph.legendText,
+                        legend      : settings.graph.legend,
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,
-                        height      : 104,
+                        height      : 393,
                         muglString  : settings.graph.mugl
                     });
                     $graphSlotDiv.append($graphDiv);

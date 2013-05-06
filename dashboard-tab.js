@@ -116,6 +116,9 @@
                         var $graphDiv = $('<div/>').dashboard_graph({
                             title       : graph.title,
                             description : graph.description,
+                            legendTitle : graph.legendTitle,
+                            legendText  : graph.legendText,
+                            legend      : graph.legend,
                             error       : function (e) { throw e; },
                             warning     : function (e) { console.log(e); },
                             width       : 560,

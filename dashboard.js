@@ -98,12 +98,28 @@
                 var title       = $(this).find('>title').text();
                 var shortTitle  = $(this).find('>shorttitle').text();
                 var description = $(this).find('>description').text();
+                var legendTitle = $(this).find('>legendtitle').text();
+                var legendText  = $(this).find('>legendtext').text();
+                var $legend     = undefined;
+                if ($(this).find('>legend').length > 0) {
+                    $legend = $('<table/>');
+                    $(this).find('>legend item').each(function() {
+                        $legend.append($('<tr><td><img src="'
+                                          + $(this).find("img").attr('src')
+                                          + '"/></td><td>'
+                                          + $(this).find("text").text()
+                                          + '</td></tr>'));
+                    });
+                }
                 var mugl        = applyXMLOverrides($(this).find('mugl'),
                                                     [ $globalMuglOverrides,
                                                       $tabMuglOverrides ]);
                 tabGraphs.push({'title'       : title,
                                 'shortTitle'  : shortTitle, 
                                 'description' : description,
+                                'legendTitle' : legendTitle,
+                                'legendText'  : legendText,
+                                'legend'      : $legend,
                                 'mugl'        : mugl});
             });
             $timelineMugl = applyXMLOverrides($timelineMugl, 

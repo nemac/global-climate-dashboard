@@ -1,11 +1,24 @@
 (function ($) {
     "use strict";
 
+//
+// NOTE: the html template below includes divs for both a description ("dashboard-graph-description")
+// and a legend ("dashboard-graph-legend"), but only one of them is ever displayed.  By default,
+// the description is displayed and the legend is not.  If the `legendTitle` property of the options
+// object is set when the plugin is invoked, though, the description is hidden and the legend
+// is displayed instead.
+//
+
     var dashboardGraphTpl = (
         ''
             + '<div class="dashboard-graph">'
             +   '<div class="dashboard-graph-title">{{{title}}}</div>'
             +   '<div class="dashboard-graph-description">{{{description}}}</div>'
+            +   '<div class="dashboard-graph-legend dashboard-displaynone">'
+            +     '<div class="dashboard-graph-legend-title">{{{legendTitle}}}</div>'
+            +     '<div class="dashboard-graph-legend-content"/>'
+            +     '<div class="dashboard-graph-legend-text">{{{legendText}}}</div>'
+            +   '</div>'
             +   '<div class="dashboard-graph-link">Learn More &gt;&gt;</div>'
             +   '<div class="dashboard-graph-multigraph-wrapper">'
             +     '<div class="dashboard-graph-multigraph"></div>'
@@ -24,8 +37,16 @@
                 if ( ! data ) {
                     $this.html(Mustache.to_html(dashboardGraphTpl, {
                         title       : settings.title,
-                        description : settings.description
+                        description : settings.description,
+                        legendTitle : settings.legendTitle,
+                        legendText  : settings.legendText
                     }));
+                    if (settings.legendTitle) {
+                        $this.find('.dashboard-graph-link').addClass('dashboard-singleslot-graph-link');
+                        $this.find('.dashboard-graph-description').addClass('dashboard-displaynone');
+                        $this.find('.dashboard-graph-legend').removeClass('dashboard-displaynone');
+                        $this.find('.dashboard-graph-legend-content').append(settings.legend);
+                    }
                     multigraphDiv = $this.find('.dashboard-graph-multigraph').multigraph(settings);
                     $this.data('dashboard_graph', {
                         title             : settings.title,
