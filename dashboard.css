@@ -269,7 +269,14 @@
   width: 3px;
   margin-left: 0;
   top: -2px;
-  background-color: #f6a828;
+  background: #f6a828;
+  border: none;
+  cursor: pointer; 
+  opacity: 0.8;
+}
+
+.ui-slider .ui-slider-handle:hover {
+  opacity: 1.0;
 }
 
 .dashboard-timeslider .ui-widget-header {
@@ -279,6 +286,11 @@
 .dashboard-timeslider .ui-slider-range {
   background-color: #f6a828;
   opacity: 0.3;
+  cursor: pointer; 
+}
+
+.dashboard-timeslider .ui-slider-range:hover {
+  opacity: 0.5;
 }
 
 div.dashboard-timeslider.ui-slider.ui-widget-content {
