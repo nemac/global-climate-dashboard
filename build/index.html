@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Global Climate Dashboard</title>
+<style type="text/css">
+
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cabin Regular'), local('Cabin-Regular'), url(lib/fonts/Cabin-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Cabin';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cabin Bold'), local('Cabin-Bold'), url(lib/fonts/Cabin-Bold.ttf) format('truetype');
+}
+#dashboard {
+  font-family: Cabin;
+}
+
+</style>
+
+<script type="text/javascript" src="dashboard-min.js"></script>
+<link type="text/css" rel="stylesheet" href="dashboard.css"></link>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#dashboard').dashboard({config : 'config/dashboard.xml'});
+  });
+</script>
+
+</head>
+<body>
+
+<div id="dashboard"></div>
+
+</body>
+</html>
