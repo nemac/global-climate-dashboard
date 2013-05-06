@@ -5,6 +5,8 @@
         ''
             + '<div class="dashboard-timeslider-wrapper">'
             +   '<div class="dashboard-timeslider">'
+            +     '<div class="label earlier"><img src="assets/left-arrow.png"><span class="text">Earlier</span></div>'
+            +     '<div class="label later"><span class="text">Later</span><img src="assets/right-arrow.png"></div>'
             +   '</div>'
             + '</div>'
     );

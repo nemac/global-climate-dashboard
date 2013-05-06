@@ -260,6 +260,7 @@
   width: 3px;
   margin-left: 0;
   top: -2px;
+  background-color: #f6a828;
 }
 
 .dashboard-timeslider .ui-widget-header {
@@ -268,12 +269,50 @@
 
 .dashboard-timeslider .ui-slider-range {
   background-color: #f6a828;
+  opacity: 0.3;
 }
 
 div.dashboard-timeslider.ui-slider.ui-widget-content {
   border: none;
   background: none;
   background-color: #232020; /* dark gray */
+}
+
+.dashboard-timeslider-earlier {
+  position: absolute;
+  left: 5px;
+  top: 2px;
+  color: #ffffff;
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+.dashboard-timeslider .label {
+  position: absolute;
+}
+
+.dashboard-timeslider .text {
+  color: #ffffff;
+  font-size: 8pt;
+  font-weight: normal;
+}
+
+.dashboard-timeslider .label.earlier {
+  left: 100px;
+  top: -4px;
+}
+
+.dashboard-timeslider .label.later {
+  left: 400px;
+  top: -4px;
+}
+
+.dashboard-timeslider .label.earlier .text {
+  margin-left: 5px;
+}
+
+.dashboard-timeslider .label.later .text {
+  margin-right: 5px;
 }
 
 /**********************************************************************************
