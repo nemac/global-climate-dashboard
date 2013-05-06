@@ -32,12 +32,11 @@
 
 .dashboard-tab-buttons {
   position: absolute;
-  width: 560px;
+  width: 575px;
   height: 40px;
   top: 5px;
-  left: 365px;
+  left: 350px;
   padding-left: 7px;
-  /*background-color: #00ff00;*/
 }
 
 .dashboard-tab-button.ui-button span.ui-button-text {
@@ -46,11 +45,14 @@
 }
 
 .dashboard-tab-button {
-  width: 175px;
+  width: 185px;
   margin-left: 3px;
   margin-right: 3px;
   margin-top: 5px;
+}
 
+.dashboard-tab-button .ui-button-text {
+   margin-left: 10px;
 }
 
 
