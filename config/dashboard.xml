@@ -1204,7 +1204,11 @@
                <grid />
 	</horizontalaxis>
 	<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="100" min="-100" tickmax="0" tickmin="-4" type="number">
-		<labels densityfactor="0.5" format="%.1f" spacing="100 50 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+      <labels>
+		<label densityfactor="0.5" format="%1d"  spacing="100 50 20 10 5 2 1" />
+		<label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+		<label densityfactor="0.5" format="%.2f" spacing="0.05 0.02 0.01" />
+      </labels>
 		 <title anchor="0 -4" angle="90" position="-15 0">Global Sea Level (mm) shown as difference from 1990</title>
 		 
 		 
@@ -1810,7 +1814,11 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	  <title anchor="0 5" position="0 0">Year</title>
 	 </horizontalaxis>
 	 <verticalaxis highlightstyle="labels" id="wm2" linewidth="0" max="1370" min="1350" tickmax="0" tickmin="-4" type="number">
-	   <labels densityfactor="0.5" format="%.2f" spacing="50 20 10 5 2 1 0.5 0.10 0.05 0.01" />
+       <labels>
+         <label densityfactor="0.5" format="%1d"  spacing="50 20 10 5 2 1" />
+         <label densityfactor="0.5" format="%.1f" spacing="0.5 0.1" />
+         <label densityfactor="0.5" format="%.2f" spacing="0.05 0.01" />
+       </labels>
 	   <grid />
 	   <title anchor="0 -4" angle="90" position="-20 0">Sun's Energy (watts per square meter)</title>
 	   
@@ -2278,7 +2286,11 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 			</horizontalaxis>
 
 			<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="5" min="-15" tickmax="0" tickmin="-4" type="number">
-				<labels densityfactor="1.5" format="%.2f" spacing="100 50 20 10 5 2 1 0.5 0.3 0.24 0.2 0.1 0.05 0.02 0.01" />
+              <labels>
+				<label densityfactor="0.4" format="%1d"  spacing="100 50 20 10 5 2 1" />
+				<label densityfactor="0.4" format="%.1f" spacing="0.5 0.2 0.1" />
+				<label densityfactor="0.4" format="%.2f" spacing="0.05 0.02 0.01" />
+              </labels>
 				<grid />		
 				<title anchor="0 -4" angle="90" position="-15 0">Cumulative Glacier Mass Balance (meters of water equivalent)</title>
 				<pan max="50" min="-50" />
@@ -2377,7 +2389,11 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	</horizontalaxis>
 
 	<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="1.600" min="0.600" tickmax="0" tickmin="-4" type="number">
-		<labels densityfactor="1.0" format="%.2f" spacing="100 50 20 10 5 2 1 0.5 0.2 0.1 0.05 0.02 0.01" />
+      <labels>
+		<label densityfactor="1.0" format="%1d"  spacing="100 50 20 10 5 2 1" />
+		<label densityfactor="1.0" format="%.1f" spacing="0.5 0.2 0.1" />
+		<label densityfactor="1.0" format="%.2f" spacing="0.05 0.02 0.01" />
+      </labels>
 		<grid />		
 		 <title anchor="0 -4" angle="90" position="-15 -10">Annual Greenhouse Gas Index (AGGI)</title>
 		 
@@ -2500,8 +2516,8 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	  
 	  <verticalaxis highlightstyle="labels" id="y" linewidth="0" max="4" min="-4" tickmax="0" tickmin="-4">
 		<labels>
-		 <label densityfactor="0.4" format="%1d" spacing="20 10 5 2 1" />
-		 <label densityfactor="0.4" format="%.1f" spacing="0.5 0.2 0.1" />
+		 <label densityfactor="0.8" format="%1d" spacing="20 10 5 2 1" />
+		 <label densityfactor="0.8" format="%.1f" spacing="0.5 0.2 0.1" />
 		</labels>
 		 <title anchor="0 -4" angle="90" position="-15 0">Oceanic Ni&#241;o Index (C)</title>
 		 
