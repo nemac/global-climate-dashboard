@@ -209,6 +209,7 @@
 
 .dashboard-timeline {
     position: relative;
+    margin-bottom: 5px;
     left: 10px;
     width: 920px;
     height: 20px;
@@ -300,7 +301,7 @@ div.dashboard-timeslider.ui-slider.ui-widget-content {
 }
 
 .dashboard-graph-button.ui-button span.ui-button-text {
-  line-height: 1.0;
+  line-height: 1.2;
   font-size: 11pt;
 }
 
