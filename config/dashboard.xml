@@ -94,7 +94,7 @@
       <help>Earth&#8217;s overall temperature has increased by 1.3&#176;F (0.7&#176;C) since 1900. <br /> <br />
 
 		In the graph, average annual surface temperature is shown as the difference from the average for 1901-2000.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-global-temperature</link>
+      <link>/news-features/understanding-climate/climate-change-global-temperature</link>
       <stats>
         <stat>
           <title>Increase since 1990</title>
@@ -297,7 +297,7 @@
 	The graph shows the number of CO<span baselineShift="subscript">2</span>&#160;&#160;molecules
         per million molecules of dry air measured at Mauna Loa, Hawai'i. 
 	The black line shows monthly values; the red line shows the running average.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-atmospheric-carbon-dioxide</link>
+      <link>/news-features/understanding-climate/climate-change-atmospheric-carbon-dioxide</link>
       <stats>
         <stat>
           <title>Increase since 1960</title>
@@ -1050,7 +1050,7 @@
       <oldtitle>Spring Snow Cover (million km<span baselineShift="superscript">2</span>)</oldtitle>
       <help>Earlier melting of winter snow has reduced the area of land covered by snow in spring. The graph shows the area covered by snow in the Northern Hemisphere during March and April, shown as 
 	the difference from the 1971-2000 average. </help>
-      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-spring-snow-cover</link>
+      <link>/news-features/understanding-climate/climate-change-spring-snow-cover</link>
       <stats>
         <stat>
           <title>Decrease since 1968</title>
@@ -1178,7 +1178,7 @@
 
 	The graph shows mean global sea level measured by tidal gauges since 1880 and by 
 	satellite instruments since 1993.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-sea-level</link>
+      <link>/news-features/understanding-climate/climate-change-global-sea-level</link>
       <stats>
         <stat>
           <title>Increase since 1880</title>
@@ -1384,7 +1384,7 @@
       decreased by more than 10% per decade since 1979. <br /><br />
 
 The graph shows the average area with at least 15% sea ice on its surface each September.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-minimum-arctic-sea-ice-extent</link>
+      <link>/news-features/understanding-climate/climate-change-minimum-arctic-sea-ice-extent</link>
       <stats>
         <stat>
           <title>Decrease since 1980</title>
@@ -1486,7 +1486,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
       <oldtitle>Ocean Heat (10<span baselineShift="superscript">22</span> Joules)</oldtitle>
       <help>More than 90% of the warming that has occurred on Earth over the past 50 years has occurred in the ocean. The graph shows heat energy in the top 700 meters of the ocean as the difference from the average from 1955-2006.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-ocean-heat-content</link>
+      <link>/news-features/understanding-climate/climate-change-ocean-heat-content</link>
       <stats>
         <stat>
           <title>Increase since 1955</title>
@@ -1790,7 +1790,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
 	The graph shows the total amount of solar energy arriving at the top of Earth&#8217;s 
 	atmosphere.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-incoming-sunlight</link>
+      <link>/news-features/understanding-climate/climate-change-incoming-sunlight</link>
       <stats>
         <stat>
           <title>Change since 1880</title>
@@ -2259,7 +2259,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
       <oldtitle>Glaciers (meters of water equivalent)</oldtitle>
       <help>Since 1980, a representative set of well studied glaciers has lost the equivalent of 40 feet (12.5 meters) of water on average. The graph shows the average mass balance of 30 reference glaciers around the world.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-glacier-mass-balance</link>
+      <link>/news-features/features/climate-change-glacier-mass-balance</link>
       <stats>
         <stat>
           <title>Melt water lost since 1980</title>
@@ -2362,7 +2362,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
       <oldtitle>Annual Greenhouse Gas Index</oldtitle>
       <help>The effect of heat-trapping gases in the atmosphere has increased by 27.5% since 1990, the 
       year many nations agreed to limit emissions under the Kyoto Protocol. The graph shows total radiative forcing from long-lived greenhouse gases as a percent change from 1990.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-annual-greenhouse-gas-index-2</link>
+      <link>/news-features/understanding-climate/climate-change-annual-greenhouse-gas-index</link>
       <stats>
         <stat>
           <title>Increase in heat-trapping since 1990</title>
@@ -2488,7 +2488,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
       Southern Oscillation cycle. Values greater than 0.5 indicate El Ni&#241;o conditions. 
       Values less than -0.5 indicate La Ni&#241;a conditions. Values between 0.5 and -0.5 indicate neutral conditions. 
 </help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-oceanic-nino-index</link>
+      <link>/news-features/understanding-climate/climate-variability-oceanic-ni%C3%B1o-index</link>
       <stats>
         <stat>
           <title>?? ??? ?????</title>
@@ -3326,7 +3326,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
       <help>Departures from average air pressure over the Arctic region and the North Pacific and Atlantic Oceans 
       affect the north-to-south location of the storm-steering, 
       mid-latitude jet stream. Negative values are associated with severe winter storms in the eastern U.S.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-arctic-oscillation</link>
+      <link>/news-features/understanding-climate/climate-variability-arctic-oscillation</link>
       <stats>
         <stat>
           <title>?? ??? ?????</title>
@@ -4164,7 +4164,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
       Ocean affect weather around the Atlantic by influencing the intensity 
       and location of the jet stream and the storm tracks that follow it. Negative values 
       are linked with winter storms in the eastern U.S.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-north-atlantic-oscillation</link>
+      <link>/news-features/understanding-climate/climate-variability-north-atlantic-oscillation</link>
       <stats>
         <stat>
           <title>?? ??? ?????</title>
@@ -4999,7 +4999,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
   <oldtitle>Southern Oscillation Index</oldtitle>
   <help>Differences in average air pressure at Tahiti and Darwin, Australia provide an 
   atmospheric indicator of the El Ni&#241;o&#8211;Southern Oscillation.  El Ni&#241;o conditions result in negative SOI values; La Ni&#241;a conditions produce positive values for this index.</help>
-  <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-southern-oscillation-index</link>
+  <link>/news-features/understanding-climate/climate-variability-southern-oscillation-index</link>
   <stats>
     <stat>
       <title>?? ??? ?????</title>
@@ -5823,7 +5823,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
       <oldtitle>Pacific North American Pattern</oldtitle>
       <help>Departures from average air pressure at four locations over the Pacific Ocean and North America affect 
       the strength and location of the East Asian jet stream and the weather it delivers to North America.</help>
-      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-pacific-north-american-teleconnection-pattern</link>
+      <link>/news-features/understanding-climate/climate-variability-pacific-north-american-teleconnection</link>
       <stats>
         <stat>
           <title>?? ??? ?????</title>
@@ -6719,7 +6719,7 @@ in their assumptions about the number of people on the planet and the
 way they use energy, and therefore, the amount of heat-trapping gas in
 the atmosphere.
 </help>
-      <link>http://www.climatewatch.noaa.gov/article/2012/global-temperature-projections</link>
+      <link>/news-features/understanding-climate/climate-change-global-temperature-projections</link>
       <mugl>
         <legend visible="false" />
         <horizontalaxis id="year" max="2100" min="1990" type="datetime">
