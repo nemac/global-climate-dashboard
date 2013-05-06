@@ -6682,7 +6682,11 @@ The graph shows the average area with at least 15% sea ice on its surface each S
           <attribute name="allowed" value="yes" />
         </element>
       </element>
+      <element name="verticalaxis[id=tempf]">
+        <element name="title" text="Temperature Change from 1971-1999 Average (&#730;F)"/>
+      </element>
       <element name="verticalaxis[id=temp]">
+        <element name="title" text="Temperature Change from 1971-1999 Average (&#730;C)"/>
         <element name="grid">
           <attribute name="visible" value="false" />
         </element>
@@ -6728,15 +6732,22 @@ the atmosphere.
 
         <verticalaxis id="tempf" type="number">
           <title anchor="0 -1" angle="90" position="-20 0">Temperature Change from 1971-1999 Average (&#730;F)</title>
-
           <binding id="ProjTempBinding" max="1.8" min="0" />
-          <labels fontcolor="0x666666" />
+          <labels fontcolor="0x666666">
+            <label densityfactor="0.3" format="%1d"  spacing="100 50 20 10 5 2 1" />
+            <label densityfactor="0.3" format="%.1f" spacing="0.5 0.2 0.1" />
+            <label densityfactor="0.3" format="%.2f" spacing="0.05 0.02 0.01" />
+          </labels>
         </verticalaxis>
         <verticalaxis base="1 -1" id="temp" max="4.5" min="-0.5" type="number">
           <title anchor="0 -1" angle="90" position="28 0">Temperature Change from 1971-1999 Average (&#730;C)</title>
           <pan max="6" min="-2" />
           <binding id="ProjTempBinding" max="1" min="0" />
-          <labels fontcolor="0x666666" />
+          <labels fontcolor="0x666666">
+            <label densityfactor="0.2" format="%1d"  spacing="100 50 20 10 5 2 1" />
+            <label densityfactor="0.2" format="%.1f" spacing="0.5 0.2 0.1" />
+            <label densityfactor="0.2" format="%.2f" spacing="0.05 0.02 0.01" />
+          </labels>
         </verticalaxis>
 
         <plot>

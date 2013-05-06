@@ -40,11 +40,14 @@
                 var $this = $(this);
                 var elementName   = $this.attr('name');
                 var elementAction = $this.attr('action');
+                var elementText   = $this.attr('text');
                 var $targetChildList = $target.find(">"+elementName);
                 if ($targetChildList.length === 0) {
                     $target.append($("<"+elementName+">"));
                 } else if (elementAction === "empty") {
                     $target.find(">"+elementName).empty();
+                } else if (elementText) {
+                    $target.find(">"+elementName).text(elementText);
                 }
                 applyXMLOverrides($target.find(">"+elementName), $this);
             });
