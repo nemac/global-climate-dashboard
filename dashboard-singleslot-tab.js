@@ -8,6 +8,8 @@
             +     '<div class="dashboard-tab-graphslot"/>'
             +   '</div>'
             +   '<div class="dashboard-tab-timeregion">'
+            +     '<div class="dashboard-tab-messagearea">'
+            +     '</div>'
             +   '</div>'
             + '</div>'
     );
@@ -49,7 +51,13 @@
                         warning     : function (e) { console.log(e); },
                         width       : 560,
                         height      : 450,
-                        muglString  : settings.graph.mugl
+                        muglString  : settings.graph.mugl,
+                        mouseOver   : function () {
+                            $this.find('.dashboard-tab-messagearea').html("Click and drag the graph to change the timeline.");
+                        },
+                        mouseOut    : function () {
+                            $this.find('.dashboard-tab-messagearea').empty();
+                        }
                     });
                     $graphSlotDiv.append($graphDiv);
 
@@ -61,7 +69,13 @@
                         warning     : function (e) { console.log(e); },
                         width       : 560,
                         height      : 20,
-                        muglString  : settings.timelineMugl
+                        muglString  : settings.timelineMugl,
+                        mouseOver   : function () {
+                            $this.find('.dashboard-tab-messagearea').html("Click and drag the graph to change the timeline.");
+                        },
+                        mouseOut    : function () {
+                            $this.find('.dashboard-tab-messagearea').empty();
+                        }
                     }));
                     $graphDiv.dashboard_graph('multigraphDone', function (multigraph) {
                         var axis = multigraph.graphs().at(0).axes().at(0);
@@ -94,6 +108,12 @@
                                 // here, because the other ones will be forced to redraw by the axis binding
                                 multigraph.redraw();
                                 sliderActive = false;
+                            },
+                            mouseOver   : function () {
+                                $this.find('.dashboard-tab-messagearea').html("Drag the ends of the amber region to change the graph time scale.");
+                            },
+                            mouseOut    : function () {
+                                $this.find('.dashboard-tab-messagearea').empty();
                             }
                         }).appendTo($timeRegionDiv);
                     });

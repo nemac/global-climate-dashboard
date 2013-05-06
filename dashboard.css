@@ -364,3 +364,17 @@ div.dashboard-timeslider.ui-slider.ui-widget-content {
   /* background-color: #232020; */ /* dark grey */
   background: #232020 url("assets/triangle-232020-n.png") no-repeat 5px 5px;
 }
+
+.dashboard-tab-timeregion {
+  position: relative;
+}
+
+.dashboard-tab-messagearea {
+  position: absolute;
+  top: 3px;
+  left: 20px;
+  color: #aaaaaa;
+  width: 320px;
+  height: 40px;
+}
+

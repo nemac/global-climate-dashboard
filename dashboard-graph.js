@@ -47,7 +47,9 @@
                         $this.find('.dashboard-graph-legend').removeClass('dashboard-displaynone');
                         $this.find('.dashboard-graph-legend-content').append(settings.legend);
                     }
-                    multigraphDiv = $this.find('.dashboard-graph-multigraph').multigraph(settings);
+                    multigraphDiv = $this.find('.dashboard-graph-multigraph')
+                        .multigraph(settings)
+                        .hover(settings.mouseOver, settings.mouseOut);
                     $this.data('dashboard_graph', {
                         title             : settings.title,
                         description       : settings.description,

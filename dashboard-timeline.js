@@ -20,7 +20,9 @@
                 if ( ! data ) {
                     $this.html(Mustache.to_html(timelineTpl, {
                     }));
-                    $this.find('.dashboard-timeline-multigraph').multigraph(settings);
+                    $this.find('.dashboard-timeline-multigraph')
+                        .multigraph(settings)
+                        .hover(settings.mouseOver, settings.mouseOut);
                     $this.data('dashboard_timeline', settings);
                 }
                 return this;

@@ -33,7 +33,7 @@
                                 settings.setRange(ui.values[0], ui.values[1]);
                             }
                         }
-                    });
+                    }).hover(settings.mouseOver, settings.mouseOut);
                     $this.data('dashboard_timeslider', {
                         'foo' : 'bar'
                     });
