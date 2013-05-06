@@ -103,7 +103,7 @@
                                                       $tabMuglOverrides ]);
                 tabGraphs.push({'title'       : title,
                                 'shortTitle'  : shortTitle, 
-                               'description' : description,
+                                'description' : description,
                                 'mugl'        : mugl});
             });
             $timelineMugl = applyXMLOverrides($timelineMugl, 
@@ -116,19 +116,35 @@
             var timeSliderSelectedMax = parseInt($timelineMugl.find("horizontalaxis").attr('max'), 10);
 
             // create the tab div, with css display `none`, and add it to the list of all tabdivs
-            tabList.push(
-                $('<div class="dashboard-tab-wrapper">')
-                    .dashboard_tab({
-                        graphs                : tabGraphs,
-                        timelineMugl          : $timelineMugl,
-                        timeSliderMin         : timeSliderMin,
-                        timeSliderMax         : timeSliderMax,
-                        timeSliderSelectedMin : timeSliderSelectedMin,
-                        timeSliderSelectedMax : timeSliderSelectedMax
-                    })
-                    .appendTo($tabsContainer)
-                    .css('display', 'none')
-            );
+            if (tabGraphs.length > 1) {
+                tabList.push(
+                    $('<div class="dashboard-tab-wrapper">')
+                        .dashboard_tab({
+                            graphs                : tabGraphs,
+                            timelineMugl          : $timelineMugl,
+                            timeSliderMin         : timeSliderMin,
+                            timeSliderMax         : timeSliderMax,
+                            timeSliderSelectedMin : timeSliderSelectedMin,
+                            timeSliderSelectedMax : timeSliderSelectedMax
+                        })
+                        .appendTo($tabsContainer)
+                        .css('display', 'none')
+                );
+            } else {
+                tabList.push(
+                    $('<div class="dashboard-tab-wrapper">')
+                        .dashboard_singleslot_tab({
+                            graph                 : tabGraphs[0],
+                            timelineMugl          : $timelineMugl,
+                            timeSliderMin         : timeSliderMin,
+                            timeSliderMax         : timeSliderMax,
+                            timeSliderSelectedMin : timeSliderSelectedMin,
+                            timeSliderSelectedMax : timeSliderSelectedMax
+                        })
+                        .appendTo($tabsContainer)
+                        .css('display', 'none')
+                );
+            }
             
             // add the tab button
             tabButtonList.push(

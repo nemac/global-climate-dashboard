@@ -98,6 +98,10 @@
     -moz-border-radius:10px;
 }
 
+.dashboard-singleslot-tab .dashboard-graph {
+   height: 400px;
+}
+
 .dashboard-graph-title {
   position: absolute;
   left: 8px;
