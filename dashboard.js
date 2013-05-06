@@ -19,6 +19,14 @@
       return (new XMLSerializer()).serializeToString(obj);
     }
 
+    function removeTitleTagAndFixSuperSub(string) {
+        string = string.replace(/<title>/, "");
+        string = string.replace(/<\/title>/, "");
+        string = string.replace(/<span\s+baselineShift="superscript">([^>]+)<\/span>/, "<sup>$1</sup>");
+        string = string.replace(/<span\s+baselineShift="subscript">([^>]+)<\/span>/, "<sub>$1</sub>");
+        return string;
+    }
+
     function applyXMLOverrides($target, $overrides) {
         var i;
         if (! $overrides || $overrides.length === 0) {
@@ -98,7 +106,8 @@
             var $tabMuglOverrides = $tabxml.find(">mugloverrides");
             var tabGraphs = [];
             $tabxml.find('graph').each(function() {
-                var title       = $(this).find('>title').text();
+                //var title       = $(this).find('>title').text();
+                var title       = removeTitleTagAndFixSuperSub(xmlObjectToString(($(this).find('>title'))[0]));
                 var shortTitle  = $(this).find('>shorttitle').text();
                 var description = $(this).find('>description').text();
                 var legendTitle = $(this).find('>legendtitle').text();
