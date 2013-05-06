@@ -180,6 +180,15 @@
   font-weight: bold;
 }
 
+.dashboard-graph-link a {
+  color: #888888;
+  text-decoration: none;
+}
+
+.dashboard-graph-link a:hover {
+  color: #cccccc;
+}
+
 .dashboard-singleslot-graph-link {
   top: 430px;
 }

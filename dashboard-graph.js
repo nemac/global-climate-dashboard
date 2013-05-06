@@ -19,7 +19,7 @@
             +     '<div class="dashboard-graph-legend-content"/>'
             +     '<div class="dashboard-graph-legend-text">{{{legendText}}}</div>'
             +   '</div>'
-            +   '<div class="dashboard-graph-link">Learn More &gt;&gt;</div>'
+            +   '<div class="dashboard-graph-link"><a href="{{{link}}}">Learn More &gt;&gt;</a></div>'
             +   '<div class="dashboard-graph-multigraph-wrapper">'
             +     '<div class="dashboard-graph-multigraph"></div>'
             +   '</div>'
@@ -39,7 +39,8 @@
                         title       : settings.title,
                         description : settings.description,
                         legendTitle : settings.legendTitle,
-                        legendText  : settings.legendText
+                        legendText  : settings.legendText,
+                        link        : settings.link
                     }));
                     if (settings.legendTitle) {
                         $this.find('.dashboard-graph-link').addClass('dashboard-singleslot-graph-link');

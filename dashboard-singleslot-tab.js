@@ -47,6 +47,7 @@
                         legendTitle : settings.graph.legendTitle,
                         legendText  : settings.graph.legendText,
                         legend      : settings.graph.legend,
+                        link        : settings.graph.link,
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,

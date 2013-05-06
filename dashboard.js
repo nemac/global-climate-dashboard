@@ -103,6 +103,7 @@
                 var description = $(this).find('>description').text();
                 var legendTitle = $(this).find('>legendtitle').text();
                 var legendText  = $(this).find('>legendtext').text();
+                var link        = $(this).find('>link').text();
                 var $legend     = undefined;
                 if ($(this).find('>legend').length > 0) {
                     $legend = $('<table/>');
@@ -117,13 +118,16 @@
                 var mugl        = applyXMLOverrides($(this).find('mugl'),
                                                     [ $globalMuglOverrides,
                                                       $tabMuglOverrides ]);
-                tabGraphs.push({'title'       : title,
-                                'shortTitle'  : shortTitle, 
-                                'description' : description,
-                                'legendTitle' : legendTitle,
-                                'legendText'  : legendText,
-                                'legend'      : $legend,
-                                'mugl'        : mugl});
+                tabGraphs.push({
+                    'title'       : title,
+                    'shortTitle'  : shortTitle, 
+                    'description' : description,
+                    'legendTitle' : legendTitle,
+                    'legendText'  : legendText,
+                    'legend'      : $legend,
+                    'mugl'        : mugl,
+                    'link'        : link
+                });
             });
             $timelineMugl = applyXMLOverrides($timelineMugl, 
                                               [ $globalMuglOverrides,

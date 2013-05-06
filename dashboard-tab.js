@@ -121,6 +121,7 @@
                             legendTitle : graph.legendTitle,
                             legendText  : graph.legendText,
                             legend      : graph.legend,
+                            link        : graph.link,
                             error       : function (e) { throw e; },
                             warning     : function (e) { console.log(e); },
                             width       : 560,
