@@ -48,7 +48,7 @@
                         error       : function (e) { throw e; },
                         warning     : function (e) { console.log(e); },
                         width       : 560,
-                        height      : 393,
+                        height      : 450,
                         muglString  : settings.graph.mugl
                     });
                     $graphSlotDiv.append($graphDiv);

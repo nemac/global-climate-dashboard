@@ -109,7 +109,7 @@
 }
 
 .dashboard-singleslot-tab .dashboard-graph {
-   height: 400px;
+   height: 455px;
 }
 
 .dashboard-graph-title {
@@ -135,12 +135,12 @@
   left: 8px;
   top: 30px;
   width: 340px;
-  height: 340px;
+  height: 375px;
 }
 
 .dashboard-graph-legend-title {
   position: absolute;
-  top: 12px;
+  top: 25px;
   width: 100%;
   text-align: center;
   font-weight: bold;
@@ -158,8 +158,8 @@
 
 .dashboard-graph-legend-content {
   position: absolute;
-  top: 50px;
-  left: 85px;
+  top: 75px;
+  left: 80px;
 }
 
 .dashboard-graph-legend-content table {
@@ -181,7 +181,7 @@
 }
 
 .dashboard-singleslot-graph-link {
-  top: 380px;
+  top: 430px;
 }
 
 
