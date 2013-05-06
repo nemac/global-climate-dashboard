@@ -22,10 +22,10 @@
 
 </style>
 
-<!-- BEGIN MULTIGRAPH FILES -->
+<script type="text/javascript" src="lib/multigraph/build/multigraph-min.js"></script>
+
+<!-- BEGIN INDIVIDUAL MULTIGRAPH FILES -->
 <!--
-<script type="text/javascript" src="lib/multigraph/build/multigraph.js"></script>
--->
 <script type="text/javascript" src="lib/multigraph/lib/jermaine/build/jermaine.js"></script>
 <script type="text/javascript" src="lib/multigraph/lib/jquery/jquery.min.js"></script>
 <script type="text/javascript" src="lib/multigraph/lib/ajaxthrottle/src/ajaxthrottle.js"></script>
@@ -160,44 +160,35 @@
 <script type="text/javascript" src="lib/multigraph/src/normalizer/legend.js"></script>
 <script type="text/javascript" src="lib/multigraph/src/normalizer/multigraph.js"></script>
 <script type="text/javascript" src="lib/multigraph/src/normalizer/plot.js"></script>
+-->
+<!-- END INDIVIDUAL MULTIGRAPH FILES -->
 
 <script type="text/javascript">$ = jQuery = window.multigraph.jQuery;</script>
-<!-- END OF MULTIGRAPH FILES -->
 
 <script type="text/javascript" src="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js"></script>
-<link rel="stylesheet" href="lib/jquery-ui-1.9.0.custom/css/smoothness/jquery-ui-1.9.0.custom.css"></link>
 <script type="text/javascript" src="lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js"></script>
-
 <script type="text/javascript" src="lib/dragslider/dragslider.js"></script>
-
 <script type="text/javascript" src="lib/mustache.js"></script>
-
 <script type="text/javascript" src="dashboard-tab.js"></script>
 <script type="text/javascript" src="dashboard-singleslot-tab.js"></script>
-
 <script type="text/javascript" src="dashboard-graph.js"></script>
-
 <script type="text/javascript" src="dashboard-timeline.js"></script>
-
 <script type="text/javascript" src="dashboard-timeslider.js"></script>
-
 <script type="text/javascript" src="dashboard.js"></script>
+
+<link rel="stylesheet" href="lib/jquery-ui-1.9.0.custom/css/smoothness/jquery-ui-1.9.0.custom.css"></link>
 <link type="text/css" rel="stylesheet" href="dashboard.css"></link>
 
 <script type="text/javascript">
-
-$(document).ready(function() {
-
-  $('#dashboard').dashboard({config : 'config/dashboard.xml'});
-
-});
+  $(document).ready(function() {
+    $('#dashboard').dashboard({config : 'config/dashboard.xml'});
+  });
 </script>
-
 
 </head>
 <body>
 
-  <div id="dashboard"></div>
+<div id="dashboard"></div>
 
 </body>
 </html>
