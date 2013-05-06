@@ -6682,6 +6682,11 @@ The graph shows the average area with at least 15% sea ice on its surface each S
           <attribute name="allowed" value="yes" />
         </element>
       </element>
+      <element name="verticalaxis[id=temp]">
+        <element name="grid">
+          <attribute name="visible" value="false" />
+        </element>
+      </element>
     </mugloverrides>
     <graph id="cp2" name="cp">
       <title>Simulation of Global Temperature</title>
