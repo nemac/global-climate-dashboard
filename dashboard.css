@@ -94,6 +94,10 @@
  * dashboard-graph.css
  */
 
+.dashboard-tab-graphslot {
+  margin-bottom: 8px;
+}
+
 .dashboard-graph {
     position: relative;
     left: 10px;
