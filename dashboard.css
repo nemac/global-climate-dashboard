@@ -1,3 +1,10 @@
+/*
+  background-image: url('images/triangle-e.png');
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position: 50px 100px;
+*/
+
 /**********************************************************************************
  * dashboard.css
  */
@@ -39,25 +46,29 @@
   margin-left: 3px;
   margin-right: 3px;
   margin-top: 5px;
+
 }
 
 
-.dashboard-tab-button.ui-widget {
+.dashboard-tab-button.ui-button {
   background: none;
   border: none;
   color: #ffffff;
 }
 
-.dashboard-tab-button.ui-widget.ui-state-default {
-  background-color: #8a8c8e; /* light gray */
+.dashboard-tab-button.ui-button.ui-state-default {
+  /* background-color: #8a8c8e; */ /* light gray */
+  background: #8a8c8e url("images/triangle-8a8c8e-e.png") no-repeat 5px 5px;
 }
 
-.dashboard-tab-button.ui-widget.ui-state-hover {
-  background-color: #232020; /* dark grey */
+.dashboard-tab-button.ui-button.ui-state-hover {
+  /* background-color: #232020; */ /* dark grey */
+  background: #232020 url("images/triangle-232020-e.png") no-repeat 5px 5px;
 }
 
-.dashboard-tab-button.ui-widget.ui-state-default.dashboard-button-selected {
-  background-color: #232020; /* dark grey */
+.dashboard-tab-button.ui-button.ui-state-default.dashboard-button-selected {
+  /* background-color: #232020; */ /* dark grey */
+  background: #232020 url("images/triangle-232020-s.png") no-repeat 5px 5px;
 }
 
 .dashboard-tabs {
@@ -241,13 +252,16 @@ div.dashboard-timeslider.ui-slider.ui-widget-content {
 }
 
 .dashboard-graph-button.ui-widget.ui-state-default {
-  background-color: #8a8c8e; /* light gray */
+  /* background-color: #8a8c8e; */ /* light gray */
+  background: #8a8c8e url("images/triangle-8a8c8e-e.png") no-repeat 5px 5px;
 }
 
 .dashboard-graph-button.ui-widget.ui-state-hover {
-  background-color: #232020; /* dark grey */
+  /* background-color: #232020; */ /* dark grey */
+  background: #232020 url("images/triangle-232020-e.png") no-repeat 5px 5px;
 }
 
 .dashboard-graph-button.ui-widget.ui-state-default.dashboard-button-selected {
-  background-color: #232020; /* dark grey */
+  /* background-color: #232020; */ /* dark grey */
+  background: #232020 url("images/triangle-232020-n.png") no-repeat 5px 5px;
 }
