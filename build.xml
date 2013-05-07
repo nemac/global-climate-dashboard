@@ -1,8 +1,59 @@
 <project name="dashboard" default="build">
   <loadproperties srcfile="build.properties" />
 
-<!-- ************************************************************************** -->
+  <target name="build" depends="minify">
+    <copy todir="./build/assets">
+      <fileset dir="./assets"/>
+    </copy>
+    <copy todir="./build/lib/fonts">
+      <fileset dir="./lib/fonts"/>
+    </copy>
+    <copy todir="./build/flash">
+      <fileset dir="./flash/build"/>
+    </copy>
+  </target>
 
+  <target name="concatenate">
+    <delete includeemptydirs="true">
+      <fileset dir="build" includes="**/*" excludes="index.html" />
+    </delete>
+    <concat destfile="build/dashboard.js" fixlastline="yes" eol="lf">
+      <filelist dir="." files="lib/multigraph/build/multigraph-min.js" />
+      <filelist dir="." files="lib/jquery-dollar.js" />
+      <filelist dir="." files="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js" />
+      <filelist dir="." files="lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" />
+      <filelist dir="." files="lib/dragslider/dragslider.js" />
+      <filelist dir="." files="lib/mustache.js" />
+      <filelist dir="." files="src/dashboard-tab.js" />
+      <filelist dir="." files="src/dashboard-singleslot-tab.js" />
+      <filelist dir="." files="src/dashboard-graph.js" />
+      <filelist dir="." files="src/dashboard-timeline.js" />
+      <filelist dir="." files="src/dashboard-timeslider.js" />
+      <filelist dir="." files="src/dashboard.js" />
+    </concat>
+    <concat destfile="build/dashboard.css" fixlastline="yes" eol="lf">
+      <filelist dir="." files="lib/jquery-ui-1.9.0.custom/css/smoothness/jquery-ui-1.9.0.custom.css" />
+      <filelist dir="." files="src/dashboard.css" />
+    </concat>
+  </target>
+
+
+  <target name="minify" depends="concatenate">
+    <copy file="build/dashboard.js" tofile="build/stripped-dashboard.js"/>
+    <!-- replace /*! with /* so ALL comments are removed -->
+    <replace file="build/stripped-dashboard.js" token="/*!" value="/*"/>
+    <exec executable="java" failonerror="true">
+      <arg line="-jar" />
+      <arg path="${yuicompressor}" />
+      <arg line="${yuicompressor.options}" />
+      <arg line="build/stripped-dashboard.js" />
+      <arg line="-o" />
+      <arg line="build/dashboard-min.js" />
+    </exec>
+    <delete file="build/stripped-dashboard.js" />
+  </target>
+
+<!-- ************************************************************************** -->
 
   <property environment="env"/>
   <property name="FLEX_HOME" value="${env.FLEX_HOME}"/>
@@ -36,59 +87,7 @@
     </copy>
   </target>
 
-
-
-
-
 <!-- ************************************************************************** -->
-
-  <target name="build" depends="minify"/>
-
-  <target name="concatenate">
-    <delete includeemptydirs="true">
-      <fileset dir="build" includes="**/*" excludes="index.html" />
-    </delete>
-    <concat destfile="build/dashboard.js" fixlastline="yes" eol="lf">
-      <filelist dir="." files="lib/multigraph/build/multigraph-min.js" />
-      <filelist dir="." files="lib/jquery-dollar.js" />
-      <filelist dir="." files="lib/jquery-ui-1.9.0.custom/js/jquery-ui-1.9.0.custom.min.js" />
-      <filelist dir="." files="lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js" />
-      <filelist dir="." files="lib/dragslider/dragslider.js" />
-      <filelist dir="." files="lib/mustache.js" />
-      <filelist dir="." files="src/dashboard-tab.js" />
-      <filelist dir="." files="src/dashboard-singleslot-tab.js" />
-      <filelist dir="." files="src/dashboard-graph.js" />
-      <filelist dir="." files="src/dashboard-timeline.js" />
-      <filelist dir="." files="src/dashboard-timeslider.js" />
-      <filelist dir="." files="src/dashboard.js" />
-    </concat>
-    <concat destfile="build/dashboard.css" fixlastline="yes" eol="lf">
-      <filelist dir="." files="lib/jquery-ui-1.9.0.custom/css/smoothness/jquery-ui-1.9.0.custom.css" />
-      <filelist dir="." files="src/dashboard.css" />
-    </concat>
-    <copy todir="./build/assets">
-      <fileset dir="./assets"/>
-    </copy>
-    <copy todir="./build/lib/fonts">
-      <fileset dir="./lib/fonts"/>
-    </copy>
-  </target>
-
-
-  <target name="minify" depends="concatenate">
-    <copy file="build/dashboard.js" tofile="build/stripped-dashboard.js"/>
-    <!-- replace /*! with /* so ALL comments are removed -->
-    <replace file="build/stripped-dashboard.js" token="/*!" value="/*"/>
-    <exec executable="java" failonerror="true">
-      <arg line="-jar" />
-      <arg path="${yuicompressor}" />
-      <arg line="${yuicompressor.options}" />
-      <arg line="build/stripped-dashboard.js" />
-      <arg line="-o" />
-      <arg line="build/dashboard-min.js" />
-    </exec>
-    <delete file="build/stripped-dashboard.js" />
-  </target>
 
 
 </project>

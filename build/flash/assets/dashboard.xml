@@ -1,0 +1,369 @@
+<dashboard>
+  <!-- global mugl overrides -->
+    <mugloverrides>
+      <element name="window">
+        <attribute name="margin" value="0"/>
+        <attribute name="border" value="0"/>
+        <attribute name="padding" value="0"/>
+      </element>
+      <element name="plotarea">
+        <attribute name="marginleft"    value="34"/>
+        <attribute name="marginright"   value="18"/>
+        <attribute name="margintop"     value="4"/>
+        <attribute name="marginbottom"  value="6"/>
+      </element>
+      <element name="legend">
+        <attribute name="visible" value="false"/>
+      </element>
+      <element name="horizontalaxis">
+        <attribute name="tickcolor" value="0xdddddd"/>
+        <element name="labels">
+          <attribute name="format" value="%Y" visible="false"/>
+          <attribute name="fontcolor" value="0x666666"/>
+        </element>
+        <element name="pan">
+          <attribute name="allowed" value="yes"/>
+        </element>
+        <element name="zoom">
+          <attribute name="allowed" value="yes"/>
+        </element>
+        <element name="grid">
+          <attribute name="color" value="0xdddddd"/>
+        </element>
+        <element name="binding">
+          <attribute name="min" value="1900"/>
+          <attribute name="max" value="2000"/>
+        </element>
+      </element>
+      <element name="verticalaxis">
+        <attribute name="tickcolor" value="0xdddddd"/>
+        <element name="labels">
+          <attribute name="fontcolor" value="0x666666"/>
+        </element>      
+        <element name="pan">
+          <attribute name="allowed" value="no"/>
+        </element>
+        <element name="zoom">
+          <attribute name="allowed" value="no"/>
+        </element>
+        <element name="grid">
+          <attribute name="color" value="0xdddddd"/>
+        </element>
+      </element>
+      <elements name="datatips">
+      	<attribute name="border" value="1"/>
+        <attribute name="bgcolor" value="0x33383b" />
+        <attribute name="bordercolor" value="0x5b6473"/>
+        <attribute name="fontcolor" value="0xffffff"/>
+        <attribute name="fontsize" value="14"/>
+        <attribute name="bold" value="true"/>
+        <attribute name="pad" value="2"/>
+      </elements>
+    </mugloverrides>
+
+
+  <tab>
+    <title>Climate Change</title>
+    <timeslider labels="1880,1900,1920,1940,1960,1980,2000,2020"/>
+    <mugloverrides>
+      <element name="horizontalaxis">
+        <attribute name="min" value="1950"/>
+        <attribute name="max" value="2010"/>
+        <element name="binding">
+          <attribute name="id" value="Tab1TimeBinding"/>
+        </element>
+        <element name="pan">
+          <attribute name="min" value="1880"/>
+          <attribute name="max" value="2020"/>
+        </element>
+        <element name="zoom">
+          <attribute name="min" value="6M"/>
+        </element>
+      </element>
+    </mugloverrides>
+
+    <graph name="Temperature">
+      <title>Temperature (˚C)</title>
+      <help>Earth’s overall temperature has increased by 1.3°F (0.7°C) since 1900. <br /> <br />
+
+		In the graph, average annual surface temperature is shown as the difference from the average for 1901-2000.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-global-temperature</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbtempanom_5"/>
+    </graph>
+
+    <graph name="CarbonDioxide">
+      <title>Carbon Dioxide (ppm)</title>
+      <help>Atmospheric carbon dioxide has increased by about 40% since 1750.
+
+	The graph shows the number of CO<span baselineShift="superscript">2</span> molecules per million molecules of dry air measured at Mauna Loa, Hawai’i. 
+	The black line shows monthly values; the red line shows the running average.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-atmospheric-carbon-dioxide</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbco2_2"/>
+    </graph>
+
+    <graph name="SnowCover">
+      <title>Snow (million km<span baselineShift="superscript">2</span>)</title>
+      <help>Earlier melting of winter snow has reduced the area of land covered by snow in spring. The graph shows the area covered by snow in the Northern Hemisphere during March and April, shown as 
+	the difference from the 1971-2000 average. </help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-spring-snow-cover</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbnhmasc_1"/>
+    </graph>
+
+      <graph name="SeaLevel">
+      <title>Sea Level (mm)</title>
+      <help>The average height of the ocean’s surface has increased by 8.25 inches 
+      (210 mm) since 1880. <br /> <br />
+
+	The graph shows mean global sea level measured by tidal gauges since 1880 and by 
+	satellite instruments since 1993.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-sea-level</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbtmsl_0"/>
+    </graph>
+
+    <graph name="asi">
+      <title>Arctic Sea Ice (1000 km<span baselineShift="superscript">2</span>)</title>
+      <help>The area of the Arctic where sea ice remains frozen at the end of summer has 
+      decreased by more than 10% per decade since 1979. <br /><br />
+
+The graph shows the average area with at least 15% sea ice on its surface each September.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-ocean-heat-content</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbASI_2"/>
+    </graph>
+
+    <graph name="OceanHeat">
+      <title>Ocean Heat (10<span baselineShift="superscript">22</span> Joules)</title>
+      <help>More than 90% of the warming that has occurred on Earth over the past 50 years has occurred in the ocean. The graph shows heat energy in the top 700 meters of the ocean as the difference from the average from 1955-2006.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-minimum-arctic-sea-ice-extent</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbohc_v3"/>
+    </graph>
+
+
+ <graph name="SunsEnergy">
+      <title>Sun's Energy (W/m<span baselineShift="superscript">2</span>)</title>
+      <help>Energy from the Sun varies slightly on 11-year cycles with little net 
+      change overall. <br /> <br />
+
+	The graph shows the total amount of solar energy arriving at the top of Earth’s 
+	atmosphere.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-change-incoming-sunlight</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbse_5"/>
+    </graph>
+
+
+
+    <graph name="Glacier">
+      <title>Glaciers (meters of water equivalent)</title>
+      <help>Since 1980, a representative set of well studied glaciers has lost the equivalent of 40 feet (12.5 meters) of water on average. The graph shows the average mass balance of 30 reference glaciers around the world.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-glacier-mass-balance</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbcigmb_1"/>
+    </graph>
+
+
+
+    <graph name="TotalGreenhouseGas">
+      <title>Annual Greenhouse Gas Index</title>
+      <help>The effect of heat-trapping gases in the atmosphere has increased by 27.5% since 1990, the 
+      year many nations agreed to limit emissions under the Kyoto Protocol. The graph shows total radiative forcing from long-lived greenhouse gases as a percent change from 1990.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2011/climate-change-annual-greenhouse-gas-index-2</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbaggi_2"/>
+    </graph>
+
+
+  </tab>
+
+  <!-- ********************************************************************************* -->
+
+  <tab>
+    <title>Climate Variability</title>
+    <timeslider labels="1950,1960,1970,1980,1990,2000,2010"/>
+    <mugloverrides>
+      <element name="horizontalaxis">
+        <attribute name="min" value="2009"/>
+        <attribute name="max" value="2012"/>
+        <element name="binding">
+          <attribute name="id" value="Tab2TimeBinding"/>
+        </element>
+        <element name="pan">
+          <attribute name="min" value="1950"/>
+          <attribute name="max" value="2012"/>
+        </element>
+        <element name="zoom">
+          <attribute name="min" value="6M"/>
+        </element>
+      </element>
+    </mugloverrides>
+    <graph name="oni">
+      <title>El Niño / La Niña Index</title>
+      <help>Departures from average sea surface temperature in the eastern Pacific Ocean indicate the status of the El Niño – 
+      Southern Oscillation cycle. Values greater than 0.5 indicate El Niño conditions. 
+      Values less than -0.5 indicate La Niña conditions. Values between 0.5 and -0.5 indicate neutral conditions. 
+</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-oceanic-nino-index</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dboni_2A2"/>
+    </graph>
+    <graph name="aoi">
+      <title>Arctic Oscillation Index</title>
+      <help>Departures from average air pressure over the Arctic region and the North Pacific and Atlantic Oceans 
+      affect the north-to-south location of the storm-steering, 
+      mid-latitude jet stream. Negative values are associated with severe winter storms in the eastern U.S.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-arctic-oscillation</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbaoi_2A2"/>
+    </graph>
+    <graph name="naoi">
+      <title>North Atlantic Oscillation</title>
+      <help>Departures from average air pressure over Greenland and the central North Atlantic 
+      Ocean affect weather all around the Atlantic by influencing the intensity 
+      and location of the jet stream and the storm tracks that follow it. Negative values 
+      are associated with severe winter storms in the eastern U.S.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-north-atlantic-oscillation</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbnaoi_2A2"/>
+    </graph>
+    <graph name="soi">
+      <title>Southern Oscillation Index</title>
+      <help>Differences in average air pressure at Tahiti and Darwin, Australia provide an 
+      atmospheric indicator of the El Niño–Southern Oscillation.<br /><br />
+
+		El Niño conditions result in negative SOI values; La Niña conditions produce positive values for this index.
+</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-southern-oscillation-index</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbsoi_2A2"/>
+    </graph>
+    <graph name="pnap">
+      <title>Pacific North American Pattern</title>
+      <help>Departures from average air pressure at four locations over the Pacific Ocean and North America affect 
+      the strength and location of the East Asian jet stream and the weather it delivers to North America.</help>
+      <link>http://www.climatewatch.noaa.gov/article/2009/climate-variability-pacific-north-american-teleconnection-pattern</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbpnap_2A2"/>
+    </graph>
+  </tab>
+
+  <!-- ********************************************************************************* -->
+
+<!--
+  <tab container="Tab1SlotContainer">
+    <title>Climate Projections</title>
+    <timeslider labels="1880,1910,1940,1970,2000,2030,2060,2090"/>
+    <mugloverrides>
+      <element name="horizontalaxis">
+        <attribute name="min" value="1880"/>
+        <attribute name="max" value="2090"/>
+        <element name="binding">
+          <attribute name="id" value="Tab3TimeBinding"/>
+        </element>
+        <element name="pan">
+          <attribute name="min" value="1880"/>
+          <attribute name="max" value="2100"/>
+        </element>
+        <element name="zoom">
+          <attribute name="min" value="6M"/>
+        </element>
+      </element>
+    </mugloverrides>
+    <graph name="cp">
+      <title>CMIP3 Projections</title>
+      <help>This graph shows ...</help>
+      <link>about:blank</link>
+      <mugl location="http://dashboard.nemac.org/multigraph/mugl/dbcp_2"/>
+    </graph>
+    <legend>
+      <link>#</link>
+      <legendA>
+        <title># 20th Century Climate</title>
+        <blurb>20th Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vestibulum lorem mi, vehicula fringilla placerat nec, egestas eget ante.
+        </blurb>
+      </legendA>
+      <legendB>
+        <title># High Growth (A1)</title>
+        <blurb>A1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vestibulum lorem mi, vehicula fringilla placerat nec, egestas eget ante.
+        </blurb>
+      </legendB>
+      <legendC>
+        <title># Moderate Growth (A1B)</title>
+        <blurb>A1B Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vestibulum lorem mi, vehicula fringilla placerat nec, egestas eget ante.
+        </blurb>
+      </legendC>
+      <legendD>
+        <title># Low Growth (B1)</title>
+        <blurb>B1 Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Vestibulum lorem mi, vehicula fringilla placerat nec, egestas eget ante.
+        </blurb>
+      </legendD>
+    </legend>
+  </tab>
+  -->
+
+   <!-- ********************************************************************************* -->
+  
+   <intro>
+     <TextFlow fontFamily="Arial" xmlns="http://ns.adobe.com/textLayout/2008"><p textAlign="center"><span fontSize="18" fontWeight="bold">Global Climate Dashboard</span></p><p><span fontWeight="bold"></span></p><p ><span fontSize="12" fontWeight="bold">Just as the dashboard of a car gives you a quick look at the status of your vehicle, the global climate dashboard gives you a quick look at the status of Earth’s climate system. The interactive graphs let you explore climate-relevant measurements and the relationships among them for different time periods.</span></p>
+       <p><span fontSize="12" fontWeight="bold"></span></p>
+       <p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><span fontSize="12">•<tab/></span><span fontSize="12" fontWeight="bold">Adjust the time slider, or click and drag within a graph, to change the time period displayed.</span></p>
+       <p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><span fontSize="12">•<tab/></span><span fontSize="12" fontWeight="bold">Click and drag data labels up from the list at the bottom to display their graphs.</span></p>
+       <p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><span fontSize="12">•<tab/></span><span fontSize="12" fontWeight="bold">Click the question mark next to any graph for a brief description of the parameter.</span></p>
+       <p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><span fontSize="12">•<tab/></span><span fontSize="12" fontWeight="bold">Click Read More… to access an overview article about the parameter, including a larger version of the graph and the opportunity to download the data.</span></p>
+     </TextFlow>
+  </intro>
+  
+  <!-- ********************************************************************************* -->  
+  
+  <timeline>
+    <mugloverrides>
+      <element name="plotarea">
+        <attribute name="marginbottom"  value="15"/>
+      </element>
+      <element name="horizontalaxis">
+        <attribute name="linewidth" value="0"/>
+        <attribute name="tickcolor" value="0x666666"/>
+        <element name="grid">
+          <attribute name="color" value="0x666666"/>
+        </element>
+        <element name="labels">
+          <attribute name="visible" value="true"/>
+        </element>
+      </element>
+      <element name="verticalaxis">
+        <element name="pan">
+          <attribute name="allowed" value="yes"/>
+        </element>
+        <element name="grid">
+          <attribute name="visible" value="false"/>
+        </element>
+      </element>
+    </mugloverrides>
+    <mugl>
+      <window margin="0" border="0" padding="0"/>
+      <legend visible="false"/>
+      <plotarea marginleft="25" marginright="20" margintop="0" marginbottom="15"/>
+      <horizontalaxis id="year" min="1950" max="2010" type="datetime" linewidth="0" tickwidth="1" tickmin="-2" tickmax="5">
+        <labels position="0 0">
+          <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y"/>
+          <label format="%n %Y" spacing="6M 3M 2M 1M"/>
+        </labels>
+        <title/>
+        <grid/>
+        <pan min="1600" max="2500"/>
+        <zoom min="2"/>
+        <binding id="timebinding" min="1900" max="2000"/>
+      </horizontalaxis>
+      <verticalaxis id="y" base="-2 -1" type="number" min="-1" max="1" linewidth="0">
+        <labels/>
+        <title/>
+        <pan allowed="no"/>
+        <zoom allowed="no"/>
+      </verticalaxis>
+      <data>
+        <variables>
+          <variable id="x" column="0" type="datetime"/>
+          <variable id="y" column="1"/>
+        </variables>
+        <values>
+        </values>
+      </data>
+    </mugl>
+  </timeline>
+  
+  
+</dashboard>

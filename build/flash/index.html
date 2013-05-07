@@ -1,0 +1,61 @@
+<html>
+<head>
+<title>Flash GCD Test</title>
+<script type="text/javascript" src="swfobject.js"></script>
+</head>
+<body>
+
+        <div id="globalClimateDashboard" class="global_climate_dashboard"><img width="940" height="570" src="$screenshot_path"></div>
+       	<noscript>
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="940" height="570" id="Dashboard">
+                <param name="movie" value="Dashboard.swf" />
+                <param name="quality" value="high" />
+                <param name="bgcolor" value="#ffffff" />
+                <param name="allowScriptAccess" value="sameDomain" />
+                <param name="allowFullScreen" value="true" />
+                <!--[if !IE]>-->
+                <object type="application/x-shockwave-flash" data="Dashboard.swf" width="940" height="570">
+                    <param name="quality" value="high" />
+                    <param name="bgcolor" value="#ffffff" />
+                    <param name="allowScriptAccess" value="sameDomain" />
+                    <param name="allowFullScreen" value="true" />
+                <!--<![endif]-->
+                <!--[if gte IE 6]>-->
+                	<p> 
+                		Either scripts and active content are not permitted to run or Adobe Flash Player version
+                		10.0.0 or greater is not installed.
+                	</p>
+                <!--<![endif]-->
+                    <a href="http://www.adobe.com/go/getflashplayer">
+                        <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash Player" />
+                    </a>
+                <!--[if !IE]>-->
+                </object>
+                <!--<![endif]-->
+            </object>
+	    </noscript>		
+        <script type="text/javascript">
+            <!-- For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. --> 
+            var swfVersionStr = "10.0.0";
+            <!-- To use express install, set to playerProductInstall.swf, otherwise the empty string. -->
+            var xiSwfUrlStr = "$ppi_swf_path";
+            var flashvars = { config : "data/dashboard.xml" };
+            var params = {};
+            params.quality = "high";
+            params.bgcolor = "#ffffff";
+            params.allowscriptaccess = "sameDomain";
+            params.allowfullscreen = "true";
+            var attributes = {};
+            attributes.id = "Dashboard";
+            attributes.name = "Dashboard";
+            attributes.align = "middle";
+            swfobject.embedSWF(
+                "Dashboard.swf", "globalClimateDashboard", 
+                "940", "570", 
+                swfVersionStr, xiSwfUrlStr, 
+                flashvars, params, attributes);
+			<!-- JavaScript enabled so display the globalClimateDashboard div in case it is not replaced with a swf object. -->
+			swfobject.createCSS("#globalClimateDashboard", "display:block;text-align:left;");
+        </script>
+
+</body>
