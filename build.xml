@@ -26,7 +26,7 @@
     <ant dir="flash/flash-global-climate-dashboard" target="build"/>
   </target>
 
-  <target name="compile-flash">
+  <target name="copy-flash">
     <copy includeemptydirs="false" todir="flash/build" overwrite="true">
       <fileset dir="flash/flash-global-climate-dashboard/html" includes="**/*"
                excludes="index.html swfobject.js"/>
