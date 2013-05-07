@@ -27,6 +27,9 @@
   </target>
 
   <target name="copy-flash">
+    <delete includeemptydirs="true">
+      <fileset dir="flash/build" includes="**/*" excludes="index.html" />
+    </delete>
     <copy includeemptydirs="false" todir="flash/build" overwrite="true">
       <fileset dir="flash/flash-global-climate-dashboard/html" includes="**/*"
                excludes="index.html"/>
