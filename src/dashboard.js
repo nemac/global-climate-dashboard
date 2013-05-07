@@ -16,11 +16,48 @@
                     + '</div>'
             );
 
+    var flashDashboardTpl =
+            ( 
+                ''
+                    + '<object width="{{{width}}}" height="{{{height}}}"'
+                    +        ' codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">'
+                    +   '<param name="quality" value="best" />'
+                    +   '<param name="scale" value="exactfit" />'
+                    +   '<param name="wmode" value="opaque" />'
+                    +   '<param name="bgcolor" value="#ffffff" />'
+                    +   '<param name="src" value="{{{swf_path}}}"/>'
+                    +   '<param name="name" value="mgid" />'
+                    +   '<param name="allowfullscreen" value="false" />'
+                    +   '<param name="allowScriptAccess" value="sameDomain" />'
+                    +   '<param name="flashvars" value="config={{{config}}}"/>'
+                    +   '<param name="align" value="middle" />'
+                    +   '<embed'
+                    +     ' type="application/x-shockwave-flash"'
+                    +     ' width="{{{width}}}"'
+                    +     ' height="{{{height}}}"'
+                    +     ' src="{{{swf_path}}}"'
+                    +     ' name="mgid"'
+                    +     ' bgcolor="#ffffff"'
+                    +     ' wmode="opaque"'
+                    +     ' scale="exactfit"'
+                    +     ' quality="best"'
+                    +     ' allowfullscreen="false"'
+                    +     ' allowscriptaccess="sameDomain"'
+                    +     ' flashvars="config={{{config}}}"'
+                    +     ' align="middle">'
+                    +   '</embed>'
+                    + '</object>'
+            );
+              
     function xmlObjectToString(obj) {
-      if (window.ActiveXObject) {
-        return obj.xml;
-      }
-      return (new XMLSerializer()).serializeToString(obj);
+        if (window.ActiveXObject) {
+            return obj.xml;
+        }
+        return (new XMLSerializer()).serializeToString(obj);
+    }
+              
+    function remove_trailing_slash(url) {
+        return url.replace(/\/$/, '');
     }
 
     function add_relative_url_prefix(prefix, url) {
@@ -30,10 +67,7 @@
         if (url.match(/^\//) || url.match(/\/\//)) {
             return url;
         }
-        if (! prefix.match(/\/$/)) {
-            prefix = prefix + '/';
-        }
-        return prefix + url;
+        return remove_trailing_slash(prefix) + '/' + url;
     }
 
     function removeTitleTagAndFixSuperSub(string) {
@@ -215,6 +249,15 @@
 
     }
 
+    function buildFlashDashboard(options) {
+        return $(Mustache.to_html(flashDashboardTpl, {
+            width             : 940,
+            height            : 570,
+            swf_path          : options.swf_path,
+            config            : options.config
+        }));
+    }
+
     var methods = {
         init : function(options) {
             return this.each(function() {
@@ -226,24 +269,37 @@
                         assets : '.'
                     }, options);
 
-                window.dashboard.assets = settings.assets;
+                window.dashboard.assets = remove_trailing_slash(settings.assets);
 
                 if ( ! data ) {
 
-                    var $dashboardDiv = $(Mustache.to_html(dashboardTpl, {
-                        title : settings.title
-                    })).appendTo($this);
-
                     $this.data('dashboard', {
-                        //
+                        initialized : true
                     });
 
-                    $.ajax({url      : settings.config,
-                            dataType : 'text',
-                            success  : function (data) {
-                                var $configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
-                                buildDashboard($dashboardDiv, $configxml);
-                            }});
+                    if (settings.flash && (settings.flash.force
+                                           || (!window.multigraph.core.browserHasCanvasSupport()
+                                               &&
+                                               !window.multigraph.core.browserHasSVGSupport()))) {
+                        // if configured to fall back to flash, do so here
+                        if (!settings.flash.config) {
+                            // flash config path defaults to regular config path:
+                            settings.flash.config = settings.config;
+                        }
+                        $this.append(buildFlashDashboard(settings.flash));
+                    } else {
+
+                        var $dashboardDiv = $(Mustache.to_html(dashboardTpl, {
+                            title : settings.title
+                        })).appendTo($this);
+
+                        $.ajax({url      : settings.config,
+                                dataType : 'text',
+                                success  : function (data) {
+                                    var $configxml = window.multigraph.parser.jquery.stringToJQueryXMLObj(data);
+                                    buildDashboard($dashboardDiv, $configxml);
+                                }});
+                    }
 
                 }
                 return this;

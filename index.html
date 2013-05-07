@@ -181,9 +181,17 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
+
     $('#dashboard').dashboard({
       config : './src/assets/dashboard.xml',
-      assets : './src/assets'
+      assets : './src/assets',
+
+      flash  : {
+         force             : false,
+         swf_path          : 'build/flash/Dashboard.swf',
+         config            : 'build/flash/data/dashboard.xml'
+      }
+  
     });
   });
 </script>
