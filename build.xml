@@ -1,6 +1,44 @@
 <project name="dashboard" default="build">
   <loadproperties srcfile="build.properties" />
 
+<!-- ************************************************************************** -->
+
+
+  <property environment="env"/>
+  <property name="FLEX_HOME" value="${env.FLEX_HOME}"/>
+  <property name="mxmlc.exe" value="${FLEX_HOME}/bin/mxmlc"/>
+  <target name="checkenv-flash">
+    <fail unless="env.FLEX_HOME">FLEX_HOME not set
+
+    The FLEX_HOME environment variable must be set to the root of a
+    Flex SDK installation (directory containing "bin", "lib", ...)
+
+    </fail>
+  </target>
+
+  <!--
+     FLEX_HOME=/usr/local/src/flex/flex_sdk_4.1.0.16076 ant build-flash
+   -->
+  <target name="build-flash" depends="compile-flash,copy-flash"/>
+
+  <target name="compile-flash" depends="checkenv-flash">
+    <ant dir="flash/flash-global-climate-dashboard" target="clean"/>
+    <ant dir="flash/flash-global-climate-dashboard" target="build"/>
+  </target>
+
+  <target name="compile-flash">
+    <copy includeemptydirs="false" todir="flash/build" overwrite="true">
+      <fileset dir="flash/flash-global-climate-dashboard/html" includes="**/*"
+               excludes="index.html swfobject.js"/>
+    </copy>
+  </target>
+
+
+
+
+
+<!-- ************************************************************************** -->
+
   <target name="build" depends="minify"/>
 
   <target name="concatenate">
