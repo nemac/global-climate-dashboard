@@ -50,7 +50,7 @@
             );
               
     function xmlObjectToString(obj) {
-        if (window.ActiveXObject) {
+        if (window.ActiveXObject && obj.xml) {
             return obj.xml;
         }
         return (new XMLSerializer()).serializeToString(obj);
