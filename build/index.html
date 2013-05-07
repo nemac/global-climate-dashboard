@@ -27,7 +27,10 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#dashboard').dashboard({config : '../assets/dashboard.xml'});
+    $('#dashboard').dashboard({
+      config : './assets/dashboard.xml',
+      assets : './assets'
+    });
   });
 </script>
 

@@ -181,7 +181,10 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    $('#dashboard').dashboard({config : 'assets/dashboard.xml'});
+    $('#dashboard').dashboard({
+      config : './src/assets/dashboard.xml',
+      assets : './src/assets'
+    });
   });
 </script>
 

@@ -5,8 +5,8 @@
         ''
             + '<div class="dashboard-timeslider-wrapper">'
             +   '<div class="dashboard-timeslider">'
-            +     '<div class="label earlier"><img src="assets/left-arrow.png"><span class="text">Earlier</span></div>'
-            +     '<div class="label later"><span class="text">Later</span><img src="assets/right-arrow.png"></div>'
+            +     '<div class="label earlier"><img src="{{{assets}}}/left-arrow.png"><span class="text">Earlier</span></div>'
+            +     '<div class="label later"><span class="text">Later</span><img src="{{{assets}}}/right-arrow.png"></div>'
             +   '</div>'
             + '</div>'
     );
@@ -20,6 +20,7 @@
                     }, options);
                 if ( ! data ) {
                     $this.html(Mustache.to_html(timesliderTpl, {
+                        assets : window.dashboard.assets
                     }));
                     $this.find('.dashboard-timeslider').dragslider({
                         animate   : true,   // Works with animation.

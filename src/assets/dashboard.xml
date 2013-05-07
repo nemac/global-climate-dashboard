@@ -7317,19 +7317,19 @@ the atmosphere.
       </mugl>
     <legend>
       <item>
-        <img src="./assets/ProjectionGraphLegendIcons-Red-width2.png" />
+        <img src="ProjectionGraphLegendIcons-Red-width2.png" />
         <text>High Growth (A2)</text>
       </item>
       <item>
-        <img src="./assets/ProjectionGraphLegendIcons-Green-width2.png" />
+        <img src="ProjectionGraphLegendIcons-Green-width2.png" />
         <text>Moderate Growth (A1B)</text>
       </item>
       <item>
-        <img src="./assets/ProjectionGraphLegendIcons-Blue-width2.png" />
+        <img src="ProjectionGraphLegendIcons-Blue-width2.png" />
         <text>Low Growth (B1)</text>
       </item>
       <item>
-        <img src="./assets/ProjectionGraphLegendIcons-Black-width2.png" />
+        <img src="ProjectionGraphLegendIcons-Black-width2.png" />
         <text>20th Century Climate</text>
       </item>
     </legend>

@@ -3,7 +3,7 @@
 
   <target name="build" depends="minify">
     <copy todir="./build/assets">
-      <fileset dir="./assets"/>
+      <fileset dir="./src/assets"/>
     </copy>
     <copy todir="./build/lib/fonts">
       <fileset dir="./lib/fonts"/>

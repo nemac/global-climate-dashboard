@@ -1,6 +1,10 @@
 (function ($) {
     "use strict";
 
+    window.dashboard = {
+        '$' : jQuery
+    };
+
     var dashboardTpl =
             (
                 ''
@@ -17,6 +21,19 @@
         return obj.xml;
       }
       return (new XMLSerializer()).serializeToString(obj);
+    }
+
+    function add_relative_url_prefix(prefix, url) {
+        // If `url` is a relative url (neither starts with a '/', nor contains a '//'),
+        // modify it by prepending `prefix` to it.  If `url` is not relative, return
+        // it unmodified.
+        if (url.match(/^\//) || url.match(/\/\//)) {
+            return url;
+        }
+        if (! prefix.match(/\/$/)) {
+            prefix = prefix + '/';
+        }
+        return prefix + url;
     }
 
     function removeTitleTagAndFixSuperSub(string) {
@@ -118,10 +135,11 @@
                     $legend = $('<table/>');
                     $(this).find('>legend item').each(function() {
                         $legend.append($('<tr><td><img src="'
-                                          + $(this).find("img").attr('src')
-                                          + '"/></td><td>'
-                                          + $(this).find("text").text()
-                                          + '</td></tr>'));
+                                         + add_relative_url_prefix(window.dashboard.assets,
+                                                                   $(this).find("img").attr('src'))
+                                         + '"/></td><td>'
+                                         + $(this).find("text").text()
+                                         + '</td></tr>'));
                     });
                 }
                 var mugl        = applyXMLOverrides($(this).find('mugl'),
@@ -204,8 +222,12 @@
                     data = $this.data('dashboard'),
                     settings = $.extend({
                         config : undefined,
-                        title : 'Global Climate Dashboard'
+                        title  : 'Global Climate Dashboard',
+                        assets : '.'
                     }, options);
+
+                window.dashboard.assets = settings.assets;
+
                 if ( ! data ) {
 
                     var $dashboardDiv = $(Mustache.to_html(dashboardTpl, {
