@@ -4,3 +4,6 @@
 [submodule "lib/jquery-ui-touch-punch"]
 	path = lib/jquery-ui-touch-punch
 	url = https://github.com/furf/jquery-ui-touch-punch.git
+[submodule "flash/flash-global-climate-dashboard"]
+	path = flash/flash-global-climate-dashboard
+	url = https://github.com/nemac/flash-global-climate-dashboard.git
