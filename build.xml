@@ -4,6 +4,9 @@
   <target name="build" depends="minify"/>
 
   <target name="concatenate">
+    <delete includeemptydirs="true">
+      <fileset dir="build" includes="**/*" excludes="index.html" />
+    </delete>
     <concat destfile="build/dashboard.js" fixlastline="yes" eol="lf">
       <filelist dir="." files="lib/multigraph/build/multigraph-min.js" />
       <filelist dir="." files="lib/jquery-dollar.js" />
@@ -24,9 +27,6 @@
     </concat>
     <copy todir="./build/assets">
       <fileset dir="./assets"/>
-    </copy>
-    <copy todir="./build/config">
-      <fileset dir="./config"/>
     </copy>
     <copy todir="./build/lib/fonts">
       <fileset dir="./lib/fonts"/>
