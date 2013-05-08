@@ -19,8 +19,7 @@
         <attribute name="tickcolor" value="0xdddddd" />
         <element name="title" action="empty"/>
         <element name="labels">
-          <attribute name="format" value="%Y" visible="false" />
-          <attribute name="fontcolor" value="0x666666" />
+          <attribute name="visible" value="false"/>
         </element>
         <element name="pan">
           <attribute name="allowed" value="yes" />
