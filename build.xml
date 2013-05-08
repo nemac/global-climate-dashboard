@@ -11,6 +11,10 @@
     <copy todir="./build/flash">
       <fileset dir="./flash/build"/>
     </copy>
+    <copy todir="./build">
+      <filelist dir="lib/multigraph/build" files="multigraph-min.js"/>
+      <filelist dir="lib/multigraph/build" files="multigraph.js"/>
+    </copy>
   </target>
 
   <target name="concatenate">
