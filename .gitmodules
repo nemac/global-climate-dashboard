@@ -7,3 +7,6 @@
 [submodule "flash/flash-global-climate-dashboard"]
 	path = flash/flash-global-climate-dashboard
 	url = https://github.com/nemac/flash-global-climate-dashboard.git
+[submodule "data"]
+	path = data
+	url = https://github.com/nemac/global-climate-dashboard-data.git

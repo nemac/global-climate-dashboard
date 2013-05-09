@@ -1,4 +1,4 @@
-<dashboard xmlns:ns0="http://ns.adobe.com/textLayout/2008" id="dashboard2">
+<dashboard xmlns:ns0="http://ns.adobe.com/textLayout/2008" id="dashboard-oak1">
   
     <mugloverrides>
       <element name="window">
@@ -17,9 +17,9 @@
       </element>
       <element name="horizontalaxis">
         <attribute name="tickcolor" value="0xdddddd" />
-        <element name="title" action="empty"/>
+        <element action="empty" name="title" />
         <element name="labels">
-          <attribute name="visible" value="false"/>
+          <attribute name="visible" value="false" />
         </element>
         <element name="pan">
           <attribute name="allowed" value="yes" />
@@ -37,7 +37,7 @@
       </element>
       <element name="verticalaxis">
 
-        <element name="title" action="empty"/>
+        <element action="empty" name="title" />
 
         <attribute name="tickcolor" value="0xdddddd" />
         <element name="labels">
@@ -65,7 +65,7 @@
     </mugloverrides>
 
 
-    <tab id="climateChange2">
+    <tab id="climateChange-oak1">
     <title>Climate Change</title>
     <timeslider />
     <mugloverrides>
@@ -85,7 +85,7 @@
       </element>
     </mugloverrides>
 
-    <graph id="temperature2" name="Temperature">
+    <graph id="temperature-oak1" name="Temperature">
       <title>Global Average Temperature (&#730;C)</title>
       <shorttitle>Temperature</shorttitle>
       <description>The temperature near Earth&#8217;s surface is rising: the bars show each year&#8217;s average temperature compared to the 20th century average.</description>
@@ -119,7 +119,7 @@
 
   <verticalaxis highlightstyle="labels" id="tempanomaly" linewidth="0" max="1" min="-1" tickmax="0" tickmin="-4" type="number">
     <labels>
-      <label densityfactor="0.5" format="%1d"  spacing="50 20 10 5 2 1" />
+      <label densityfactor="0.5" format="%1d" spacing="50 20 10 5 2 1" />
       <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
       <label densityfactor="0.5" format="%.2f" spacing="0.05 0.02 0.01" />
     </labels>
@@ -287,7 +287,7 @@
 2011,0.5338
 </values>
   </data>
-</mugl></graph><graph id="carbonDioxide2" name="CarbonDioxide">
+</mugl></graph><graph id="carbonDioxide-oak1" name="CarbonDioxide">
       <title>Carbon Dioxide (ppm)</title>
       <shorttitle>Carbon Dioxide</shorttitle>
       <description>The amount of carbon dioxide in the atmosphere has risen by 25% since 1958, and by about 40% since the Industrial Revolution.</description>
@@ -325,7 +325,7 @@
 
   <verticalaxis highlightstyle="labels" id="co2" linewidth="0" max="400" min="300" tickmax="0" tickmin="-4" type="number">
     <labels>
-      <label densityfactor="0.7" format="%1d"  spacing="100 50 25 20 10 5 2 1" />
+      <label densityfactor="0.7" format="%1d" spacing="100 50 25 20 10 5 2 1" />
       <label densityfactor="0.7" format="%.1f" spacing="0.5 0.2 0.1" />
       <label densityfactor="0.7" format="%.2f" spacing="0.05 0.02 0.01" />
     </labels>
@@ -1041,7 +1041,7 @@
 201210,391.01,393.39
 </values>
   </data>
-</mugl></graph><graph id="snowCover2" name="SnowCover">
+</mugl></graph><graph id="snowCover-oak1" name="SnowCover">
       <title>Spring Snow Cover (million km<span baselineShift="superscript">2</span>)</title>
       <shorttitle>Snow</shorttitle>
       <description>Snow is melting earlier: each bar shows spring snow cover in the Northern Hemisphere compared to the long-term average.</description>
@@ -1166,7 +1166,7 @@
 </values>
 	  </data>
 	</mugl>
-    </graph><graph id="seaLevel2" name="SeaLevel">
+    </graph><graph id="seaLevel-oak1" name="SeaLevel">
       <title>Global Average Sea Level (mm)</title>
       <shorttitle>Sea Level</shorttitle>
       <description>The ocean&#8217;s surface is rising: water expands as it warms, and melting of ice sheets and glaciers on land adds water to the ocean.</description>
@@ -1204,7 +1204,7 @@
 	</horizontalaxis>
 	<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="100" min="-100" tickmax="0" tickmin="-4" type="number">
       <labels>
-		<label densityfactor="0.5" format="%1d"  spacing="100 50 20 10 5 2 1" />
+		<label densityfactor="0.5" format="%1d" spacing="100 50 20 10 5 2 1" />
 		<label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
 		<label densityfactor="0.5" format="%.2f" spacing="0.05 0.02 0.01" />
       </labels>
@@ -1373,7 +1373,7 @@
 2009,55.5
 </values>
   </data>
-</mugl></graph><graph id="asi2" name="asi">
+</mugl></graph><graph id="asi-oak1" name="asi">
       <title>September Arctic Sea Ice (1000 km<span baselineShift="superscript">2</span>)</title>
       <shorttitle>Arctic Sea Ice</shorttitle>
       <description>The area covered by sea ice in the Arctic at the end of summer has shrunk by about 40% since 1979.</description>
@@ -1477,7 +1477,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201209,3.61
 </values>
 	  </data>
-	</mugl></graph><graph id="oceanHeat2" name="OceanHeat">
+	</mugl></graph><graph id="oceanHeat-oak1" name="OceanHeat">
       <title>Ocean Heat (10<span baselineShift="superscript">22</span> Joules)</title>
       <shorttitle>Ocean Heat</shorttitle>
       <description>Each bar shows heat energy in the top half-mile of the ocean compared to the average from 1955-2006.</description>
@@ -1778,7 +1778,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 </values>
   </data>
 
-</mugl></graph><graph id="sunsEnergy2" name="SunsEnergy">
+</mugl></graph><graph id="sunsEnergy-oak1" name="SunsEnergy">
       <title>Sun's Energy (W/m<sup>2</sup>)</title>
       <shorttitle>Sun's Energy</shorttitle>
       <description>The sun&#8217;s energy rises and falls slightly on an 11-year cycle, with little net change over the last century.</description>
@@ -1814,7 +1814,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	 </horizontalaxis>
 	 <verticalaxis highlightstyle="labels" id="wm2" linewidth="0" max="1370" min="1350" tickmax="0" tickmin="-4" type="number">
        <labels>
-         <label densityfactor="0.5" format="%1d"  spacing="50 20 10 5 2 1" />
+         <label densityfactor="0.5" format="%1d" spacing="50 20 10 5 2 1" />
          <label densityfactor="0.5" format="%.1f" spacing="0.5 0.1" />
          <label densityfactor="0.5" format="%.2f" spacing="0.05 0.01" />
        </labels>
@@ -2251,7 +2251,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 2011,1361.3473
 </values>
 	  </data>
-	</mugl></graph><graph id="glacier2" name="Glacier">
+	</mugl></graph><graph id="glacier-oak1" name="Glacier">
       <title>Glaciers (meters of water equivalent)</title>
       <shorttitle>Glaciers</shorttitle>
       <description>Glaciers are shrinking: average thickness of 30 well-studied glaciers has decreased more than 40 feet since 1980.</description>
@@ -2286,7 +2286,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
 			<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="5" min="-15" tickmax="0" tickmin="-4" type="number">
               <labels>
-				<label densityfactor="0.4" format="%1d"  spacing="100 50 20 10 5 2 1" />
+				<label densityfactor="0.4" format="%1d" spacing="100 50 20 10 5 2 1" />
 				<label densityfactor="0.4" format="%.1f" spacing="0.5 0.2 0.1" />
 				<label densityfactor="0.4" format="%.2f" spacing="0.05 0.02 0.01" />
               </labels>
@@ -2353,7 +2353,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 2008,-11.5670
 </values>
 		  </data>
-		</mugl></graph><graph id="totalGreenhouseGas2" name="TotalGreenhouseGas">
+		</mugl></graph><graph id="totalGreenhouseGas-oak1" name="TotalGreenhouseGas">
       <title>Heat-Trapping Gases</title>
       <shorttitle>Heat-Trapping Gases</shorttitle>
       <description>The total warming effect of long-lived heat-trapping gases has gone up by 30% since 1990, the year many nations agreed to cut emissions.</description>
@@ -2389,7 +2389,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 
 	<verticalaxis highlightstyle="labels" id="col1" linewidth="0" max="1.600" min="0.600" tickmax="0" tickmin="-4" type="number">
       <labels>
-		<label densityfactor="1.0" format="%1d"  spacing="100 50 20 10 5 2 1" />
+		<label densityfactor="1.0" format="%1d" spacing="100 50 20 10 5 2 1" />
 		<label densityfactor="1.0" format="%.1f" spacing="0.5 0.2 0.1" />
 		<label densityfactor="1.0" format="%.2f" spacing="0.05 0.02 0.01" />
       </labels>
@@ -2458,7 +2458,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 2010,1.29
 </values>
   </data>
-</mugl></graph></tab><tab id="climateVariability2">
+</mugl></graph></tab><tab id="climateVariability-oak1">
     <title>Climate Variability</title>
     <timeslider />
     <mugloverrides>
@@ -2477,7 +2477,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
         </element>
       </element>
     </mugloverrides>
-    <graph id="oni2" name="oni">
+    <graph id="oni-oak1" name="oni">
       <title>El Ni&#241;o / La Ni&#241;a (Oceanic Ni&#241;o Index)</title>
       <shorttitle>El Ni&#241;o / La Ni&#241;a</shorttitle>
       <description>Average sea surface temperature in the Eastern Pacific Ocean indicates El Ni&#241;o (yellow), La Ni&#241;a (blue), or neutral (gray) conditions</description>
@@ -3316,7 +3316,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201209,0.400
 </values>
 	  </data>
-	</mugl></graph><graph id="aoi2" name="aoi">
+	</mugl></graph><graph id="aoi-oak1" name="aoi">
       <title>Arctic Oscillation Index</title>
       <shorttitle>Arctic Oscillation</shorttitle>
       <description>When this index is negative, air pressure patterns are more likely to steer severe winter storms to the eastern U.S.</description>
@@ -3397,7 +3397,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 		  <variable column="0" id="datetime" type="datetime" />
 		  <variable column="1" id="number" type="number" />
 		</variables>
-		<values>195002,0.186
+        <values>195002,0.186
 195003,0.391
 195004,0.206
 195005,0.389
@@ -4151,7 +4151,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201209,-0.243
 </values>
 	  </data>
-	</mugl></graph><graph id="naoi2" name="naoi">
+	</mugl></graph><graph id="naoi-oak1" name="naoi">
       <title>North Atlantic Oscillation Index</title>
       <shorttitle>North Atlantic Oscillation</shorttitle>
       <description>Air pressure patterns over the North Atlantic can steer winter weather: negative values are linked to storms in the eastern U.S.</description>
@@ -4991,7 +4991,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201209,-1.210
 </values>
 	  </data>
-	</mugl></graph><graph id="soi2" name="soi">
+	</mugl></graph><graph id="soi-oak1" name="soi">
   <title>Southern Oscillation Index</title>
   <shorttitle>Southern Oscillation</shorttitle>
   <description>Air pressure patterns across the southern Pacific Ocean reflect El Ni&#241;o (yellow), La Ni&#241;a (blue), and neutral (gray) conditions.</description>
@@ -5814,7 +5814,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201210,0.300
 </values>
     </data>
-</mugl></graph><graph id="pnap2" name="pnap">
+</mugl></graph><graph id="pnap-oak1" name="pnap">
       <title>Pacific North American Pattern</title>
       <shorttitle>Pacific North American Pattern</shorttitle>
       <description>Air pressure patterns over the Pacific Ocean and North America affect the type of weather that is delivered to North America.</description>
@@ -6653,9 +6653,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201209,-0.590
 </values>
 	  </data>
-	</mugl></graph></tab>
-
-<tab id="climateProjections2">
+	</mugl></graph></tab><tab id="climateProjections-oak1">
     <title>Climate Projections</title>
     <timeslider />
     <mugloverrides>
@@ -6682,16 +6680,16 @@ The graph shows the average area with at least 15% sea ice on its surface each S
         </element>
       </element>
       <element name="verticalaxis[id=tempf]">
-        <element name="title" text="Temperature Change from 1971-1999 Average (&#730;F)"/>
+        <element name="title" text="Temperature Change from 1971-1999 Average (&#730;F)" />
       </element>
       <element name="verticalaxis[id=temp]">
-        <element name="title" text="Temperature Change from 1971-1999 Average (&#730;C)"/>
+        <element name="title" text="Temperature Change from 1971-1999 Average (&#730;C)" />
         <element name="grid">
           <attribute name="visible" value="false" />
         </element>
       </element>
     </mugloverrides>
-    <graph id="cp2" name="cp">
+    <graph id="cp-oak1" name="cp">
       <title>Simulation of Global Temperature</title>
       <legendtitle>Climate Model Data (CMIP3, 2007)</legendtitle>
       <legendtext>The black line shows the average of many different
@@ -6733,7 +6731,7 @@ the atmosphere.
           <title anchor="0 -1" angle="90" position="-20 0">Temperature Change from 1971-1999 Average (&#730;F)</title>
           <binding id="ProjTempBinding" max="1.8" min="0" />
           <labels fontcolor="0x666666">
-            <label densityfactor="0.3" format="%1d"  spacing="100 50 20 10 5 2 1" />
+            <label densityfactor="0.3" format="%1d" spacing="100 50 20 10 5 2 1" />
             <label densityfactor="0.3" format="%.1f" spacing="0.5 0.2 0.1" />
             <label densityfactor="0.3" format="%.2f" spacing="0.05 0.02 0.01" />
           </labels>
@@ -6743,7 +6741,7 @@ the atmosphere.
           <pan max="6" min="-2" />
           <binding id="ProjTempBinding" max="1" min="0" />
           <labels fontcolor="0x666666">
-            <label densityfactor="0.2" format="%1d"  spacing="100 50 20 10 5 2 1" />
+            <label densityfactor="0.2" format="%1d" spacing="100 50 20 10 5 2 1" />
             <label densityfactor="0.2" format="%.1f" spacing="0.5 0.2 0.1" />
             <label densityfactor="0.2" format="%.2f" spacing="0.05 0.02 0.01" />
           </labels>
@@ -7332,9 +7330,7 @@ the atmosphere.
         <text>20th Century Climate</text>
       </item>
     </legend>
-    </graph></tab>
-
-<intro>
+</graph></tab><intro>
      <ns0:TextFlow fontFamily="Arial"><ns0:p textAlign="center"><ns0:span fontSize="18" fontWeight="bold">Global Climate Dashboard</ns0:span></ns0:p><ns0:p><ns0:span fontWeight="bold" /></ns0:p><ns0:p><ns0:span fontSize="12" fontWeight="bold">Just as the dashboard of a car gives you a quick look at the status of your vehicle, the global climate dashboard gives you a quick look at the status of Earth&#8217;s climate system. The interactive graphs let you explore climate-relevant measurements and the relationships among them for different time periods.</ns0:span></ns0:p>
        <ns0:p><ns0:span fontSize="12" fontWeight="bold" /></ns0:p>
        <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Adjust the time slider, or click and drag within a graph, to change the time period displayed.</ns0:span></ns0:p>
@@ -7350,7 +7346,7 @@ the atmosphere.
     <mugloverrides>
       <element name="plotarea">
         <attribute name="marginbottom" value="10" />
-        <attribute name="margintop"    value="0" />
+        <attribute name="margintop" value="0" />
       </element>
       <element name="horizontalaxis">
         <attribute name="linewidth" value="0" />

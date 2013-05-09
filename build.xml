@@ -17,6 +17,21 @@
     </copy>
   </target>
 
+  <target name="html5-data">
+    <exec dir="data" executable="bin/deref" output="src/assets/dashboard.xml">
+      <arg line="dashboards/dashboard-oak1.xml"/>
+    </exec>
+  </target>
+
+  <target name="flash-data">
+    <exec dir="data" executable="bin/deref" output="./flash/flash-global-climate-dashboard/data/dashboard.xml">
+      <arg line="dashboards/dashboard2.xml"/>
+    </exec>
+    <copy todir="./flash/build/data">
+      <filelist dir="./flash/flash-global-climate-dashboard/data" files="dashboard.xml"/>
+    </copy>
+  </target>
+
   <target name="concatenate">
     <delete includeemptydirs="true">
       <fileset dir="build" includes="**/*" excludes="index.html" />
