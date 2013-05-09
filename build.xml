@@ -1,7 +1,7 @@
 <project name="dashboard" default="build">
   <loadproperties srcfile="build.properties" />
 
-  <target name="build" depends="minify">
+  <target name="build" depends="minify,html5-data,flash-data">
     <copy todir="./build/assets">
       <fileset dir="./src/assets"/>
     </copy>
