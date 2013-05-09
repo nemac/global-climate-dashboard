@@ -638,12 +638,16 @@ body .ui-tooltip { border-width:2px; }
   font-weight: bold;
 }
 
-.dashboard-graph-link a {
+.dashboard-graph-link a,
+.dashboard-graph-link a:link,
+.context-data .dashboard a,
+.context-data .dashboard a:link {
   color: #888888;
   text-decoration: none;
 }
 
-.dashboard-graph-link a:hover {
+.dashboard-graph-link a:hover,
+.context-data .dashboard-graph-link a:hover {
   color: #cccccc;
 }
 

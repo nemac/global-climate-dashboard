@@ -6716,9 +6716,16 @@ The graph shows the average area with at least 15% sea ice on its surface each S
           <attribute name="min" value="6M" />
         </element>
       </element>
-      <element name="verticalaxis">
+      <element name="verticalaxis[id=tempf]">
         <element name="pan">
           <attribute name="allowed" value="yes" />
+          <attribute name="min" value="-1" />
+          <attribute name="max" value="10" />
+        </element>
+        <element name="zoom">
+          <attribute name="allowed" value="yes" />
+          <attribute name="min" value="1" />
+          <attribute name="max" value="50" />
         </element>
       </element>
       <element name="verticalaxis[id=tempf]">
