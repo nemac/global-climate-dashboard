@@ -1,0 +1,185 @@
+<mugl>
+<window border="0" margin="0" padding="0" />
+  <legend visible="false" />
+  <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
+  <horizontalaxis highlightstyle="labels" id="year" linewidth="0" max="2020" min="1870" tickmax="0" tickmin="-4" type="datetime">
+    <labels>
+      <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
+      <label format="%n %y" spacing="6M 3M 2M 1M" />
+    </labels>
+    <grid />
+    <title anchor="0 5" position="-10 0">Year</title>
+  </horizontalaxis>
+
+  <verticalaxis highlightstyle="labels" id="tempanomaly" linewidth="0" max="1" min="-1" tickmax="0" tickmin="-4" type="number">
+    <labels>
+      <label densityfactor="0.5" format="%1d" spacing="50 20 10 5 2 1" />
+      <label densityfactor="0.5" format="%.1f" spacing="0.5 0.2 0.1" />
+      <label densityfactor="0.5" format="%.2f" spacing="0.05 0.02 0.01" />
+    </labels>
+    <grid />
+    <title anchor="0 -4" angle="90" position="-20 -22">Global Temperature Anomaly (C) compared to 1901-2000</title>
+	
+	
+  </verticalaxis>
+  <plot>
+    <horizontalaxis ref="year">
+      <variable ref="year" />
+    </horizontalaxis>
+    <verticalaxis ref="tempanomaly">
+      <variable ref="temp" />
+    </verticalaxis>
+		<renderer type="bar">
+			<option min="0" name="fillcolor" value="0xCD6760" />
+			<option max="0" name="fillcolor" value="0x6194C8" />
+			<option name="barwidth" value="1Y" />
+			<option name="baroffset" value="0" />
+			<option name="barbase" value="0" />
+		</renderer>
+    <datatips format="{0}: {1}">
+       <variable format="'%y" />
+       <variable format="%.1f" />
+    </datatips>
+  </plot>
+
+  <data>
+    <variables>
+      <variable column="0" id="year" type="datetime" />
+      <variable column="1" id="temp" />
+    </variables>
+    <values>1880,-0.1592
+1881,-0.1067
+1882,-0.1244
+1883,-0.1734
+1884,-0.2339
+1885,-0.2075
+1886,-0.1856
+1887,-0.2631
+1888,-0.1771
+1889,-0.0951
+1890,-0.3106
+1891,-0.2705
+1892,-0.3090
+1893,-0.3455
+1894,-0.3068
+1895,-0.2516
+1896,-0.1066
+1897,-0.1476
+1898,-0.2777
+1899,-0.1609
+1900,-0.1163
+1901,-0.1716
+1902,-0.2618
+1903,-0.3541
+1904,-0.4125
+1905,-0.2934
+1906,-0.2413
+1907,-0.3854
+1908,-0.4316
+1909,-0.4334
+1910,-0.4158
+1911,-0.4388
+1912,-0.3826
+1913,-0.3506
+1914,-0.1909
+1915,-0.1112
+1916,-0.3102
+1917,-0.3468
+1918,-0.2396
+1919,-0.2576
+1920,-0.2354
+1921,-0.1672
+1922,-0.2545
+1923,-0.2339
+1924,-0.2286
+1925,-0.1589
+1926,-0.0625
+1927,-0.1284
+1928,-0.1297
+1929,-0.2488
+1930,-0.0574
+1931,-0.0313
+1932,-0.0526
+1933,-0.1952
+1934,-0.0518
+1935,-0.0828
+1936,-0.0560
+1937,0.0560
+1938,0.0847
+1939,0.0700
+1940,0.1150
+1941,0.1605
+1942,0.1170
+1943,0.1110
+1944,0.2155
+1945,0.0890
+1946,-0.0440
+1947,-0.0476
+1948,-0.0593
+1949,-0.0710
+1950,-0.1602
+1951,-0.0037
+1952,0.0383
+1953,0.1145
+1954,-0.1010
+1955,-0.1175
+1956,-0.1767
+1957,0.0641
+1958,0.1151
+1959,0.0721
+1960,0.0221
+1961,0.0971
+1962,0.1247
+1963,0.1432
+1964,-0.1197
+1965,-0.0540
+1966,0.0051
+1967,0.0209
+1968,0.0081
+1969,0.1132
+1970,0.0672
+1971,-0.0315
+1972,0.0563
+1973,0.1920
+1974,-0.0515
+1975,0.0185
+1976,-0.0742
+1977,0.1791
+1978,0.0999
+1979,0.1867
+1980,0.2305
+1981,0.2701
+1982,0.1524
+1983,0.3177
+1984,0.1269
+1985,0.1077
+1986,0.1971
+1987,0.3316
+1988,0.3430
+1989,0.2673
+1990,0.3976
+1991,0.3772
+1992,0.2354
+1993,0.2659
+1994,0.3280
+1995,0.4514
+1996,0.3217
+1997,0.5158
+1998,0.6339
+1999,0.4568
+2000,0.4313
+2001,0.5532
+2002,0.6159
+2003,0.6246
+2004,0.5819
+2005,0.6549
+2006,0.6022
+2007,0.5946
+2008,0.5164
+2009,0.5989
+2010,0.6628
+2011,0.5389
+2012,0.5792
+</values>
+  </data>
+</mugl>

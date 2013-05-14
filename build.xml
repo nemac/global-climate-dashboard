@@ -17,10 +17,53 @@
     </copy>
   </target>
 
+  <macrodef name="makemugl">
+    <attribute name="xmlfile"/>
+    <sequential>
+      <exec dir="data" executable="bin/deref" output="src/assets/@{xmlfile}">
+        <arg line="-e"/>
+        <arg line="mugl"/>
+        <arg line="graphs/@{xmlfile}"/>
+      </exec>
+    </sequential>
+  </macrodef>
+
   <target name="html5-data">
     <exec dir="data" executable="bin/deref" output="src/assets/dashboard.xml">
       <arg line="dashboards/dashboard-oak1.xml"/>
     </exec>
+    <makemugl xmlfile="aoi-oak1.xml"/>
+    <makemugl xmlfile="asi-oak1.xml"/>
+    <makemugl xmlfile="carbonDioxide-oak1.xml"/>
+    <makemugl xmlfile="cp-oak1.xml"/>
+    <makemugl xmlfile="glacier-oak1.xml"/>
+    <makemugl xmlfile="naoi-oak1.xml"/>
+    <makemugl xmlfile="oceanHeat-oak1.xml"/>
+    <makemugl xmlfile="oni-oak1.xml"/>
+    <makemugl xmlfile="pnap-oak1.xml"/>
+    <makemugl xmlfile="seaLevel-oak1.xml"/>
+    <makemugl xmlfile="snowCover-oak1.xml"/>
+    <makemugl xmlfile="soi-oak1.xml"/>
+    <makemugl xmlfile="sunsEnergy-oak1.xml"/>
+    <makemugl xmlfile="temperature-oak1.xml"/>
+    <makemugl xmlfile="totalGreenhouseGas-oak1.xml"/>
+    
+    
+    <makemugl xmlfile="aoi2.xml"/>
+    <makemugl xmlfile="asi2.xml"/>
+    <makemugl xmlfile="carbonDioxide2.xml"/>
+    <makemugl xmlfile="cp2.xml"/>
+    <makemugl xmlfile="glacier2.xml"/>
+    <makemugl xmlfile="naoi2.xml"/>
+    <makemugl xmlfile="oceanHeat2.xml"/>
+    <makemugl xmlfile="oni2.xml"/>
+    <makemugl xmlfile="pnap2.xml"/>
+    <makemugl xmlfile="seaLevel2.xml"/>
+    <makemugl xmlfile="snowCover2.xml"/>
+    <makemugl xmlfile="soi2.xml"/>
+    <makemugl xmlfile="sunsEnergy2.xml"/>
+    <makemugl xmlfile="temperature2.xml"/>
+    <makemugl xmlfile="totalGreenhouseGas2.xml"/>
   </target>
 
   <target name="flash-data">
