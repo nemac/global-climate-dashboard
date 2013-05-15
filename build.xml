@@ -25,6 +25,7 @@
         <arg line="mugl"/>
         <arg line="graphs/@{xmlfile}"/>
       </exec>
+      <echo message="wrote src/assets/@{xmlfile}"/>
     </sequential>
   </macrodef>
 
