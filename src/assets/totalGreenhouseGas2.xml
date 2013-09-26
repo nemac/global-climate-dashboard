@@ -35,7 +35,7 @@
 			<option name="linewidth" value="1" />		
 		</renderer>
 	<datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%.3f" />
     </datatips>
   </plot>

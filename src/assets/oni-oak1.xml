@@ -51,7 +51,7 @@
 				<option name="barbase" value="0" />
 			</renderer>
 			<datatips format="{0}: {1}">
-			  <variable format="%n '%y" />
+			  <variable format="%n &apos;%y" />
 			  <variable format="%.1f" />
 			</datatips>
 

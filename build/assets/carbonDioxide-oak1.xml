@@ -41,7 +41,7 @@
 			<option name="fillopacity" value="0.55" />
 		</renderer>
 		    <datatips format="{0}: {1}">
-       <variable format="%n '%y" />
+       <variable format="%n &apos;%y" />
        <variable format="%1d" />
     </datatips>
 

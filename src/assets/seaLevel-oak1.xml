@@ -38,7 +38,7 @@
 			<option name="fillopacity" value="0.5" />
 		</renderer>
 		    <datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%1d" />
     </datatips>
    </plot>
