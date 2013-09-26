@@ -49,7 +49,14 @@
                         legend      : settings.graph.legend,
                         link        : settings.graph.link,
                         error       : function (e) { throw e; },
-                        warning     : function (e) { console.log(e); },
+                        warning     : function (e) {
+                            // wrap console.log statement in try/catch since it causes IE 9 to barf
+                            // unless dev tools are up
+                            try {
+                                console.log(e);
+                            } catch (e) {
+                            }
+                        },
                         width       : 560,
                         height      : 450,
                         muglString  : settings.graph.mugl,
