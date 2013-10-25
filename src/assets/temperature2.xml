@@ -33,7 +33,7 @@
 			<option name="barbase" value="0" />
 		</renderer>
     <datatips format="{0}: {1}">
-       <variable format="&apos;%y" />
+       <variable format="'%y" />
        <variable format="%.1f" />
     </datatips>
   </plot>
