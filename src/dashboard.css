@@ -13,6 +13,13 @@
   display: none;
 }
 
+.dashboard sup {
+  vertical-align: super;
+}
+.dashboard sub {
+  vertical-align: sub;
+}
+
 .dashboard {
   position: relative;
   width: 940px;
