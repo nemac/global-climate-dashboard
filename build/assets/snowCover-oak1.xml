@@ -4,7 +4,7 @@
 		<legend visible="false" />
 		<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 	  
-		<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2011" min="1966" tickmax="0" tickmin="-4" type="datetime">
+		<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2014" min="1966" tickmax="0" tickmin="-4" type="datetime">
 			<labels>
 			  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
 			  
@@ -45,7 +45,7 @@
 			</renderer>
 
 			<datatips format="{0}: {1}">
-		   <variable format="'%y" />
+		   <variable format="&apos;%y" />
 		   <variable format="%.1f" />
 		</datatips>
 	  </plot>

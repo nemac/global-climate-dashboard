@@ -5,7 +5,7 @@
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 	 
 
-	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201401" min="200601" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
 		  <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -54,7 +54,7 @@
 				<option name="barbase" value="0" />
 			</renderer>
 			<datatips format="{0}: {1}">
-			  <variable format="%n '%y" />
+			  <variable format="%n &apos;%y" />
 			  <variable format="%.2f" />
 			</datatips>
 	  </plot>
@@ -822,6 +822,13 @@
 201301,-0.003
 201302,0.347
 201303,-0.357
+201304,-0.627
+201305,-0.783
+201306,-0.367
+201307,-0.257
+201308,0.067
+201309,0.057
+201310,-0.327
 </values>
 	  </data>
 	</mugl>

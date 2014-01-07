@@ -1,4 +1,4 @@
-<dashboard xmlns:ns0="http://ns.adobe.com/textLayout/2008" id="dashboard-oak1">
+<dashboard id="dashboard-oak1">
   
     <mugloverrides>
       <element name="window">
@@ -143,7 +143,7 @@
 			<option name="barbase" value="0" />
 		</renderer>
     <datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%.1f" />
     </datatips>
   </plot>
@@ -153,139 +153,139 @@
       <variable column="0" id="year" type="datetime" />
       <variable column="1" id="temp" />
     </variables>
-    <values>1880,-0.1592
-1881,-0.1067
-1882,-0.1244
-1883,-0.1734
-1884,-0.2339
-1885,-0.2075
-1886,-0.1856
-1887,-0.2631
-1888,-0.1771
-1889,-0.0951
-1890,-0.3106
-1891,-0.2705
-1892,-0.3090
-1893,-0.3455
-1894,-0.3068
-1895,-0.2516
-1896,-0.1066
-1897,-0.1476
-1898,-0.2777
+    <values>1880,-0.1595
+1881,-0.1077
+1882,-0.1241
+1883,-0.1714
+1884,-0.2324
+1885,-0.2052
+1886,-0.1851
+1887,-0.2613
+1888,-0.1764
+1889,-0.0947
+1890,-0.3094
+1891,-0.2697
+1892,-0.3069
+1893,-0.3440
+1894,-0.3074
+1895,-0.2539
+1896,-0.1098
+1897,-0.1499
+1898,-0.2788
 1899,-0.1609
-1900,-0.1163
-1901,-0.1716
-1902,-0.2618
-1903,-0.3541
-1904,-0.4125
-1905,-0.2934
-1906,-0.2413
-1907,-0.3854
-1908,-0.4316
-1909,-0.4334
-1910,-0.4158
-1911,-0.4388
-1912,-0.3826
-1913,-0.3506
-1914,-0.1909
-1915,-0.1112
-1916,-0.3102
-1917,-0.3468
-1918,-0.2396
-1919,-0.2576
-1920,-0.2354
-1921,-0.1672
-1922,-0.2545
-1923,-0.2339
-1924,-0.2286
-1925,-0.1589
-1926,-0.0625
-1927,-0.1284
-1928,-0.1297
-1929,-0.2488
-1930,-0.0574
-1931,-0.0313
-1932,-0.0526
-1933,-0.1952
-1934,-0.0518
-1935,-0.0828
-1936,-0.0560
-1937,0.0560
-1938,0.0847
-1939,0.0700
-1940,0.1150
-1941,0.1605
-1942,0.1170
-1943,0.1110
-1944,0.2155
-1945,0.0890
-1946,-0.0440
-1947,-0.0476
-1948,-0.0593
-1949,-0.0710
-1950,-0.1602
-1951,-0.0037
-1952,0.0383
-1953,0.1145
-1954,-0.1010
-1955,-0.1175
-1956,-0.1767
-1957,0.0641
-1958,0.1151
-1959,0.0721
-1960,0.0221
-1961,0.0971
-1962,0.1247
-1963,0.1432
-1964,-0.1197
-1965,-0.0540
-1966,0.0051
-1967,0.0209
-1968,0.0081
-1969,0.1132
-1970,0.0672
-1971,-0.0315
-1972,0.0563
-1973,0.1920
-1974,-0.0515
-1975,0.0185
-1976,-0.0742
-1977,0.1791
-1978,0.0999
-1979,0.1867
-1980,0.2305
-1981,0.2701
-1982,0.1524
-1983,0.3177
-1984,0.1269
-1985,0.1077
-1986,0.1971
-1987,0.3316
-1988,0.3430
-1989,0.2673
-1990,0.3976
-1991,0.3772
-1992,0.2354
-1993,0.2659
-1994,0.3280
-1995,0.4514
-1996,0.3217
+1900,-0.1173
+1901,-0.1748
+1902,-0.2657
+1903,-0.3558
+1904,-0.4154
+1905,-0.2940
+1906,-0.2423
+1907,-0.3825
+1908,-0.4293
+1909,-0.4317
+1910,-0.4141
+1911,-0.4369
+1912,-0.3808
+1913,-0.3493
+1914,-0.1896
+1915,-0.1113
+1916,-0.3096
+1917,-0.3467
+1918,-0.2391
+1919,-0.2575
+1920,-0.2345
+1921,-0.1648
+1922,-0.2511
+1923,-0.2303
+1924,-0.2274
+1925,-0.1572
+1926,-0.0614
+1927,-0.1268
+1928,-0.1292
+1929,-0.2492
+1930,-0.0581
+1931,-0.0326
+1932,-0.0516
+1933,-0.1959
+1934,-0.0525
+1935,-0.0821
+1936,-0.0545
+1937,0.0578
+1938,0.0876
+1939,0.0708
+1940,0.1155
+1941,0.1627
+1942,0.1182
+1943,0.1139
+1944,0.2196
+1945,0.0939
+1946,-0.0432
+1947,-0.0462
+1948,-0.0571
+1949,-0.0684
+1950,-0.1583
+1951,-0.0003
+1952,0.0420
+1953,0.1173
+1954,-0.0980
+1955,-0.1144
+1956,-0.1751
+1957,0.0653
+1958,0.1159
+1959,0.0726
+1960,0.0230
+1961,0.0972
+1962,0.1233
+1963,0.1415
+1964,-0.1217
+1965,-0.0557
+1966,0.0033
+1967,0.0193
+1968,0.0070
+1969,0.1113
+1970,0.0655
+1971,-0.0343
+1972,0.0536
+1973,0.1885
+1974,-0.0547
+1975,0.0154
+1976,-0.0760
+1977,0.1769
+1978,0.0968
+1979,0.1842
+1980,0.2279
+1981,0.2683
+1982,0.1504
+1983,0.3161
+1984,0.1253
+1985,0.1066
+1986,0.1970
+1987,0.3301
+1988,0.3410
+1989,0.2645
+1990,0.3975
+1991,0.3763
+1992,0.2350
+1993,0.2645
+1994,0.3254
+1995,0.4494
+1996,0.3213
 1997,0.5158
-1998,0.6339
-1999,0.4568
-2000,0.4313
-2001,0.5532
-2002,0.6159
-2003,0.6246
-2004,0.5819
-2005,0.6549
-2006,0.6022
-2007,0.5946
-2008,0.5164
-2009,0.5989
-2010,0.6628
-2011,0.5389
-2012,0.5792
+1998,0.6334
+1999,0.4554
+2000,0.4278
+2001,0.5497
+2002,0.6098
+2003,0.6200
+2004,0.5742
+2005,0.6496
+2006,0.5956
+2007,0.5896
+2008,0.5113
+2009,0.5948
+2010,0.6582
+2011,0.5326
+2012,0.5736
 </values>
   </data>
 </mugl></graph><graph id="carbonDioxide-oak1" name="CarbonDioxide">
@@ -315,7 +315,7 @@
       <icon border="0" height="15" width="15" />
   </legend>
   <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
-  <horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2010" min="1960" tickmax="0" tickmin="-4" type="datetime">
+  <horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2014" min="1960" tickmax="0" tickmin="-4" type="datetime">
     <labels>
       <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />  
       <label format="  %n %y" spacing="6M 3M 2M 1M" />
@@ -351,7 +351,7 @@
 			<option name="fillopacity" value="0.55" />
 		</renderer>
 		    <datatips format="{0}: {1}">
-       <variable format="%n '%y" />
+       <variable format="%n &apos;%y" />
        <variable format="%1d" />
     </datatips>
 
@@ -626,7 +626,7 @@
 197802,335.26,334.15
 197803,336.61,334.29
 197804,337.77,334.43
-197805,338.01,334.53
+197805,338.00,334.53
 197806,337.98,334.69
 197807,336.48,334.83
 197808,334.37,334.98
@@ -637,8 +637,8 @@
 197901,336.21,335.50
 197902,336.65,335.62
 197903,338.13,335.74
-197904,338.95,335.84
-197905,339.00,335.93
+197904,338.94,335.84
+197905,339.00,335.92
 197906,339.20,336.03
 197907,337.60,336.12
 197908,335.56,336.22
@@ -705,18 +705,18 @@
 198409,341.35,344.21
 198410,341.68,344.33
 198411,343.06,344.46
-198412,344.54,344.58
+198412,344.55,344.58
 198501,345.25,344.68
 198502,346.06,344.79
 198503,347.66,344.97
 198504,348.20,345.09
 198505,348.92,345.20
 198506,348.40,345.32
-198507,346.66,345.41
+198507,346.66,345.42
 198508,344.85,345.55
 198509,343.20,345.71
 198510,343.08,345.82
-198511,344.40,345.93
+198511,344.40,345.94
 198512,345.82,346.04
 198601,346.54,346.15
 198602,347.13,346.24
@@ -740,15 +740,15 @@
 198708,347.84,348.51
 198709,346.52,348.64
 198710,346.65,348.82
-198711,347.96,348.99
+198711,347.95,348.99
 198712,349.18,349.16
 198801,350.38,349.33
-198802,351.68,349.58
+198802,351.68,349.57
 198803,352.24,349.79
 198804,353.66,349.98
 198805,354.18,350.15
 198806,353.68,350.32
-198807,352.58,350.55
+198807,352.58,350.54
 198808,350.66,350.78
 198809,349.03,350.99
 198810,349.08,351.19
@@ -769,13 +769,13 @@
 199001,353.79,353.14
 199002,354.88,353.28
 199003,355.65,353.43
-199004,356.27,353.49
+199004,356.28,353.49
 199005,357.29,353.61
 199006,356.32,353.69
 199007,354.89,353.77
 199008,352.89,353.88
 199009,351.28,353.99
-199010,351.59,354.09
+199010,351.59,354.10
 199011,353.05,354.23
 199012,354.27,354.35
 199101,354.87,354.44
@@ -925,11 +925,11 @@
 200301,374.87,373.42
 200302,375.62,373.62
 200303,376.48,373.84
-200304,377.73,374.06
+200304,377.74,374.06
 200305,378.50,374.30
-200306,378.18,374.52
+200306,378.18,374.53
 200307,376.72,374.75
-200308,374.32,374.96
+200308,374.31,374.96
 200309,373.20,375.17
 200310,373.10,375.39
 200311,374.64,375.59
@@ -937,14 +937,14 @@
 200401,377.00,375.95
 200402,377.87,376.14
 200403,378.73,376.33
-200404,380.42,376.55
+200404,380.41,376.55
 200405,380.63,376.73
 200406,379.56,376.84
 200407,377.61,376.92
 200408,376.15,377.07
-200409,374.11,377.15
+200409,374.11,377.14
 200410,374.44,377.26
-200411,375.93,377.37
+200411,375.93,377.36
 200412,377.45,377.49
 200501,378.47,377.61
 200502,379.76,377.77
@@ -1009,7 +1009,7 @@
 201001,388.50,387.50
 201002,389.94,387.71
 201003,391.09,387.90
-201004,392.53,388.16
+201004,392.52,388.16
 201005,393.04,388.39
 201006,392.15,388.62
 201007,390.22,388.82
@@ -1023,13 +1023,13 @@
 201103,392.49,390.35
 201104,393.34,390.42
 201105,394.21,390.51
-201106,393.71,390.64
+201106,393.72,390.64
 201107,392.42,390.83
 201108,390.19,390.99
 201109,389.04,391.17
 201110,388.96,391.32
 201111,390.24,391.45
-201112,391.83,391.62
+201112,391.83,391.63
 201201,393.12,391.78
 201202,393.60,391.93
 201203,394.45,392.09
@@ -1042,9 +1042,17 @@
 201210,391.01,393.40
 201211,392.81,393.62
 201212,394.28,393.82
-201301,395.55,394.02
-201302,396.79,394.29
-201303,397.34,394.53
+201301,395.52,394.02
+201302,396.79,394.28
+201303,397.32,394.52
+201304,398.38,394.71
+201305,399.76,394.96
+201306,398.58,395.19
+201307,397.22,395.43
+201308,395.15,395.66
+201309,393.51,395.86
+201310,393.66,396.08
+201311,395.10,396.27
 </values>
   </data>
 </mugl></graph><graph id="snowCover-oak1" name="SnowCover">
@@ -1072,7 +1080,7 @@
 		<legend visible="false" />
 		<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 	  
-		<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2011" min="1966" tickmax="0" tickmin="-4" type="datetime">
+		<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2014" min="1966" tickmax="0" tickmin="-4" type="datetime">
 			<labels>
 			  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
 			  
@@ -1113,7 +1121,7 @@
 			</renderer>
 
 			<datatips format="{0}: {1}">
-		   <variable format="'%y" />
+		   <variable format="&apos;%y" />
 		   <variable format="%.1f" />
 		</datatips>
 	  </plot>
@@ -1201,7 +1209,7 @@
 	<legend visible="false" />
 	<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
   
-	<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2009" min="1880" tickmax="0" tickmin="-4" type="datetime">
+	<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2014" min="1880" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
 		  <label format="  %n %y" spacing="6M 3M 2M 1M" />
@@ -1235,7 +1243,7 @@
 			<option name="fillopacity" value="0.5" />
 		</renderer>
 		    <datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%1d" />
     </datatips>
    </plot>
@@ -1408,7 +1416,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	  <legend visible="false" />
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2010" min="1979" tickmax="0" tickmin="-4" type="datetime">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2014" min="1979" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
 		  <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -1437,7 +1445,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 				<option name="fillopacity" value="0.2" />
 			</renderer>
     <datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%.1f" />
     </datatips>
 	</plot>
@@ -1481,7 +1489,8 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 200909,5.39
 201009,4.93
 201109,4.63
-201209,3.61
+201209,3.63
+201309,5.35
 </values>
 	  </data>
 	</mugl></graph><graph id="oceanHeat-oak1" name="OceanHeat">
@@ -1509,7 +1518,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
   <legend visible="false" />
  <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2011" min="1955" tickmax="0" tickmin="-4" type="datetime">
+  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2014" min="1955" tickmax="0" tickmin="-4" type="datetime">
     <labels>
       <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
       <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -1541,7 +1550,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 			<option name="barbase" value="0" />			
 		</renderer>
     <datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%.2f" />
     </datatips>
   </plot>
@@ -1783,6 +1792,9 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201206,10.098619
 201209,10.641594
 201212,11.275383
+201303,13.501332
+201306,12.316297
+201309,11.539783
 </values>
   </data>
 
@@ -1812,7 +1824,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	 <window border="0" margin="0" padding="0" />
 	  <legend visible="false" />
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
-	 <horizontalaxis highlightstyle="labels" id="year" linewidth="0" max="2010" min="1960" tickmax="0" tickmin="-4" type="datetime">
+	 <horizontalaxis highlightstyle="labels" id="year" linewidth="0" max="2014" min="1960" tickmax="0" tickmin="-4" type="datetime">
 	  <grid />
 	  <labels>
 		<label format="%Y" spacing="500Y 200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
@@ -1846,7 +1858,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 				<option name="fillopacity" value="0.1" />
 			</renderer>
 		<datatips format="{0}: {1}">
-		   <variable format="'%y" />
+		   <variable format="&apos;%y" />
 		   <variable format="%.1f" />
 		</datatips>
 	  </plot>
@@ -2284,7 +2296,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 			<legend visible="false" />
 			<plotarea marginbottom="50" marginleft="55" marginright="25" margintop="10" />
 		  
-			<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2010" min="1975" tickmax="0" tickmin="-4" type="datetime">
+			<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2014" min="1975" tickmax="0" tickmin="-4" type="datetime">
 				<labels>
 				  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
 				  
@@ -2389,7 +2401,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	<legend visible="false" />
 	<plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
   
-	<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2009" min="1980" tickmax="0" tickmin="-4" type="datetime">
+	<horizontalaxis highlightstyle="labels" id="datetime" linewidth="0" max="2014" min="1980" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="200Y 100Y 50Y 20Y 10Y 5Y 2Y 1Y" />
 		  
@@ -2424,7 +2436,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 			<option name="linewidth" value="1" />		
 		</renderer>
 	<datatips format="{0}: {1}">
-       <variable format="'%y" />
+       <variable format="&apos;%y" />
        <variable format="%.3f" />
     </datatips>
   </plot>
@@ -2516,7 +2528,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	  <legend visible="false" />
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2010" min="2008" tickmax="0" tickmin="-4" type="datetime">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="2014" min="2008" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
 		  <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -2563,7 +2575,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 				<option name="barbase" value="0" />
 			</renderer>
 			<datatips format="{0}: {1}">
-			  <variable format="%n '%y" />
+			  <variable format="%n &apos;%y" />
 			  <variable format="%.1f" />
 			</datatips>
 
@@ -3332,6 +3344,13 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201301,-0.600
 201302,-0.700
 201303,-0.400
+201304,-0.200
+201305,-0.200
+201306,-0.300
+201307,-0.300
+201308,-0.300
+201309,-0.300
+201310,-0.200
 </values>
 	  </data>
 	</mugl></graph><graph id="aoi-oak1" name="aoi">
@@ -3360,7 +3379,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	  <legend visible="false" />
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201401" min="200601" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
 		  <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -3404,7 +3423,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 				<option name="barbase" value="0" />
 			</renderer>
 		<datatips format="{0}: {1}">
-				 <variable format="%n '%y" />
+				 <variable format="%n &apos;%y" />
 				<variable format="%.2f" />
 			</datatips>
 	  </plot>
@@ -4173,6 +4192,13 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201301,-1.131
 201302,-1.607
 201303,-1.296
+201304,-0.787
+201305,0.455
+201306,0.344
+201307,0.231
+201308,-0.106
+201309,-0.015
+201310,0.610
 </values>
 	  </data>
 	</mugl></graph><graph id="naoi-oak1" name="naoi">
@@ -4204,7 +4230,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	  <legend visible="false" />
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201401" min="200601" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
 		  <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -4250,7 +4276,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 				<option name="barbase" value="0" />
 			</renderer>
 		<datatips format="{0}: {1}">
-				 <variable format="%n '%y" />
+				 <variable format="%n &apos;%y" />
 				<variable format="%.2f" />
 			</datatips>
 	  </plot>
@@ -5019,6 +5045,13 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201301,0.023
 201302,-0.570
 201303,-0.457
+201304,-0.117
+201305,0.593
+201306,0.587
+201307,0.720
+201308,0.627
+201309,-0.023
+201310,-0.047
 </values>
 	  </data>
 	</mugl></graph><graph id="soi-oak1" name="soi">
@@ -5045,7 +5078,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
     <legend visible="false" />
     <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 
-    <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+    <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201401" min="200601" tickmax="0" tickmin="-4" type="datetime">
       <labels>
         <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
         <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -5090,7 +5123,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
         <option name="barbase" value="0" />
       </renderer>
       <datatips format="{0}: {1}">
-        <variable format="%n '%y" />
+        <variable format="%n &apos;%y" />
         <variable format="%.2f" />
       </datatips>
 
@@ -5848,6 +5881,13 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201302,-0.200
 201303,1.500
 201304,0.200
+201305,0.800
+201306,1.200
+201307,0.800
+201308,0.200
+201309,0.300
+201310,-0.100
+201311,0.700
 </values>
     </data>
 </mugl></graph><graph id="pnap-oak1" name="pnap">
@@ -5876,7 +5916,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 	 <plotarea marginbottom="50" marginleft="60" marginright="25" margintop="10" />
 	 
 
-	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201207" min="200601" tickmax="0" tickmin="-4" type="datetime">
+	  <horizontalaxis highlightstyle="labels" id="x" linewidth="0" max="201401" min="200601" tickmax="0" tickmin="-4" type="datetime">
 		<labels>
 		  <label format="%Y" spacing="100Y 50Y 20Y 10Y 5Y 2Y 1Y " />
 		  <label format="%n %y" spacing="6M 3M 2M 1M" />
@@ -5925,7 +5965,7 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 				<option name="barbase" value="0" />
 			</renderer>
 			<datatips format="{0}: {1}">
-			  <variable format="%n '%y" />
+			  <variable format="%n &apos;%y" />
 			  <variable format="%.2f" />
 			</datatips>
 	  </plot>
@@ -6693,6 +6733,13 @@ The graph shows the average area with at least 15% sea ice on its surface each S
 201301,-0.003
 201302,0.347
 201303,-0.357
+201304,-0.627
+201305,-0.783
+201306,-0.367
+201307,-0.257
+201308,0.067
+201309,0.057
+201310,-0.327
 </values>
 	  </data>
 	</mugl></graph></tab><tab id="climateProjections-oak1">
@@ -7380,7 +7427,7 @@ the atmosphere.
       </item>
     </legend>
 </graph></tab><intro>
-     <ns0:TextFlow fontFamily="Arial"><ns0:p textAlign="center"><ns0:span fontSize="18" fontWeight="bold">Global Climate Dashboard</ns0:span></ns0:p><ns0:p><ns0:span fontWeight="bold" /></ns0:p><ns0:p><ns0:span fontSize="12" fontWeight="bold">Just as the dashboard of a car gives you a quick look at the status of your vehicle, the global climate dashboard gives you a quick look at the status of Earth&#8217;s climate system. The interactive graphs let you explore climate-relevant measurements and the relationships among them for different time periods.</ns0:span></ns0:p>
+     <ns0:TextFlow fontFamily="Arial" xmlns:ns0="http://ns.adobe.com/textLayout/2008"><ns0:p textAlign="center"><ns0:span fontSize="18" fontWeight="bold">Global Climate Dashboard</ns0:span></ns0:p><ns0:p><ns0:span fontWeight="bold" /></ns0:p><ns0:p><ns0:span fontSize="12" fontWeight="bold">Just as the dashboard of a car gives you a quick look at the status of your vehicle, the global climate dashboard gives you a quick look at the status of Earth&#8217;s climate system. The interactive graphs let you explore climate-relevant measurements and the relationships among them for different time periods.</ns0:span></ns0:p>
        <ns0:p><ns0:span fontSize="12" fontWeight="bold" /></ns0:p>
        <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Adjust the time slider, or click and drag within a graph, to change the time period displayed.</ns0:span></ns0:p>
        <ns0:p paragraphStartIndent="30" tabStops="s30" textIndent="-15"><ns0:span fontSize="12">&#8226;<ns0:tab /></ns0:span><ns0:span fontSize="12" fontWeight="bold">Click and drag data labels up from the list at the bottom to display their graphs.</ns0:span></ns0:p>
